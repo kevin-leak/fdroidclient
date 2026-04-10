@@ -103,6 +103,7 @@ app assembleRelease test:
     paths:
       - app/build/reports
       - app/build/outputs/apk
+      - app/build/outputs/mapping
       - libs/*/build/reports
       - legacy/build/reports
       - legacy/build/outputs/apk
