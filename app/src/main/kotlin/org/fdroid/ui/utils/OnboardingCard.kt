@@ -1,5 +1,8 @@
 package org.fdroid.ui.utils
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.ElevatedCard
@@ -22,14 +25,36 @@ import org.fdroid.ui.FDroidContent
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
+fun OnboardingPopupCard(
+  title: String,
+  message: String,
+  modifier: Modifier = Modifier,
+  buttonText: String = stringResource(R.string.got_it),
+  onGotIt: () -> Unit = {},
+) {
+  val focusRequester = remember { FocusRequester() }
+  OnboardingCard(
+    title = title,
+    message = message,
+    modifier = modifier.widthIn(max = TooltipDefaults.richTooltipMaxWidth),
+    buttonText = buttonText,
+    buttonModifier = Modifier.focusRequester(focusRequester),
+    onGotIt = onGotIt,
+  )
+  LaunchedEffect(Unit) { focusRequester.requestFocus() }
+}
+
+@Composable
+@OptIn(ExperimentalMaterial3Api::class)
 fun OnboardingCard(
   title: String,
   message: String,
   modifier: Modifier = Modifier,
+  buttonText: String = stringResource(R.string.got_it),
+  buttonModifier: Modifier = Modifier,
   onGotIt: () -> Unit = {},
 ) {
-  val focusRequester = remember { FocusRequester() }
-  ElevatedCard(modifier = modifier.widthIn(max = TooltipDefaults.richTooltipMaxWidth)) {
+  ElevatedCard(modifier = modifier) {
     Text(
       text = title,
       style = MaterialTheme.typography.titleSmall,
@@ -40,15 +65,15 @@ fun OnboardingCard(
       style = MaterialTheme.typography.bodyMedium,
       modifier = Modifier.padding(horizontal = 16.dp),
     )
-    TextButton(
-      onClick = onGotIt,
-      modifier =
-        Modifier.focusRequester(focusRequester).padding(vertical = 8.dp, horizontal = 16.dp),
-    ) {
-      Text(text = stringResource(R.string.got_it))
+    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+      TextButton(
+        onClick = onGotIt,
+        modifier = buttonModifier.padding(vertical = 8.dp, horizontal = 16.dp),
+      ) {
+        Text(text = buttonText)
+      }
     }
   }
-  LaunchedEffect(Unit) { focusRequester.requestFocus() }
 }
 
 @Preview

@@ -30,6 +30,7 @@ class MyAppsScreenshotTest(localeName: String) : LocalizedScreenshotTest(localeN
           appUpdates = getUpdates(localeList),
           installingApps = emptyList(),
           installedApps = getInstalledApps(localeList),
+          showUpdatesHint = false,
           showAppIssueHint = false,
           networkState = NetworkState(isOnline = true, isMetered = false),
         )

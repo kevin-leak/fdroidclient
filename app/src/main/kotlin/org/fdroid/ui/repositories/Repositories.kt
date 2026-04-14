@@ -43,7 +43,7 @@ import org.fdroid.R
 import org.fdroid.download.NetworkState
 import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.utils.BigLoadingIndicator
-import org.fdroid.ui.utils.OnboardingCard
+import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.getHintOverlayColor
 import org.fdroid.ui.utils.getRepositoriesInfo
 import org.fdroid.ui.utils.repoItems
@@ -54,7 +54,7 @@ fun Repositories(info: RepositoryInfo, isBigScreen: Boolean, onBackClicked: () -
   val hintController = rememberHintController(overlay = getHintOverlayColor())
   val hint = rememberHint {
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-      OnboardingCard(
+      OnboardingPopupCard(
         title = stringResource(R.string.repo_list_info_title),
         message = stringResource(R.string.repo_list_info_text),
         modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),

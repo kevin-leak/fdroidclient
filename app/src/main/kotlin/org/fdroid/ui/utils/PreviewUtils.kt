@@ -407,6 +407,8 @@ fun getMyAppsInfo(model: MyAppsModel): MyAppsInfo =
 
           override fun ignoreAppIssue(item: AppWithIssueItem) {}
 
+          override fun onUpdatesHintSeen() {}
+
           override fun onAppIssueHintSeen() {}
 
           override fun exportInstalledApps() {}
@@ -495,6 +497,7 @@ internal val myAppsModel =
           lastUpdated = System.currentTimeMillis() - DAYS.toMillis(3),
         ),
       ),
+    showUpdatesHint = true,
     showAppIssueHint = true,
     sortOrder = AppListSortOrder.NAME,
     networkState = NetworkState(isOnline = false, isMetered = false),

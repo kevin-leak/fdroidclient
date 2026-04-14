@@ -99,6 +99,7 @@ constructor(
           appInstallStatesFlow = appInstallManager.appInstallStates,
           appsWithIssuesFlow = updatesManager.appsWithIssues,
           installedAppsFlow = installedAppItems,
+          showUpdatesHintFlow = onboardingManager.showMyAppsUpdatesHint,
           showAppIssueHintFlow = onboardingManager.showAppIssueHint,
           searchQueryFlow = searchQuery,
           sortOrderFlow = sortOrder,
@@ -138,6 +139,8 @@ constructor(
     settingsManager.ignoreAppIssue(item.packageName, item.installedVersionCode)
     updatesManager.loadUpdates()
   }
+
+  override fun onUpdatesHintSeen() = onboardingManager.onMyAppsUpdateHintSeen()
 
   override fun onAppIssueHintSeen() = onboardingManager.onAppIssueHintSeen()
 

@@ -39,7 +39,7 @@ import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.utils.BackButton
 import org.fdroid.ui.utils.BigLoadingIndicator
 import org.fdroid.ui.utils.MeteredConnectionDialog
-import org.fdroid.ui.utils.OnboardingCard
+import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.TopAppBarButton
 import org.fdroid.ui.utils.TopAppBarOverflowButton
 import org.fdroid.ui.utils.getHintOverlayColor
@@ -58,7 +58,7 @@ fun RepoDetails(
   val hintController = rememberHintController(overlay = getHintOverlayColor())
   val hint = rememberHint {
     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-      OnboardingCard(
+      OnboardingPopupCard(
         title = stringResource(R.string.repo_details),
         message = stringResource(R.string.repo_details_info_text),
         modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),

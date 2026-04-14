@@ -61,7 +61,7 @@ import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.search.TopSearchBar
 import org.fdroid.ui.utils.BackButton
 import org.fdroid.ui.utils.BigLoadingIndicator
-import org.fdroid.ui.utils.OnboardingCard
+import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.TopAppBarButton
 import org.fdroid.ui.utils.appListItems
 import org.fdroid.ui.utils.getAppListInfo
@@ -81,7 +81,7 @@ fun AppList(
 
   val hintController = rememberHintController(overlay = getHintOverlayColor())
   val hint = rememberHint {
-    OnboardingCard(
+    OnboardingPopupCard(
       title = stringResource(R.string.onboarding_app_list_filter_title),
       message = stringResource(R.string.onboarding_app_list_filter_message),
       modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),

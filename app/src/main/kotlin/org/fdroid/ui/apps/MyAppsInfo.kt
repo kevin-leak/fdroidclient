@@ -15,6 +15,7 @@ data class MyAppsModel(
   val installingApps: List<InstallingAppItem>,
   val appsWithIssue: List<AppWithIssueItem>? = null,
   val installedApps: List<InstalledAppItem>? = null,
+  val showUpdatesHint: Boolean,
   val showAppIssueHint: Boolean,
   val sortOrder: AppListSortOrder = AppListSortOrder.NAME,
   val networkState: NetworkState,
@@ -31,6 +32,8 @@ interface MyAppsActions {
   fun confirmAppInstall(packageName: String, state: InstallConfirmationState)
 
   fun ignoreAppIssue(item: AppWithIssueItem)
+
+  fun onUpdatesHintSeen()
 
   fun onAppIssueHintSeen()
 
