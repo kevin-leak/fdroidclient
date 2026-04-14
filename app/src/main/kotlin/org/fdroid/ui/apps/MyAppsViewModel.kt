@@ -144,6 +144,10 @@ constructor(
 
   override fun onAppIssueHintSeen() = onboardingManager.onAppIssueHintSeen()
 
+  override fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
+  }
+
   override fun exportInstalledApps() {
     scope.launch {
       val stringBuilder =

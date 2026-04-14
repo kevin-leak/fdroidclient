@@ -103,7 +103,7 @@ fun MyAppsList(
                   myAppsInfo.actions.updateAll()
                   showUpdateAllButton = false
                 }
-                if (myAppsInfo.model.networkState.isMetered) {
+                if (myAppsInfo.model.networkState.showWarningDialog) {
                   showMeteredDialog = installLambda
                 } else {
                   installLambda()
@@ -251,7 +251,10 @@ fun MyAppsList(
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = myAppsInfo.model.appUpdatesBytes,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) myAppsInfo.actions.onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
 }

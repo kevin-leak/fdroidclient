@@ -95,7 +95,10 @@ fun RepoDetails(
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = null,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) info.actions.onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
   Scaffold(
@@ -120,7 +123,7 @@ fun RepoDetails(
             contentDescription = stringResource(R.string.repo_force_update),
             enabled = info.model.isUpdateButtonEnabled,
             onClick = {
-              if (info.model.networkState.isMetered)
+              if (info.model.networkState.showWarningDialog)
                 showMeteredDialog = { RepoUpdateWorker.updateNow(context, repo.repoId) }
               else RepoUpdateWorker.updateNow(context, repo.repoId)
             },

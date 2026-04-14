@@ -259,7 +259,7 @@ fun AppDetails(
         }
         // Screenshots
         if (item.phoneScreenshots.isNotEmpty()) {
-          Screenshots(item.networkState.isMetered, item.phoneScreenshots)
+          Screenshots(item.networkState.showWarningDialog, item.phoneScreenshots)
         }
         // Donate card
         if (item.showDonate)

@@ -304,7 +304,7 @@ fun AppDetailsHeader(
         // button is for either installing or updating
         Button(
           onClick = {
-            if (item.networkState.isMetered) {
+            if (item.networkState.showWarningDialog) {
               showMeteredDialog = true
             } else {
               require(item.suggestedVersion != null) { "suggestedVersion was null" }
@@ -325,7 +325,8 @@ fun AppDetailsHeader(
   if (showMeteredDialog)
     MeteredConnectionDialog(
       numBytes = version?.size,
-      onConfirm = {
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) item.actions.onNotWarnWhenMetered()
         require(item.suggestedVersion != null) { "suggestedVersion was null" }
         item.actions.installAction(item.app, item.suggestedVersion, item.icon)
       },

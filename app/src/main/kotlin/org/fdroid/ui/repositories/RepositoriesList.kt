@@ -94,7 +94,7 @@ fun RepositoriesList(
           isSelected = isSelected,
           onRepoEnabled = { enabled ->
             if (enabled) {
-              if (info.model.networkState.isMetered)
+              if (info.model.networkState.showWarningDialog)
                 showMeteredDialog = { info.onRepositoryEnabled(repoItem.repoId, true) }
               else info.onRepositoryEnabled(repoItem.repoId, true)
             } else {
@@ -170,7 +170,10 @@ fun RepositoriesList(
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = null,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) info.onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
 }

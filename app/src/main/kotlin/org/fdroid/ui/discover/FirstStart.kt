@@ -52,10 +52,10 @@ fun FirstStart(
     // TODO it would be nice to surface normal update errors better and also let the user retry
   }
   Column(verticalArrangement = Center, modifier = modifier) {
-    if ((!networkState.isOnline || networkState.isMetered) && !override) {
+    if ((!networkState.isOnline || networkState.showWarningDialog) && !override) {
       // offline or metered, not overridden
       val res =
-        if (networkState.isMetered) {
+        if (networkState.showWarningDialog) {
           stringResource(R.string.first_start_metered)
         } else {
           stringResource(R.string.first_start_offline)

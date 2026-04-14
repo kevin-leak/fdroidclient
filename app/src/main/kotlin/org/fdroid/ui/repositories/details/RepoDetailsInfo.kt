@@ -32,6 +32,8 @@ interface RepoDetailsActions {
 
   fun setArchiveRepoEnabled(enabled: Boolean)
 
+  fun onNotWarnWhenMetered()
+
   fun onOnboardingSeen()
 
   suspend fun generateQrCode(repo: Repository): Bitmap? {

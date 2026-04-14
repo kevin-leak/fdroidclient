@@ -244,6 +244,7 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <!-- The placeholder will be replaced with a size string such as "13 MB" -->
     <string name="dialog_metered_text">Downloading %1$s may incur charges depending on your data plan</string>
     <string name="dialog_metered_text_no_size">Downloading may incur charges depending on your data plan</string>
+    <string name="dialog_metered_dont_show">Don\'t show this again</string>
     <string name="dialog_metered_button">Download</string>
     <string name="screenshots_metered">Tap to load screenshots via mobile data</string>
 

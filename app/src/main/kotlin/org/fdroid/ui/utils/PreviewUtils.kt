@@ -256,6 +256,7 @@ fun getAppDetailsActions() =
     onUninstallResult = { _ -> },
     onRepoChanged = {},
     onPreferredRepoChanged = {},
+    onNotWarnWhenMetered = {},
     allowBetaVersions = {},
     onAntiFeaturesOnboardingSeen = {},
     ignoreAllUpdates = {},
@@ -412,6 +413,8 @@ fun getMyAppsInfo(model: MyAppsModel): MyAppsInfo =
 
           override fun onAppIssueHintSeen() {}
 
+          override fun onNotWarnWhenMetered() {}
+
           override fun exportInstalledApps() {}
         }
   }
@@ -553,6 +556,8 @@ fun getRepositoriesInfo(model: RepositoryModel, currentRepositoryId: Long? = nul
 
     override fun onRepositoryEnabled(repoId: Long, enabled: Boolean) {}
 
+    override fun onNotWarnWhenMetered() {}
+
     override fun onAddRepo() {}
 
     override fun onRepositoryMoved(fromRepoId: Long, toRepoId: Long) {}
@@ -603,6 +608,8 @@ fun getRepoDetailsInfo(
         override fun deleteUserMirror(mirror: Mirror) {}
 
         override fun setArchiveRepoEnabled(enabled: Boolean) {}
+
+        override fun onNotWarnWhenMetered() {}
 
         override fun onOnboardingSeen() {}
       }

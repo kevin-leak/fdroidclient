@@ -12,6 +12,8 @@ interface RepositoryInfo {
 
   fun onRepositoryEnabled(repoId: Long, enabled: Boolean)
 
+  fun onNotWarnWhenMetered()
+
   fun onAddRepo()
 
   fun onRepositoryMoved(fromRepoId: Long, toRepoId: Long)

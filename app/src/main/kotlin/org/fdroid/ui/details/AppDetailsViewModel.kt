@@ -183,6 +183,11 @@ constructor(
     }
   }
 
+  @UiThread
+  fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
+  }
+
   override fun onCleared() {
     log.info { "App details screen left: $packageName" }
     appInstallManager.cleanUp(packageName)

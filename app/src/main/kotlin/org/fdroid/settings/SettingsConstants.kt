@@ -55,6 +55,9 @@ object SettingsConstants {
   const val PREF_KEY_PREVENT_SCREENSHOTS = "preventScreenshots"
   const val PREF_DEFAULT_PREVENT_SCREENSHOTS = false
 
+  const val PREF_KEY_WARN_WHEN_METERED = "warnWhenMetered"
+  const val PREF_DEFAULT_WARN_WHEN_METERED = true
+
   const val PREF_KEY_SHOW_INCOMPATIBLE = "incompatibleVersions"
   const val PREF_DEFAULT_SHOW_INCOMPATIBLE = true
 

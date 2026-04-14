@@ -46,6 +46,8 @@ fun EntryProviderScope<NavKey>.repoEntry(navigator: Navigator, isBigScreen: Bool
         override fun onRepositoryEnabled(repoId: Long, enabled: Boolean) =
           viewModel.onRepositoryEnabled(repoId, enabled)
 
+        override fun onNotWarnWhenMetered() = viewModel.onNotWarnWhenMetered()
+
         override fun onAddRepo() {
           navigator.navigate(NavigationKey.AddRepo())
         }
@@ -94,6 +96,7 @@ fun EntryProviderScope<NavKey>.repoEntry(navigator: Navigator, isBigScreen: Bool
       networkStateFlow = viewModel.networkState,
       proxyConfig = viewModel.proxyConfig,
       onFetchRepo = viewModel::onFetchRepo,
+      onNotWarnWhenMetered = viewModel::onNotWarnWhenMetered,
       onAddRepo = viewModel::addFetchedRepository,
       onExistingRepo = { repoId ->
         navigator.goBack()

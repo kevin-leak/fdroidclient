@@ -57,10 +57,11 @@ fun Versions(item: AppDetailsItem, scrollUp: suspend () -> Unit) {
       item.versions?.forEach { versionItem ->
         Version(
           item = versionItem,
-          isMetered = item.networkState.isMetered,
+          isMetered = item.networkState.showWarningDialog,
           installAction = { version: AppVersion ->
             item.actions.installAction(item.app, version, item.icon)
           },
+          onNotWarnWhenMetered = item.actions.onNotWarnWhenMetered,
           scrollUp = scrollUp,
         )
       }
@@ -73,6 +74,7 @@ fun Version(
   item: VersionItem,
   isMetered: Boolean,
   installAction: (AppVersion) -> Unit,
+  onNotWarnWhenMetered: () -> Unit,
   scrollUp: suspend () -> Unit,
 ) {
   val isPreview = LocalInspectionMode.current
@@ -215,7 +217,8 @@ fun Version(
       if (showMeteredDialog)
         MeteredConnectionDialog(
           numBytes = item.version.size,
-          onConfirm = {
+          onConfirm = { notWarnWhenMetered ->
+            if (notWarnWhenMetered) onNotWarnWhenMetered()
             installAction(item.version as AppVersion)
             coroutineScope.launch { scrollUp() }
           },

@@ -95,6 +95,10 @@ constructor(
     }
   }
 
+  fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
+  }
+
   fun onRepositoriesMoved(fromRepoId: Long, toRepoId: Long) {
     log.info { "onRepositoriesMoved($fromRepoId, $toRepoId)" }
     repoSortingMap.update {

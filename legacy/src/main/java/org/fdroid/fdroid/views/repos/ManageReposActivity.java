@@ -213,7 +213,7 @@ public class ManageReposActivity extends AppCompatActivity implements RepoAdapte
     public void onToggleEnabled(Repository repo) {
         if (repo.getEnabled()) {
             new MaterialAlertDialogBuilder(this)
-                    .setMessage(R.string.repo_disable_warning)
+                    .setMessage(R.string.repo_disable_dialog_warning)
                     .setPositiveButton(R.string.repo_disable_warning_button, (dialog, id) -> {
                         disableRepo(repo);
                         dialog.dismiss();

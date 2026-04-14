@@ -206,6 +206,7 @@ fun DetailsPresenter(
         onUninstallResult = viewModel::onUninstallResult,
         onRepoChanged = viewModel::onRepoChanged,
         onPreferredRepoChanged = viewModel::onPreferredRepoChanged,
+        onNotWarnWhenMetered = viewModel::onNotWarnWhenMetered,
         allowBetaVersions = viewModel::allowBetaUpdates,
         onAntiFeaturesOnboardingSeen = viewModel::onAntiFeaturesOnboardingSeen,
         ignoreAllUpdates =

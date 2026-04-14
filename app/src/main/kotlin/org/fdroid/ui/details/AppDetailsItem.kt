@@ -242,6 +242,7 @@ data class AppDetailsActions(
   val onUninstallResult: (ActivityResult) -> Unit,
   val onRepoChanged: (Long) -> Unit,
   val onPreferredRepoChanged: (Long) -> Unit,
+  val onNotWarnWhenMetered: () -> Unit,
   val allowBetaVersions: () -> Unit,
   val onAntiFeaturesOnboardingSeen: () -> Unit,
   val ignoreAllUpdates: (() -> Unit)? = null,

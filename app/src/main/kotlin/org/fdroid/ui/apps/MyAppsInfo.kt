@@ -37,5 +37,7 @@ interface MyAppsActions {
 
   fun onAppIssueHintSeen()
 
+  fun onNotWarnWhenMetered()
+
   fun exportInstalledApps()
 }

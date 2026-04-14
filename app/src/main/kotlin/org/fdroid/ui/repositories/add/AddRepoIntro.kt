@@ -88,6 +88,7 @@ import org.fdroid.ui.utils.startActivitySafe
 fun AddRepoIntroContent(
   networkState: NetworkState,
   onFetchRepo: (String) -> Unit,
+  onNotWarnWhenMetered: () -> Unit,
   paddingValues: PaddingValues = PaddingValues(),
 ) {
   val scrollState = rememberScrollState()
@@ -150,7 +151,7 @@ fun AddRepoIntroContent(
               Unit
             }
           }
-          if (networkState.isMetered) showMeteredDialog = scanLambda else scanLambda()
+          if (networkState.showWarningDialog) showMeteredDialog = scanLambda else scanLambda()
         },
       )
       AnimatedVisibility(
@@ -229,7 +230,7 @@ fun AddRepoIntroContent(
             FDroidButton(
               text = stringResource(R.string.repo_add_add),
               onClick = {
-                if (networkState.isMetered)
+                if (networkState.showWarningDialog)
                   showMeteredDialog = { onFetchRepo(textState.value.text) }
                 else onFetchRepo(textState.value.text)
               },
@@ -244,7 +245,10 @@ fun AddRepoIntroContent(
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = null,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
 }
@@ -254,7 +258,7 @@ fun AddRepoIntroContent(
 private fun Preview() {
   FDroidContent {
     val networkStateFlow = MutableStateFlow(NetworkState(isOnline = true, isMetered = false))
-    AddRepo(None, networkStateFlow, null, {}, {}, {}, { _, _ -> }) {}
+    AddRepo(None, networkStateFlow, null, {}, {}, {}, {}, { _, _ -> }, {})
   }
 }
 
@@ -263,6 +267,6 @@ private fun Preview() {
 private fun PreviewNight() {
   FDroidContent {
     val networkStateFlow = MutableStateFlow(NetworkState(isOnline = false, isMetered = false))
-    AddRepo(None, networkStateFlow, null, {}, {}, {}, { _, _ -> }) {}
+    AddRepo(None, networkStateFlow, null, {}, {}, {}, {}, { _, _ -> }, {})
   }
 }
