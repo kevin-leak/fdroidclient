@@ -30,11 +30,11 @@ import org.fdroid.ui.utils.testApp
 
 @Composable
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
-fun AntiFeatures(antiFeatures: List<AntiFeature>) {
+fun AntiFeatures(antiFeatures: List<AntiFeature>, modifier: Modifier = Modifier) {
   ElevatedCard(
     colors =
       CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.inverseSurface),
-    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+    modifier = modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
   ) {
     ExpandableSection(
       icon = rememberVectorPainter(Icons.Default.WarningAmber),

@@ -257,6 +257,7 @@ fun getAppDetailsActions() =
     onRepoChanged = {},
     onPreferredRepoChanged = {},
     allowBetaVersions = {},
+    onAntiFeaturesOnboardingSeen = {},
     ignoreAllUpdates = {},
     ignoreThisUpdate = {},
     shareApk = Intent(),

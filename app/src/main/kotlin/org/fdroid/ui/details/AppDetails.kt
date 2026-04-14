@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -41,12 +42,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.onPlaced
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
@@ -66,6 +69,12 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
+import com.viktormykhailiv.compose.hints.hintAnchor
+import com.viktormykhailiv.compose.hints.rememberHint
+import com.viktormykhailiv.compose.hints.rememberHintAnchorState
+import com.viktormykhailiv.compose.hints.rememberHintController
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.fdroid.LocaleChooser.getBestLocale
 import org.fdroid.R
 import org.fdroid.install.InstallState
@@ -78,6 +87,8 @@ import org.fdroid.ui.lists.AppListType
 import org.fdroid.ui.navigation.NavigationKey
 import org.fdroid.ui.utils.BigLoadingIndicator
 import org.fdroid.ui.utils.ExpandableSection
+import org.fdroid.ui.utils.OnboardingPopupCard
+import org.fdroid.ui.utils.getHintOverlayColor
 import org.fdroid.ui.utils.testApp
 
 @Composable
@@ -107,6 +118,21 @@ fun AppDetails(
           showInstallError = true
         }
       }
+      // onboarding hint plumbing
+      val hintController = rememberHintController(overlay = getHintOverlayColor())
+      val hint = rememberHint {
+        OnboardingPopupCard(
+          title = stringResource(R.string.app_details_anti_features_title),
+          message = stringResource(R.string.app_details_anti_features_text),
+          modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+          onGotIt = {
+            item.actions.onAntiFeaturesOnboardingSeen()
+            hintController.dismiss()
+          },
+        )
+      }
+      val hintAnchor = rememberHintAnchorState(hint)
+      val coroutineScope = rememberCoroutineScope()
       val scrollState = rememberScrollState()
       var size by remember { mutableStateOf(IntSize.Zero) }
       Column(
@@ -217,7 +243,19 @@ fun AppDetails(
         }
         // Anti-features
         if (!item.antiFeatures.isNullOrEmpty()) {
-          AntiFeatures(item.antiFeatures)
+          AntiFeatures(
+            antiFeatures = item.antiFeatures,
+            modifier =
+              Modifier.hintAnchor(state = hintAnchor, shape = RoundedCornerShape(16.dp)).onPlaced {
+                if (item.showAntiFeaturesOnboarding) {
+                  coroutineScope.launch {
+                    delay(500) // we still need a delay to not highlight the wrong place
+                    hintController.show(hintAnchor)
+                    item.actions.onAntiFeaturesOnboardingSeen()
+                  }
+                }
+              },
+          )
         }
         // Screenshots
         if (item.phoneScreenshots.isNotEmpty()) {

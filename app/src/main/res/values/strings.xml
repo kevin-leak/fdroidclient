@@ -226,6 +226,10 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="app_details_more_apps_interesting">This might also be interesting to you:</string>
     <string name="app_details_more_apps_by_author">More apps by %1$s</string>
 
+    <string name="app_details_anti_features_title">What are Anti-Features?</string>
+    <string name="app_details_anti_features_text">Some apps come with behaviors you didn’t ask for — and might not want. Things like ads, tracking, or dependence on proprietary services. We call these Anti-Features.
+\n\nApps in F-Droid are clearly labeled when they contain Anti-Features, so you can make an informed choice.</string>
+
     <string name="about_title_full">About F-Droid</string>
     <string name="about_title_basic">About F-Droid Basic</string>
     <string name="about_text">Apps on F-Droid are free and open source software (FOSS), they respect your privacy, and they\'re available for anyone to see the source code, build on and improve.\n\nApp distribution is transparent, privacy-respecting, and accountable, setting a standard that challenges the mobile ecosystem to do better.\n\nF-Droid\'s impact is measured not just in apps published, but in the freedom, trust, and digital rights it helps protect.\n\nHelp F-Droid to protect community-powered innovation and continue our mission of openness, privacy, and user empowerment.</string>

@@ -42,6 +42,7 @@ import org.fdroid.install.AppInstallManager
 import org.fdroid.install.InstallState
 import org.fdroid.install.InstalledAppsCache
 import org.fdroid.repo.RepoPreLoader
+import org.fdroid.settings.OnboardingManager
 import org.fdroid.settings.SettingsManager
 import org.fdroid.updates.UpdatesManager
 import org.fdroid.utils.IoDispatcher
@@ -61,6 +62,7 @@ constructor(
   private val updatesManager: UpdatesManager,
   private val networkMonitor: NetworkMonitor,
   private val settingsManager: SettingsManager,
+  private val onboardingManager: OnboardingManager,
   private val appInstallManager: AppInstallManager,
   private val installedAppsCache: InstalledAppsCache,
 ) : AndroidViewModel(app) {
@@ -84,6 +86,7 @@ constructor(
           viewModel = this,
           packageInfoFlow = packageInfoFlow,
           currentRepoIdFlow = currentRepoIdFlow,
+          showAntiFeaturesOnboardingFlow = onboardingManager.showAntiFeaturesOnboarding,
           appsWithIssuesFlow = updatesManager.appsWithIssues,
           networkStateFlow = networkMonitor.networkState,
         )
@@ -225,6 +228,11 @@ constructor(
       db.getAppPrefsDao().update(appPrefs.toggleIgnoreVersionCodeUpdate(versionCode))
       updatesManager.loadUpdates()
     }
+  }
+
+  @UiThread
+  fun onAntiFeaturesOnboardingSeen() {
+    onboardingManager.onAntiFeaturesOnboardingSeen()
   }
 
   @AssistedFactory
