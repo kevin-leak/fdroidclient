@@ -1,9 +1,12 @@
 package org.fdroid
 
 import android.Manifest.permission.POST_NOTIFICATIONS
+import android.app.ComponentCaller
+import android.content.Intent
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager.LayoutParams.FLAG_SECURE
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -57,5 +60,10 @@ class MainActivity : AppCompatActivity() {
     ) {
       requestPermissionLauncher.launchSafe(POST_NOTIFICATIONS)
     }
+  }
+
+  override fun onNewIntent(intent: Intent, caller: ComponentCaller) {
+    Log.i("MainActivity", "onNewIntent: $intent, caller: $caller")
+    super.onNewIntent(intent, caller)
   }
 }
