@@ -585,7 +585,6 @@
     <string name="repo_list_info_text">מאגר הוא מקור של יישומונים. הרשימה הזאת מציגה את כל המאגרים שנוספו. המאגרים המושבתים אינם בשימוש.
 \n
 \nאם יישומון הוא יותר במאגר אחד, המאגר שנמצא יותר גבוה ברשימה מקבל עדיפות אוטומטית. אפשר לסדר את המאגרים מחדש בלחיצה ארוכה עליהם וגרירתם.</string>
-    <string name="repo_disable_warning">השבתת המאגר תסיר את מצב ה„העדפה” שלו מכל היישומונים.</string>
     <string name="repo_archive_failed">מאגר ארכיון לא זמין כרגע</string>
     <string name="ipfsgw_summary_disabled">הורדת יישומונים באמצעות נקודות גישת IPFS: מושבתת</string>
     <string name="ipfsgw_add_title">הוספת שער גישת IPFS</string>

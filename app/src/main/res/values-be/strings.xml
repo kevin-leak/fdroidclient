@@ -571,7 +571,6 @@
     <string name="repo_error_adding_archive">Архіўныя рэпазітары не могуць быць дададзены напрамую. Націсніце на рэпазітар са спісу і ўключыце ў ім архіў.</string>
     <string name="repo_archive_toggle_description">Адлюстроўваць архіўныя і састарэлыя версіі праграм</string>
     <string name="repo_archive_toggle">Архіў рэпазіторыя</string>
-    <string name="repo_disable_warning">Адключэнне гэтага рэпазітара выдаліць яго статус «пераважны» з усіх праграм.</string>
     <string name="ipfsgw_title">IPFS-шлюзы</string>
     <string name="ipfsgw_add_title">Дадаць шлюз IPFS</string>
     <string name="ipfsgw_add_add">Дадаць</string>

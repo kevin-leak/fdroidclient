@@ -591,7 +591,6 @@
     <string name="repositories_last_update_never">mai</string>
     <string name="repo_list_info_title">Elenco repository</string>
     <string name="repo_archive_failed">Repo di archivio attualmente non disponibile</string>
-    <string name="repo_disable_warning">Disattivando questo repository verrà rimosso il suo stato \"preferito\" da tutte le app.</string>
     <string name="repo_add_repo_and_mirror">Aggiungi repository e mirror</string>
     <string name="repo_view_repo">Vedi il repository</string>
     <string name="repo_scan_qr_code">Scansiona codice QR</string>

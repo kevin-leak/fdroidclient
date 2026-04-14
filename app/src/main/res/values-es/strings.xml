@@ -588,7 +588,6 @@
     <string name="repo_list_info_title">Lista de repositorios</string>
     <string name="repo_archive_toggle">Versiones históricas</string>
     <string name="repo_archive_toggle_description">Muestra aplicaciones antiguas y versiones obsoletas de aplicaciones existentes</string>
-    <string name="repo_disable_warning">Deshabilitar este repositorio eliminará su estado \"preferido\" de todas las aplicaciones.</string>
     <string name="repo_disable_warning_button">Desactivar</string>
     <string name="repo_list_info_text">Un repositorio es una fuente de aplicaciones. Esta lista muestra todos los repositorios que has añadido. Los repositorios desactivados no se utilizan.\n\nSi una aplicación está en más de un repositorio se utilizará la versión del repositorio que esté más alto en la lista. Puedes reordenar el listado manteniendo pulsado y arrastrando cada entrada.</string>
     <string name="repo_mirror_add_info">La URL que está intentando añadir (%s) es una réplica de un repositorio existente.</string>

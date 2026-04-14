@@ -551,7 +551,6 @@
     <string name="repo_error_adding_archive">Ne eblas senpere aldoni arĥivan deponejon. Frapetu deponejon sur la listo kaj tie aktivigi arĥivon.</string>
     <string name="repo_archive_failed">Arĥiva deponejo ne estas nune disponebla</string>
     <string name="repo_disable_warning_button">Malaktivigi</string>
-    <string name="repo_disable_warning">Per malaktivigi tiun ĉi deponejon, ĝi estos forigita kiel preferata deponejo por ĉiuj ĝiaj aplikaĵoj.</string>
     <string name="repositories_last_update">Lasta ĝisdatigo: %s</string>
     <string name="repositories_last_update_never">neniam</string>
     <string name="repo_archive_toggle">Arĥiva deponejo</string>

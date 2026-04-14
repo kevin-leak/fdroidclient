@@ -538,7 +538,6 @@
         <item quantity="one">Iscàrriga aplicatziones dae sos puntos finales IPFS: %1$d abilitadu</item>
         <item quantity="other">Iscàrriga aplicatziones dae sos puntos finales IPFS: %1$d abilitados</item>
     </plurals>
-    <string name="repo_disable_warning">Disabilitende custu depòsitu nd\'as a bogare s\'istadu de \"preferidu\" suo dae totu sas aplicatziones.</string>
     <string name="repositories_last_update">Ùrtima atualizatzione: %s</string>
     <string name="repositories_last_update_never">mai</string>
     <string name="repo_list_info_title">Lista de depòsitos</string>

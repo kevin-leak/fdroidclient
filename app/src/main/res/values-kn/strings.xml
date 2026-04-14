@@ -501,7 +501,6 @@
     <string name="swap_wifi_vpn_conflict">ಸಕ್ರಿಯ ವಿ.ಪಿ.ಎನ್ ಜೊತೆಗೆ ಸಂಘರ್ಷಿಸುತ್ತದೆ!</string>
     <string name="app_name_basic">ಎಫ್-ಡ್ರಾಯ್ಡ್ ಬೇಸಿಕ್</string>
     <string name="ipfsgw_caption_custom_gateways">ಕಸ್ಟಮೈಜ್ ಐ ಪಿ ಎಫ್ ಎಸ್ ಗೇಟ್ವೇಸ್</string>
-    <string name="repo_disable_warning">ಡಿಸೇಬ್ಲಿಂಗ್ ದಿಸ್ ರೆಪೊಸಿಟರಿ ವಿಲ್ ರಿಮೋವ್ ಇಟ್ಸ್ \"ಪ್ರಿಫರ್ಡ್\" ಸ್ಥಿತಿ ಫ್ರಾಮ್ ಆಲ್ ಅಲ್ ಅಪ್ಪ್ಸ್.</string>
     <string name="share_apk_error">ಅಪ್ಲಿಕೇಶನ್ ಫೈಲ್ ಹಂಚಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="warning_target_sdk">ಈ ಅಪ್ಲಿಕೇಶನ್ ಹಳಈ ಅಪ್ಲಿಕೇಶನ್‌ನು ಹಳೆಯ ಆಂಡ್ರಾಯ್ಡ್ ಆವೃತ್ತಿಗಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ ಮತ್ತು ಸ್ವಯಂಮತ್ತಾಯವಾಗಿ ನವೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
     <string name="swap_connection_indexv0_error">ನೀವು ಹಳೆಯ ಆವೃತ್ತಿಯ F-Droid ಅನ್ನು ಹೊಂದಿರುವ ಯಾರಾದರು ಸಂಪರ್ಕ ಸ್ಥಾಪಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿದ್ದೀರಿ. ಅವರು ತಮ್ಮ F-Droid ಅಪ್ಲಿಕೇಶನ್‌ನನ್ನು ನವೀಕರಿಸಬೇಕಾಗಿರುತ್ತದೆ. ಅವರು ನಿಮ್ಮಿಂದ F-Droid ಅಪ್ಲಿಕೇಶನ್‌ನನ್ನು ನವೀಕರಿಸಲು ಸ್ವಾಪ್ ಬಳಸಬಹುದು.</string>

@@ -558,7 +558,6 @@
     <string name="ipfsgw_explainer">Lataa sovelluksia IPFS-verkkopäätepisteistä. (Toimii vain F-Droid-ohjelmavarastoissa, joissa on IPFS-tuki.)</string>
     <string name="repo_list_info_title">Ohjelmavarastoluettelo</string>
     <string name="repo_archive_toggle">Ohjelmavarastoarkisto</string>
-    <string name="repo_disable_warning">Tämän ohjelmavaraston poistaminen käytöstä poistaa sen \"ensisijaisen\" tilan kaikista sovelluksista.</string>
     <string name="ipfsgw_summary_disabled">Lataa sovelluksia IPFS-verkkopäätepisteiden avulla: pois käytöstä</string>
     <plurals name="ipfsgw_summary">
         <item quantity="one">Lataa sovelluksia IPFS-verkkopäätepisteen avulla: %1$d käytössä</item>

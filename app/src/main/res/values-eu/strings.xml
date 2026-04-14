@@ -576,7 +576,6 @@
     <string name="repo_archive_toggle">Gordailuko artxiboa</string>
     <string name="repo_archive_toggle_description">Erakutsi gordetako aplikazioak eta aplikazioen bertsio zaharkituak</string>
     <string name="repo_archive_failed">Artxiboen gordailua une honetan ez dago erabilgarri</string>
-    <string name="repo_disable_warning">Gordailu hau desgaituz gero, aplikazio guztietatik \"hobetsitakoa\" egoera kenduko da.</string>
     <string name="repo_disable_warning_button">Desgailu</string>
     <string name="useDnsCache">Erabili DNS cachea</string>
     <string name="useDnsCacheSummary">Erabili cachean gordetako emaitzak DNS kontsultak minimizatzeko.</string>

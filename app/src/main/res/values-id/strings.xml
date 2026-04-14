@@ -538,7 +538,6 @@
     <string name="repo_share_not_found">Tidak dapat mencari alamat repositori dalam teks terbagi.</string>
     <string name="repo_archive_toggle">Arsip repositori</string>
     <string name="repo_archive_failed">Repositori arsip saat ini tidak tersedia</string>
-    <string name="repo_disable_warning">Menonaktifkan repositori ini akan menghilangkan status \"lebih disukai\" dari semua aplikasi.</string>
     <string name="targetsdk_or_later">sasaran %s</string>
     <string name="repo_disable_warning_button">Nonaktifkan</string>
     <string name="ipfsgw_explainer">Unduh aplikasi dari titik akhir web IPFS. (Hanya bekerja pada repositori F-Droid dengan dukungan IPFS.)</string>

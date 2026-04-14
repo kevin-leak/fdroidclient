@@ -557,7 +557,6 @@
     <string name="repositories_last_update_never">從來沒有</string>
     <string name="repo_list_info_title">存庫清單</string>
     <string name="repo_archive_failed">封印存庫目前欠奉</string>
-    <string name="repo_disable_warning">若然停用呢個存庫，所有 app 都唔會再「揀選」佢個囉噃。</string>
     <string name="repo_disable_warning_button">停用</string>
     <string name="app_details_repositories">存庫</string>
     <string name="app_details_repository_button_prefer">揀選存庫</string>
