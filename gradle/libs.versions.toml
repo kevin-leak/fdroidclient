@@ -22,7 +22,7 @@ glide = "5.0.5"
 glideCompose = "1.0.0-beta08"
 coilCompose = "3.4.0"
 molecule = "2.2.0"
-hints = "2.0.1"
+hints = "2.1.0"
 composePreference = "2.2.0"
 
 androidxCoreKtx = "1.18.0"

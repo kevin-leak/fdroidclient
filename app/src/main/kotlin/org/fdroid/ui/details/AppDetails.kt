@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -49,7 +48,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onGloballyPositioned
-import androidx.compose.ui.layout.onPlaced
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
@@ -69,11 +67,10 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
-import com.viktormykhailiv.compose.hints.hintAnchor
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.fdroid.LocaleChooser.getBestLocale
 import org.fdroid.R
@@ -120,17 +117,18 @@ fun AppDetails(
       }
       // onboarding hint plumbing
       val hintController = rememberHintController(overlay = getHintOverlayColor())
-      val hint = rememberHint {
-        OnboardingPopupCard(
-          title = stringResource(R.string.app_details_anti_features_title),
-          message = stringResource(R.string.app_details_anti_features_text),
-          modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-          onGotIt = {
-            item.actions.onAntiFeaturesOnboardingSeen()
-            hintController.dismiss()
-          },
-        )
-      }
+      val hint =
+        rememberHint(HintProperties(dismissOnClickOutside = false)) {
+          OnboardingPopupCard(
+            title = stringResource(R.string.app_details_anti_features_title),
+            message = stringResource(R.string.app_details_anti_features_text),
+            modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+            onGotIt = {
+              item.actions.onAntiFeaturesOnboardingSeen()
+              hintController.dismiss()
+            },
+          )
+        }
       val hintAnchor = rememberHintAnchorState(hint)
       val coroutineScope = rememberCoroutineScope()
       val scrollState = rememberScrollState()
@@ -245,17 +243,14 @@ fun AppDetails(
         if (!item.antiFeatures.isNullOrEmpty()) {
           AntiFeatures(
             antiFeatures = item.antiFeatures,
-            modifier =
-              Modifier.hintAnchor(state = hintAnchor, shape = RoundedCornerShape(16.dp)).onPlaced {
-                if (item.showAntiFeaturesOnboarding) {
-                  coroutineScope.launch {
-                    delay(500) // we still need a delay to not highlight the wrong place
-                    hintController.show(hintAnchor)
-                    item.actions.onAntiFeaturesOnboardingSeen()
-                  }
-                }
-              },
-          )
+            hintAnchor = hintAnchor,
+            showOnboarding = item.showAntiFeaturesOnboarding,
+          ) {
+            coroutineScope.launch {
+              hintController.show(hintAnchor)
+              item.actions.onAntiFeaturesOnboardingSeen()
+            }
+          }
         }
         // Screenshots
         if (item.phoneScreenshots.isNotEmpty()) {

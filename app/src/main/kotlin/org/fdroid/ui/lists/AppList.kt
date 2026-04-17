@@ -51,6 +51,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.hintAnchor
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
@@ -80,17 +81,18 @@ fun AppList(
   val scrollBehavior = enterAlwaysScrollBehavior(rememberTopAppBarState())
 
   val hintController = rememberHintController(overlay = getHintOverlayColor())
-  val hint = rememberHint {
-    OnboardingPopupCard(
-      title = stringResource(R.string.onboarding_app_list_filter_title),
-      message = stringResource(R.string.onboarding_app_list_filter_message),
-      modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-      onGotIt = {
-        appListInfo.actions.onOnboardingSeen()
-        hintController.dismiss()
-      },
-    )
-  }
+  val hint =
+    rememberHint(HintProperties(dismissOnClickOutside = false)) {
+      OnboardingPopupCard(
+        title = stringResource(R.string.onboarding_app_list_filter_title),
+        message = stringResource(R.string.onboarding_app_list_filter_message),
+        modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+        onGotIt = {
+          appListInfo.actions.onOnboardingSeen()
+          hintController.dismiss()
+        },
+      )
+    }
   val hintAnchor = rememberHintAnchorState(hint)
   LaunchedEffect(appListInfo.showOnboarding) {
     if (appListInfo.showOnboarding) {

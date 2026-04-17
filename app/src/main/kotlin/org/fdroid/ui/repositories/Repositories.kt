@@ -36,6 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
@@ -52,19 +53,20 @@ import org.fdroid.ui.utils.repoItems
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 fun Repositories(info: RepositoryInfo, isBigScreen: Boolean, onBackClicked: () -> Unit) {
   val hintController = rememberHintController(overlay = getHintOverlayColor())
-  val hint = rememberHint {
-    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-      OnboardingPopupCard(
-        title = stringResource(R.string.repo_list_info_title),
-        message = stringResource(R.string.repo_list_info_text),
-        modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-        onGotIt = {
-          info.onOnboardingSeen()
-          hintController.dismiss()
-        },
-      )
+  val hint =
+    rememberHint(HintProperties(dismissOnClickOutside = false)) {
+      Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        OnboardingPopupCard(
+          title = stringResource(R.string.repo_list_info_title),
+          message = stringResource(R.string.repo_list_info_text),
+          modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+          onGotIt = {
+            info.onOnboardingSeen()
+            hintController.dismiss()
+          },
+        )
+      }
     }
-  }
   val hintAnchor = rememberHintAnchorState(hint)
   LaunchedEffect(info.model.showOnboarding) {
     if (!isBigScreen && info.model.showOnboarding) {

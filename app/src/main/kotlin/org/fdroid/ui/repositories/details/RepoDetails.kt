@@ -30,6 +30,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
@@ -56,19 +57,20 @@ fun RepoDetails(
   val repo = info.model.repo
 
   val hintController = rememberHintController(overlay = getHintOverlayColor())
-  val hint = rememberHint {
-    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-      OnboardingPopupCard(
-        title = stringResource(R.string.repo_details),
-        message = stringResource(R.string.repo_details_info_text),
-        modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-        onGotIt = {
-          info.actions.onOnboardingSeen()
-          hintController.dismiss()
-        },
-      )
+  val hint =
+    rememberHint(HintProperties(dismissOnClickOutside = false)) {
+      Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        OnboardingPopupCard(
+          title = stringResource(R.string.repo_details),
+          message = stringResource(R.string.repo_details_info_text),
+          modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+          onGotIt = {
+            info.actions.onOnboardingSeen()
+            hintController.dismiss()
+          },
+        )
+      }
     }
-  }
   val hintAnchor = rememberHintAnchorState(hint)
   LaunchedEffect(info.model.showOnboarding) {
     if (info.model.showOnboarding) {
