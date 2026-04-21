@@ -14,6 +14,31 @@ import org.fdroid.ui.utils.getPreviewVersion
 @Composable
 @PreviewTest
 @Preview(showBackground = true, showSystemUi = true)
+fun MyAppsEmpty() {
+  ScreenshotTest(numUpdates = 0, hasAppIssues = false) {
+    val model =
+      MyAppsModel(
+        appUpdates = emptyList(),
+        installingApps = emptyList(),
+        appsWithIssue = null,
+        installedApps = emptyList(),
+        showUpdatesHint = true,
+        showAppIssueHint = false,
+        sortOrder = AppListSortOrder.NAME,
+        networkState = NetworkState(isOnline = true, isMetered = false),
+      )
+    MyApps(
+      myAppsInfo = getMyAppsInfo(model),
+      currentPackageName = null,
+      onAppItemClick = {},
+      onNav = {},
+    )
+  }
+}
+
+@Composable
+@PreviewTest
+@Preview(showBackground = true, showSystemUi = true)
 fun MyAppsOnlyInstalledAppsAndNoInternet() {
   ScreenshotTest(numUpdates = 0, hasAppIssues = false) {
     val model =
