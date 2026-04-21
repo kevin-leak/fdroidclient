@@ -16,6 +16,8 @@ import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
 import org.fdroid.ui.apps.myAppsEntry
+import org.fdroid.ui.categories.Categories
+import org.fdroid.ui.categories.CategoriesViewModel
 import org.fdroid.ui.details.NoAppSelected
 import org.fdroid.ui.details.appDetailsEntry
 import org.fdroid.ui.discover.discoverEntry
@@ -76,6 +78,14 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
         onNav = { navKey -> navigator.navigate(navKey) },
         onBack = { navigator.goBack() },
         onSearchCleared = viewModel::onSearchCleared,
+      )
+    }
+    entry(NavigationKey.Categories) {
+      val viewModel = hiltViewModel<CategoriesViewModel>()
+      Categories(
+        categories = viewModel.categories.collectAsStateWithLifecycle(null).value,
+        onNav = { navKey -> navigator.navigate(navKey) },
+        onBackClicked = { navigator.goBack() },
       )
     }
     entry(NavigationKey.Settings) {

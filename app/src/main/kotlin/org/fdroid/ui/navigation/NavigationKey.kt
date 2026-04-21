@@ -39,6 +39,8 @@ sealed interface NavigationKey : NavKey {
 
   @Serializable data class AppList(val type: AppListType) : NavigationKey
 
+  @Serializable data object Categories : NavigationKey
+
   @Serializable data object Repos : NavigationKey
 
   @Serializable data class RepoDetails(val repoId: Long) : NavigationKey

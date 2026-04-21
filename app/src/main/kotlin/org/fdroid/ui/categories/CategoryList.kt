@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation3.runtime.NavKey
 import org.fdroid.R
 import org.fdroid.ui.FDroidContent
+import org.fdroid.ui.navigation.NavigationKey
 
 @Composable
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -29,7 +30,7 @@ fun CategoryList(
   onNav: (NavKey) -> Unit,
   modifier: Modifier = Modifier,
 ) {
-  val onAllCategories = { /* TODO */ }
+  val onAllCategories = { onNav(NavigationKey.Categories) }
   AnimatedVisibility(!categoryList.isNullOrEmpty()) {
     Column(modifier = modifier) {
       Row(
