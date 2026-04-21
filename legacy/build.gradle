@@ -62,6 +62,8 @@ android {
         }
         debug {
             getIsDefault().set(true)
+            minifyEnabled false
+            shrinkResources false
             manifestPlaceholders = [applicationLabel: APP_NAME_DEBUG]
             applicationIdSuffix ".debug"
             versionNameSuffix "-debug"
