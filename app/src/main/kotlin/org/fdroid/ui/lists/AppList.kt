@@ -97,7 +97,6 @@ fun AppList(
   LaunchedEffect(appListInfo.showOnboarding) {
     if (appListInfo.showOnboarding) {
       hintController.show(hintAnchor)
-      appListInfo.actions.onOnboardingSeen()
     }
   }
 

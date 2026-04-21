@@ -34,6 +34,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
 import com.viktormykhailiv.compose.hints.HintProperties
@@ -71,7 +72,6 @@ fun Repositories(info: RepositoryInfo, isBigScreen: Boolean, onBackClicked: () -
   LaunchedEffect(info.model.showOnboarding) {
     if (!isBigScreen && info.model.showOnboarding) {
       hintController.show(hintAnchor)
-      info.onOnboardingSeen()
     }
   }
   val scrollBehavior = enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -155,8 +155,8 @@ fun RepositoriesScaffoldLoadingPreview() {
   }
 }
 
-@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES or UI_MODE_TYPE_NORMAL)
 @Composable
+@PreviewLightDark
 private fun RepositoriesScaffoldPreview() {
   HintHost {
     FDroidContent {

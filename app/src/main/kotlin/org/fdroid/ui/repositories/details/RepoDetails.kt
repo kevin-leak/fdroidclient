@@ -75,7 +75,6 @@ fun RepoDetails(
   LaunchedEffect(info.model.showOnboarding) {
     if (info.model.showOnboarding) {
       hintController.show(hintAnchor)
-      info.actions.onOnboardingSeen()
     }
   }
 

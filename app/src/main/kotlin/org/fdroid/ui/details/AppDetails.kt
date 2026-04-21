@@ -246,10 +246,7 @@ fun AppDetails(
             hintAnchor = hintAnchor,
             showOnboarding = item.showAntiFeaturesOnboarding,
           ) {
-            coroutineScope.launch {
-              hintController.show(hintAnchor)
-              item.actions.onAntiFeaturesOnboardingSeen()
-            }
+            coroutineScope.launch { hintController.show(hintAnchor) }
           }
         }
         // Screenshots
