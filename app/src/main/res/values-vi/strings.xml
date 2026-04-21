@@ -602,16 +602,6 @@
     <string name="collapse">Thu gọn</string>
     <string name="crash_dialog_title_old">F-Droid đã bị treo</string>
     <string name="technical_info">Thông tin kỹ thuật</string>
-    <string name="category_group_productivity">Năng suất</string>
-    <string name="category_group_tools">Công cụ</string>
-    <string name="category_group_wallets">Tài chính &amp; Ví</string>
-    <string name="category_group_media">Giải trí &amp; Media</string>
-    <string name="category_group_communication">Liên lạc</string>
-    <string name="category_group_device">Thiết bị</string>
-    <string name="category_group_network">Kết nối mạng</string>
-    <string name="category_group_storage">Tệp &amp; Lưu trữ</string>
-    <string name="category_group_interests">Sở thích</string>
-    <string name="category_group_misc">Linh tinh</string>
     <string name="author_by">Bởi %1$s</string>
     <string name="last_updated">Lần cuối cập nhật: %1$s</string>
     <string name="last_updated_with_size">Lần cuối cập nhật: %1$s (%2$s)</string>

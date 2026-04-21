@@ -685,16 +685,6 @@
     <string name="app_list_author">Aipeanna ó %s</string>
     <string name="search_placeholder">Cuardaigh…</string>
     <string name="search_no_results">Níor aimsíodh aon aipeanna\n\nBain triail as níos lú téarmaí cuardaigh nó cuir níos mó stórtha leis</string>
-    <string name="category_group_productivity">Táirgiúlacht</string>
-    <string name="category_group_tools">Uirlisí</string>
-    <string name="category_group_wallets">Airgeadas &amp; Sparán</string>
-    <string name="category_group_media">Siamsaíocht &amp; Meáin</string>
-    <string name="category_group_communication">Cumarsáid</string>
-    <string name="category_group_device">Gléas</string>
-    <string name="category_group_network">Líonra</string>
-    <string name="category_group_storage">Comhaid &amp; Stóráil</string>
-    <string name="category_group_interests">Leasanna</string>
-    <string name="category_group_misc">Ilghnéitheach</string>
     <string name="author_by">Faoi %1$s</string>
     <string name="last_updated">Nuashonraithe go deireanach: %1$s</string>
     <string name="last_updated_with_size">Nuashonraithe go deireanach: %1$s (%2$s)</string>

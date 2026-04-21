@@ -395,13 +395,10 @@
     <string name="my_apps_ignore_dialog_button">Seggelmes</string>
     <string name="search_placeholder">Nadi…</string>
     <string name="call_to_action_keepandroidopen_url">https://keepandroidopen.org</string>
-    <string name="category_group_network">Aẓeṭṭa</string>
     <plurals name="repo_num_apps_text">
         <item quantity="one">%d n wesnas</item>
         <item quantity="other">%d n yesnasen</item>
     </plurals>
-    <string name="category_group_tools">Ifecka</string>
-    <string name="category_group_device">Ibenk</string>
     <string name="donate_title">Mudd tawsa</string>
     <string name="category">Taggayt</string>
     <string name="pref_category_network">Aẓeṭṭa</string>

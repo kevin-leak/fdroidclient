@@ -653,16 +653,6 @@
     <string name="app_list_author">%s araberako aplikazioak</string>
     <string name="search_placeholder">Bilatu…</string>
     <string name="search_no_results">Ez da aplikaziorik aurkitu\n\nSaiatu bilaketa termino gutxiagorekin edo biltegi gehiagorekin</string>
-    <string name="category_group_productivity">Produktibitatea</string>
-    <string name="category_group_tools">Tresnak</string>
-    <string name="category_group_wallets">Finantza eta diru-zorroak</string>
-    <string name="category_group_media">Entretenimendu eta multimedia</string>
-    <string name="category_group_communication">Komunikazioa</string>
-    <string name="category_group_device">Gailua</string>
-    <string name="category_group_network">Sarea</string>
-    <string name="category_group_storage">Fitxategiak eta biltegiratzea</string>
-    <string name="category_group_interests">Interesak</string>
-    <string name="category_group_misc">Denetarik</string>
     <string name="author_by">%1$s-ek egina</string>
     <string name="last_updated">Azken eguneraketa: %1$s</string>
     <string name="last_updated_with_size">Azken eguneraketa: %1$s (%2$s)</string>

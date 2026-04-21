@@ -88,7 +88,7 @@ fun DiscoverPresenter(
       newApps = newApps ?: emptyList(),
       recentlyUpdatedApps = recentlyUpdatedApps ?: emptyList(),
       mostDownloadedApps = mostDownloadedApps,
-      categories = categories?.groupBy { it.group },
+      categories = categories,
       hasRepoIssues = hasRepoIssuesFlow.collectAsState(false).value,
     )
   } else {

@@ -636,16 +636,6 @@
     <string name="search_placeholder">Zoeken…</string>
     <string name="first_start_loading">App gegevensbanken binnenhalen…</string>
     <string name="search_no_results">Geen apps gevonden\n\nProbeer minder zoektermen of voeg meer gegevensbanken toe</string>
-    <string name="category_group_productivity">Productiviteit</string>
-    <string name="category_group_tools">Hulpmiddelen</string>
-    <string name="category_group_wallets">Financiën &amp; Wallets</string>
-    <string name="category_group_media">Entertainment &amp; Media</string>
-    <string name="category_group_communication">Communicatie</string>
-    <string name="category_group_device">Apparaat</string>
-    <string name="category_group_network">Netwerk</string>
-    <string name="category_group_storage">Bestanden &amp; Opslag</string>
-    <string name="category_group_interests">Interesses</string>
-    <string name="category_group_misc">Diversen</string>
     <string name="author_by">Door %1$s</string>
     <string name="last_updated">Laatst geüpdatet: %1$s</string>
     <string name="last_updated_with_size">Laatst geüpdatet: %1$s (%2$s)</string>

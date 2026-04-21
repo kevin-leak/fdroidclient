@@ -153,81 +153,31 @@ data class CategoryItem(val id: String, val name: String) {
         else -> Icons.Default.Category
       }
 
-  val group: CategoryGroup
+  val featured: Boolean
     get() =
       when (id) {
-        "AI Chat" -> CategoryGroups.tools
-        "App Manager" -> CategoryGroups.device
-        "App Store & Updater" -> CategoryGroups.device
-        "Battery" -> CategoryGroups.device
-        "Bookmark" -> CategoryGroups.storage
-        "Browser" -> CategoryGroups.network
-        "Calculator" -> CategoryGroups.tools
-        "Calendar & Agenda" -> CategoryGroups.productivity
-        "Clock" -> CategoryGroups.productivity
-        "Cloud Storage & File Sync" -> CategoryGroups.storage
-        "Connectivity" -> CategoryGroups.network
-        "Contact" -> CategoryGroups.communication
-        "Development" -> CategoryGroups.interests
-        "DNS & Hosts" -> CategoryGroups.network
-        "Draw" -> CategoryGroups.interests
-        "Ebook Reader" -> CategoryGroups.media
-        "Email" -> CategoryGroups.communication
-        "File Encryption & Vault" -> CategoryGroups.storage
-        "File Transfer" -> CategoryGroups.storage
-        "Finance Manager" -> CategoryGroups.wallets
-        "Firewall" -> CategoryGroups.network
-        "Flashlight" -> CategoryGroups.tools
-        "Forum" -> CategoryGroups.communication
-        "Gallery" -> CategoryGroups.storage
-        "Games" -> CategoryGroups.media
-        "Graphics" -> CategoryGroups.interests
-        "Habit Tracker" -> CategoryGroups.productivity
-        "Icon Pack" -> CategoryGroups.device
-        "Internet" -> CategoryGroups.network
-        "Inventory" -> CategoryGroups.tools
-        "Keyboard & IME" -> CategoryGroups.device
-        "Launcher" -> CategoryGroups.device
-        "Local Media Player" -> CategoryGroups.media
-        "Location Tracker & Sharer" -> CategoryGroups.tools
-        "Messaging" -> CategoryGroups.communication
-        "Money" -> CategoryGroups.wallets
-        "Multimedia" -> CategoryGroups.media
-        "Music Practice Tool" -> CategoryGroups.interests
-        "Navigation" -> CategoryGroups.tools
-        "Network Analyzer" -> CategoryGroups.network
-        "News" -> CategoryGroups.interests
-        "Note" -> CategoryGroups.storage
-        "Online Media Player" -> CategoryGroups.media
-        "Pass Wallet" -> CategoryGroups.wallets
-        "Password & 2FA" -> CategoryGroups.device
-        "Phone & SMS" -> CategoryGroups.communication
-        "Podcast" -> CategoryGroups.media
-        "Public Transport" -> CategoryGroups.tools
-        "Radio" -> CategoryGroups.media
-        "Reading" -> CategoryGroups.media
-        "Recipe Manager" -> CategoryGroups.interests
-        "Religion" -> CategoryGroups.interests
-        "Remote Controller" -> CategoryGroups.tools
-        "Science & Education" -> CategoryGroups.interests
-        "Security" -> CategoryGroups.device
-        "Shopping List" -> CategoryGroups.tools
-        "Social Network" -> CategoryGroups.communication
-        "Sports & Health" -> CategoryGroups.interests
-        "System" -> CategoryGroups.device
-        "Task" -> CategoryGroups.productivity
-        "Text Editor" -> CategoryGroups.productivity
-        "Theming" -> CategoryGroups.device
-        "Time" -> CategoryGroups.productivity
-        "Translation & Dictionary" -> CategoryGroups.tools
-        "Voice & Video Chat" -> CategoryGroups.communication
-        "Unit Convertor" -> CategoryGroups.tools
-        "VPN & Proxy" -> CategoryGroups.network
-        "Wallet" -> CategoryGroups.wallets
-        "Wallpaper" -> CategoryGroups.device
-        "Weather" -> CategoryGroups.tools
-        "Workout" -> CategoryGroups.interests
-        "Writing" -> CategoryGroups.productivity
-        else -> CategoryGroups.misc
+        "Browser" -> true
+        "Calendar & Agenda" -> true
+        "Cloud Storage & File Sync" -> true
+        "Email" -> true
+        "File Encryption & Vault" -> true
+        "File Transfer" -> true
+        "Firewall" -> true
+        "Games" -> true
+        "Local Media Player" -> true
+        "Location Tracker & Sharer" -> true
+        "Messaging" -> true
+        "Navigation" -> true
+        "News" -> true
+        "Password & 2FA" -> true
+        "Podcast" -> true
+        "Public Transport" -> true
+        "Radio" -> true
+        "Social Network" -> true
+        "Translation & Dictionary" -> true
+        "Voice & Video Chat" -> true
+        "VPN & Proxy" -> true
+        "Weather" -> true
+        else -> false
       }
 }

@@ -634,16 +634,6 @@
     <string name="app_list_author">%s によるアプリ</string>
     <string name="search_placeholder">検索…</string>
     <string name="search_no_results">アプリが見つかりませんでした\n\nリポジトリを追加するか検索語を減らしてみて下さい</string>
-    <string name="category_group_productivity">生産性</string>
-    <string name="category_group_tools">ツール</string>
-    <string name="category_group_wallets">財布＆財務</string>
-    <string name="category_group_media">エンタメ＆メディア</string>
-    <string name="category_group_communication">交流</string>
-    <string name="category_group_device">デバイス</string>
-    <string name="category_group_network">通信</string>
-    <string name="category_group_storage">ファイル＆ストレージ</string>
-    <string name="category_group_interests">趣味</string>
-    <string name="category_group_misc">その他</string>
     <string name="author_by">%1$s による</string>
     <string name="last_updated">最終更新: %1$s</string>
     <string name="last_updated_with_size">最終更新: %1$s (%2$s)</string>

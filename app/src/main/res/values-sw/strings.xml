@@ -600,16 +600,6 @@
     <string name="app_list_recently_updated">Zilizosasishwa hivi karibuni</string>
     <string name="app_list_all">Programu zote</string>
     <string name="search_placeholder">Tafuta</string>
-    <string name="category_group_productivity">Uzalishaji</string>
-    <string name="category_group_tools">Zana</string>
-    <string name="category_group_wallets">Fedha na Pochi</string>
-    <string name="category_group_media">Burudani na Vyombo vya Habari</string>
-    <string name="category_group_communication">Mawasiliano</string>
-    <string name="category_group_device">Kifaa</string>
-    <string name="category_group_network">Mtandao</string>
-    <string name="category_group_storage">Faili na Hifadhi</string>
-    <string name="category_group_interests">Maslahi</string>
-    <string name="category_group_misc">Mengineyo</string>
     <string name="last_updated">Ilisasishwa mwisho: %1$s</string>
     <string name="whats_new_title">Nini kipya</string>
     <string name="donate_title">Changia</string>

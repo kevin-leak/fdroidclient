@@ -591,7 +591,4 @@
     <string name="app_list_author">Aplicacións por %s</string>
     <string name="search_placeholder">Buscar…</string>
     <string name="search_no_results">Non se atoparon aplicacións\n\nIntente usar menos termos de busca ou engadir máis repositorios</string>
-    <string name="category_group_productivity">Produtividade</string>
-    <string name="category_group_tools">Ferramentas</string>
-    <string name="category_group_wallets">Finanzas e carteiras</string>
 </resources>

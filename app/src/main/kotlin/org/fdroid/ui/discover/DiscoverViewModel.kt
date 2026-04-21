@@ -71,8 +71,13 @@ constructor(
   private val categories =
     db.getRepositoryDao().getLiveCategories().asFlow().map { categories ->
       categories
-        .map { category ->
-          CategoryItem(id = category.id, name = category.getName(localeList) ?: "Unknown Category")
+        .mapNotNull { category ->
+          val item =
+            CategoryItem(
+              id = category.id,
+              name = category.getName(localeList) ?: "Unknown Category",
+            )
+          if (item.featured) item else null
         }
         .sortedWith { c1, c2 -> collator.compare(c1.name, c2.name) }
     }

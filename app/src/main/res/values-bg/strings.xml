@@ -628,16 +628,6 @@
     <string name="app_list_author">Приложения от %s</string>
     <string name="search_placeholder">Търсене…</string>
     <string name="search_no_results">Не са намерени приложения\n\nСъкратете търсенето или добавете повече хранилища</string>
-    <string name="category_group_productivity">Продуктивност</string>
-    <string name="category_group_tools">Инструменти</string>
-    <string name="category_group_wallets">Финанси и портфейли</string>
-    <string name="category_group_media">Забавление и медия</string>
-    <string name="category_group_communication">Разговори</string>
-    <string name="category_group_device">Устройство</string>
-    <string name="category_group_network">Мрежа</string>
-    <string name="category_group_storage">Файлове и хранилища</string>
-    <string name="category_group_interests">Интереси</string>
-    <string name="category_group_misc">Разни</string>
     <string name="author_by">От %1$s</string>
     <string name="last_updated">Последно обновяване: %1$s</string>
     <string name="last_updated_with_size">Последно обновяване: %1$s (%2$s)</string>

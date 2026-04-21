@@ -627,16 +627,6 @@
     <string name="app_list_author">Εφαρμογές από %s</string>
     <string name="search_placeholder">Αναζήτησε…</string>
     <string name="search_no_results">Δεν βρέθηκαν εφαρμογές\n\nΔοκιμάστε να χρησιμοποιήσετε λιγότερους όρους αναζήτησης ή προσθέστε περισσότερα αποθετήρια</string>
-    <string name="category_group_productivity">Παραγωγικότητα</string>
-    <string name="category_group_tools">Εργαλεία</string>
-    <string name="category_group_wallets">Οικονομικά &amp; Πορτοφόλια</string>
-    <string name="category_group_media">Ψυχαγωγία &amp; Μέσα</string>
-    <string name="category_group_communication">Επικοινωνία</string>
-    <string name="category_group_device">Συσκευή</string>
-    <string name="category_group_network">Δίκτυο</string>
-    <string name="category_group_storage">Αρχεία &amp; Αποθηκευτικός Χώρος</string>
-    <string name="category_group_interests">Ενδιαφέροντα</string>
-    <string name="category_group_misc">Διάφορα</string>
     <string name="author_by">Από %1$s</string>
     <string name="last_updated">Τελευταία ενημέρωση: %1$s</string>
     <string name="last_updated_with_size">Τελευταία ενημέρωση: %1$s (%2$s)</string>

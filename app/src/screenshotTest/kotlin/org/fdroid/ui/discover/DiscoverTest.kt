@@ -6,7 +6,6 @@ import com.android.tools.screenshot.PreviewTest
 import org.fdroid.download.NetworkState
 import org.fdroid.repo.RepoUpdateProgress
 import org.fdroid.ui.ScreenshotTest
-import org.fdroid.ui.categories.CategoryGroups
 import org.fdroid.ui.categories.CategoryItem
 
 @Composable
@@ -97,15 +96,12 @@ private fun getLoadedModel(): LoadedDiscoverModel {
       AppDiscoverItem(packageName = "at.bitfire.davdroid", name = "DAVx⁵", isInstalled = false),
     )
   val categories =
-    mapOf(
-      CategoryGroups.communication to
-        listOf(
-          CategoryItem(id = "Contact", name = "Contact"),
-          CategoryItem(id = "Email", name = "Email"),
-          CategoryItem(id = "Forum", name = "Forum"),
-          CategoryItem(id = "Messaging", name = "Messaging"),
-          CategoryItem(id = "Phone & SMS", name = "Phone & SMS"),
-        )
+    listOf(
+      CategoryItem(id = "Contact", name = "Contact"),
+      CategoryItem(id = "Email", name = "Email"),
+      CategoryItem(id = "Forum", name = "Forum"),
+      CategoryItem(id = "Messaging", name = "Messaging"),
+      CategoryItem(id = "Phone & SMS", name = "Phone & SMS"),
     )
   return LoadedDiscoverModel(
     newApps = newApps,

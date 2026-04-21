@@ -647,16 +647,6 @@
     <string name="app_list_author">Aplikacije od %s</string>
     <string name="search_placeholder">Pretraga …</string>
     <string name="search_no_results">Nije pronađena nijedna aplikacija\n\nPokušaj koristiti manje pojmova za pretraživanje ili dodaj više repozitorija</string>
-    <string name="category_group_productivity">Produktivnost</string>
-    <string name="category_group_tools">Alati</string>
-    <string name="category_group_wallets">Financije i novčanici</string>
-    <string name="category_group_media">Zabava i mediji</string>
-    <string name="category_group_communication">Komunikacija</string>
-    <string name="category_group_device">Uređaj</string>
-    <string name="category_group_network">Mreža</string>
-    <string name="category_group_storage">Datoteke i spremišta</string>
-    <string name="category_group_interests">Interesi</string>
-    <string name="category_group_misc">Razno</string>
     <string name="author_by">Autor: %1$s</string>
     <string name="last_updated">Zadnje aktualiziranje: %1$s</string>
     <string name="last_updated_with_size">Zadnje aktualiziranje: %1$s (%2$s)</string>

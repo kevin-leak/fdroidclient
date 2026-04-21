@@ -627,16 +627,6 @@
     <string name="app_list_author">%s 的应用</string>
     <string name="search_placeholder">搜索…</string>
     <string name="search_no_results">没找到应用\n\n试试减少搜索词或添加更多存储库</string>
-    <string name="category_group_productivity">生产力</string>
-    <string name="category_group_tools">工具</string>
-    <string name="category_group_wallets">财务和钱包</string>
-    <string name="category_group_media">娱乐和媒体</string>
-    <string name="category_group_communication">通信</string>
-    <string name="category_group_device">设备</string>
-    <string name="category_group_network">网络</string>
-    <string name="category_group_storage">文件和存储</string>
-    <string name="category_group_interests">兴趣</string>
-    <string name="category_group_misc">杂项</string>
     <string name="author_by">由 %1$s 开发</string>
     <string name="last_updated">上次更新：%1$s</string>
     <string name="last_updated_with_size">上次更新： %1$s (%2$s)</string>

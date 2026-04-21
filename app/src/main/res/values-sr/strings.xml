@@ -626,16 +626,6 @@
     <string name="app_list_author">Апликације од %s</string>
     <string name="search_placeholder">Претражи…</string>
     <string name="search_no_results">Нема пронађених апликација.\n\nПокушајте да користите мање појмова за претрагу или додајте још складишта</string>
-    <string name="category_group_productivity">Продуктивност</string>
-    <string name="category_group_tools">Алати</string>
-    <string name="category_group_wallets">Финансије и новчаници</string>
-    <string name="category_group_media">Забава и садржај</string>
-    <string name="category_group_communication">Комуникација</string>
-    <string name="category_group_device">Уређај</string>
-    <string name="category_group_network">Мрежа</string>
-    <string name="category_group_storage">Датотеке и складиште</string>
-    <string name="category_group_interests">Интересовања</string>
-    <string name="category_group_misc">Разно</string>
     <string name="author_by">Од %1$s</string>
     <string name="last_updated">Последње ажурирање: %1$s</string>
     <string name="last_updated_with_size">Последње ажурирано: %1$s (%2$s)</string>

@@ -627,15 +627,6 @@
     <string name="app_list_author">Aplikacione nga %s</string>
     <string name="search_placeholder">Kërkoni…</string>
     <string name="search_no_results">S’u gjetën aplikacione\n\nProvoni të përdorni më pak terma kërkimi, ose të shtoni më tepër depo</string>
-    <string name="category_group_tools">Mjete</string>
-    <string name="category_group_wallets">Financa &amp; Kuleta</string>
-    <string name="category_group_media">Spektakël &amp; Media</string>
-    <string name="category_group_communication">Komunikim</string>
-    <string name="category_group_device">Pajisje</string>
-    <string name="category_group_network">Rrjet</string>
-    <string name="category_group_storage">Kartela &amp; Depozitim</string>
-    <string name="category_group_interests">Interesa</string>
-    <string name="category_group_misc">Të ndryshme</string>
     <string name="author_by">Nga %1$s</string>
     <string name="last_updated">Përditësuar së fundi më: %1$s</string>
     <string name="anti_features_title">Ky aplikacion përmban anti-veçori</string>
@@ -648,7 +639,6 @@
     <string name="my_apps_ignore_dialog_text">Problemi me këtë version të “%1$s” do të shpërfillet</string>
     <string name="my_apps_ignore_dialog_button">Fshihe</string>
     <string name="my_apps_export_installed_apps">Eksportoni listë aplikacionesh</string>
-    <string name="category_group_productivity">Prodhimtari</string>
     <string name="ipfsgw_summary_new">Shkarkoni aplikacione duke përdorur pikëmbarime web IPFS</string>
     <string name="first_start_intro">Që t’ia fillohet, njëkohësoni depot e aplikacioneve</string>
     <string name="first_start_offline">Jeni jashtë linje. Që t’ia fillohet, lidhuni në Internet.</string>

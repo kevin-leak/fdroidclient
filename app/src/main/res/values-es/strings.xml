@@ -665,16 +665,6 @@
     <string name="app_list_author">Aplicaciones por %s</string>
     <string name="search_placeholder">Buscar…</string>
     <string name="search_no_results">No se encontraron apps\n\nIntenta usar menos términos de búsqueda o agrega más repositorios</string>
-    <string name="category_group_productivity">Productividad</string>
-    <string name="category_group_tools">Herramientas</string>
-    <string name="category_group_wallets">Financias y Carteras</string>
-    <string name="category_group_media">Entretenimiento y Medios</string>
-    <string name="category_group_communication">Comunicación</string>
-    <string name="category_group_device">Dispositivo</string>
-    <string name="category_group_network">Red</string>
-    <string name="category_group_storage">Archivos y Almacenamiento</string>
-    <string name="category_group_interests">Intereses</string>
-    <string name="category_group_misc">Misceláneo</string>
     <string name="author_by">Por %1$s</string>
     <string name="last_updated">Últimamente actualizado: %1$s</string>
     <string name="last_updated_with_size">Últimamente actualizado: %1$s (%2$s)</string>

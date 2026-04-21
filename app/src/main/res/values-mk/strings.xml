@@ -296,16 +296,6 @@
     <string name="app_list_author">Апликации од%s</string>
     <string name="search_placeholder">Пребарувај…</string>
     <string name="search_no_results">Не се пронајдени апликации\n\nПробај да употребиш помали термини или додај нови репо</string>
-    <string name="category_group_productivity">Продуктивност</string>
-    <string name="category_group_tools">Алатки</string>
-    <string name="category_group_wallets">Финансии и новчаник</string>
-    <string name="category_group_media">Забава и медија</string>
-    <string name="category_group_communication">Комуникација</string>
-    <string name="category_group_device">Уред</string>
-    <string name="category_group_network">Мрежа</string>
-    <string name="category_group_storage">Датотеки и меморија</string>
-    <string name="category_group_interests">Интереси</string>
-    <string name="category_group_misc">Останато</string>
     <string name="author_by">Направено од %1$s</string>
     <string name="last_updated">Последно надоградено: %1$s</string>
     <string name="last_updated_with_size">Последно надоградено: %1$s­%2$s</string>

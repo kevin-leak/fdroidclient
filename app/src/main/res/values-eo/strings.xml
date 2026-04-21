@@ -628,16 +628,6 @@
     <string name="app_list_author">Aplikaĵoj fare de %s</string>
     <string name="search_placeholder">Serĉi…</string>
     <string name="search_no_results">Trovis neniun aplikaĵon\n\nProvu uzi malpli da serĉvortoj aŭ aldoni pliajn deponejojn</string>
-    <string name="category_group_productivity">Oficejo</string>
-    <string name="category_group_tools">Utilaĵoj</string>
-    <string name="category_group_wallets">Financoj</string>
-    <string name="category_group_media">Distro kaj aŭdvidaĵoj</string>
-    <string name="category_group_communication">Komunikado</string>
-    <string name="category_group_device">Aparato</string>
-    <string name="category_group_network">Reto</string>
-    <string name="category_group_storage">Dosieroj kaj konservado</string>
-    <string name="category_group_interests">Interesiĝoj</string>
-    <string name="category_group_misc">Diversaĵoj</string>
     <string name="author_by">Fare de %1$s</string>
     <string name="last_updated">Lasta ĝisdatigo: %1$s</string>
     <string name="last_updated_with_size">Lasta ĝisdatigo: %1$s (%2$s)</string>

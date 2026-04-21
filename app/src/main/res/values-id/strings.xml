@@ -633,16 +633,6 @@
     <string name="app_list_author">Aplikasi oleh %s</string>
     <string name="search_placeholder">Cari…</string>
     <string name="search_no_results">Tidak ada aplikasi ditemukan\n\nCoba gunakan lebih sedikit kata kunci atau tambahkan lebih banyak repositori</string>
-    <string name="category_group_productivity">Produktifitas</string>
-    <string name="category_group_tools">Alat</string>
-    <string name="category_group_wallets">Keuangan &amp; Dompet</string>
-    <string name="category_group_media">Hiburan &amp; Media</string>
-    <string name="category_group_communication">Komunikasi</string>
-    <string name="category_group_device">Perangkat</string>
-    <string name="category_group_network">Jaringan</string>
-    <string name="category_group_storage">Fail &amp; Penyimpanan</string>
-    <string name="category_group_interests">Minat</string>
-    <string name="category_group_misc">Lain-Lain</string>
     <string name="author_by">Oleh %1$s</string>
     <string name="last_updated">Terakhir diperbarui: %1$s</string>
     <string name="last_updated_with_size">Terakhir diperbarui: %1$s (%2$s)</string>

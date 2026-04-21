@@ -630,11 +630,6 @@
     <string name="menu_discover">Keşfet</string>
     <string name="menu_apps_my">Uygulamalarım</string>
     <string name="my_apps_ignore_dialog_button">Gizle</string>
-    <string name="category_group_productivity">Üretkenlik</string>
-    <string name="category_group_tools">Araçlar</string>
-    <string name="category_group_media">Eğlence &amp; Medya</string>
-    <string name="category_group_communication">İletişim</string>
-    <string name="category_group_interests">İlgi Alanları</string>
     <string name="author_by">%1$s tarafından</string>
     <string name="app_name_full_nightly">F-Nightly</string>
     <string name="app_name_basic_nightly">F-Nightly Temel</string>
@@ -651,11 +646,6 @@
     <string name="app_list_author">%s tarafından uygulamalar</string>
     <string name="search_placeholder">Ara…</string>
     <string name="search_no_results">Herhangi bir uygulama bulunamadı \n\nDaha az arama terimi kullanmayı ya da daha fazla depo eklemeyi deneyin</string>
-    <string name="category_group_wallets">Finans ve Cüzdanlar</string>
-    <string name="category_group_device">Cihaz</string>
-    <string name="category_group_network">Ağ</string>
-    <string name="category_group_storage">Dosyalar ve Depolama</string>
-    <string name="category_group_misc">Çeşitli</string>
     <string name="last_updated">En son güncelleme: %1$s</string>
     <string name="last_updated_with_size">En son güncelleme: %1$s (%2$s)</string>
     <string name="status_install_preparing">Yüklemeye hazırlanılıyor…</string>

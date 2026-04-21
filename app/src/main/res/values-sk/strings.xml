@@ -578,16 +578,6 @@
     <string name="app_list_author">Aplikácie od vyvojára %s</string>
     <string name="search_placeholder">Vyhľadať…</string>
     <string name="search_no_results">Nenašli sa žiadne aplikácie\n\nSkúste použiť menej slov alebo pridať ďalšie repozitáre</string>
-    <string name="category_group_productivity">Produktivita</string>
-    <string name="category_group_tools">Nástroje</string>
-    <string name="category_group_wallets">Financie a peňaženky</string>
-    <string name="category_group_media">Zábava a média</string>
-    <string name="category_group_communication">Komunikácia</string>
-    <string name="category_group_device">Zariadenie</string>
-    <string name="category_group_network">Sieť</string>
-    <string name="category_group_storage">Súbory a uložisko</string>
-    <string name="category_group_interests">Záujmy</string>
-    <string name="category_group_misc">Rôzne</string>
     <string name="author_by">Od %1$s</string>
     <string name="last_updated">Naposledy aktualizované: %1$s</string>
     <string name="last_updated_with_size">Naposledy aktualizované: %1$s (%2$s)</string>
