@@ -27,8 +27,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.fdroid.R
-import org.fdroid.search.SEARCH_THRESHOLD
 import org.fdroid.search.SavedSearch
+import org.fdroid.search.SearchHelper.isSearchable
 import org.fdroid.ui.categories.CategoryChip
 import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.categories.ChipFlowRow
@@ -55,7 +55,7 @@ fun SearchResults(
   val listState =
     rememberSaveable(searchResults, saver = LazyListState.Saver) { LazyListState(0, 0) }
   if (searchResults == null) {
-    if (textFieldState.text.length >= SEARCH_THRESHOLD) {
+    if (textFieldState.text.isSearchable()) {
       BigLoadingIndicator(modifier.padding(paddingValues).imePadding())
     } else {
       if (!savedSearches.isNullOrEmpty()) {
@@ -68,7 +68,7 @@ fun SearchResults(
         )
       }
     }
-  } else if (searchResults.apps.isEmpty() && textFieldState.text.length >= SEARCH_THRESHOLD) {
+  } else if (searchResults.apps.isEmpty() && textFieldState.text.isSearchable()) {
     Column(modifier = modifier.padding(paddingValues)) {
       if (searchResults.categories.isNotEmpty()) {
         CategoriesFlowRow(searchResults.categories, onNav)

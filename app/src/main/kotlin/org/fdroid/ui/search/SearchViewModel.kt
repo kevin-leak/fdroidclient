@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.launch
+import org.fdroid.search.SearchHelper.isSearchable
 import org.fdroid.search.SearchManager
 
 @HiltViewModel
@@ -16,7 +17,7 @@ constructor(app: Application, private val searchManager: SearchManager) : Androi
   val searchResults = searchManager.searchResults
   val savedSearchesFlow = searchManager.savedSearches
 
-  suspend fun search(term: String) = searchManager.search(term)
+  suspend fun search(term: String) = if (term.isSearchable()) searchManager.search(term) else Unit
 
   fun onSearchCleared() = searchManager.onSearchCleared()
 

@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import org.fdroid.R
-import org.fdroid.search.SEARCH_THRESHOLD
+import org.fdroid.search.SearchHelper.isSearchable
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, FlowPreview::class)
@@ -41,10 +41,10 @@ fun AppSearchInputField(
     snapshotFlow { textFieldState.text }
       .distinctUntilChanged()
       .debounce(500)
-      .collectLatest {
-        if (it.isEmpty()) {
+      .collectLatest { query ->
+        if (query.isEmpty()) {
           onSearchCleared()
-        } else if (it.length >= SEARCH_THRESHOLD) {
+        } else if (query.isSearchable()) {
           onSearch(textFieldState.text.toString())
         }
       }
@@ -54,7 +54,7 @@ fun AppSearchInputField(
     searchBarState = searchBarState,
     textFieldState = textFieldState,
     textStyle = MaterialTheme.typography.bodyLarge,
-    onSearch = { scope.launch { onSearch(it) } },
+    onSearch = { if (it.isSearchable()) scope.launch { onSearch(it) } },
     placeholder = { Text(stringResource(R.string.search_placeholder)) },
     trailingIcon = {
       if (textFieldState.text.isNotEmpty()) {
