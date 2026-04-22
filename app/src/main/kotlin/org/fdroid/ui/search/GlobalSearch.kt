@@ -17,33 +17,28 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.tooling.preview.Preview
 import org.fdroid.search.SavedSearch
 import org.fdroid.ui.FDroidContent
-import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.navigation.NavigationKey
 import org.fdroid.ui.utils.appListItems
 import org.fdroid.ui.utils.categoryItems
+import org.fdroid.ui.utils.getSearchInfo
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun GlobalSearch(
+  info: SearchInfo,
   textFieldState: TextFieldState = rememberTextFieldState(),
-  searchResults: SearchResults?,
-  savedSearches: List<SavedSearch>? = null,
-  categories: List<CategoryItem>? = null,
-  onSearch: suspend (String) -> Unit,
-  onClearSavedSearches: () -> Unit,
   onNav: (NavigationKey) -> Unit,
   onBack: () -> Unit,
-  onSearchCleared: () -> Unit,
 ) {
+  val searchResults = info.searchResults
   Scaffold(
     topBar = {
       TopSearchBar(
         searchFieldState = textFieldState,
         shouldRequestFocus = // only show keyboard if there are no results to show
-          searchResults == null ||
-            searchResults.apps.isEmpty() && searchResults.categories.isEmpty(),
-        onSearch = onSearch,
-        onSearchCleared = onSearchCleared,
+        searchResults == null || searchResults.apps.isEmpty() && searchResults.categories.isEmpty(),
+        onSearch = info.actions::onSearch,
+        onSearchCleared = info.actions::onSearchCleared,
         onHideSearch = onBack,
       )
     }
@@ -61,9 +56,9 @@ fun GlobalSearch(
       paddingValues = paddingValues,
       searchResults = searchResults,
       textFieldState = textFieldState,
-      savedSearches = savedSearches,
-      categories = categories,
-      onClearSavedSearches = onClearSavedSearches,
+      savedSearches = info.savedSearches,
+      categories = info.categories,
+      onClearSavedSearches = info.actions::onClearSearchHistory,
       onNav = onNav,
     )
   }
@@ -75,15 +70,9 @@ fun GlobalSearch(
 private fun AppsSearchLoadingPreview() {
   FDroidContent {
     val textFieldState = rememberTextFieldState("foo bar")
-    Box(Modifier.fillMaxSize()) { GlobalSearch(
-      textFieldState,
-      null,
-      onSearch = {},
-      onClearSavedSearches = {},
-      onNav = {},
-      onBack = {},
-      onSearchCleared = {},
-    ) }
+    Box(Modifier.fillMaxSize()) {
+      GlobalSearch(info = getSearchInfo(), textFieldState = textFieldState, onNav = {}, onBack = {})
+    }
   }
 }
 
@@ -97,15 +86,10 @@ private fun AppsSearchEmptyStatePreview() {
       listOf(SavedSearch(1, "foo"), SavedSearch(2, "foo bar"), SavedSearch(3, "foobar"))
     Box(Modifier.fillMaxSize()) {
       GlobalSearch(
+        info = getSearchInfo(null, savedSearches, categoryItems),
         textFieldState = textFieldState,
-        searchResults = null,
-        savedSearches = savedSearches,
-        categories = categoryItems,
-        onSearch = {},
-        onClearSavedSearches = {},
         onNav = {},
         onBack = {},
-        onSearchCleared = {},
       )
     }
   }
@@ -119,14 +103,10 @@ private fun AppsSearchNoResultsPreview() {
     val textFieldState = rememberTextFieldState("foo")
     Box(Modifier.fillMaxSize()) {
       GlobalSearch(
+        info = getSearchInfo(SearchResults(emptyList(), emptyList()), emptyList(), emptyList()),
         textFieldState = textFieldState,
-        searchResults = SearchResults(emptyList(), emptyList()),
-        savedSearches = emptyList(),
-        onSearch = {},
-        onClearSavedSearches = {},
         onNav = {},
         onBack = {},
-        onSearchCleared = {},
       )
     }
   }
@@ -140,14 +120,10 @@ private fun AppsSearchOnlyCategoriesPreview() {
     val textFieldState = rememberTextFieldState()
     Box(Modifier.fillMaxSize()) {
       GlobalSearch(
+        info = getSearchInfo(SearchResults(emptyList(), categoryItems.subList(3, 5)), emptyList()),
         textFieldState = textFieldState,
-        searchResults = SearchResults(emptyList(), categoryItems.subList(3, 5)),
-        savedSearches = emptyList(),
-        onSearch = {},
-        onClearSavedSearches = {},
         onNav = {},
         onBack = {},
-        onSearchCleared = {},
       )
     }
   }
@@ -161,14 +137,10 @@ private fun AppsSearchPreview() {
     val textFieldState = rememberTextFieldState()
     Box(Modifier.fillMaxSize()) {
       GlobalSearch(
+        info = getSearchInfo(SearchResults(appListItems, categoryItems.subList(0, 4)), emptyList()),
         textFieldState = textFieldState,
-        searchResults = SearchResults(appListItems, categoryItems.subList(0, 4)),
-        savedSearches = emptyList(),
-        onSearch = {},
-        onClearSavedSearches = {},
         onNav = {},
         onBack = {},
-        onSearchCleared = {},
       )
     }
   }

@@ -22,6 +22,7 @@ import org.fdroid.index.v2.SignerV2
 import org.fdroid.install.InstallConfirmationState
 import org.fdroid.install.InstallState
 import org.fdroid.repo.RepoUpdateProgress
+import org.fdroid.search.SavedSearch
 import org.fdroid.ui.apps.AppUpdateItem
 import org.fdroid.ui.apps.AppWithIssueItem
 import org.fdroid.ui.apps.InstalledAppItem
@@ -49,6 +50,9 @@ import org.fdroid.ui.repositories.details.RepoDetailsActions
 import org.fdroid.ui.repositories.details.RepoDetailsInfo
 import org.fdroid.ui.repositories.details.RepoDetailsModel
 import org.fdroid.ui.repositories.details.UserMirrorItem
+import org.fdroid.ui.search.SearchActions
+import org.fdroid.ui.search.SearchInfo
+import org.fdroid.ui.search.SearchResults
 
 object Names {
   val randomName: String
@@ -634,3 +638,25 @@ fun getRepository(
     password = password,
     lastError = lastError,
   )
+
+fun getSearchInfo(
+  searchResults: SearchResults? = null,
+  savedSearches: List<SavedSearch>? = null,
+  categories: List<CategoryItem>? = null,
+) =
+  object : SearchInfo {
+    override val searchResults: SearchResults? = searchResults
+
+    override val savedSearches: List<SavedSearch>? = savedSearches
+
+    override val categories: List<CategoryItem>? = categories
+
+    override val actions: SearchActions =
+      object : SearchActions {
+        override suspend fun onSearch(term: String) {}
+
+        override fun onSearchCleared() {}
+
+        override fun onClearSearchHistory() {}
+      }
+  }

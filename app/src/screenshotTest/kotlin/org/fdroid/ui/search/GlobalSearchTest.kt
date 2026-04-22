@@ -9,6 +9,7 @@ import org.fdroid.search.SavedSearch
 import org.fdroid.ui.ScreenshotTest
 import org.fdroid.ui.utils.appListItems
 import org.fdroid.ui.utils.categoryItems
+import org.fdroid.ui.utils.getSearchInfo
 
 @Composable
 @PreviewTest
@@ -16,14 +17,10 @@ import org.fdroid.ui.utils.categoryItems
 fun GlobalSearchEmptyTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState()
   GlobalSearch(
+    info = getSearchInfo(savedSearches = emptyList()),
     textFieldState = textFieldState,
-    searchResults = null,
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -35,15 +32,15 @@ fun GlobalSearchEmptyStateTest() = ScreenshotTest {
     listOf(SavedSearch(1, "Browser"), SavedSearch(2, "media player"), SavedSearch(3, "email app"))
   val textFieldState = rememberTextFieldState()
   GlobalSearch(
+    info =
+      getSearchInfo(
+        searchResults = null,
+        savedSearches = savedSearches,
+        categories = categoryItems,
+      ),
     textFieldState = textFieldState,
-    searchResults = null,
-    savedSearches = savedSearches,
-    categories = categoryItems,
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -53,14 +50,10 @@ fun GlobalSearchEmptyStateTest() = ScreenshotTest {
 fun GlobalSearchLoadingTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState("foo bar")
   GlobalSearch(
+    info = getSearchInfo(savedSearches = emptyList()),
     textFieldState = textFieldState,
-    searchResults = null,
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -70,14 +63,10 @@ fun GlobalSearchLoadingTest() = ScreenshotTest {
 fun GlobalSearchNoResultsTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState("foo")
   GlobalSearch(
+    info = getSearchInfo(searchResults = SearchResults(emptyList(), emptyList())),
     textFieldState = textFieldState,
-    searchResults = SearchResults(emptyList(), emptyList()),
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -87,14 +76,10 @@ fun GlobalSearchNoResultsTest() = ScreenshotTest {
 fun GlobalSearchResultsTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState("foo bar")
   GlobalSearch(
+    info = getSearchInfo(searchResults = SearchResults(appListItems, categoryItems.subList(0, 4))),
     textFieldState = textFieldState,
-    searchResults = SearchResults(appListItems, categoryItems.subList(0, 4)),
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -104,14 +89,10 @@ fun GlobalSearchResultsTest() = ScreenshotTest {
 fun GlobalSearchOnlyCategoriesTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState("foo bar")
   GlobalSearch(
+    info = getSearchInfo(searchResults = SearchResults(emptyList(), categoryItems.subList(5, 9))),
     textFieldState = textFieldState,
-    searchResults = SearchResults(emptyList(), categoryItems.subList(5, 9)),
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }
 
@@ -125,13 +106,9 @@ fun GlobalSearchOnlyCategoriesTest() = ScreenshotTest {
 fun GlobalSearchResultsNightTest() = ScreenshotTest {
   val textFieldState = rememberTextFieldState("foo bar")
   GlobalSearch(
+    info = getSearchInfo(searchResults = SearchResults(appListItems, categoryItems.subList(0, 4))),
     textFieldState = textFieldState,
-    searchResults = SearchResults(appListItems, categoryItems.subList(0, 4)),
-    savedSearches = emptyList(),
-    onSearch = {},
-    onClearSavedSearches = {},
     onNav = {},
     onBack = {},
-    onSearchCleared = {},
   )
 }

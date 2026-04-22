@@ -7,6 +7,7 @@ import org.fdroid.ui.lists.AppListItem
 import org.fdroid.ui.navigation.NavigationKey
 import org.fdroid.ui.search.GlobalSearch
 import org.fdroid.ui.search.SearchResults
+import org.fdroid.ui.utils.getSearchInfo
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -28,14 +29,10 @@ class SearchScreenshotTest(localeName: String) : LocalizedScreenshotTest(localeN
           apps = getSearchResultItems(localeList),
         )
       GlobalSearch(
+        info = getSearchInfo(results, emptyList()),
         textFieldState = rememberTextFieldState("work"),
-        searchResults = results,
-        savedSearches = emptyList(),
-        onSearch = {},
-        onClearSavedSearches = {},
         onNav = {},
         onBack = {},
-        onSearchCleared = {},
       )
     }
 }

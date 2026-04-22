@@ -12,15 +12,20 @@ import org.fdroid.search.SearchManager
 @HiltViewModel
 class SearchViewModel
 @Inject
-constructor(app: Application, private val searchManager: SearchManager) : AndroidViewModel(app) {
+constructor(app: Application, private val searchManager: SearchManager) :
+  AndroidViewModel(app), SearchActions {
 
   val searchResults = searchManager.searchResults
   val savedSearchesFlow = searchManager.savedSearches
   val categories = searchManager.categories
 
-  suspend fun search(term: String) = if (term.isSearchable()) searchManager.search(term) else Unit
+  override suspend fun onSearch(term: String) {
+    if (term.isSearchable()) searchManager.search(term)
+  }
 
-  fun onSearchCleared() = searchManager.onSearchCleared()
+  override fun onSearchCleared() = searchManager.onSearchCleared()
 
-  fun onClearSearchHistory() = viewModelScope.launch { searchManager.onClearSearchHistory() }
+  override fun onClearSearchHistory() {
+    viewModelScope.launch { searchManager.onClearSearchHistory() }
+  }
 }

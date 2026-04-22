@@ -15,9 +15,11 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
+import org.fdroid.search.SavedSearch
 import org.fdroid.ui.apps.myAppsEntry
 import org.fdroid.ui.categories.Categories
 import org.fdroid.ui.categories.CategoriesViewModel
+import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.details.NoAppSelected
 import org.fdroid.ui.details.appDetailsEntry
 import org.fdroid.ui.discover.discoverEntry
@@ -34,6 +36,9 @@ import org.fdroid.ui.navigation.toEntries
 import org.fdroid.ui.navigation.topLevelRoutes
 import org.fdroid.ui.repositories.repoEntry
 import org.fdroid.ui.search.GlobalSearch
+import org.fdroid.ui.search.SearchActions
+import org.fdroid.ui.search.SearchInfo
+import org.fdroid.ui.search.SearchResults
 import org.fdroid.ui.search.SearchViewModel
 import org.fdroid.ui.settings.Settings
 import org.fdroid.ui.settings.SettingsViewModel
@@ -71,14 +76,18 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
     ) {
       val viewModel = hiltViewModel<SearchViewModel>()
       GlobalSearch(
-        searchResults = viewModel.searchResults.collectAsStateWithLifecycle().value,
-        savedSearches = viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value,
-        categories = viewModel.categories.collectAsStateWithLifecycle(null).value,
-        onSearch = viewModel::search,
-        onClearSavedSearches = viewModel::onClearSearchHistory,
+        info =
+          object : SearchInfo {
+            override val searchResults: SearchResults? =
+              viewModel.searchResults.collectAsStateWithLifecycle().value
+            override val savedSearches: List<SavedSearch>? =
+              viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value
+            override val categories: List<CategoryItem>? =
+              viewModel.categories.collectAsStateWithLifecycle(null).value
+            override val actions: SearchActions = viewModel
+          },
         onNav = { navKey -> navigator.navigate(navKey) },
         onBack = { navigator.goBack() },
-        onSearchCleared = viewModel::onSearchCleared,
       )
     }
     entry(NavigationKey.Categories) {
