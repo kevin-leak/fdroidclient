@@ -487,6 +487,7 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="expert_on">Show extra info and enable extra settings</string>
 
     <string name="search_hint">Search apps</string>
+    <string name="search_my_apps_hint">Search installed apps</string>
 
     <string name="appcompatibility">App compatibility</string>
     <string name="show_incompat_versions">Include incompatible versions</string>

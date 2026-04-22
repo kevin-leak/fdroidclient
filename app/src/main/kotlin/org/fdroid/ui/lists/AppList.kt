@@ -17,8 +17,8 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ManageSearch
 import androidx.compose.material.icons.filled.FilterList
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -132,7 +132,7 @@ fun AppList(
           },
           actions = {
             TopAppBarButton(
-              imageVector = Icons.Filled.Search,
+              imageVector = Icons.AutoMirrored.Default.ManageSearch,
               contentDescription = stringResource(R.string.menu_search),
               onClick = { searchActive = true },
             )
