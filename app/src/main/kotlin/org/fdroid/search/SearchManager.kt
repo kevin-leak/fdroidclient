@@ -52,7 +52,9 @@ constructor(
   private val collator = Collator.getInstance(Locale.getDefault())
   private val _searchResults = MutableStateFlow<SearchResults?>(null)
   private val _savedSearches = MutableStateFlow<List<SavedSearch>?>(null)
-  private val categories =
+  private var searchJob: SearchJob? = null
+
+  val categories =
     db.getRepositoryDao().getLiveCategories().asFlow().map { categories ->
       categories
         .map { category ->
@@ -60,8 +62,6 @@ constructor(
         }
         .sortedWith { c1, c2 -> collator.compare(c1.name, c2.name) }
     }
-  private var searchJob: SearchJob? = null
-
   val searchResults = _searchResults.asStateFlow()
   val savedSearches = _savedSearches.asStateFlow()
 

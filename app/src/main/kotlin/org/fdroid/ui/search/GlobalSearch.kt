@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.tooling.preview.Preview
 import org.fdroid.search.SavedSearch
 import org.fdroid.ui.FDroidContent
+import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.navigation.NavigationKey
 import org.fdroid.ui.utils.appListItems
 import org.fdroid.ui.utils.categoryItems
@@ -27,6 +28,7 @@ fun GlobalSearch(
   textFieldState: TextFieldState = rememberTextFieldState(),
   searchResults: SearchResults?,
   savedSearches: List<SavedSearch>? = null,
+  categories: List<CategoryItem>? = null,
   onSearch: suspend (String) -> Unit,
   onClearSavedSearches: () -> Unit,
   onNav: (NavigationKey) -> Unit,
@@ -60,6 +62,7 @@ fun GlobalSearch(
       searchResults = searchResults,
       textFieldState = textFieldState,
       savedSearches = savedSearches,
+      categories = categories,
       onClearSavedSearches = onClearSavedSearches,
       onNav = onNav,
     )
@@ -72,7 +75,15 @@ fun GlobalSearch(
 private fun AppsSearchLoadingPreview() {
   FDroidContent {
     val textFieldState = rememberTextFieldState("foo bar")
-    Box(Modifier.fillMaxSize()) { GlobalSearch(textFieldState, null, null, {}, {}, {}, {}, {}) }
+    Box(Modifier.fillMaxSize()) { GlobalSearch(
+      textFieldState,
+      null,
+      onSearch = {},
+      onClearSavedSearches = {},
+      onNav = {},
+      onBack = {},
+      onSearchCleared = {},
+    ) }
   }
 }
 
@@ -89,6 +100,7 @@ private fun AppsSearchEmptyStatePreview() {
         textFieldState = textFieldState,
         searchResults = null,
         savedSearches = savedSearches,
+        categories = categoryItems,
         onSearch = {},
         onClearSavedSearches = {},
         onNav = {},

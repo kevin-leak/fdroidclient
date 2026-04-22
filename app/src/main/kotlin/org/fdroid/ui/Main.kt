@@ -73,6 +73,7 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
       GlobalSearch(
         searchResults = viewModel.searchResults.collectAsStateWithLifecycle().value,
         savedSearches = viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value,
+        categories = viewModel.categories.collectAsStateWithLifecycle(null).value,
         onSearch = viewModel::search,
         onClearSavedSearches = viewModel::onClearSearchHistory,
         onNav = { navKey -> navigator.navigate(navKey) },

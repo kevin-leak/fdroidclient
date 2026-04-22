@@ -16,6 +16,7 @@ constructor(app: Application, private val searchManager: SearchManager) : Androi
 
   val searchResults = searchManager.searchResults
   val savedSearchesFlow = searchManager.savedSearches
+  val categories = searchManager.categories
 
   suspend fun search(term: String) = if (term.isSearchable()) searchManager.search(term) else Unit
 

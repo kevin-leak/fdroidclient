@@ -47,6 +47,7 @@ fun SearchResults(
   searchResults: SearchResults?,
   textFieldState: TextFieldState,
   savedSearches: List<SavedSearch>?,
+  categories: List<CategoryItem>?,
   onClearSavedSearches: () -> Unit,
   onNav: (NavigationKey) -> Unit,
   modifier: Modifier = Modifier,
@@ -58,14 +59,19 @@ fun SearchResults(
     if (textFieldState.text.isSearchable()) {
       BigLoadingIndicator(modifier.padding(paddingValues).imePadding())
     } else {
-      if (!savedSearches.isNullOrEmpty()) {
-        PastSearches(
-          savedSearches = savedSearches,
-          onSearch = { textFieldState.edit { replace(0, length, it) } },
-          onClearSavedSearches = onClearSavedSearches,
-          modifier = modifier,
-          paddingValues = paddingValues,
-        )
+      LazyColumn(modifier = modifier.fillMaxSize(), contentPadding = paddingValues) {
+        if (!savedSearches.isNullOrEmpty()) {
+          pastSearches(
+            savedSearches = savedSearches,
+            onSearch = { textFieldState.edit { replace(0, length, it) } },
+            onClearSavedSearches = onClearSavedSearches,
+          )
+        }
+        if (!categories.isNullOrEmpty()) {
+          item { CategoriesFlowRow(categories, onNav, modifier = Modifier.padding(top = 16.dp)) }
+        }
+        item { Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.systemBars)) }
+        item { Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.ime)) }
       }
     }
   } else if (searchResults.apps.isEmpty() && textFieldState.text.isSearchable()) {
@@ -121,8 +127,12 @@ fun SearchResults(
 }
 
 @Composable
-private fun CategoriesFlowRow(categories: List<CategoryItem>, onNav: (NavigationKey) -> Unit) {
-  Column(modifier = Modifier.padding(horizontal = 8.dp)) {
+private fun CategoriesFlowRow(
+  categories: List<CategoryItem>,
+  onNav: (NavigationKey) -> Unit,
+  modifier: Modifier = Modifier,
+) {
+  Column(modifier = modifier.padding(horizontal = 8.dp)) {
     Text(
       text = stringResource(R.string.main_menu__categories),
       style = MaterialTheme.typography.labelLarge,
