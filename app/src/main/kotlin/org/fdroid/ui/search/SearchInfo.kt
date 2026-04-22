@@ -7,7 +7,9 @@ interface SearchInfo {
   val searchResults: SearchResults?
   val savedSearches: List<SavedSearch>?
   val categories: List<CategoryItem>?
+  val showKeyboard: Boolean
   val actions: SearchActions
+  fun onKeyboardShown()
 }
 
 interface SearchActions {

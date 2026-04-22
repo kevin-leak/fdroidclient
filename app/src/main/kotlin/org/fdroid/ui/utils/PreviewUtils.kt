@@ -650,6 +650,7 @@ fun getSearchInfo(
     override val savedSearches: List<SavedSearch>? = savedSearches
 
     override val categories: List<CategoryItem>? = categories
+    override val showKeyboard: Boolean = false
 
     override val actions: SearchActions =
       object : SearchActions {
@@ -659,4 +660,6 @@ fun getSearchInfo(
 
         override fun onClearSearchHistory() {}
       }
+
+    override fun onKeyboardShown() {}
   }

@@ -8,7 +8,10 @@ import androidx.compose.material3.adaptive.layout.calculatePaneScaffoldDirective
 import androidx.compose.material3.adaptive.navigation3.ListDetailSceneStrategy
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -64,6 +67,7 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
       calculatePaneScaffoldDirective(windowAdaptiveInfo).copy(horizontalPartitionSpacerSize = 2.dp)
     }
   val isBigScreen = directive.maxHorizontalPartitions > 1
+  var showSearchKeyboard by remember { mutableStateOf(false) }
 
   val entryProvider: (NavKey) -> NavEntry<NavKey> = entryProvider {
     discoverEntry(navigator)
@@ -84,7 +88,12 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
               viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value
             override val categories: List<CategoryItem>? =
               viewModel.categories.collectAsStateWithLifecycle(null).value
+            override val showKeyboard: Boolean = showSearchKeyboard
             override val actions: SearchActions = viewModel
+
+            override fun onKeyboardShown() {
+              showSearchKeyboard = false
+            }
           },
         onNav = { navKey -> navigator.navigate(navKey) },
         onBack = { navigator.goBack() },
@@ -139,7 +148,17 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
     isBigScreen = isBigScreen,
     showBottomBar = !isBigScreen && navigator.last is MainNavKey,
     currentNavKey = navigationState.topLevelRoute,
-    onNav = navigator::navigate,
+    onNav = {
+      // don't navigate, if we are already on the selected top level route
+      if (navigationState.topLevelRoute == it) {
+        if (navigationState.topLevelRoute == NavigationKey.Search) {
+          // double tapping the search brings up the keyboard
+          showSearchKeyboard = true
+        }
+      } else {
+        navigator.navigate(it)
+      }
+    },
     onBack = navigator::goBack,
   )
 }

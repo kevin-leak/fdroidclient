@@ -12,6 +12,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,13 +31,16 @@ fun GlobalSearch(
   onNav: (NavigationKey) -> Unit,
   onBack: () -> Unit,
 ) {
+  LaunchedEffect(info.showKeyboard) {
+    // auto-reset showKeyboard, so it functions like an event
+    if (info.showKeyboard) info.onKeyboardShown()
+  }
   val searchResults = info.searchResults
   Scaffold(
     topBar = {
       TopSearchBar(
         searchFieldState = textFieldState,
-        shouldRequestFocus = // only show keyboard if there are no results to show
-        searchResults == null || searchResults.apps.isEmpty() && searchResults.categories.isEmpty(),
+        shouldRequestFocus = info.showKeyboard,
         onSearch = info.actions::onSearch,
         onSearchCleared = info.actions::onSearchCleared,
         onHideSearch = onBack,

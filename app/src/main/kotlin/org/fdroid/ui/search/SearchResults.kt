@@ -23,6 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -59,11 +60,15 @@ fun SearchResults(
     if (textFieldState.text.isSearchable()) {
       BigLoadingIndicator(modifier.padding(paddingValues).imePadding())
     } else {
+      val keyboardController = LocalSoftwareKeyboardController.current
       LazyColumn(modifier = modifier.fillMaxSize(), contentPadding = paddingValues) {
         if (!savedSearches.isNullOrEmpty()) {
           pastSearches(
             savedSearches = savedSearches,
-            onSearch = { textFieldState.edit { replace(0, length, it) } },
+            onSearch = {
+              textFieldState.edit { replace(0, length, it) }
+              keyboardController?.hide()
+            },
             onClearSavedSearches = onClearSavedSearches,
           )
         }
