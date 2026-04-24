@@ -639,6 +639,16 @@
     <string name="app_list_author">Aplicacions per %s</string>
     <string name="search_placeholder">Cerca…</string>
     <string name="search_no_results">No s\'han trobat aplicacions\n\nProva d\'emprar menys termes de cerca o d\'afegir més repositoris</string>
+    <string name="category_group_productivity">Productivitat</string>
+    <string name="category_group_tools">Eines</string>
+    <string name="category_group_wallets">Finances i carteres</string>
+    <string name="category_group_media">Entreteniment i mitjans</string>
+    <string name="category_group_communication">Comunicació</string>
+    <string name="category_group_device">Dispositiu</string>
+    <string name="category_group_network">Xarxa</string>
+    <string name="category_group_storage">Arxius i emmagatzematge</string>
+    <string name="category_group_interests">Interessos</string>
+    <string name="category_group_misc">Miscel·lània</string>
     <string name="author_by">Per %1$s</string>
     <string name="last_updated">Últimes actualitzacions: %1$s</string>
     <string name="last_updated_with_size">Últimes actualitzacions: %1$s (%2$s)</string>

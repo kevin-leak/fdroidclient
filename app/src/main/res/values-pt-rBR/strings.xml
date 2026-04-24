@@ -645,6 +645,14 @@
     <string name="app_list_author">Apps por %s</string>
     <string name="search_placeholder">Buscar…</string>
     <string name="search_no_results">Nenhum app encontrado\n\nTente usar menos termos na busca ou adicione mais repositórios</string>
+    <string name="category_group_productivity">Produtividade</string>
+    <string name="category_group_tools">Ferramentas</string>
+    <string name="category_group_wallets">Finanças &amp; Carteiras</string>
+    <string name="category_group_media">Entretenimento &amp; Mídia</string>
+    <string name="category_group_communication">Comunicações</string>
+    <string name="category_group_device">Dispositivo</string>
+    <string name="category_group_storage">Arquivos &amp; Armazenamento</string>
+    <string name="category_group_interests">Interesses</string>
     <string name="author_by">Por %1$s</string>
     <string name="last_updated_with_size">Última atualização: %1$s (%2$s)</string>
     <string name="status_install_preparing">Preparando instalação…</string>
@@ -655,6 +663,8 @@
     <string name="technical_info">Informações técnicas</string>
     <string name="package_name">Nome do pacote:</string>
     <string name="installed_version">Versão instalada:</string>
+    <string name="category_group_network">Rede</string>
+    <string name="category_group_misc">Diversos</string>
     <string name="last_updated">Última atualização: %1$s</string>
     <string name="ipfsgw_summary_new">Baixe aplicativos usando endpoints web do IPFS</string>
     <string name="first_start_intro">Para começar, sincronize os repositórios de apps</string>

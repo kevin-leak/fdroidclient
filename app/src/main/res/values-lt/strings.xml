@@ -601,6 +601,16 @@
     <string name="app_list_author">%s sukurtos programėlės</string>
     <string name="search_placeholder">Ieškoti…</string>
     <string name="search_no_results">Nerastos programėlės\n\nPamėginkite naudoti mažiau paieškos žodžių arba įtraukite daugiau saugyklų</string>
+    <string name="category_group_productivity">Produktyvumas</string>
+    <string name="category_group_tools">Įrankiai</string>
+    <string name="category_group_wallets">Finansai ir piniginės</string>
+    <string name="category_group_media">Pramogos ir multimedija</string>
+    <string name="category_group_communication">Komunikacija</string>
+    <string name="category_group_device">Įrenginys</string>
+    <string name="category_group_network">Tinklas</string>
+    <string name="category_group_storage">Failai ir saugykla</string>
+    <string name="category_group_interests">Pomėgiai</string>
+    <string name="category_group_misc">Kiti</string>
     <string name="author_by">Sukurta %1$s</string>
     <string name="last_updated">Paskutinį kartą atnaujinta: %1$s</string>
     <string name="last_updated_with_size">Paskutinį kartą atnaujinta: %1$s (%2$s)</string>

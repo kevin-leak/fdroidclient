@@ -647,6 +647,16 @@
     <string name="app_list_author">Apps by %s</string>
     <string name="search_placeholder">Search…</string>
     <string name="search_no_results">No apps found\n\nTry to use less search terms or add more repositories</string>
+    <string name="category_group_productivity">Productivity</string>
+    <string name="category_group_tools">Tools</string>
+    <string name="category_group_wallets">Finances &amp; Wallets</string>
+    <string name="category_group_media">Entertainment &amp; Media</string>
+    <string name="category_group_communication">Communication</string>
+    <string name="category_group_device">Device</string>
+    <string name="category_group_network">Network</string>
+    <string name="category_group_storage">Files &amp; Storage</string>
+    <string name="category_group_interests">Interests</string>
+    <string name="category_group_misc">Miscellaneous</string>
     <string name="author_by">By %1$s</string>
     <string name="last_updated">Last updated: %1$s</string>
     <string name="last_updated_with_size">Last updated: %1$s (%2$s)</string>

@@ -630,6 +630,15 @@
     <string name="app_list_author">کاره‌های %s</string>
     <string name="search_placeholder">جست‌وجو…</string>
     <string name="search_no_results">هیچ کارهٔ مطابقی وجود ندارد\n\nتلاش برای استفاده از عبارت‌های جست‌وجوی کم‌تر یا افزودن مخزن‌های بیش‌تر</string>
+    <string name="category_group_productivity">بهره‌وری</string>
+    <string name="category_group_tools">ابزارها</string>
+    <string name="category_group_wallets">مالی و کیف‌پول</string>
+    <string name="category_group_media">سرگرمی و رسانه</string>
+    <string name="category_group_communication">ارتباطات</string>
+    <string name="category_group_device">افزاره</string>
+    <string name="category_group_network">شبکه</string>
+    <string name="category_group_storage">پرونده‌ها و ذخیره‌سازی</string>
+    <string name="category_group_misc">متفرّقه</string>
     <string name="author_by">به دست %1$s</string>
     <string name="last_updated">آخرین به‌روز رسانی: %1$s</string>
     <string name="last_updated_with_size">آخرین به‌روز رسانی: %1$s‏ (%2$s)</string>
@@ -641,6 +650,7 @@
     <string name="technical_info">اطّلاعات فنی</string>
     <string name="package_name">نام بسته:</string>
     <string name="installed_version">نگارش نصب شده:</string>
+    <string name="category_group_interests">سهام</string>
     <string name="filter">پالایش</string>
     <string name="filter_selected">گزیده</string>
     <string name="category">دسته</string>

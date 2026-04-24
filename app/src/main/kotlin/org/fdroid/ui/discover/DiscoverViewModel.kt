@@ -81,13 +81,8 @@ constructor(
     combine(localeListFlow, dbCategories) { localeList, categories ->
       val collator = Collator.getInstance(Locale.getDefault())
       categories
-        .mapNotNull { category ->
-          val item =
-            CategoryItem(
-              id = category.id,
-              name = category.getName(localeList) ?: "Unknown Category",
-            )
-          if (item.featured) item else null
+        .map { category ->
+          CategoryItem(id = category.id, name = category.getName(localeList) ?: "Unknown Category")
         }
         .sortedWith { c1, c2 -> collator.compare(c1.name, c2.name) }
     }

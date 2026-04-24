@@ -621,6 +621,16 @@
     <string name="app_list_author">%s 的應用程式</string>
     <string name="search_placeholder">搜尋…</string>
     <string name="search_no_results">找不到應用程式\n\n請嘗試減少搜尋關鍵字或新增軟體庫或</string>
+    <string name="category_group_productivity">生產性</string>
+    <string name="category_group_tools">工具</string>
+    <string name="category_group_wallets">財經與錢包</string>
+    <string name="category_group_media">娛樂與媒體</string>
+    <string name="category_group_communication">通訊</string>
+    <string name="category_group_device">裝置</string>
+    <string name="category_group_network">網路</string>
+    <string name="category_group_storage">檔案與儲存</string>
+    <string name="category_group_interests">興趣</string>
+    <string name="category_group_misc">其他</string>
     <string name="last_updated">最後更新: %1$s</string>
     <string name="last_updated_with_size">最後更新: %1$s (%2$s)</string>
     <string name="status_install_preparing">正在準備安裝…</string>

@@ -639,6 +639,15 @@
     <string name="app_list_author">Lietotnes no %s</string>
     <string name="search_placeholder">Meklēt…</string>
     <string name="search_no_results">Neviena lietotne netika atrasta\n\nJāmēģina izmantot vienkāršāks meklēšanas vaicājums vai jāpievieno vairāk glabātavu</string>
+    <string name="category_group_productivity">Ražīgums</string>
+    <string name="category_group_tools">Rīki</string>
+    <string name="category_group_wallets">Nauda un maki</string>
+    <string name="category_group_media">Izklaide un mediji</string>
+    <string name="category_group_communication">Saziņa</string>
+    <string name="category_group_device">Ierīce</string>
+    <string name="category_group_network">Tīkls</string>
+    <string name="category_group_storage">Datnes un krātuve</string>
+    <string name="category_group_misc">Dažādi</string>
     <string name="author_by">No %1$s</string>
     <string name="last_updated">Pēdējoreiz atjaunināta: %1$s</string>
     <string name="last_updated_with_size">Pēdējoreiz atjaunināta: %1$s (%2$s)</string>
@@ -653,6 +662,7 @@
     <string name="my_apps_header_apps_with_issue">Lietotnes ar nepilnībām</string>
     <string name="my_apps_ignore_dialog_title">Paslēpt nepilnību</string>
     <string name="my_apps_ignore_dialog_text">Nepilnība šajā “%1$s” versijā netiks ņemta vērā</string>
+    <string name="category_group_interests">Intereses</string>
     <string name="ipfsgw_summary_new">Lejupielādēt lietotnes no IPFS tīmekļa galamērķiem</string>
     <string name="first_start_intro">Lai uzsāktu, jāvienādo lietotņu glabātavas</string>
 </resources>

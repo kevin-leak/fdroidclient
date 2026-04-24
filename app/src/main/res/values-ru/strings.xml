@@ -654,6 +654,16 @@
     <string name="app_list_author">Приложения от %s</string>
     <string name="search_placeholder">Поиск…</string>
     <string name="search_no_results">Приложений не найдено\n\nПопробуйте использовать меньше поисковых запросов или добавить больше репозиториев</string>
+    <string name="category_group_productivity">Производительность</string>
+    <string name="category_group_tools">Инструменты</string>
+    <string name="category_group_wallets">Финансы и кошельки</string>
+    <string name="category_group_media">Развлечения и СМИ</string>
+    <string name="category_group_communication">Коммуникация</string>
+    <string name="category_group_device">Устройство</string>
+    <string name="category_group_network">Сеть</string>
+    <string name="category_group_storage">Файлы и хранилище</string>
+    <string name="category_group_interests">Интересы</string>
+    <string name="category_group_misc">Разное</string>
     <string name="author_by">От %1$s</string>
     <string name="last_updated">Последнее обновление: %1$s</string>
     <string name="last_updated_with_size">Последнее обновление: %1$s (%2$s)</string>

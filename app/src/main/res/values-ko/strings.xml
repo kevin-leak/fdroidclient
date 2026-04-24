@@ -625,6 +625,16 @@
     <string name="app_list_author">%s의 앱</string>
     <string name="search_placeholder">검색…</string>
     <string name="search_no_results">앱을 찾을 수 없음\n\n검색어를 줄이거나 다른 저장소를 추가하세요</string>
+    <string name="category_group_productivity">생산성</string>
+    <string name="category_group_tools">도구</string>
+    <string name="category_group_wallets">금융 &amp; 지갑</string>
+    <string name="category_group_media">엔터테인먼트 &amp; 미디어</string>
+    <string name="category_group_communication">통신</string>
+    <string name="category_group_device">기기</string>
+    <string name="category_group_network">네트워크</string>
+    <string name="category_group_storage">파일 &amp; 저장소</string>
+    <string name="category_group_interests">관심분야</string>
+    <string name="category_group_misc">기타</string>
     <string name="author_by">개발자: %1$s</string>
     <string name="last_updated">마지막 업데이트: %1$s</string>
     <string name="last_updated_with_size">마지막 업데이트: %1$s (%2$s)</string>

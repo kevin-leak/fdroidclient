@@ -654,6 +654,16 @@
     <string name="filter_selected">escolhido</string>
     <string name="category">Categoria</string>
     <string name="clear">Limpar</string>
+    <string name="category_group_productivity">Produtividade</string>
+    <string name="category_group_tools">Ferramentas</string>
+    <string name="category_group_wallets">Finanças &amp; carteiras</string>
+    <string name="category_group_media">Entretenimento &amp; média</string>
+    <string name="category_group_communication">Comunicação</string>
+    <string name="category_group_device">Dispositivo</string>
+    <string name="category_group_network">Rede</string>
+    <string name="category_group_storage">Ficheiros &amp; armazenamento</string>
+    <string name="category_group_interests">Interesses</string>
+    <string name="category_group_misc">Diversos</string>
     <string name="author_by">Por %1$s</string>
     <string name="last_updated">Última atualização: %1$s</string>
     <string name="last_updated_with_size">Última atualização: %1$s (%2$s)</string>

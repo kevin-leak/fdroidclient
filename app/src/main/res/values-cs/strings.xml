@@ -642,6 +642,16 @@
     <string name="app_list_author">Aplikace od vývojáře %s</string>
     <string name="search_placeholder">Hledat…</string>
     <string name="search_no_results">Nenalezeny žádné aplikace\n\nZkuste použít méně slov nebo přidat další repozitáře</string>
+    <string name="category_group_productivity">Produktivita</string>
+    <string name="category_group_tools">Nástroje</string>
+    <string name="category_group_wallets">Finance a peněženky</string>
+    <string name="category_group_media">Zábava a média</string>
+    <string name="category_group_communication">Komunikace</string>
+    <string name="category_group_device">Zařízení</string>
+    <string name="category_group_network">Síť</string>
+    <string name="category_group_storage">Soubory a úložiště</string>
+    <string name="category_group_interests">Zájmy</string>
+    <string name="category_group_misc">Různé</string>
     <string name="author_by">Od %1$s</string>
     <string name="last_updated">Naposledy aktualizováno: %1$s</string>
     <string name="last_updated_with_size">Naposledy aktualizováno: %1$s (%2$s)</string>

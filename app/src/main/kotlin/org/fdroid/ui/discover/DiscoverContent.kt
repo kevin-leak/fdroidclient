@@ -55,7 +55,7 @@ fun DiscoverContent(
         )
     }
     CategoryList(
-      categoryList = discoverModel.categories,
+      categoryMap = discoverModel.categories,
       onNav = onNav,
       modifier = Modifier.fillMaxWidth(),
     )

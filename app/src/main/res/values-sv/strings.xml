@@ -644,6 +644,16 @@
     <string name="app_list_author">Appar från %s</string>
     <string name="search_placeholder">Sök…</string>
     <string name="search_no_results">Inga appar hittades\n\nFörsök att använda färre söktermer eller lägga till fler förråd</string>
+    <string name="category_group_productivity">Produktivitet</string>
+    <string name="category_group_tools">Verktyg</string>
+    <string name="category_group_wallets">Ekonomi &amp; plånböcker</string>
+    <string name="category_group_media">Underhållning &amp; media</string>
+    <string name="category_group_communication">Kommunikation</string>
+    <string name="category_group_device">Enhet</string>
+    <string name="category_group_network">Nätverk</string>
+    <string name="category_group_storage">Filer &amp; lagring</string>
+    <string name="category_group_interests">Intressen</string>
+    <string name="category_group_misc">Diverse</string>
     <string name="author_by">Av %1$s</string>
     <string name="last_updated">Senast uppdaterad: %1$s</string>
     <string name="last_updated_with_size">Senast uppdaterad: %1$s (%2$s)</string>

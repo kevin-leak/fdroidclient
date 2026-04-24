@@ -629,6 +629,16 @@
     <string name="app_list_author">Forrit frá %s</string>
     <string name="search_placeholder">Leita…</string>
     <string name="search_no_results">Engin forrit fundust\n\nPrófaðu með færri leitarorð eða bættu við gagnasöfnum</string>
+    <string name="category_group_productivity">Framleiðni</string>
+    <string name="category_group_tools">Verkfæri</string>
+    <string name="category_group_wallets">Fjármál og veski</string>
+    <string name="category_group_media">Afþreying og miðlun</string>
+    <string name="category_group_communication">Samskipti</string>
+    <string name="category_group_device">Tæki</string>
+    <string name="category_group_network">Netkerfi</string>
+    <string name="category_group_storage">Skrár og geymslurými</string>
+    <string name="category_group_interests">Áhugamál</string>
+    <string name="category_group_misc">Ýmislegt</string>
     <string name="author_by">Frá %1$s</string>
     <string name="last_updated">Síðast uppfært: %1$s</string>
     <string name="last_updated_with_size">Síðast uppfært: %1$s (%2$s)</string>

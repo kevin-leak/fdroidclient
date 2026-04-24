@@ -630,6 +630,16 @@
     <string name="app_list_author">Alkalmazások %s szerint</string>
     <string name="search_placeholder">Keres…</string>
     <string name="search_no_results">Nincs találat\n\nPróbálj meg kevesebb keresési kifejezést használni, vagy adjon hozzá több alkalmazás-tárolót</string>
+    <string name="category_group_productivity">Termelékenység</string>
+    <string name="category_group_tools">Eszközök</string>
+    <string name="category_group_wallets">Pénzügyek és pénztárcák</string>
+    <string name="category_group_media">Szórakozás és média</string>
+    <string name="category_group_communication">Kommunikáció</string>
+    <string name="category_group_device">Eszköz</string>
+    <string name="category_group_network">Hálózat</string>
+    <string name="category_group_storage">Fájlok és tárolók</string>
+    <string name="category_group_interests">Érdeklődési kör</string>
+    <string name="category_group_misc">Egyéb</string>
     <string name="author_by">%1$s -től</string>
     <string name="last_updated">Utolsó frissítés: %1$s</string>
     <string name="last_updated_with_size">Utolsó frissítés: %1$s (%2$s)</string>

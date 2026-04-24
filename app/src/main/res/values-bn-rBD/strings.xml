@@ -510,6 +510,8 @@
     <string name="app_list_all">সমস্ত অ্যাপস</string>
     <string name="app_list_most_downloaded">সর্বাধিক ডাউনলোডকৃত</string>
     <string name="search_placeholder">অনুসন্ধান করুন</string>
+    <string name="category_group_tools">সরঞ্জামসমূহ</string>
+    <string name="category_group_interests">পছন্দসমূহ</string>
     <string name="app_name_basic">F-Droid সাধারণ</string>
     <string name="app_name_full_nightly">F-Nightly</string>
     <string name="app_name_basic_nightly">F-Nightly Basic</string>

@@ -686,6 +686,16 @@
     <string name="app_list_author">تطبيقات بواسطة %s</string>
     <string name="search_placeholder">ابحث…</string>
     <string name="search_no_results">لم يُعثر على أي تطبيقات\n\nحاول استخدام كلمات بحث أقل أو أضف المزيد من المستودعات</string>
+    <string name="category_group_productivity">إنتاجية</string>
+    <string name="category_group_tools">أدوات</string>
+    <string name="category_group_wallets">المالية والمحافظ</string>
+    <string name="category_group_media">الترفيه والإعلام</string>
+    <string name="category_group_communication">اتصال</string>
+    <string name="category_group_device">الجهاز</string>
+    <string name="category_group_network">الشبكة</string>
+    <string name="category_group_storage">الملفات والتخزين</string>
+    <string name="category_group_interests">اهتمامات</string>
+    <string name="category_group_misc">متنوّع</string>
     <string name="author_by">بواسطة %1$s</string>
     <string name="last_updated">آخر تحديث: %1$s</string>
     <string name="last_updated_with_size">آخر تحديث: %1$s (%2$s)</string>

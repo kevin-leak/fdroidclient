@@ -650,6 +650,16 @@
     <string name="app_list_author">Aplicații de la %s</string>
     <string name="search_placeholder">Căutare…</string>
     <string name="search_no_results">Nu s-au găsit aplicații\n\nÎncercați să utilizați mai puțini termeni de căutare sau adăugați mai multe depozite</string>
+    <string name="category_group_productivity">Productivitate</string>
+    <string name="category_group_tools">Unelte</string>
+    <string name="category_group_wallets">Finanțe și Portofele</string>
+    <string name="category_group_media">Divertisment și media</string>
+    <string name="category_group_communication">Comunicare</string>
+    <string name="category_group_device">Dispozitiv</string>
+    <string name="category_group_network">Rețea</string>
+    <string name="category_group_storage">Fișiere și stocare</string>
+    <string name="category_group_interests">Pasiuni</string>
+    <string name="category_group_misc">Diverse</string>
     <string name="author_by">De către %1$s</string>
     <string name="last_updated">Ultima actualizare: %1$s</string>
     <string name="last_updated_with_size">Ultima actualizare: %1$s (%2$s)</string>

@@ -673,6 +673,16 @@
     <string name="app_list_author">יישמונים על ידי %s</string>
     <string name="search_placeholder">חפש…</string>
     <string name="search_no_results">לא נמצאו יישומונים\n\nנסו להשתמש בפחות מילות חיפוש או להוסיף עוד מאגרים</string>
+    <string name="category_group_productivity">הפקה</string>
+    <string name="category_group_tools">כלים</string>
+    <string name="category_group_wallets">כלכלה וארנקים</string>
+    <string name="category_group_media">בידור ומדיה</string>
+    <string name="category_group_communication">תקשורת</string>
+    <string name="category_group_device">מכשיר</string>
+    <string name="category_group_network">רשת</string>
+    <string name="category_group_storage">קבצים ואחסון</string>
+    <string name="category_group_interests">תחומי עניין</string>
+    <string name="category_group_misc">שונות</string>
     <string name="author_by">על ידי %1$s</string>
     <string name="last_updated">עדכון אחרון: %1$s</string>
     <string name="last_updated_with_size">עדכון אחרון: %1$s (%2$s)</string>

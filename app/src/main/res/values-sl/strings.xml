@@ -552,6 +552,16 @@
     <string name="app_list_author">Aplikacije avtorja %s</string>
     <string name="search_placeholder">Iskanje …</string>
     <string name="search_no_results">Ni najdenih aplikacij\n\nPoskusite uporabiti manj iskalnih izrazov ali dodajte več repozitorijev</string>
+    <string name="category_group_productivity">Produktivnost</string>
+    <string name="category_group_tools">Orodja</string>
+    <string name="category_group_wallets">Finance in denarnice</string>
+    <string name="category_group_media">Zabava in mediji</string>
+    <string name="category_group_communication">Komunikacija</string>
+    <string name="category_group_device">Naprava</string>
+    <string name="category_group_network">Omrežje</string>
+    <string name="category_group_storage">Datoteke in shranjevanje</string>
+    <string name="category_group_interests">Interesi</string>
+    <string name="category_group_misc">Razno</string>
     <string name="author_by">Od %1$s</string>
     <string name="last_updated">Zadnja posodobitev: %1$s</string>
     <string name="last_updated_with_size">Zadnja posodobitev: %1$s (%2$s)</string>

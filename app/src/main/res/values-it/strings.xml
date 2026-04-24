@@ -663,6 +663,16 @@
     <string name="app_list_author">App per %s</string>
     <string name="search_placeholder">Cerca…</string>
     <string name="search_no_results">Nessuna app trovata\n\nProva a usare meno termini di ricerca o aggiungere più repository</string>
+    <string name="category_group_productivity">Produttività</string>
+    <string name="category_group_tools">Strumenti</string>
+    <string name="category_group_wallets">Finanze e Portafogli</string>
+    <string name="category_group_media">Intrattenimento &amp; Media</string>
+    <string name="category_group_communication">Comunicazione</string>
+    <string name="category_group_device">Dispositivo</string>
+    <string name="category_group_network">Rete</string>
+    <string name="category_group_storage">Archiviazione</string>
+    <string name="category_group_interests">Interessi</string>
+    <string name="category_group_misc">Miscellanea</string>
     <string name="author_by">Da %1$s</string>
     <string name="last_updated">Ultimo aggiornamento: %1$s</string>
     <string name="last_updated_with_size">Ultimo aggiornamento: %1$s (%2$s)</string>

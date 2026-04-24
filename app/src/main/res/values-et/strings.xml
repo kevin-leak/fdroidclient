@@ -644,6 +644,16 @@
     <string name="app_list_author">Rakendused arendajalt %s</string>
     <string name="search_placeholder">Otsi…</string>
     <string name="search_no_results">Rakendusi ei leidu\n\nProovi kasutada laiemaid otsingutingimusi või lisa veel rakenduste hoidlaid</string>
+    <string name="category_group_productivity">Tarbetarkvara</string>
+    <string name="category_group_tools">Tarvikud</string>
+    <string name="category_group_wallets">Rahandus ja rahataskud</string>
+    <string name="category_group_media">Meelelahutus ja meedia</string>
+    <string name="category_group_communication">Suhtlus</string>
+    <string name="category_group_device">Nutiseade ja süsteem</string>
+    <string name="category_group_network">Võrgundus</string>
+    <string name="category_group_storage">Failid ja andmeruum</string>
+    <string name="category_group_interests">Huvid ja hobid</string>
+    <string name="category_group_misc">Varia</string>
     <string name="author_by">Arendajalt %1$s</string>
     <string name="last_updated">Viimati uuendatud: %1$s</string>
     <string name="last_updated_with_size">Viimati uuendatud: %1$s (%2$s)</string>

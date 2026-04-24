@@ -79,6 +79,7 @@
     <string name="send_version_and_uuid">Versiyasi va UUID\'larni serverlarga jo\'natish</string>
     <string name="send_install_history">O\'rnatish tarixini jo\'natish</string>
     <string name="installed_version">O\'rnatilgan versiya:</string>
+    <string name="category_group_device">Qurulma</string>
     <string name="my_apps_ignore_dialog_button">Yaxshirish</string>
     <string name="menu_about">Haqida</string>
     <string name="menu_apps_my">Mening ilovalarim</string>
