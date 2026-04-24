@@ -19,6 +19,7 @@ data class MyAppsModel(
   val showAppIssueHint: Boolean,
   val sortOrder: AppListSortOrder = AppListSortOrder.NAME,
   val networkState: NetworkState,
+  val isSearching: Boolean = false,
   val appUpdatesBytes: Long? = null,
 )
 

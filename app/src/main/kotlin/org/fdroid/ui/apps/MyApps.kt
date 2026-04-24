@@ -186,11 +186,8 @@ fun MyAppsLoadingPreview() {
   val model =
     MyAppsModel(
       installingApps = emptyList(),
-      appUpdates = null,
-      installedApps = null,
       showUpdatesHint = false,
       showAppIssueHint = false,
-      sortOrder = AppListSortOrder.NAME,
       networkState = NetworkState(isOnline = false, isMetered = false),
     )
   FDroidContent {
@@ -224,12 +221,11 @@ fun MyAppsEmptyPreview() {
   FDroidContent {
     val model =
       MyAppsModel(
-        installingApps = emptyList(),
         appUpdates = emptyList(),
+        installingApps = emptyList(),
         installedApps = emptyList(),
         showUpdatesHint = false,
         showAppIssueHint = false,
-        sortOrder = AppListSortOrder.NAME,
         networkState = NetworkState(isOnline = false, isMetered = false),
       )
     MyApps(

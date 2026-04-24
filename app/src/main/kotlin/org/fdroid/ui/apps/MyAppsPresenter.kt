@@ -105,6 +105,7 @@ fun MyAppsPresenter(
     showAppIssueHint = showAppIssueHintFlow.collectAsState().value,
     sortOrder = sortOrder,
     networkState = networkStateFlow.collectAsState().value,
+    isSearching = searchQuery.isNotBlank(),
     appUpdatesBytes = updateBytes,
   )
 }

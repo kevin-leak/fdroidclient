@@ -75,7 +75,12 @@ fun MyAppsList(
       modifier.then(if (currentPackageName == null) Modifier else Modifier.selectableGroup()),
   ) {
     // Updates header with Update all button
-    if (updatableApps != null && updatableApps.isEmpty() && myAppsInfo.model.showUpdatesHint) {
+    if (
+      updatableApps != null &&
+        updatableApps.isEmpty() &&
+        myAppsInfo.model.showUpdatesHint &&
+        !myAppsInfo.model.isSearching
+    ) {
       item(key = "A-hint", contentType = "hint") {
         OnboardingCard(
           title = stringResource(R.string.apps_updates_hint_title),
