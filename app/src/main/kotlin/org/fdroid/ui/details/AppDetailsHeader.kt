@@ -223,6 +223,7 @@ fun AppDetailsHeader(
         Text(
           text = stringResource(strRes),
           style = MaterialTheme.typography.bodyMedium,
+          color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
           overflow = TextOverflow.Ellipsis,
           maxLines = 1,
         )
@@ -236,6 +237,7 @@ fun AppDetailsHeader(
           Text(
             text = stringResource(R.string.status_downloading, speedStr),
             style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             overflow = TextOverflow.StartEllipsis,
             maxLines = 1,
             modifier = Modifier.padding(end = 8.dp),
@@ -243,6 +245,7 @@ fun AppDetailsHeader(
           Text(
             text = stringResource(R.string.status_downloading_remaining, remainingStr),
             style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             overflow = TextOverflow.Ellipsis,
             maxLines = 1,
           )
