@@ -2,6 +2,11 @@ package org.fdroid.ui.discover
 
 import android.annotation.SuppressLint
 import android.app.Application
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.Intent.ACTION_LOCALE_CHANGED
+import android.content.IntentFilter
 import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.SavedStateHandle
@@ -16,10 +21,13 @@ import java.util.Locale
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.update
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
@@ -49,8 +57,8 @@ constructor(
   private val log = KotlinLogging.logger {}
   private val moleculeScope =
     CoroutineScope(viewModelScope.coroutineContext + AndroidUiDispatcher.Main)
-  private val collator = Collator.getInstance(Locale.getDefault())
 
+  private val localeListFlow = MutableStateFlow(LocaleListCompat.getDefault())
   private val newAppsFlow = db.getAppDao().getNewAppsFlow()
   private val recentlyUpdatedAppsFlow = db.getAppDao().getRecentlyUpdatedAppsFlow()
   private val mostDownloadedApps =
@@ -68,8 +76,10 @@ constructor(
         db.getAppDao().getAppsFlow(packageNames).collect { apps -> emit(apps) }
       }
       .flowOn(Dispatchers.IO)
+  private val dbCategories = db.getRepositoryDao().getLiveCategories().asFlow()
   private val categories =
-    db.getRepositoryDao().getLiveCategories().asFlow().map { categories ->
+    combine(localeListFlow, dbCategories) { localeList, categories ->
+      val collator = Collator.getInstance(Locale.getDefault())
       categories
         .mapNotNull { category ->
           val item =
@@ -86,7 +96,6 @@ constructor(
       repos?.any { it.enabled && it.errorCount >= 5 } ?: false
     }
 
-  val localeList = LocaleListCompat.getDefault()
   val discoverModel: StateFlow<DiscoverModel> by
     lazy(LazyThreadSafetyMode.NONE) {
       @SuppressLint("StateFlowValueCalledInComposition") // see comment below
@@ -108,4 +117,24 @@ constructor(
         )
       }
     }
+
+  private val localeChangedReceiver = LocaleChangedReceiver()
+
+  init {
+    app.registerReceiver(localeChangedReceiver, IntentFilter(ACTION_LOCALE_CHANGED))
+  }
+
+  override fun onCleared() {
+    app.unregisterReceiver(localeChangedReceiver)
+  }
+
+  private inner class LocaleChangedReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+      if (intent.action == ACTION_LOCALE_CHANGED) {
+        val localeList = LocaleListCompat.getDefault()
+        log.info { "Locale list has changed: $localeList" }
+        localeListFlow.update { localeList }
+      }
+    }
+  }
 }
