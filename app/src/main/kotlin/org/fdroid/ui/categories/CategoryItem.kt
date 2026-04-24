@@ -131,6 +131,7 @@ data class CategoryItem(val id: String, val name: String, val description: Strin
         "Reading" -> AutoMirrored.Default.MenuBook
         "Recipe Manager" -> Icons.Default.RestaurantMenu
         "Religion" -> Icons.Default.Church
+        "Remote Access" -> Icons.Default.BrowserUpdated
         "Remote Controller" -> Icons.Default.SettingsRemote
         "Science & Education" -> Icons.Default.Science
         "Security" -> Icons.Default.Security
@@ -209,6 +210,7 @@ data class CategoryItem(val id: String, val name: String, val description: Strin
         "Reading" -> CategoryGroups.media
         "Recipe Manager" -> CategoryGroups.interests
         "Religion" -> CategoryGroups.interests
+        "Remote Access" -> CategoryGroups.network
         "Remote Controller" -> CategoryGroups.tools
         "Science & Education" -> CategoryGroups.interests
         "Security" -> CategoryGroups.device
