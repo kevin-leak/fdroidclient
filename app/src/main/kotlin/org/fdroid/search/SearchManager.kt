@@ -58,7 +58,11 @@ constructor(
     db.getRepositoryDao().getLiveCategories().asFlow().map { categories ->
       categories
         .map { category ->
-          CategoryItem(id = category.id, name = category.getName(localeList) ?: "Unknown Category")
+          CategoryItem(
+            id = category.id,
+            name = category.getName(localeList) ?: "Unknown Category",
+            description = category.getDescription(localeList),
+          )
         }
         .sortedWith { c1, c2 -> collator.compare(c1.name, c2.name) }
     }
@@ -113,7 +117,9 @@ constructor(
       val timedCategories = measureTimedValue {
         categories.first().filter {
           // normalization removed diacritics, so searches without them work
-          it.name.normalize().contains(sanitized.normalize(), ignoreCase = true)
+          val normalized = sanitized.normalize()
+          it.name.normalize().contains(normalized, ignoreCase = true) ||
+            (it.description?.normalize()?.contains(normalized, ignoreCase = true) ?: false)
         }
       }
       _searchResults.value = SearchResults(timedApps.value, timedCategories.value)

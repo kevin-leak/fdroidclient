@@ -74,7 +74,7 @@ import androidx.compose.material.icons.filled.Wallpaper
 import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.ui.graphics.vector.ImageVector
 
-data class CategoryItem(val id: String, val name: String) {
+data class CategoryItem(val id: String, val name: String, val description: String? = null) {
   val imageVector: ImageVector
     get() =
       when (id) {
