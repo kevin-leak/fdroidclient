@@ -7,6 +7,7 @@ interface SearchInfo {
   val searchResults: SearchResults?
   val savedSearches: List<SavedSearch>?
   val categories: List<CategoryItem>?
+  val autoShowKeyboard: Boolean
   val showKeyboard: Boolean
   val actions: SearchActions
   fun onKeyboardShown()
@@ -18,4 +19,6 @@ interface SearchActions {
   fun onSearchCleared()
 
   fun onClearSearchHistory()
+
+  fun setAutoShowKeyboard(autoShow: Boolean)
 }

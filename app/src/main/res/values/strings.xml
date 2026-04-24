@@ -38,6 +38,7 @@
     <string name="search_no_results">No apps found\n\nTry using fewer search terms or add more repositories</string>
     <string name="search_filter_no_results">No matching apps\n\nTry using fewer search terms or remove filters</string>
     <string name="search_my_apps_no_results">No matching apps\n\nTry using fewer search terms</string>
+    <string name="search_auto_keyboard">Automatically open keyboard</string>
     <string name="sort_title">Sorting and compatibility</string>
     <string name="sort_by_name">Sort by name</string>
     <string name="sort_by_latest">Sort by last update</string>

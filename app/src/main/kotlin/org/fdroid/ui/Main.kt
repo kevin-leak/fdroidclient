@@ -86,6 +86,8 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
               viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value
             override val categories: List<CategoryItem>? =
               viewModel.categories.collectAsStateWithLifecycle(null).value
+            override val autoShowKeyboard: Boolean =
+              viewModel.autoShowKeyboard.collectAsStateWithLifecycle().value
             override val showKeyboard: Boolean = showSearchKeyboard
             override val actions: SearchActions = viewModel
 

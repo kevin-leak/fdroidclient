@@ -33,6 +33,7 @@ import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_PREVENT_SCREENSHOTS
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_PROXY
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_REPO_UPDATES
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_SHOW_INCOMPATIBLE
+import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_SHOW_SEARCH_KEYBOARD
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_THEME
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_WARN_WHEN_METERED
 import org.fdroid.settings.SettingsConstants.PREF_DNS_CACHE
@@ -50,6 +51,7 @@ import org.fdroid.settings.SettingsConstants.PREF_KEY_PREVENT_SCREENSHOTS
 import org.fdroid.settings.SettingsConstants.PREF_KEY_PROXY
 import org.fdroid.settings.SettingsConstants.PREF_KEY_REPO_UPDATES
 import org.fdroid.settings.SettingsConstants.PREF_KEY_SHOW_INCOMPATIBLE
+import org.fdroid.settings.SettingsConstants.PREF_KEY_SHOW_SEARCH_KEYBOARD
 import org.fdroid.settings.SettingsConstants.PREF_KEY_THEME
 import org.fdroid.settings.SettingsConstants.PREF_KEY_WARN_WHEN_METERED
 import org.fdroid.settings.SettingsConstants.PREF_USE_DNS_CACHE
@@ -194,6 +196,10 @@ class SettingsManager @Inject constructor(@param:ApplicationContext private val 
     MutableStateFlow(prefs.getBoolean(PREF_KEY_WARN_WHEN_METERED, PREF_DEFAULT_WARN_WHEN_METERED))
   val warnWhenMeteredFlow = _warnWhenMeteredFlow.asStateFlow()
 
+  private val _showSearchKeyboardFlow =
+    MutableStateFlow(prefs.getBoolean(PREF_KEY_SHOW_SEARCH_KEYBOARD, PREF_DEFAULT_SHOW_SEARCH_KEYBOARD))
+  val showSearchKeyboardFlow = _showSearchKeyboardFlow.asStateFlow()
+
   val filterIncompatible: Boolean
     get() = !prefs.getBoolean(PREF_KEY_SHOW_INCOMPATIBLE, PREF_DEFAULT_SHOW_INCOMPATIBLE)
 
@@ -215,6 +221,11 @@ class SettingsManager @Inject constructor(@param:ApplicationContext private val 
   fun onDontWarnOnMeteredNetwork() {
     prefs.edit { putBoolean(PREF_KEY_WARN_WHEN_METERED, false) }
     _warnWhenMeteredFlow.update { false }
+  }
+
+  fun setShowSearchKeyboard(show: Boolean) {
+    prefs.edit { putBoolean(PREF_KEY_SHOW_SEARCH_KEYBOARD, show) }
+    _showSearchKeyboardFlow.update { show }
   }
 
   fun saveAppListFilter(sortOrder: AppListSortOrder, filterIncompatible: Boolean) {
