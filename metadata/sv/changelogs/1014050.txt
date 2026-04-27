@@ -6,7 +6,7 @@
 
 * Appar utan PNG-appikoner visas nu i Senaste fliken (@ashutoshgngwr)
 
-* Bättre ikonhantering med begränsade data-/WiFi-inställningar
+* Bättre ikonhantering med begränsade data-/Wi-Fi-inställningar
 
 * Stöd för fler streckkodsläsare (@Lugerun)
 

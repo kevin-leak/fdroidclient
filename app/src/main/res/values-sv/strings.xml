@@ -33,7 +33,7 @@
     <string name="enable">Aktivera</string>
     <string name="add_key">Lägg till nyckel</string>
     <string name="overwrite">Skriv över</string>
-    <string name="bluetooth_activity_not_found">Ingen metod för att kunna skicka med Bluetooth hittades, välj en!</string>
+    <string name="bluetooth_activity_not_found">Ingen metod för att skicka via Bluetooth hittades. Välj en!</string>
     <string name="choose_bt_send">Välj sändningsmetod för Bluetooth</string>
     <string name="repo_add_url">Förrådsadress</string>
     <string name="repo_add_fingerprint">Fingeravtryck (valfritt)</string>
@@ -68,7 +68,7 @@
     <string name="local_repo_running">F-Droid är redo att utbyta</string>
     <string name="touch_to_configure_local_repo">Tryck för att se detaljer och tillåta andra att utbyta appar med dig.</string>
     <string name="deleting_repo">Tar bort aktuellt förråd…</string>
-    <string name="adding_apks_format">Lägger till %s i förråd…</string>
+    <string name="adding_apks_format">Lägger till %s i förrådet…</string>
     <string name="writing_index_jar">Skriver signerad indexfil (index.jar)…</string>
     <string name="linking_apks">Länkar APK:er till förrådet…</string>
     <string name="copying_icons">Kopierar appikoner till förrådet…</string>
@@ -90,7 +90,7 @@
     <string name="all_other_repos_fine">Övriga förråd orsakade inga fel.</string>
     <string name="global_error_updating_repos">Fel vid uppdatering: %s</string>
     <string name="no_permissions">Inga behörigheter</string>
-    <string name="no_handler_app">Du har inte någon app tillgänglig för hantering av %s.</string>
+    <string name="no_handler_app">Du har ingen app som kan hantera %s.</string>
     <string name="theme">Tema</string>
     <string name="unsigned">Osignerad</string>
     <string name="unverified">Ej verifierad</string>
@@ -98,9 +98,7 @@
     <string name="repo_description">Beskrivning</string>
     <string name="unknown">Okänd</string>
     <string name="repo_confirm_delete_title">Ta bort förråd?</string>
-    <string name="repo_confirm_delete_body">Att radera ett förråd betyder att dess appar inte längre kommer att vara tillgängliga.
-\n
-\nObservera: Alla tidigare installerade appar kommer finnas kvar på din enhet.</string>
+    <string name="repo_confirm_delete_body">Att ta bort ett förråd innebär att appar från det inte längre kommer att vara tillgängliga.\n \nObservera: Alla tidigare installerade appar kommer finnas kvar på din enhet.</string>
     <string name="repo_disabled_notification">Inaktiverade %1$s.
 \n
 \nDu måste återaktivera detta förråd för att installera appar från det.</string>
@@ -118,7 +116,7 @@
     <string name="category_Science_Education">Vetenskap &amp; utbildning</string>
     <string name="category_Security">Säkerhet</string>
     <string name="category_System">System</string>
-    <string name="swap_join_same_wifi">Använd samma wifi som din vän</string>
+    <string name="swap_join_same_wifi">Använd samma Wi-Fi som din vän</string>
     <string name="swap">Utbyta appar</string>
     <string name="swap_no_wifi_network">Inget nätverk ännu</string>
     <string name="swap_view_available_networks">Tryck för att öppna tillgängliga nätverk</string>
@@ -157,12 +155,12 @@
     <string name="repo_error_empty_username">Tomt användarnamn, användaruppgifterna har inte ändrats</string>
     <string name="about_license">Licens</string>
     <string name="menu_email">Skicka ett e-postmeddelande till utvecklaren</string>
-    <string name="antinonfreeassetslist">Denna app innehåller icke-fria tillgångar</string>
+    <string name="antinonfreeassetslist">Denna app innehåller icke-fria resurser</string>
     <string name="useTor">Använd Tor</string>
     <string name="useTorSummary">Tvinga hämtningstrafik genom Tor för ökad integritet. Kräver Orbot</string>
     <string name="status_processing_xml_percent">Bearbetar %2$s / %3$s (%4$d%%) från %1$s</string>
     <string name="status_inserting_apps">Sparar appdetaljer</string>
-    <string name="repo_added">Sparat paketförråd %1$s.</string>
+    <string name="repo_added">Paketförrådet %1$s har sparats.</string>
     <string name="wifi_ap">Hotspot</string>
     <string name="category_Connectivity">Anslutbarhet</string>
     <string name="category_Graphics">Grafik</string>
@@ -171,7 +169,7 @@
     <string name="category_Theming">Temasättning</string>
     <string name="category_Time">Tid</string>
     <string name="category_Writing">Skrivande</string>
-    <string name="empty_search_available_app_list">Inga matchande applikationer är tillgängliga.</string>
+    <string name="empty_search_available_app_list">Inga matchande appar finns tillgängliga.</string>
     <string name="empty_installed_app_list">Inga appar har installerats.\n\nDet finns appar på din enhet, men de är inte
         tillgängliga från F-Droid. Detta kan bero på att du behöver uppdatera dina förråd, eller så har förråden
         verkligen inte dina appar tillgängliga.
@@ -492,7 +490,7 @@
     <string name="theme_follow_system">Följ systemet</string>
     <string name="use_pure_black_dark_theme_summary">Rekommenderas endast för OLED-skärmar.</string>
     <string name="use_pure_black_dark_theme">Använd ren svart bakgrund i mörkt tema</string>
-    <string name="banner_no_data_or_wifi">Ingen mobildata eller WiFi aktiverat</string>
+    <string name="banner_no_data_or_wifi">Ingen mobildata eller Wi-Fi aktiverat</string>
     <string name="banner_no_internet">Inget internet</string>
     <string name="share_apk_error">Det gick inte att dela appfilen</string>
     <string name="swap_wifi_vpn_conflict">Konflikter med aktiv VPN!</string>
@@ -501,7 +499,7 @@
     <string name="antiads">Annonser</string>
     <string name="antinonfreenet">Icke-fria nätverkstjänster</string>
     <string name="antinonfreedep">Icke-fria beroenden</string>
-    <string name="antinonfreeassets">Icke-fria tillgångar</string>
+    <string name="antinonfreeassets">Icke-fria resurser</string>
     <string name="antidisabledalgorithm">Signerad med en osäker algoritm</string>
     <string name="antiknownvuln">Känd sårbarhet</string>
     <string name="app_list_results_hidden_antifeature_settings">Några appar är dolda baserat på dina antifunktionsinställningar. Tryck för att ändra.</string>
@@ -509,7 +507,7 @@
     <string name="antinosource">Källkoden är inte längre tillgänglig</string>
     <string name="antitrack">Spårning</string>
     <string name="antiothers">Andra antifunktioner</string>
-    <string name="antinsfw">Inte Säkert för Arbetet</string>
+    <string name="antinsfw">Inte säkert för arbete</string>
     <string name="menu_release_channel_beta">Tillåt betauppdateringar</string>
     <string name="latest__empty_state__upgrading">Uppdaterar databas…</string>
     <string name="app_name_basic">F-Droid Standard</string>

@@ -664,7 +664,7 @@
     <string name="my_apps_empty">Tutaj wyświetlane są tylko aplikacje zainstalowane przez %1$s</string>
     <string name="my_apps_header_apps_with_issue">Aplikacje z problemami</string>
     <string name="my_apps_ignore_dialog_title">Ukryj problem</string>
-    <string name="my_apps_ignore_dialog_text">Problem z tą wersją „%1$s” zostanie zignorowany</string>
+    <string name="my_apps_ignore_dialog_text">Problem z tą wersją „%1$s” zostanie zignorowany.</string>
     <string name="my_apps_ignore_dialog_button">Ukryj</string>
     <string name="my_apps_export_installed_apps">Eksportuj listę aplikacji</string>
     <string name="app_list_new">Nowe aplikacje</string>
@@ -743,8 +743,8 @@
     <string name="about_text">Aplikacje na F-Droid są wolnym i otwartym oprogramowaniem (FOSS), szanują Twoją prywatność i są dostępne dla wszystkich – każdy może zapoznać się z kodem źródłowym, rozwijać je i ulepszać.\n\nDystrybucja aplikacji jest przejrzysta, szanująca prywatność i odpowiedzialna, wyznaczając standard, który motywuje ekosystem mobilny do ciągłego doskonalenia.\n\nWpływ F-Droid mierzy się nie tylko liczbą opublikowanych aplikacji, ale także wolnością, zaufaniem i prawami cyfrowymi, które pomaga chronić.\n\nPomóż F-Droid chronić innowacje oparte na zaangażowaniu społeczności i kontynuować naszą misję otwartości, prywatności i wzmacniania pozycji użytkowników.</string>
     <string name="about_license_text">Ten program jest wolnym oprogramowaniem. Można go rozpowszechniać i/lub modyfikować na warunkach GNU General Public License opublikowanej przez Fundację Wolnego Oprogramowania w wersji 3 albo dowolnej późniejszej.</string>
     <string name="dialog_metered_title">Czy kontynuować na danych mobilnych?</string>
-    <string name="dialog_metered_text">Pobieranie %1$s może spowodować naliczanie opłat w zależności od Twojego pakietu danych</string>
-    <string name="dialog_metered_text_no_size">Pobieranie może spowodować naliczanie opłat w zależności od Twojego pakietu danych</string>
+    <string name="dialog_metered_text">Pobieranie %1$s może spowodować naliczanie opłat w zależności od Twojego pakietu danych.</string>
+    <string name="dialog_metered_text_no_size">Pobieranie może spowodować naliczanie opłat w zależności od Twojego pakietu danych.</string>
     <string name="dialog_metered_button">Pobierz</string>
     <string name="screenshots_metered">Naciśnij, aby załadować zrzuty ekranu przez dane mobilne</string>
     <string name="copy_link">Kopiuj link</string>

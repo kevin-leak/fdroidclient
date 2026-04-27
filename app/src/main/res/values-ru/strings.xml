@@ -274,7 +274,7 @@
         <item quantity="many">Показать все %d</item>
         <item quantity="other">Показать все %d</item>
     </plurals>
-    <string name="nearby_splash__download_apps_from_people_nearby">Нет интернета? Получите приложения от людей рядом с вами!</string>
+    <string name="nearby_splash__download_apps_from_people_nearby">Нет интернета? Получайте приложения от людей поблизости!</string>
     <string name="notification_title_single_ready_to_install">Готово к установке</string>
     <string name="notification_title_single_install_error">Установка не удалась</string>
     <string name="notification_content_single_downloading">Загрузка \"%1$s\"…</string>
@@ -808,6 +808,8 @@
     <string name="about_text">Приложения на F-Droid — это бесплатное программное обеспечение с открытым исходным кодом (FOSS), которое уважает вашу конфиденциальность и доступно любому желающему для проверки исходного кода, доработки и улучшения.\n\nРаспространение приложений происходит прозрачно, с соблюдением конфиденциальности и подотчетностью, устанавливая стандарт, который побуждает мобильную экосистему к совершенствованию.\n\nВлияние F-Droid измеряется не только количеством опубликованных приложений, но и свободой, доверием и цифровыми правами, которые он помогает защищать.\n\nПомогите F-Droid защищать инновации, создаваемые сообществом, и продолжить нашу миссию открытости, конфиденциальности и расширения прав пользователей.</string>
     <string name="about_license_text">Эта программа является свободным программным обеспечением. Вы можете распространять ее и/или изменять в соответствии с условиями General Public License GNU, опубликованной Фондом свободного программного обеспечения, — версии 3 или любой более поздней версии.</string>
     <string name="repo_has_update_error">Ошибки обновления</string>
-    <string name="status_downloading">Загрузка: %1$s</string>
+    <string name="status_downloading">Загрузка: %s/s</string>
     <string name="status_downloading_remaining">Осталось: %1$s</string>
+    <string name="install_history_switch">Использовать историю установок</string>
+    <string name="search_history">Недавние поиски</string>
 </resources>

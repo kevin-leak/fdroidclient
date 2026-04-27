@@ -692,4 +692,13 @@
     <string name="pref_repo_updates_summary_never">Ne keressen frissítéseket • Az alkalmazások elavulnak</string>
     <string name="pref_category_network">Hálózat</string>
     <string name="pref_mirror_chooser_summary_random">Véletlenszerű</string>
+    <string name="search_history">Legutóbbi keresések</string>
+    <string name="pref_mirror_chooser_summary_prefer_foreign">Külföldi források preferálása</string>
+    <string name="pref_mirror_chooser_title">Letöltési források kiválasztása</string>
+    <string name="pref_proxy_title">SOCKS proxy-n keresztüli csatlakozás</string>
+    <string name="pref_proxy_disabled">Csatlakozás az internethez proxy nélkül</string>
+    <string name="pref_proxy_enabled">A %s-t használja a csatlakozáshoz</string>
+    <string name="pref_proxy_hint">A proxy elvárja a host:port formátumot</string>
+    <string name="pref_proxy_error">Hibás proxy formátum</string>
+    <string name="about_text">Az F-droidon szereplő alkalamzások nyílt forráskódúak és szabad szoftverek (FOSS), tiszteletben tartják a személyes adataidat és forráskódjuk mindenki számára elérhető a további fejlesztések érdekében.\n\nAz alkalmazások transzparensek, személyes adatvédelem-központúak és fellelősségteljesek, ez a megközelítés egy olyan, új standardot jelent, amely a teljes mobilpiacot fejlesztésre kényszeríti.\n\nAz F-Droid befolyása nem csak az itt elérhető appok számában mérendp, hanem a szabadság, a bizalom és a digitális jogok védelmével is.\n\nSegíts az F-Droidnak megvédeni a közösségi erejű innovációt, és folytatni küldetésünket a nyitottság, az adatvédelem és a felhasználói szabadság jegyében.</string>
 </resources>

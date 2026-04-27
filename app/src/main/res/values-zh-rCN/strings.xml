@@ -725,8 +725,8 @@
     <string name="app_details_install_error_text">抱歉! 安装此应用时发生意外错误</string>
     <string name="repo_has_update_error">更新错误</string>
     <string name="repo_has_update_error_intro">更新此存储库时发生错误:</string>
-    <string name="repo_last_update_upstream">发布了 %s</string>
-    <string name="repo_last_downloaded">下载了 %s</string>
+    <string name="repo_last_update_upstream">发布于 %s</string>
+    <string name="repo_last_downloaded">下载于 %s</string>
     <string name="repo_basicauth_username">用户名</string>
     <string name="repo_basicauth_password">密码</string>
     <string name="repo_basicauth_edit">保存更改</string>

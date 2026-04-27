@@ -679,4 +679,8 @@
     <string name="installed_version">Встановлена версія:</string>
     <string name="ipfsgw_summary_new">Завантажуйте програми за допомогою веб-кінцевих точок IPFS</string>
     <string name="notification_title">Сповіщення</string>
+    <string name="first_start_intro">Щоб розпочати, синхронізуйте репозиторії застосунків</string>
+    <string name="first_start_offline">Ви поза мережею. Підключіться до Інтернету аби почати.</string>
+    <string name="no_repos_enabled">Немає жодного репозиторію, додайте репозиторій, щоб розпочати</string>
+    <string name="first_start_button">Отримати репозиторії</string>
 </resources>
