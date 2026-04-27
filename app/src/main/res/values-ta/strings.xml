@@ -587,4 +587,11 @@
         <item quantity="one">IPFS வலை முடிவுபுள்ளிகளைப் பயன்படுத்தி பயன்பாடுகளைப் பதிவிறக்கவும்: %1$d இயக்கப்பட்டது</item>
         <item quantity="other">IPFS வலை முடிவுபுள்ளிகளைப் பயன்படுத்தி பயன்பாடுகளைப் பதிவிறக்கவும்: %1$d இயக்கப்பட்டன</item>
     </plurals>
+    <string name="app_name_full_nightly">எஃப்-நய்ட்லி</string>
+    <string name="app_name_basic_nightly">எஃப்-நய்ட்லி அடிப்படை</string>
+    <string name="menu_about">பற்றி</string>
+    <string name="menu_discover">கண்டுபடி</string>
+    <string name="menu_apps_my">என்னுடைய செயலிகள்</string>
+    <string name="first_start_loading">செயலி கலஞ்சியங்களை இறக்குகிரது…</string>
+    <string name="first_start_intro">முன் தொடர, செயலி களஞ்சியத்தை ஒத்திசையவும்</string>
 </resources>

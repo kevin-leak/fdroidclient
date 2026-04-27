@@ -591,7 +591,7 @@
     <string name="repo_basic_auth_edit">編輯</string>
     <string name="repo_confirm_delete_mirror_title">要刪除鏡像？</string>
     <string name="repo_confirm_delete_mirror_body">您可以使用其他鏡像來從此軟體庫繼續安裝應用程式。</string>
-    <string name="pref_export_log_title">除錯日誌</string>
+    <string name="pref_export_log_title">除錯紀錄</string>
     <string name="pref_export_log_summary">建立一個包含 logcat 輸出的檔案，用於除錯。請注意，檔案可能包含敏感資訊！</string>
     <string name="export_log_success">Logcat 儲存成功</string>
     <string name="export_log_error">儲存 Logcat 時發生錯誤</string>
@@ -766,4 +766,8 @@
     <string name="install_history_disabled_state">停用了安裝歷史記錄\n\n不會記錄安裝、更新和解除安裝</string>
     <string name="install_history_delete_ally">刪除安裝歷史記錄</string>
     <string name="install_history_delete_text">要刪除安裝歷史記錄嗎？</string>
+    <string name="search_history">最近搜尋</string>
+    <string name="status_downloading">目前下載速率：%s/s</string>
+    <string name="status_downloading_remaining">剩餘：%1$s</string>
+    <string name="install_history_switch">使用安裝歷史紀錄</string>
 </resources>

@@ -1,5 +1,5 @@
 * Åtgärdat användning av repos och speglar från extern lagring i nyare Android-versioner
-* Förbättrad WiFi-hantering i Närliggande
+* Förbättrad Wi-Fi-hantering i Närliggande
 * Navigeringsfältet minns nu sin position även när F-Droid startas om
 * Nytt språk: Swahili
 * Åtgärdat nedladdning av bilder för repos som fortfarande använder index-v1

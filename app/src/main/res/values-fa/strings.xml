@@ -25,7 +25,7 @@
     <string name="repo_add_url">نشانی مخزن</string>
     <string name="repo_add_fingerprint">اثر انگشت (اختیاری)</string>
     <string name="menu_manage">مخزن‌ها</string>
-    <string name="menu_search">جستجو</string>
+    <string name="menu_search">جست‌وجو</string>
     <string name="menu_share">هم‌رسانی</string>
     <string name="menu_install">نصب</string>
     <string name="menu_uninstall">حذف نصب</string>

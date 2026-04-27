@@ -274,4 +274,13 @@
     <string name="scan_removable_storage_summary">SD كارتا ۋە USB بارماق دىسكىغا ئوخشاش كۆچمە ئۈسكۈنىدىكى بوغچا خەزىنىسىنى ئىزدەيدۇ</string>
     <string name="repo_error_empty_username">ئىشلەتكۈچى ئاتى بوش، سالاھىيەت دەلىللەش ئۇچۇرى ئۆزگەرمىدى</string>
     <string name="app_details_repository">خەزىنە</string>
+    <string name="menu_about">ھەققىدە</string>
+    <string name="menu_discover">بايقاش</string>
+    <string name="menu_apps_my">ئەپلىرىم</string>
+    <string name="first_start_intro">باشلاش ئۈچۈن، ئەپ ئامبىرىنى قەدەمداشلاڭ</string>
+    <string name="my_apps_header_apps_with_issue">مەسىلىسى بار ئەپلەر</string>
+    <string name="my_apps_ignore_dialog_title">مەسىلىنى يوشۇرۇش</string>
+    <string name="my_apps_ignore_dialog_button">يوشۇرۇش</string>
+    <string name="my_apps_export_installed_apps">ئەپ تىزىملىكىنى چىقىرىش</string>
+    <string name="app_list_new">يېڭى ئەپلەر</string>
 </resources>

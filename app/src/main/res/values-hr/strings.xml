@@ -242,7 +242,7 @@
     <string name="keep_forever">Zauvijek</string>
     <string name="theme_light">Svijetla</string>
     <string name="theme_dark">Tamna</string>
-    <string name="crash_dialog_title">F-Droid se srušio</string>
+    <string name="crash_dialog_title">F-Droid je prekinuo raditi</string>
     <string name="crash_dialog_text">Dogodila se neočekivana greška, aplikacija je prisilno zaustavljena. Želite li poslati detalje kvara putem e-pošte da bismo ga popravili\?</string>
     <string name="crash_dialog_comment_prompt">Možete dodati dodatne informacije i komentare ovdje:</string>
     <string name="keep_install_history">Zadrži povijest instalacija</string>
@@ -378,7 +378,7 @@
     <string name="preference_category__my_apps">Moje aplikacije</string>
     <string name="categories__empty_state__no_categories">Nema kategorija za prikaz</string>
     <string name="latest__empty_state__no_recent_apps">Nema nedavnih aplikacija</string>
-    <string name="main_menu__updates">Ažuriranja</string>
+    <string name="main_menu__updates">Novosti</string>
     <string name="menu_liberapay">Liberapay</string>
     <string name="menu_translation">Prijevod</string>
     <string name="menu_license">Licenca: %s</string>
