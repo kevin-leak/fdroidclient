@@ -25,6 +25,12 @@
     <uses-permission android:name="android.permission.ENFORCE_UPDATE_OWNERSHIP" />
     <uses-permission android:name="android.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION" />
 
+    <!-- Permission used to externally trigger repository updates -->
+    <permission
+        android:name="${applicationId}.permission.UPDATE_REPOS"
+        android:protectionLevel="signature|privileged" />
+    <uses-permission android:name="${applicationId}.permission.UPDATE_REPOS" />
+
     <application
         android:name="org.fdroid.App"
         android:allowBackup="true"
@@ -115,6 +121,17 @@
             android:screenOrientation="fullSensor"
             tools:ignore="DiscouragedApi"
             tools:replace="screenOrientation" />
+        <activity
+            android:name="org.fdroid.ui.repositories.UpdateRepoActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:permission="${applicationId}.permission.UPDATE_REPOS">
+            <intent-filter>
+                <action android:name="org.fdroid.action.UPDATE_REPOS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name="org.fdroid.install.AppInstallService"
