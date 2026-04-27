@@ -233,3 +233,16 @@ internal val MIGRATION_8_9 =
       db.execSQL("INSERT INTO AppMetadataFts(AppMetadataFts) VALUES('rebuild')")
     }
   }
+
+/** Raise the setup flag in the [DbMetadata] table, so we know that initial setup is done. */
+internal class DbMetadataMigration : AutoMigrationSpec {
+  override fun onPostMigrate(db: SupportSQLiteDatabase) {
+    db.beginTransaction()
+    try {
+      db.execSQL("INSERT INTO DbMetadata (key, value) VALUES ('setup', 'true')")
+      db.setTransactionSuccessful()
+    } finally {
+      db.endTransaction()
+    }
+  }
+}
