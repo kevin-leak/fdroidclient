@@ -1,8 +1,8 @@
-* Användargränssnittet har skrivits om från grunden med Kotlin Compose 
-* förbättrad sök, som nu även söker i beskrivningar och översättningar 
-* enklare att upptäcka nya appar, med markering av de mest nedladdade 
-* godkännande av installation *innan* nedladdning 
-* flera uppdateringar/nedladdningar samtidigt 
-* meddelanden till användaren om problem med appar (t.ex. ändrad signeringsnyckel) 
-* valfritt färgtema i Material You 
-* förbättrad filtrering av listor
+* Användargränssnittet är omskrivet från grunden med Kotlin Compose
+* Förbättrad sökning, även sökning i beskrivningar och översättningar
+* Enklare att upptäcka nya appar, även markering av de mest nedladdade
+* Godkännande av installation *före* nedladdning
+* Flera uppdateringar/nedladdningar samtidigt
+* Meddelande till användaren om problem med appar (t.ex. ändrad signeringsnyckel)
+* Valfritt Material You-färgtema
+* Förbättrad filtrering av listor
