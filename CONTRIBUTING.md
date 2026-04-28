@@ -75,6 +75,19 @@ For a quick way to run a specific emulator test:
 	./gradlew connectedFullDebugAndroidTest \
         -Pandroid.testInstrumentationRunnerArguments.class=org.fdroid.fdroid.MainActivityExpressoTest
 
+## Screenshot tests
+
+F-Droid uses screenshot tests to check that everything displays correctly. If
+you've intentionally updated the UI or visible strings, you'll need to update
+the screenshots to avoid breaking the tests.
+
+Make sure you've pulled the screenshot files:
+
+    git lfs pull
+
+To update the screenshots:
+
+    ./gradlew :app:updateBasicDefaultDebugScreenshotTest
 
 ## Making releases
 

@@ -245,7 +245,7 @@ fun AppDetails(
             item.liberapayUri?.let { liberapayUri ->
               AppDetailsLink(
                 icon = Icons.Default.ChangeHistory,
-                title = "LiberaPay",
+                title = "Liberapay",
                 url = liberapayUri,
                 modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
@@ -253,7 +253,7 @@ fun AppDetails(
             item.openCollectiveUri?.let { openCollectiveUri ->
               AppDetailsLink(
                 icon = Icons.Default.Groups,
-                title = "OpenCollective",
+                title = "Open Collective",
                 url = openCollectiveUri,
                 modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
