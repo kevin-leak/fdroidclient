@@ -82,8 +82,7 @@
     <string name="proxy_host_summary">Hostnaam van uw proxy (bijv. 127.0.0.1)</string>
     <string name="proxy_port">Proxy poort</string>
     <string name="proxy_port_summary">Poortnummer van uw proxy (bijv. 8118)</string>
-    <string name="status_download">%2$s / %3$s (%4$d%%)
-\nvan %1$s downloaden</string>
+    <string name="status_download">%2$s / %3$s (%4$d%%)\nwordt gedownload\nvanuit %1$s</string>
     <string name="status_connecting_to_repo">Verbinden met
 \n%1$s</string>
     <string name="repos_unchanged">Alle gegevensbanken zijn bijgewerkt</string>
@@ -132,7 +131,7 @@
     <string name="bad_fingerprint">Foute vingerafdruk</string>
     <string name="invalid_url">Dit is geen geldige URL.</string>
     <string name="menu_changelog">Wijzigingen</string>
-    <string name="banner_updating_repositories">Gegevensbanken bijwerken</string>
+    <string name="banner_updating_repositories">Databanken worden geüpdated</string>
     <string name="status_processing_xml_percent">Verwerken %2$s / %3$s (%4$d%%) van %1$s</string>
     <string name="pref_language">Taal</string>
     <string name="pref_language_default">Systeemstandaard</string>
@@ -497,18 +496,18 @@
     <string name="share_apk_error">App bestand kon niet worden gedeeld</string>
     <string name="swap_wifi_vpn_conflict">Conflicteert met actieve VPN!</string>
     <string name="has_disallow_install_unknown_sources">Onbekende bronnen kunnen niet worden toegevoegd door deze gebruiker, waaronder nieuwe gegevensbanken</string>
-    <string name="has_disallow_install_unknown_sources_globally">Uw apparaatbeheerder verbied installaties van apps uit onbekende bronnen, inclusief nieuwe archieven</string>
+    <string name="has_disallow_install_unknown_sources_globally">Uw apparaatbeheerder staat het installeren van apps uit onbekende bronnen, waaronder nieuwe repo\'s, niet toe</string>
     <string name="antidisabledalgorithm">Ondertekend met een onveilig algoritme</string>
     <string name="antiads">Advertenties</string>
     <string name="antinosource">Broncode niet langer beschikbaar</string>
     <string name="antiknownvuln">Bekende kwetsbaarheid</string>
-    <string name="antinonfreenet">Niet-vrije netwerkdiensten</string>
+    <string name="antinonfreenet">Niet-vrije Netwerkdiensten</string>
     <string name="antinonfreeassets">Niet-vrije media</string>
     <string name="antiothers">Andere Anti-Functies</string>
     <string name="antitrack">Volgen</string>
     <string name="antinsfw">Onveilig voor werk</string>
     <string name="antinonfreead">Niet-vrije uitbreidingen</string>
-    <string name="app_list_results_hidden_antifeature_settings">Een aantal resultaten zijn verborgen door je Anti-Functies instellingen.</string>
+    <string name="app_list_results_hidden_antifeature_settings">Sommige resultaten zijn verborgen op basis van uw antifunctie-instellingen.</string>
     <string name="antinonfreedep">Niet-vrije afhankelijkheden</string>
     <string name="latest__empty_state__upgrading">Database upgraden…</string>
     <string name="menu_release_channel_beta">Beta updates toestaan</string>
@@ -527,7 +526,7 @@
     <string name="repo_invalid">Ongeldige gegevensbank.
 \n
 \nNeem contact op met de beheerder en informeer ze over dit probleem.</string>
-    <string name="repo_exists">Deze repository is al toegevoegd.</string>
+    <string name="repo_exists">Deze databank is al toegevoegd.</string>
     <string name="repo_add_new_title">Voeg gegevensbank toe</string>
     <string name="targetsdk_or_later">doelen %s</string>
     <string name="nearby_splach__external_storage_permission_explainer">F-Droid kan op uw SD kaart zoeken naar opslagplaatsen en spiegels, maar heeft hiervoor toestemming nodig.</string>
@@ -570,7 +569,7 @@
 \n
 \nAls een app in meerdere gegevensbanken voorkomt dan wordt de eerste gegevensbank in de lijst gebruikt. U kunt de volgorde veranderen door een gegevensbank ingedrukt te houden en te verplaatsen.</string>
     <string name="repo_archive_toggle_description">Toon gearchiveerde apps en verouderde versies van apps</string>
-    <string name="repo_disable_warning">Uitschakelen van deze gegevensbank zal de \"geprefereerde\" status verwijderen van alle apps.</string>
+    <string name="repo_disable_warning">Uitschakelen van deze databank zal de voorkeursstatus van de databank uit alle apps verwijderen.</string>
     <plurals name="ipfsgw_summary">
         <item quantity="one">Download apps van IPFS web eindpunten: %1$d ingeschakeld</item>
         <item quantity="other">Download apps van IPFS web eindpunten: %1$d ingeschakeld</item>
@@ -580,14 +579,14 @@
     <string name="warning_no_compat_versions">Het gekozen archief bevat geen ondersteunde programma versies, om bij te werken, kies een archief met ondersteunde versies.</string>
     <string name="menu_share_apk">Deel APK bestand</string>
     <string name="auto_update_time_past">Bijwerken wanneer condities zijn toegepast</string>
-    <string name="repo_view_repo">Bekijk repository</string>
+    <string name="repo_view_repo">Bekijk databank</string>
     <string name="repo_mirror_add_info">Deze link (%s) leid naar de distributie locatie van een reeds bekend archief.</string>
     <string name="antitetherednetlist">Deze app is volledig afhankelijk van een bepaald exemplaar van een netwerkdienst</string>
     <string name="apk_permissions_mismatch">Programma vraagt onverwachte permissies: %s</string>
     <string name="repo_mirror_exists">Deze spiegelserver is al toegevoegd (%s).</string>
     <string name="repo_scan_qr_code">Scan QR-code</string>
     <string name="repo_preview_included_apps">Inbegrepen apps:</string>
-    <string name="repo_add_repo_and_mirror">Voeg repository en spiegeling toe</string>
+    <string name="repo_add_repo_and_mirror">Voeg databank en mirror toe</string>
     <string name="repo_and_mirror_add_both_info">Deze link (%s) leid naar een distributie punt van een reeds bekend archief. Zowel orgineel als distributie punt zullen worden toegevoegd.</string>
     <string name="auto_update_time">Eerstvolgende versie: %s</string>
     <string name="swap_bluetooth_permissions">Verleen toestemming voor Bluetooth of Apparaat in de buurt!</string>
@@ -745,4 +744,6 @@
     <string name="app_details_incompatible_version">Incompatibel • Installatie mislukt waarschijnlijk</string>
     <string name="app_details_incompatible_signer">Handtekening discrepant, kan niet installeren</string>
     <string name="app_details_install_error_text">Sorry! Er was een onverwachte fout tijdens het installeren van deze app</string>
+    <string name="crash_report_text">Een onverwachte fout vond plaats. Dit is niet uw schuld. Zou u een e-mail willen sturen met de details om te helpen dit probleem op te lossen?</string>
+    <string name="install_history_empty_state">Deze lijst is nog leeg\n\nWanneer u apps installeert, update of deïnstalleert zal hier een register verschijnen</string>
 </resources>

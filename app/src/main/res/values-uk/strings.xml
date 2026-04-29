@@ -655,7 +655,7 @@
     <string name="app_list_all">Усі програми</string>
     <string name="app_list_author">Додатки від %s</string>
     <string name="search_placeholder">Пошук…</string>
-    <string name="search_no_results">Не знайдено жодних програм\n\nСпробуйте використовувати менше пошукових термінів або додати більше репозиторіїв</string>
+    <string name="search_no_results">Нічого не знайдено\n\nСпробуйте скоротити пошуковий запит або додати нові репозиторії</string>
     <string name="category_group_productivity">Продуктивність</string>
     <string name="category_group_tools">Інструменти</string>
     <string name="category_group_wallets">Фінанси та гаманці</string>
@@ -683,4 +683,8 @@
     <string name="first_start_offline">Ви поза мережею. Підключіться до Інтернету аби почати.</string>
     <string name="no_repos_enabled">Немає жодного репозиторію, додайте репозиторій, щоб розпочати</string>
     <string name="first_start_button">Отримати репозиторії</string>
+    <string name="first_start_metered">Ви підключені через мобільну мережу. Обсяг завантаження перевищує 10 МБ. Натисніть «Отримати репозиторії», щоб продовжити.</string>
+    <string name="search_history">Останні пошуки</string>
+    <string name="search_filter_no_results">Нічого не знайдено\n\nСпробуйте змінити параметри пошуку або вимкнути фільтри</string>
+    <string name="search_my_apps_no_results">Додатків не знайдено\n\nСпробуйте скоротити пошуковий запит</string>
 </resources>
