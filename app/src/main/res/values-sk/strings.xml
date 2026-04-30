@@ -638,7 +638,6 @@
     <string name="repo_archive_failed">Archív repozitára nie je momentálne k dispozícii</string>
     <string name="repo_confirm_delete_mirror_title">Odstrániť zrkadlo?</string>
     <string name="repo_confirm_delete_mirror_body">Aplikácie z tohto repozitára môžete naďalej inštalovať prostredníctvom iných zrkadiel.</string>
-    <string name="repo_disable_warning">Deaktiváciou tohto repozitára sa zruší jeho status „predvoleného“ vo všetkých aplikáciách.</string>
     <string name="repo_disable_warning_button">Vypnúť</string>
     <string name="share_mirror">Zrkadlo na zdieľanie</string>
     <string name="show_repository_qr">Zobraziť QR kód repozitára</string>

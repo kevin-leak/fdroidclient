@@ -534,7 +534,6 @@
     <string name="repo_list_info_title">รายการพื้นที่เก็บข้อมูล</string>
     <string name="repo_archive_toggle">ที่เก็บถาวร</string>
     <string name="repo_archive_failed">ที่เก็บถาวรไม่พร้อมใช้งานในขณะนี้</string>
-    <string name="repo_disable_warning">การปิดใช้งานที่เก็บนี้จะลบสถานะ \"ที่ต้องการ\" ออกจากแอปทั้งหมด</string>
     <string name="repo_disable_warning_button">ปิดการใช้งาน</string>
     <string name="paste">แปะ</string>
     <string name="ipfsgw_caption_custom_gateways">เกตเวย์ IPFS แบบกำหนดเอง</string>

@@ -437,7 +437,6 @@
     <string name="repo_confirm_delete_body">Ciallaíonn scriosadh stór nach mbeidh feidhmchláir uaidh ar fáil a thuilleadh.
 \n
 \nNóta: Fanfaidh gach feidhmchlár a suiteáladh roimhe seo ar do ghléas.</string>
-    <string name="repo_disable_warning">Má dhíchumasaítear an stór seo, bainfear a stádas \"is fearr\" as gach feidhmchlár.</string>
     <string name="repo_disable_warning_button">Díchumasaigh</string>
     <string name="repo_added">Stór pacáiste sábháilte %1$s.</string>
     <string name="repo_searching_address">Ag lorg stór pacáiste ag

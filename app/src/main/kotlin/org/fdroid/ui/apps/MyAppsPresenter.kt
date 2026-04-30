@@ -21,6 +21,7 @@ fun MyAppsPresenter(
   appInstallStatesFlow: StateFlow<Map<String, InstallState>>,
   appsWithIssuesFlow: StateFlow<List<AppWithIssueItem>?>,
   installedAppsFlow: Flow<List<InstalledAppItem>>,
+  showUpdatesHintFlow: StateFlow<Boolean>,
   showAppIssueHintFlow: StateFlow<Boolean>,
   searchQueryFlow: StateFlow<String>,
   sortOrderFlow: StateFlow<AppListSortOrder>,
@@ -36,52 +37,48 @@ fun MyAppsPresenter(
 
   // we want to show apps currently installing/updating even if they have updates available,
   // so we need to handle those first
-  val installingApps =
-    appInstallStates.mapNotNull { (packageName, state) ->
-      if (state is InstallStateWithInfo) {
-        val keep =
-          searchQuery.isBlank() || state.name.normalize().contains(searchQuery, ignoreCase = true)
-        if (keep) {
-          processedPackageNames.add(packageName)
-          InstallingAppItem(packageName, state)
-        } else null
-      } else {
-        null
-      }
-    }
-  val updates =
-    appUpdates?.filter {
+  val installingApps = appInstallStates.mapNotNull { (packageName, state) ->
+    if (state is InstallStateWithInfo) {
       val keep =
-        if (searchQuery.isBlank()) {
-          it.packageName !in processedPackageNames
-        } else {
-          it.packageName !in processedPackageNames &&
-            it.name.normalize().contains(searchQuery, ignoreCase = true)
-        }
-      if (keep) processedPackageNames.add(it.packageName)
-      keep
+        searchQuery.isBlank() || state.name.normalize().contains(searchQuery, ignoreCase = true)
+      if (keep) {
+        processedPackageNames.add(packageName)
+        InstallingAppItem(packageName, state)
+      } else null
+    } else {
+      null
     }
-  val withIssues =
-    appsWithIssues?.filter {
-      val keep =
-        if (searchQuery.isBlank()) {
-          it.packageName !in processedPackageNames
-        } else {
-          it.packageName !in processedPackageNames &&
-            it.name.normalize().contains(searchQuery, ignoreCase = true)
-        }
-      if (keep) processedPackageNames.add(it.packageName)
-      keep
-    }
-  val installed =
-    installedApps?.filter {
+  }
+  val updates = appUpdates?.filter {
+    val keep =
       if (searchQuery.isBlank()) {
         it.packageName !in processedPackageNames
       } else {
         it.packageName !in processedPackageNames &&
           it.name.normalize().contains(searchQuery, ignoreCase = true)
       }
+    if (keep) processedPackageNames.add(it.packageName)
+    keep
+  }
+  val withIssues = appsWithIssues?.filter {
+    val keep =
+      if (searchQuery.isBlank()) {
+        it.packageName !in processedPackageNames
+      } else {
+        it.packageName !in processedPackageNames &&
+          it.name.normalize().contains(searchQuery, ignoreCase = true)
+      }
+    if (keep) processedPackageNames.add(it.packageName)
+    keep
+  }
+  val installed = installedApps?.filter {
+    if (searchQuery.isBlank()) {
+      it.packageName !in processedPackageNames
+    } else {
+      it.packageName !in processedPackageNames &&
+        it.name.normalize().contains(searchQuery, ignoreCase = true)
     }
+  }
   var updateBytes: Long? = 0L
   updates?.forEach {
     val size = it.update.size
@@ -102,9 +99,13 @@ fun MyAppsPresenter(
     appUpdates = updates?.sort(sortOrder),
     appsWithIssue = withIssues?.sort(sortOrder),
     installedApps = installed?.sort(sortOrder),
+    showUpdatesHint =
+      showUpdatesHintFlow.collectAsState().value &&
+        installingApps.none { it.installState.showProgress },
     showAppIssueHint = showAppIssueHintFlow.collectAsState().value,
     sortOrder = sortOrder,
     networkState = networkStateFlow.collectAsState().value,
+    isSearching = searchQuery.isNotBlank(),
     appUpdatesBytes = updateBytes,
   )
 }

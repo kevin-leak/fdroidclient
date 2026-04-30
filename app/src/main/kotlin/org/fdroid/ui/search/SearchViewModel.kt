@@ -6,19 +6,35 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.launch
+import org.fdroid.search.SearchHelper.isSearchable
 import org.fdroid.search.SearchManager
+import org.fdroid.settings.SettingsManager
 
 @HiltViewModel
 class SearchViewModel
 @Inject
-constructor(app: Application, private val searchManager: SearchManager) : AndroidViewModel(app) {
+constructor(
+  app: Application,
+  private val searchManager: SearchManager,
+  private val settingsManager: SettingsManager,
+) : AndroidViewModel(app), SearchActions {
 
   val searchResults = searchManager.searchResults
   val savedSearchesFlow = searchManager.savedSearches
+  val categories = searchManager.categories
+  val autoShowKeyboard = settingsManager.showSearchKeyboardFlow
 
-  suspend fun search(term: String) = searchManager.search(term)
+  override suspend fun onSearch(term: String) {
+    if (term.isSearchable()) searchManager.search(term)
+  }
 
-  fun onSearchCleared() = searchManager.onSearchCleared()
+  override fun onSearchCleared() = searchManager.onSearchCleared()
 
-  fun onClearSearchHistory() = viewModelScope.launch { searchManager.onClearSearchHistory() }
+  override fun onClearSearchHistory() {
+    viewModelScope.launch { searchManager.onClearSearchHistory() }
+  }
+
+  override fun setAutoShowKeyboard(autoShow: Boolean) {
+    settingsManager.setShowSearchKeyboard(autoShow)
+  }
 }

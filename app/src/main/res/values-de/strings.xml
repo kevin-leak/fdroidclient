@@ -562,7 +562,6 @@
     <string name="repo_archive_toggle_description">Zeig archivierte Apps und veraltete Versionen von Apps</string>
     <string name="repo_archive_toggle">Paketquellen-Archiv</string>
     <string name="repo_archive_failed">Archiv-Paketquelle derzeit nicht verfügbar</string>
-    <string name="repo_disable_warning">Das Deaktivieren dieser Paketquelle wird ihren »bevorzugt«-Status von allen Apps entfernen.</string>
     <string name="repo_list_info_title">Paketquellen-Liste</string>
     <string name="repo_list_info_text">Eine Paketquelle ist eine Quelle für Apps. Diese Liste zeigt alle derzeit hinzugefügten Paketquellen an. Deaktivierte Paketquellen werden nicht verwendet. \n \nWenn eine App in mehr als einer Paketquelle enthalten ist, wird die in der Liste weiter oben stehende Paketquelle automatisch bevorzugt. Du kannst Paketquellen durch langes Drücken und Ziehen neu anordnen.</string>
     <string name="repo_error_adding_archive">Archiv-Paketquellen können nicht direkt hinzugefügt werden. Tippe auf die Paketquelle in der Liste und aktiviere das Archiv dort.</string>

@@ -15,9 +15,11 @@ data class MyAppsModel(
   val installingApps: List<InstallingAppItem>,
   val appsWithIssue: List<AppWithIssueItem>? = null,
   val installedApps: List<InstalledAppItem>? = null,
+  val showUpdatesHint: Boolean,
   val showAppIssueHint: Boolean,
   val sortOrder: AppListSortOrder = AppListSortOrder.NAME,
   val networkState: NetworkState,
+  val isSearching: Boolean = false,
   val appUpdatesBytes: Long? = null,
 )
 
@@ -32,7 +34,11 @@ interface MyAppsActions {
 
   fun ignoreAppIssue(item: AppWithIssueItem)
 
+  fun onUpdatesHintSeen()
+
   fun onAppIssueHintSeen()
+
+  fun onNotWarnWhenMetered()
 
   fun exportInstalledApps()
 }

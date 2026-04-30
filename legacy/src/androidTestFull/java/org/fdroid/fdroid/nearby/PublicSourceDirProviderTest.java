@@ -1,5 +1,6 @@
 package org.fdroid.fdroid.nearby;
 
+import static org.fdroid.fdroid.nearby.CopyUtils.copyInputStreamToFile;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -14,7 +15,6 @@ import android.provider.MediaStore;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -57,7 +57,8 @@ public class PublicSourceDirProviderTest {
             File f = null;
             is = context.getContentResolver().openInputStream(uri);
             f = File.createTempFile("received", ".apk");
-            FileUtils.copyInputStreamToFile(is, f);
+            assertNotNull(is);
+            copyInputStreamToFile(is, f);
             assertTrue("dest file " + f + " should exist", f.exists());
             assertEquals(f + " should equal " + apk, apk.length(), f.length());
             f.delete();

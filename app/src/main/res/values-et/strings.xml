@@ -567,7 +567,6 @@
     <string name="repositories_last_update">Viimane uuendus: %s</string>
     <string name="repo_archive_failed">Arhiiv repo praegu mitte saadaval</string>
     <string name="repo_archive_toggle_description">Näita arhiivitud äppe või äppide vanasid versioone</string>
-    <string name="repo_disable_warning">Selle tarkvarahoidla väljalülitamine eemaldab tema \"eelistatud\" oleku kõikide rakenduste jaoks.</string>
     <string name="repo_disable_warning_button">Lülita välja</string>
     <string name="repositories_last_update_never">mitte kunagi</string>
     <string name="app_details_repository_button_prefer">Eelista tarkvarahoidlat</string>

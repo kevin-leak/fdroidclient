@@ -573,7 +573,6 @@
     <string name="repo_archive_failed">Förrådets arkiv är inte tillgängligt just nu</string>
     <string name="auto_update_time">Tidigast nästkommande uppdatering: %s</string>
     <string name="repo_disable_warning_button">Inaktivera</string>
-    <string name="repo_disable_warning">Att inaktivera förrådet kommer ta bort dess status som \"föredragen\" från alla appar.</string>
     <string name="ipfsgw_title">IPFS-gateways</string>
     <string name="warning_no_compat_versions">Det valda förvaret har inga kompatibla appversioner. För att ta emot uppdateringar, föredra ett förvar med kompatibla versioner.</string>
     <string name="ipfsgw_summary_disabled">Hämta appar med IPFS-webbändpunkter: inaktiverad</string>

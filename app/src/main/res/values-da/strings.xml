@@ -545,7 +545,6 @@
     <string name="repo_invalid">Ugyldigt repository.\n\nKontakt vedligeholderen og informer dem om problemet.</string>
     <string name="swap_banner_message">Start dit Wi-Fi og forbind til det samme netværk som din ven for at udveksle apps.</string>
     <string name="repo_list_info_text">Et repository er en kilde til apps. Denne liste viser alle aktuelt tilføjede repositories. Deaktiverede repositories bruges ikke.\n\nHvis en app findes i mere end ét repository, foretrækkes det øverste på listen automatisk. Du kan ændre rækkefølgen af repositories ved at holde og trække dem.</string>
-    <string name="repo_disable_warning">Deaktiverer du dette repository, fjernes dets \"foretrækkes\" status fra alle apps.</string>
     <string name="copied_to_clipboard">Kopieret til udklipsholder</string>
     <string name="paste">Indsæt</string>
     <string name="copied_permission_to_clipboard">Tilladelsesnavn kopieret til udklipsholder</string>

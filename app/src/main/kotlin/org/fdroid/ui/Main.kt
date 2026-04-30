@@ -8,14 +8,19 @@ import androidx.compose.material3.adaptive.layout.calculatePaneScaffoldDirective
 import androidx.compose.material3.adaptive.navigation3.ListDetailSceneStrategy
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.NavEntry
 import androidx.navigation3.runtime.NavKey
 import androidx.navigation3.runtime.entryProvider
+import org.fdroid.search.SavedSearch
 import org.fdroid.ui.apps.myAppsEntry
+import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.details.NoAppSelected
 import org.fdroid.ui.details.appDetailsEntry
 import org.fdroid.ui.discover.discoverEntry
@@ -32,6 +37,9 @@ import org.fdroid.ui.navigation.toEntries
 import org.fdroid.ui.navigation.topLevelRoutes
 import org.fdroid.ui.repositories.repoEntry
 import org.fdroid.ui.search.GlobalSearch
+import org.fdroid.ui.search.SearchActions
+import org.fdroid.ui.search.SearchInfo
+import org.fdroid.ui.search.SearchResults
 import org.fdroid.ui.search.SearchViewModel
 import org.fdroid.ui.settings.Settings
 import org.fdroid.ui.settings.SettingsViewModel
@@ -57,6 +65,7 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
       calculatePaneScaffoldDirective(windowAdaptiveInfo).copy(horizontalPartitionSpacerSize = 2.dp)
     }
   val isBigScreen = directive.maxHorizontalPartitions > 1
+  var showSearchKeyboard by remember { mutableStateOf(false) }
 
   val entryProvider: (NavKey) -> NavEntry<NavKey> = entryProvider {
     discoverEntry(navigator)
@@ -69,13 +78,25 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
     ) {
       val viewModel = hiltViewModel<SearchViewModel>()
       GlobalSearch(
-        searchResults = viewModel.searchResults.collectAsStateWithLifecycle().value,
-        savedSearches = viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value,
-        onSearch = viewModel::search,
-        onClearSavedSearches = viewModel::onClearSearchHistory,
+        info =
+          object : SearchInfo {
+            override val searchResults: SearchResults? =
+              viewModel.searchResults.collectAsStateWithLifecycle().value
+            override val savedSearches: List<SavedSearch>? =
+              viewModel.savedSearchesFlow.collectAsStateWithLifecycle().value
+            override val categories: List<CategoryItem>? =
+              viewModel.categories.collectAsStateWithLifecycle(null).value
+            override val autoShowKeyboard: Boolean =
+              viewModel.autoShowKeyboard.collectAsStateWithLifecycle().value
+            override val showKeyboard: Boolean = showSearchKeyboard
+            override val actions: SearchActions = viewModel
+
+            override fun onKeyboardShown() {
+              showSearchKeyboard = false
+            }
+          },
         onNav = { navKey -> navigator.navigate(navKey) },
         onBack = { navigator.goBack() },
-        onSearchCleared = viewModel::onSearchCleared,
       )
     }
     entry(NavigationKey.Settings) {
@@ -119,7 +140,17 @@ fun Main(onListeningForIntent: () -> Unit = {}) {
     isBigScreen = isBigScreen,
     showBottomBar = !isBigScreen && navigator.last is MainNavKey,
     currentNavKey = navigationState.topLevelRoute,
-    onNav = navigator::navigate,
+    onNav = {
+      // don't navigate, if we are already on the selected top level route
+      if (navigationState.topLevelRoute == it) {
+        if (navigationState.topLevelRoute == NavigationKey.Search) {
+          // double tapping the search brings up the keyboard
+          showSearchKeyboard = true
+        }
+      } else {
+        navigator.navigate(it)
+      }
+    },
     onBack = navigator::goBack,
   )
 }

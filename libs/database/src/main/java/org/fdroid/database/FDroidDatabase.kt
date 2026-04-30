@@ -18,7 +18,7 @@ import org.fdroid.LocaleChooser.getBestLocale
   // When bumping this version, please make sure to add one (or more) migration(s) below!
   // Consider also providing tests for that migration.
   // Don't forget to commit the new schema to the git repo as well.
-  version = 12,
+  version = 13,
   entities =
     [
       // repo
@@ -38,6 +38,8 @@ import org.fdroid.LocaleChooser.getBestLocale
       VersionedString::class,
       // app user preferences
       AppPrefs::class,
+      // internal metadata
+      DbMetadata::class,
     ],
   views = [LocalizedIcon::class, HighestVersion::class, PreferredRepo::class],
   exportSchema = true,
@@ -54,6 +56,7 @@ import org.fdroid.LocaleChooser.getBestLocale
       AutoMigration(9, 10),
       AutoMigration(10, 11),
       AutoMigration(11, 12),
+      AutoMigration(12, 13, DbMetadataMigration::class),
       // add future migrations above!
     ],
 )
@@ -68,6 +71,8 @@ internal abstract class FDroidDatabaseInt : RoomDatabase(), FDroidDatabase, Clos
   abstract override fun getVersionDao(): VersionDaoInt
 
   abstract override fun getAppPrefsDao(): AppPrefsDaoInt
+
+  abstract fun getDbMetadataDao(): DbMetadataDao
 
   @Deprecated("Will be removed in future version")
   override fun afterLocalesChanged(locales: LocaleListCompat) {

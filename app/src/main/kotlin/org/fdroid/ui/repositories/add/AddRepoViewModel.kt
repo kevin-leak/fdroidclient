@@ -28,7 +28,7 @@ class AddRepoViewModel
 constructor(
   app: Application,
   networkMonitor: NetworkMonitor,
-  settingsManager: SettingsManager,
+  private val settingsManager: SettingsManager,
   private val repoManager: RepoManager,
   private val updateManager: UpdatesManager,
   @param:IoDispatcher private val ioScope: CoroutineScope,
@@ -73,5 +73,9 @@ constructor(
         }
       }
     }
+  }
+
+  fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
   }
 }

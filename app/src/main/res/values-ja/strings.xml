@@ -559,7 +559,6 @@
     </plurals>
     <string name="ipfsgw_summary_disabled">IPFSウェブ終点を使用してアプリをダウンロード: 無効</string>
     <string name="ipfsgw_explainer">IPFSウェブ終点からアプリをダウンロードします。 （IPFSに対応するF-Droidレポジトリだけで機能します。）</string>
-    <string name="repo_disable_warning">このリポジトリを無効にすると、すべてのアプリからそれの「優先」状態が削除されます。</string>
     <string name="ipfsgw_title">IPFSゲートウェイ</string>
     <string name="ipfsgw_add_title">IPFSゲートウェイを追加</string>
     <string name="nearby_splach__external_storage_permission_explainer">F-DroidはSDカード上からレポジトリとミラーを検索できますが、権限が必要です。</string>

@@ -485,7 +485,6 @@
     <string name="repo_list_info_title">Llista de repositoris</string>
     <string name="repo_archive_toggle">Arxiu del repositori</string>
     <string name="repo_archive_failed">L\'arxiu del dipòsit no està disponible actualment</string>
-    <string name="repo_disable_warning">Desactivant aquest dipòsit traureu el seu estat de \"preferit\" a totes les aplicacions.</string>
     <plurals name="details_last_update_years">
         <item quantity="one">Actualitzada fa %1$d any</item>
         <item quantity="many">Actualitzada fa %1$d anys</item>

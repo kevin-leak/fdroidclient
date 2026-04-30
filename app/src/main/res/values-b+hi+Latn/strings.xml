@@ -529,7 +529,6 @@
     <string name="status_inserting_x_apps">%3$s se app details save kiye ja rahe haì (%1$d/%2$d)</string>
     <string name="global_error_updating_repos">Update karte waqt error: %s</string>
     <string name="unknown">Anján</string>
-    <string name="repo_disable_warning">Is bhanđár ko disable kar dene par iski \"cuni hui\" sthiti sabhi apps se haţ jáyegi.</string>
     <string name="repos_unchanged">Sabhi bhanđárè up-to-date haì</string>
     <string name="all_other_repos_fine">Báki kisi bhi bhanđár ne error nahì diya.</string>
     <string name="theme">Theme</string>

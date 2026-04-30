@@ -572,7 +572,6 @@
     <string name="repositories_last_update">Son Güncelleme: %s</string>
     <string name="repositories_last_update_never">yok</string>
     <string name="repo_archive_failed">Arşiv deposu şu anda kullanılabilir değil</string>
-    <string name="repo_disable_warning">Bu deponun devre dışı bırakılması, tüm uygulamalardan \"tercih edilen\" durumunu kaldıracaktır.</string>
     <string name="repo_disable_warning_button">Devre dışı bırak</string>
     <string name="app_details_repository_preferred">(tercih edilen)</string>
     <string name="repo_add_repo_and_mirror">Depo ve yansı ekle</string>

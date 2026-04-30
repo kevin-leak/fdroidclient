@@ -555,7 +555,6 @@
     <string name="repositories_last_update">上次更新：%s</string>
     <string name="repositories_last_update_never">从未</string>
     <string name="repo_list_info_title">存储库列表</string>
-    <string name="repo_disable_warning">停用此存储库会从所有应用去除其“首选”状态。</string>
     <string name="app_details_repository_preferred">（首选）</string>
     <string name="repo_preview_included_apps">包含的应用：</string>
     <string name="repo_and_mirror_add_both_info">你正尝试添加的 URL (%s) 是一个新存储库的镜像。原始存储库和此镜像都将被添加。</string>

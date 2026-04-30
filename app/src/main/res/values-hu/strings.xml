@@ -570,7 +570,6 @@
     <string name="repositories_last_update_never">soha</string>
     <string name="repo_archive_failed">Az archív tároló jelenleg nem érhető el</string>
     <string name="repo_archive_toggle_description">Archivált alkalmazások és elavult verziók megjelenítése</string>
-    <string name="repo_disable_warning">A tároló letiltásával eltávolítja az „előnyben részesített” állapotát az összes alkalmazástól.</string>
     <string name="swap_bluetooth_permissions">Adja meg a Bluetooth vagy a Közeli eszköz engedélyt!</string>
     <string name="auto_update_time_past">Következő frissítés a feltételek teljesülése esetén</string>
     <string name="menu_share_apk">APK-fájl megosztása</string>

@@ -581,7 +581,6 @@
     <string name="repo_archive_failed">Pakkebrønnarkivet er ikke tilgjengelig nå</string>
     <string name="repo_confirm_delete_mirror_title">Slett speilet?</string>
     <string name="repo_confirm_delete_mirror_body">Du kan fortsette å installere apper fra denne pakkebrønnen ved å bruke andre speil.</string>
-    <string name="repo_disable_warning">Å skru av denne pakkebrønnen vil fjerne den som «foretrukket» fra alle apper.</string>
     <string name="repo_disable_warning_button">Skru av</string>
     <string name="share_mirror">Del speil</string>
     <string name="show_repository_qr">Vis QR-kode til pakkebrønn</string>

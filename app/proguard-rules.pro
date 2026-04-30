@@ -1,4 +1,5 @@
 -dontobfuscate
+-dontoptimize
 -keepattributes SourceFile,LineNumberTable,Exceptions
 
 # Anything less causes issues like not finding primary constructor in ReflectionDiffer

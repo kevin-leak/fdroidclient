@@ -6,6 +6,7 @@ import io.ktor.client.engine.ProxyConfig
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.ResponseException
 import io.ktor.client.plugins.UserAgent
+import io.ktor.client.plugins.compression.ContentEncoding
 import io.ktor.client.plugins.timeout
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.basicAuth
@@ -84,6 +85,10 @@ constructor(
         proxy = proxyConfig
       }
       install(UserAgent) { agent = userAgent }
+      install(ContentEncoding) {
+        deflate()
+        gzip()
+      }
       install(HttpTimeout) {
         if (highTimeouts || proxyConfig.isTor()) {
           connectTimeoutMillis = TIMEOUT_MILLIS_HIGH

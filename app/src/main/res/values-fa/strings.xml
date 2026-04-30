@@ -551,7 +551,6 @@
     <string name="repo_list_info_title">سیاههٔ مخزن‌ها</string>
     <string name="repo_archive_toggle">بایگانی مخزن</string>
     <string name="repo_archive_toggle_description">نمایش کاره‌های بایگانی شده و نگارش‌های از رده‌خارجشان</string>
-    <string name="repo_disable_warning">از کار انداختن این مخزن وضعیت «ترجیحی»اش را از همهٔ کاره‌ها برمی‌دارد.</string>
     <string name="repo_archive_failed">مخزن بایگانی اکنون در دسترس نیست</string>
     <string name="app_details_repository">مخزن</string>
     <string name="app_details_repositories">مخزن‌ها</string>

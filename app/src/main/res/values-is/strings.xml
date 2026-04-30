@@ -557,7 +557,6 @@
     <string name="repo_add_repo_and_mirror">Bæta við hugbúnaðarsafni og spegli</string>
     <string name="repositories_last_update_never">aldrei</string>
     <string name="repo_and_mirror_add_both_info">Slóðin sem þú ert að reyna að bæta við (%s) er spegill fyrir nýtt hugbúnaðarsafn. Bætt verður við bæði upprunalegu hugbúnaðarsafni og spegli þess.</string>
-    <string name="repo_disable_warning">Sé þetta hugbúnaðarsafn gert óvirkt verður staða þess sem \"ákjósanlegt\" fjarlægð af öllum forritum.</string>
     <string name="app_details_repository">Hugbúnaðarsafn</string>
     <string name="app_details_repository_preferred">(ákjósanlegt)</string>
     <string name="app_details_repository_expand">Útvíkka lista yfir hugbúnaðarsöfn</string>

@@ -26,8 +26,8 @@ constructor(private val settingsManager: SettingsManager, private val cache: Dns
   }
 
   /**
-   * these methods provide a way to pre-load the cache with values from other sources such as
-   * the mirror info from the index, further reducing the needs to do DNS lookups
+   * these methods provide a way to preload the cache with values from other sources such as the
+   * mirror info from the index, further reducing the needs to do DNS lookups
    */
   fun populateCacheWithStrings(hostname: String, ipv4List: List<String>, ipv6List: List<String>) {
     val ipv4ConvertedList = stringListToIpList(ipv4List)
@@ -35,7 +35,11 @@ constructor(private val settingsManager: SettingsManager, private val cache: Dns
     populateCacheWithIps(hostname, ipv4ConvertedList, ipv6ConvertedList)
   }
 
-  fun populateCacheWithIps(hostname: String, ipv4List: List<InetAddress>, ipv6List: List<InetAddress>) {
+  fun populateCacheWithIps(
+    hostname: String,
+    ipv4List: List<InetAddress>,
+    ipv6List: List<InetAddress>,
+  ) {
     // at this time, the DNS cache only supports a single collection because that's what the DNS
     // lookup method returns. since these values are being inserted manually, it's possible that
     // the cache might end up with values that wouldn't have been returned by the lookup method.
@@ -55,12 +59,12 @@ constructor(private val settingsManager: SettingsManager, private val cache: Dns
         try {
           InetAddress.getByName(it)
         } catch (e: UnknownHostException) {
-          log.warn { "Unexpected format for IP address: $it" }
+          log.error(e) { "Unexpected format for IP address: $it" }
           null
         }
       }
     } catch (e: Exception) {
-      log.warn { "Failed to parse list of IP addresses, returning empty list" }
+      log.error(e) { "Failed to parse list of IP addresses, returning empty list" }
       return emptyList()
     }
   }

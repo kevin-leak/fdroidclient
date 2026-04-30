@@ -41,6 +41,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
@@ -66,6 +67,11 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
+import com.viktormykhailiv.compose.hints.HintProperties
+import com.viktormykhailiv.compose.hints.rememberHint
+import com.viktormykhailiv.compose.hints.rememberHintAnchorState
+import com.viktormykhailiv.compose.hints.rememberHintController
+import kotlinx.coroutines.launch
 import org.fdroid.LocaleChooser.getBestLocale
 import org.fdroid.R
 import org.fdroid.install.InstallState
@@ -78,6 +84,8 @@ import org.fdroid.ui.lists.AppListType
 import org.fdroid.ui.navigation.NavigationKey
 import org.fdroid.ui.utils.BigLoadingIndicator
 import org.fdroid.ui.utils.ExpandableSection
+import org.fdroid.ui.utils.OnboardingPopupCard
+import org.fdroid.ui.utils.getHintOverlayColor
 import org.fdroid.ui.utils.testApp
 
 @Composable
@@ -107,6 +115,22 @@ fun AppDetails(
           showInstallError = true
         }
       }
+      // onboarding hint plumbing
+      val hintController = rememberHintController(overlay = getHintOverlayColor())
+      val hint =
+        rememberHint(HintProperties(dismissOnClickOutside = false)) {
+          OnboardingPopupCard(
+            title = stringResource(R.string.app_details_anti_features_title),
+            message = stringResource(R.string.app_details_anti_features_text),
+            modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+            onGotIt = {
+              item.actions.onAntiFeaturesOnboardingSeen()
+              hintController.dismiss()
+            },
+          )
+        }
+      val hintAnchor = rememberHintAnchorState(hint)
+      val coroutineScope = rememberCoroutineScope()
       val scrollState = rememberScrollState()
       var size by remember { mutableStateOf(IntSize.Zero) }
       Column(
@@ -217,11 +241,17 @@ fun AppDetails(
         }
         // Anti-features
         if (!item.antiFeatures.isNullOrEmpty()) {
-          AntiFeatures(item.antiFeatures)
+          AntiFeatures(
+            antiFeatures = item.antiFeatures,
+            hintAnchor = hintAnchor,
+            showOnboarding = item.showAntiFeaturesOnboarding,
+          ) {
+            coroutineScope.launch { hintController.show(hintAnchor) }
+          }
         }
         // Screenshots
         if (item.phoneScreenshots.isNotEmpty()) {
-          Screenshots(item.networkState.isMetered, item.phoneScreenshots)
+          Screenshots(item.networkState.showWarningDialog, item.phoneScreenshots)
         }
         // Donate card
         if (item.showDonate)

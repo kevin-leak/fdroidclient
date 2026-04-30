@@ -28,15 +28,12 @@ import org.fdroid.download.PackageName
 import org.fdroid.download.getImageModel
 import org.fdroid.index.RepoManager
 import org.fdroid.install.InstalledAppsCache
+import org.fdroid.search.SearchHelper.normalize
 import org.fdroid.settings.SettingsManager
 import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.lists.AppListItem
-import org.fdroid.search.SearchHelper.normalize
 import org.fdroid.ui.search.SearchResults
 import org.fdroid.utils.IoDispatcher
-
-/** The minimum amount of characters we start auto-searching for. */
-const val SEARCH_THRESHOLD = 2
 
 @Singleton
 class SearchManager
@@ -55,16 +52,20 @@ constructor(
   private val collator = Collator.getInstance(Locale.getDefault())
   private val _searchResults = MutableStateFlow<SearchResults?>(null)
   private val _savedSearches = MutableStateFlow<List<SavedSearch>?>(null)
-  private val categories =
+  private var searchJob: SearchJob? = null
+
+  val categories =
     db.getRepositoryDao().getLiveCategories().asFlow().map { categories ->
       categories
         .map { category ->
-          CategoryItem(id = category.id, name = category.getName(localeList) ?: "Unknown Category")
+          CategoryItem(
+            id = category.id,
+            name = category.getName(localeList) ?: "Unknown Category",
+            description = category.getDescription(localeList),
+          )
         }
         .sortedWith { c1, c2 -> collator.compare(c1.name, c2.name) }
     }
-  private var searchJob: SearchJob? = null
-
   val searchResults = _searchResults.asStateFlow()
   val savedSearches = _savedSearches.asStateFlow()
 
@@ -116,7 +117,9 @@ constructor(
       val timedCategories = measureTimedValue {
         categories.first().filter {
           // normalization removed diacritics, so searches without them work
-          it.name.normalize().contains(sanitized.normalize(), ignoreCase = true)
+          val normalized = sanitized.normalize()
+          it.name.normalize().contains(normalized, ignoreCase = true) ||
+            (it.description?.normalize()?.contains(normalized, ignoreCase = true) ?: false)
         }
       }
       _searchResults.value = SearchResults(timedApps.value, timedCategories.value)

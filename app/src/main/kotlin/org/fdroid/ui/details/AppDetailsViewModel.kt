@@ -3,11 +3,10 @@ package org.fdroid.ui.details
 import android.app.Application
 import android.content.Intent
 import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
-import android.content.pm.PackageManager.GET_SIGNATURES
 import androidx.activity.result.ActivityResult
 import androidx.annotation.UiThread
 import androidx.annotation.WorkerThread
+import androidx.core.content.pm.PackageInfoCompat.getLongVersionCode
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.application
 import androidx.lifecycle.viewModelScope
@@ -25,9 +24,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import mu.KotlinLogging
 import org.fdroid.UpdateChecker
 import org.fdroid.database.AppMetadata
@@ -40,7 +40,9 @@ import org.fdroid.index.RepoManager
 import org.fdroid.index.v2.PackageVersion
 import org.fdroid.install.AppInstallManager
 import org.fdroid.install.InstallState
+import org.fdroid.install.InstalledAppsCache
 import org.fdroid.repo.RepoPreLoader
+import org.fdroid.settings.OnboardingManager
 import org.fdroid.settings.SettingsManager
 import org.fdroid.updates.UpdatesManager
 import org.fdroid.utils.IoDispatcher
@@ -60,7 +62,9 @@ constructor(
   private val updatesManager: UpdatesManager,
   private val networkMonitor: NetworkMonitor,
   private val settingsManager: SettingsManager,
+  private val onboardingManager: OnboardingManager,
   private val appInstallManager: AppInstallManager,
+  private val installedAppsCache: InstalledAppsCache,
 ) : AndroidViewModel(app) {
   private val log = KotlinLogging.logger {}
   private val packageInfoFlow = MutableStateFlow<AppInfo?>(null)
@@ -82,6 +86,7 @@ constructor(
           viewModel = this,
           packageInfoFlow = packageInfoFlow,
           currentRepoIdFlow = currentRepoIdFlow,
+          showAntiFeaturesOnboardingFlow = onboardingManager.showAntiFeaturesOnboarding,
           appsWithIssuesFlow = updatesManager.appsWithIssues,
           networkStateFlow = networkMonitor.networkState,
         )
@@ -89,18 +94,20 @@ constructor(
     }
 
   init {
-    viewModelScope.launch(dispatcher) { loadPackageInfoFlow() }
+    viewModelScope.launch(dispatcher) {
+      // Collect the cached packageInfo for this app. This way we have a central place
+      // to react to state changes for installs, updates and uninstalls
+      installedAppsCache.installedApps
+        .map { cacheMap -> cacheMap[packageName]?.let { getLongVersionCode(it) } }
+        .distinctUntilChanged()
+        .collect { loadPackageInfoFlow() }
+    }
   }
 
   @WorkerThread
   private fun loadPackageInfoFlow() {
     val packageManager = app.packageManager
-    val packageInfo =
-      try {
-        @Suppress("DEPRECATION") packageManager.getPackageInfo(packageName, GET_SIGNATURES)
-      } catch (_: PackageManager.NameNotFoundException) {
-        null
-      }
+    val packageInfo = installedAppsCache.installedApps.value[packageName]
     packageInfoFlow.value =
       if (packageInfo == null) {
         AppInfo(packageName)
@@ -123,15 +130,15 @@ constructor(
           packageName = packageName,
           appMetadata = appMetadata,
           version = version,
-          currentVersionName = packageInfoFlow.value?.packageInfo?.versionName, // TODO
+          currentVersionName = packageInfoFlow.value?.packageInfo?.versionName,
           repo = repoManager.getRepository(appMetadata.repoId) ?: return@launch,
           iconModel = iconModel,
           canAskPreApprovalNow = true,
         )
-      if (result is InstallState.Installed) {
-        // to reload packageInfoFlow with fresh packageInfo
-        loadPackageInfoFlow()
-      }
+      log.info { "Install result was: $result" }
+      // We are not doing anything with that result,
+      // because an installation could have been triggered via 'Update all' in My Apps as well.
+      // So updating states need to happen elsewhere.
     }
   }
 
@@ -139,11 +146,7 @@ constructor(
   fun requestUserConfirmation(installState: InstallState.UserConfirmationNeeded) {
     scope.launch(Dispatchers.Main) {
       val result = appInstallManager.requestUserConfirmation(packageName, installState)
-      if (result is InstallState.Installed)
-        withContext(Dispatchers.Main) {
-          // to reload packageInfoFlow with fresh packageInfo
-          loadPackageInfoFlow()
-        }
+      log.info { "requestUserConfirmation result was: $result" }
     }
   }
 
@@ -164,10 +167,7 @@ constructor(
   fun onUninstallResult(activityResult: ActivityResult) {
     val name = appDetails.value?.name
     val result = appInstallManager.onUninstallResult(packageName, name, activityResult)
-    if (result is InstallState.Uninstalled) {
-      // to reload packageInfoFlow with fresh packageInfo
-      viewModelScope.launch(dispatcher) { loadPackageInfoFlow() }
-    }
+    log.info { "Uninstall result was: $result" }
   }
 
   @UiThread
@@ -181,6 +181,11 @@ constructor(
       repoManager.setPreferredRepoId(packageName, repoId).join()
       updatesManager.loadUpdates()
     }
+  }
+
+  @UiThread
+  fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
   }
 
   override fun onCleared() {
@@ -228,6 +233,11 @@ constructor(
       db.getAppPrefsDao().update(appPrefs.toggleIgnoreVersionCodeUpdate(versionCode))
       updatesManager.loadUpdates()
     }
+  }
+
+  @UiThread
+  fun onAntiFeaturesOnboardingSeen() {
+    onboardingManager.onAntiFeaturesOnboardingSeen()
   }
 
   @AssistedFactory

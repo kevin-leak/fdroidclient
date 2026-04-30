@@ -33,7 +33,9 @@ import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_PREVENT_SCREENSHOTS
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_PROXY
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_REPO_UPDATES
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_SHOW_INCOMPATIBLE
+import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_SHOW_SEARCH_KEYBOARD
 import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_THEME
+import org.fdroid.settings.SettingsConstants.PREF_DEFAULT_WARN_WHEN_METERED
 import org.fdroid.settings.SettingsConstants.PREF_DNS_CACHE
 import org.fdroid.settings.SettingsConstants.PREF_DNS_CACHE_DEFAULT
 import org.fdroid.settings.SettingsConstants.PREF_KEY_APP_LIST_SORT_ORDER
@@ -49,7 +51,9 @@ import org.fdroid.settings.SettingsConstants.PREF_KEY_PREVENT_SCREENSHOTS
 import org.fdroid.settings.SettingsConstants.PREF_KEY_PROXY
 import org.fdroid.settings.SettingsConstants.PREF_KEY_REPO_UPDATES
 import org.fdroid.settings.SettingsConstants.PREF_KEY_SHOW_INCOMPATIBLE
+import org.fdroid.settings.SettingsConstants.PREF_KEY_SHOW_SEARCH_KEYBOARD
 import org.fdroid.settings.SettingsConstants.PREF_KEY_THEME
+import org.fdroid.settings.SettingsConstants.PREF_KEY_WARN_WHEN_METERED
 import org.fdroid.settings.SettingsConstants.PREF_USE_DNS_CACHE
 import org.fdroid.settings.SettingsConstants.PREF_USE_DNS_CACHE_DEFAULT
 import org.fdroid.settings.SettingsConstants.getAppListSortOrder
@@ -188,6 +192,14 @@ class SettingsManager @Inject constructor(@param:ApplicationContext private val 
       return prefs.edit { putString(PREF_DNS_CACHE, value) }
     }
 
+  private val _warnWhenMeteredFlow =
+    MutableStateFlow(prefs.getBoolean(PREF_KEY_WARN_WHEN_METERED, PREF_DEFAULT_WARN_WHEN_METERED))
+  val warnWhenMeteredFlow = _warnWhenMeteredFlow.asStateFlow()
+
+  private val _showSearchKeyboardFlow =
+    MutableStateFlow(prefs.getBoolean(PREF_KEY_SHOW_SEARCH_KEYBOARD, PREF_DEFAULT_SHOW_SEARCH_KEYBOARD))
+  val showSearchKeyboardFlow = _showSearchKeyboardFlow.asStateFlow()
+
   val filterIncompatible: Boolean
     get() = !prefs.getBoolean(PREF_KEY_SHOW_INCOMPATIBLE, PREF_DEFAULT_SHOW_INCOMPATIBLE)
 
@@ -205,6 +217,16 @@ class SettingsManager @Inject constructor(@param:ApplicationContext private val 
     set(value) {
       prefs.edit { putString(PREF_KEY_MY_APPS_SORT_ORDER, value.toSettings()) }
     }
+
+  fun onDontWarnOnMeteredNetwork() {
+    prefs.edit { putBoolean(PREF_KEY_WARN_WHEN_METERED, false) }
+    _warnWhenMeteredFlow.update { false }
+  }
+
+  fun setShowSearchKeyboard(show: Boolean) {
+    prefs.edit { putBoolean(PREF_KEY_SHOW_SEARCH_KEYBOARD, show) }
+    _showSearchKeyboardFlow.update { show }
+  }
 
   fun saveAppListFilter(sortOrder: AppListSortOrder, filterIncompatible: Boolean) {
     prefs.edit {

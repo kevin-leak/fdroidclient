@@ -537,7 +537,6 @@
     <string name="repo_mirror_exists">Este espello xa foi engadido (%s).</string>
     <string name="repo_mirror_add_info">A URL que está tentando engadir (%s) é un espello dun repositorio existente.</string>
     <string name="repo_archive_toggle">Arquivo de repositorios</string>
-    <string name="repo_disable_warning">Desactivar este repositorio eliminará o seu estado de \"preferente\" de todas as aplicacións.</string>
     <string name="repo_disable_warning_button">Desactivar</string>
     <string tools:ignore="UnusedResources" name="category_Nightly">nocturno</string>
     <string name="swap_banner_message">Para compartir aplicacións, conéctate á mesma rede Wi-Fi que a túa amizade.</string>

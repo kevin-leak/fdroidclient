@@ -18,13 +18,18 @@ class OnboardingManager
 constructor(@param:ApplicationContext private val context: Context) {
 
   private companion object {
+    const val KEY_MY_APPS_UPDATES = "myAppsUpdates"
     const val KEY_FILTER = "appFilter"
     const val KEY_REPO_LIST = "repoList"
     const val KEY_REPO_DETAILS = "repoDetails"
     const val KEY_APP_ISSUE_HINT = "appIssueHint"
+    const val KEY_ANTI_FEATURES = "antiFeatures"
   }
 
   private val prefs = context.getSharedPreferences("onboarding", MODE_PRIVATE)
+
+  private val _showMyAppsUpdatesHint = Onboarding(KEY_MY_APPS_UPDATES, prefs)
+  val showMyAppsUpdatesHint = _showMyAppsUpdatesHint.flow
 
   private val _showFilterOnboarding = Onboarding(KEY_FILTER, prefs)
   val showFilterOnboarding = _showFilterOnboarding.flow
@@ -37,6 +42,13 @@ constructor(@param:ApplicationContext private val context: Context) {
 
   private val _showAppIssueHint = Onboarding(KEY_APP_ISSUE_HINT, prefs)
   val showAppIssueHint = _showAppIssueHint.flow
+
+  private val _showAntiFeaturesOnboarding = Onboarding(KEY_ANTI_FEATURES, prefs)
+  val showAntiFeaturesOnboarding = _showAntiFeaturesOnboarding.flow
+
+  fun onMyAppsUpdateHintSeen() {
+    _showMyAppsUpdatesHint.onSeen(prefs)
+  }
 
   fun onFilterOnboardingSeen() {
     _showFilterOnboarding.onSeen(prefs)
@@ -52,6 +64,10 @@ constructor(@param:ApplicationContext private val context: Context) {
 
   fun onAppIssueHintSeen() {
     _showAppIssueHint.onSeen(prefs)
+  }
+
+  fun onAntiFeaturesOnboardingSeen() {
+    _showAntiFeaturesOnboarding.onSeen(prefs)
   }
 }
 

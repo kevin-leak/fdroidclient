@@ -565,7 +565,6 @@
     <string name="repo_disable_warning_button">Zakázat</string>
     <string name="repo_archive_toggle_description">Zobrazit archivované a zastaralé verze aplikací</string>
     <string name="repo_archive_failed">Archiv repozitáře momentálně není dostupný</string>
-    <string name="repo_disable_warning">Zakázáním tohoto repozitáře jej odeberete z „vybraných“ u všech aplikací.</string>
     <string name="repo_list_info_text">Repozitář je zdroj aplikací. Tento seznam zobrazuje všechny aktuálně přidané repozitáře. Zakázané repozitáře nejsou používány.\n\nPokud se aplikace nachází více než v jednom repozitáři, bude automaticky vybrán repozitář výše v seznamu. Repozitáře můžete přesunout podržením a přesunutím.</string>
     <string name="repositories_last_update_never">nikdy</string>
     <string name="repositories_last_update">Poslední aktualizace: %s</string>

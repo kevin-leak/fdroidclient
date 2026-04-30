@@ -37,6 +37,7 @@ fun AddRepo(
   networkStateFlow: StateFlow<NetworkState>,
   proxyConfig: ProxyConfig?,
   onFetchRepo: (String) -> Unit,
+  onNotWarnWhenMetered: () -> Unit,
   onAddRepo: () -> Unit,
   onExistingRepo: (Long) -> Unit,
   onRepoAdded: (String, Long) -> Unit,
@@ -74,7 +75,7 @@ fun AddRepo(
     when (state) {
       None -> {
         val networkState = networkStateFlow.collectAsStateWithLifecycle().value
-        AddRepoIntroContent(networkState, onFetchRepo, paddingValues)
+        AddRepoIntroContent(networkState, onFetchRepo, onNotWarnWhenMetered, paddingValues)
       }
       is Fetching -> {
         if (state.receivedRepo == null) {

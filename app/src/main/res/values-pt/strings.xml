@@ -571,7 +571,6 @@
     <string name="repo_archive_toggle_description">Mostrar aplicações arquivadas e versões desatualizadas de aplicações</string>
     <string name="repo_archive_failed">O repositório de arquivos não está atualmente disponível</string>
     <string name="repo_disable_warning_button">Desativar</string>
-    <string name="repo_disable_warning">A desativação deste repositório removerá o seu estatuto de \"preferido\" de todas as aplicações.</string>
     <string name="ipfsgw_title">Gateways IPFS</string>
     <string name="app_details_repository">Repositório</string>
     <string name="app_details_repositories">Repositórios</string>

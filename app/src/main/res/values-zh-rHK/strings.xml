@@ -561,7 +561,6 @@
     <string name="repo_archive_toggle">軟件庫封存</string>
     <string name="repo_archive_toggle_description">顯示已封存的應用程式與各應用程式的過時版本</string>
     <string name="repo_archive_failed">封存軟件庫目前不可用</string>
-    <string name="repo_disable_warning">若停用此軟件庫，所有應用程式均將不再「喜好」此軟件庫。</string>
     <string name="repo_disable_warning_button">停用</string>
     <string name="app_details_repository">軟件庫</string>
     <string name="app_details_repository_preferred">(喜好)</string>

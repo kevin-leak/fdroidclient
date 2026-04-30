@@ -570,7 +570,6 @@
 \n
 \nAls een app in meerdere gegevensbanken voorkomt dan wordt de eerste gegevensbank in de lijst gebruikt. U kunt de volgorde veranderen door een gegevensbank ingedrukt te houden en te verplaatsen.</string>
     <string name="repo_archive_toggle_description">Toon gearchiveerde apps en verouderde versies van apps</string>
-    <string name="repo_disable_warning">Uitschakelen van deze gegevensbank zal de \"geprefereerde\" status verwijderen van alle apps.</string>
     <plurals name="ipfsgw_summary">
         <item quantity="one">Download apps van IPFS web eindpunten: %1$d ingeschakeld</item>
         <item quantity="other">Download apps van IPFS web eindpunten: %1$d ingeschakeld</item>

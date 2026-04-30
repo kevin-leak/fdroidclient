@@ -2,7 +2,9 @@ package org.fdroid.ui.settings
 
 import android.app.Application
 import android.net.Uri
+import android.os.Build.VERSION.SDK_INT
 import android.os.Process
+import android.os.Process.myUid
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.StringRes
@@ -68,8 +70,14 @@ constructor(
         sendToast(R.string.export_log_error)
         return@launch
       }
-      // support for --pid was introduced in SDK 24
-      val command = "logcat -d --pid=" + Process.myPid() + " *:V"
+      val command = if (SDK_INT < 30) {
+        // support for --pid was introduced in SDK 24
+        "logcat -d --pid=${Process.myPid()} *:V"
+      } else {
+        // support for --uid was introduced in SDK 30 and is better,
+        // because it gives logs before process death
+        "logcat -d --uid=${myUid()} *:V"
+      }
       try {
         application.contentResolver.openOutputStream(uri, "wt")?.use { outputStream ->
           getRuntime().exec(command).inputStream.use { inputStream ->

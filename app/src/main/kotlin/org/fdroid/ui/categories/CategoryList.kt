@@ -4,33 +4,37 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation3.runtime.NavKey
 import org.fdroid.R
 import org.fdroid.ui.FDroidContent
-import org.fdroid.ui.lists.AppListType
-import org.fdroid.ui.navigation.NavigationKey
 
 @Composable
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 fun CategoryList(
   categoryMap: Map<CategoryGroup, List<CategoryItem>>?,
   onNav: (NavKey) -> Unit,
   modifier: Modifier = Modifier,
 ) {
   AnimatedVisibility(!categoryMap.isNullOrEmpty()) {
-    Column(modifier = modifier.padding(top = 20.dp)) {
+    Column(modifier = modifier) {
       Text(
         text = stringResource(R.string.main_menu__categories),
-        style = MaterialTheme.typography.titleLarge,
-        modifier = Modifier.padding(bottom = 8.dp, start = 16.dp, end = 16.dp),
+        style = MaterialTheme.typography.titleMediumEmphasized,
+        fontSize = 20.sp,
+        modifier = Modifier.padding(horizontal = 16.dp),
       )
       // we'll sort the groups here, because before we didn't have the context to get names
       val res = LocalResources.current
@@ -39,22 +43,12 @@ fun CategoryList(
           val comparator = compareBy<CategoryGroup> { res.getString(it.name) }
           categoryMap?.toSortedMap(comparator)
         }
-      sortedMap?.forEach { (group, categories) ->
-        Text(
-          text = stringResource(group.name),
-          style = MaterialTheme.typography.titleMedium,
-          modifier = Modifier.fillMaxWidth().padding(16.dp, 2.dp),
-        )
-        ChipFlowRow(modifier = Modifier.padding(start = 16.dp, bottom = 12.dp)) {
-          categories.forEach { category ->
-            CategoryChip(
-              categoryItem = category,
-              onClick = {
-                val type = AppListType.Category(category.name, category.id)
-                val navKey = NavigationKey.AppList(type)
-                onNav(navKey)
-              },
-            )
+      OutlinedCard(modifier = Modifier.padding(16.dp)) {
+        // FIXME: A LazyColumn would be better, but we can't use this inside a scrollable column
+        Column {
+          sortedMap?.forEach { (group, categories) ->
+            CategoryGroupRow(group, categories, onNav)
+            HorizontalDivider(modifier = Modifier.fillMaxWidth())
           }
         }
       }
@@ -62,8 +56,8 @@ fun CategoryList(
   }
 }
 
-@Preview
 @Composable
+@PreviewLightDark
 fun CategoryListPreview() {
   FDroidContent {
     val categories =

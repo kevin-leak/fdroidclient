@@ -25,6 +25,7 @@ import androidx.core.content.ContextCompat.registerReceiver
 import androidx.core.os.LocaleListCompat
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
+import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.resume
@@ -122,7 +123,7 @@ constructor(
     app: AppMetadata,
     icon: Bitmap?,
     canRequestUserConfirmationNow: Boolean,
-  ): PreApprovalResult = suspendCancellableCoroutine { cont ->
+  ): PreApprovalResult = safeSuspendCoroutine { cont ->
     val params = getSessionParams(app.packageName)
     val sessionId = installer.createSession(params)
     log.info { "Opened session $sessionId for ${app.packageName}" }
@@ -133,7 +134,7 @@ constructor(
         when (status) {
           PackageInstaller.STATUS_SUCCESS -> {
             cont.resume(PreApprovalResult.Success(sessionId))
-            context.unregisterReceiver(this)
+            unregisterReceiver(this)
           }
           PackageInstaller.STATUS_PENDING_USER_ACTION -> {
             val flags = FLAG_UPDATE_CURRENT or FLAG_IMMUTABLE
@@ -149,13 +150,13 @@ constructor(
                 log.error(e) { "Error sending pre-approval intent: " }
                 val s = PreApprovalResult.UserConfirmationRequired(sessionId, pendingIntent)
                 cont.resume(s)
-                context.unregisterReceiver(this)
+                unregisterReceiver(this)
               }
             } else {
               log.info { "Can not ask pre-approval for ${app.packageName}: $intent" }
               val s = PreApprovalResult.UserConfirmationRequired(sessionId, pendingIntent)
               cont.resume(s)
-              context.unregisterReceiver(this)
+              unregisterReceiver(this)
             }
           }
           else -> {
@@ -166,14 +167,14 @@ constructor(
                 else -> PreApprovalResult.Error(msg)
               }
             cont.resume(result)
-            context.unregisterReceiver(this)
+            unregisterReceiver(this)
           }
         }
       }
     registerReceiver(context, receiver, IntentFilter(ACTION_INSTALL), RECEIVER_NOT_EXPORTED)
     cont.invokeOnCancellation {
       log.info { "Pre-approval for ${app.packageName} cancelled." }
-      context.unregisterReceiver(receiver)
+      unregisterReceiver(receiver)
     }
 
     installer.openSession(sessionId).use { session ->
@@ -197,7 +198,7 @@ constructor(
     packageName: String,
     state: InstallStateWithInfo,
     apkFile: File,
-  ): InstallState = suspendCancellableCoroutine { cont ->
+  ): InstallState = safeSuspendCoroutine { cont ->
     val size = apkFile.length()
     log.info { "Installing ${apkFile.name} with size $size bytes" }
 
@@ -213,12 +214,12 @@ constructor(
         log.error(e) { "Error when creating session: " }
         val s = InstallState.Error("${e::class.java.simpleName} ${e.message}", state)
         cont.resume(s)
-        return@suspendCancellableCoroutine
+        return@safeSuspendCoroutine
       }
     // set-up receiver for install result
     val receiver =
       receiverFactory.create(sessionId) { status, intent, msg ->
-        context.unregisterReceiver(this)
+        unregisterReceiver(this)
         when (status) {
           PackageInstaller.STATUS_SUCCESS -> {
             val newState =
@@ -278,7 +279,7 @@ constructor(
     registerReceiver(context, receiver, IntentFilter(ACTION_INSTALL), RECEIVER_NOT_EXPORTED)
     cont.invokeOnCancellation {
       log.info { "App installation was cancelled, unregistering broadcast receiver..." }
-      context.unregisterReceiver(receiver)
+      unregisterReceiver(receiver)
       try {
         installer.abandonSession(sessionId)
       } catch (e: SecurityException) {
@@ -306,11 +307,11 @@ constructor(
   }
 
   suspend fun requestUserConfirmation(state: InstallConfirmationState): InstallState =
-    suspendCancellableCoroutine { cont ->
+    safeSuspendCoroutine { cont ->
       val isPreApproval = state is InstallState.PreApprovalConfirmationNeeded
       val receiver =
         receiverFactory.create(state.sessionId) { status, _, msg ->
-          context.unregisterReceiver(this)
+          unregisterReceiver(this)
           when (status) {
             PackageInstaller.STATUS_SUCCESS -> {
               val newState =
@@ -346,12 +347,12 @@ constructor(
           }
         }
       registerReceiver(context, receiver, IntentFilter(ACTION_INSTALL), RECEIVER_NOT_EXPORTED)
-      cont.invokeOnCancellation { context.unregisterReceiver(receiver) }
+      cont.invokeOnCancellation { unregisterReceiver(receiver) }
       try {
         state.intent.send()
       } catch (e: Exception) {
         log.error(e) { "Error sending user confirmation intent: " }
-        context.unregisterReceiver(receiver)
+        unregisterReceiver(receiver)
         cont.resume(InstallState.Error("${e::class.java.simpleName} ${e.message}", state))
       }
     }
@@ -422,5 +423,48 @@ constructor(
     val flags = if (SDK_INT >= 31) FLAG_UPDATE_CURRENT or FLAG_MUTABLE else FLAG_UPDATE_CURRENT
     val pendingIntent = PendingIntent.getBroadcast(context, sessionId, broadcastIntent, flags)
     return pendingIntent.intentSender
+  }
+
+  private fun unregisterReceiver(receiver: InstallBroadcastReceiver) {
+    try {
+      context.unregisterReceiver(receiver)
+    } catch (e: IllegalArgumentException) {
+      // Duplicate callbacks can race with unregistration
+      log.debug(e) { "Receiver already unregistered" }
+    }
+  }
+
+  /**
+   * A helper function to create a suspend function that can be resumed only once. This shouldn't be
+   * needed, but we have seen crash reports where we received [PackageInstaller.STATUS_SUCCESS] and
+   * then [PackageInstaller.STATUS_FAILURE_ABORTED] for the same sessionId.
+   */
+  private suspend fun <T> safeSuspendCoroutine(block: (SafeContinuation<T>) -> Unit): T =
+    suspendCancellableCoroutine { continuation ->
+      val safeCont =
+        object : SafeContinuation<T> {
+          private val isCompleted = AtomicBoolean(false)
+          private var resumedValue: T? = null
+
+          override fun resume(value: T) {
+            if (isCompleted.compareAndSet(false, true)) {
+              resumedValue = value
+              continuation.resume(value)
+            } else {
+              log.warn { "Already resumed with $resumedValue, not trying to resume with $value" }
+            }
+          }
+
+          override fun invokeOnCancellation(handler: () -> Unit) {
+            continuation.invokeOnCancellation { handler() }
+          }
+        }
+      block(safeCont)
+    }
+
+  private interface SafeContinuation<T> {
+    fun resume(value: T)
+
+    fun invokeOnCancellation(handler: () -> Unit)
   }
 }

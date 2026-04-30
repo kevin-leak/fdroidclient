@@ -17,8 +17,8 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ManageSearch
 import androidx.compose.material.icons.filled.FilterList
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -51,6 +51,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.hintAnchor
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
@@ -61,7 +62,7 @@ import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.search.TopSearchBar
 import org.fdroid.ui.utils.BackButton
 import org.fdroid.ui.utils.BigLoadingIndicator
-import org.fdroid.ui.utils.OnboardingCard
+import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.TopAppBarButton
 import org.fdroid.ui.utils.appListItems
 import org.fdroid.ui.utils.getAppListInfo
@@ -80,22 +81,22 @@ fun AppList(
   val scrollBehavior = enterAlwaysScrollBehavior(rememberTopAppBarState())
 
   val hintController = rememberHintController(overlay = getHintOverlayColor())
-  val hint = rememberHint {
-    OnboardingCard(
-      title = stringResource(R.string.onboarding_app_list_filter_title),
-      message = stringResource(R.string.onboarding_app_list_filter_message),
-      modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-      onGotIt = {
-        appListInfo.actions.onOnboardingSeen()
-        hintController.dismiss()
-      },
-    )
-  }
+  val hint =
+    rememberHint(HintProperties(dismissOnClickOutside = false)) {
+      OnboardingPopupCard(
+        title = stringResource(R.string.onboarding_app_list_filter_title),
+        message = stringResource(R.string.onboarding_app_list_filter_message),
+        modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+        onGotIt = {
+          appListInfo.actions.onOnboardingSeen()
+          hintController.dismiss()
+        },
+      )
+    }
   val hintAnchor = rememberHintAnchorState(hint)
   LaunchedEffect(appListInfo.showOnboarding) {
     if (appListInfo.showOnboarding) {
       hintController.show(hintAnchor)
-      appListInfo.actions.onOnboardingSeen()
     }
   }
 
@@ -131,7 +132,7 @@ fun AppList(
           },
           actions = {
             TopAppBarButton(
-              imageVector = Icons.Filled.Search,
+              imageVector = Icons.AutoMirrored.Default.ManageSearch,
               contentDescription = stringResource(R.string.menu_search),
               onClick = { searchActive = true },
             )

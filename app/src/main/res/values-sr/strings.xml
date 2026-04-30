@@ -562,7 +562,6 @@
     <string name="repo_list_info_title">Листа репозиторијума</string>
     <string name="app_details_repository_expand">Прошири листу репозиторијума</string>
     <string name="repo_archive_toggle_description">Приказује архивиране апликације и застареле верзије апликација</string>
-    <string name="repo_disable_warning">Онемогућавањем овог репозиторијума уклањате његов статус „префериран” из свих апликација.</string>
     <string name="app_details_repository_preferred">(префериран)</string>
     <string name="app_details_repository_button_prefer">Преферирај репозиторијум</string>
     <string name="repositories_last_update">Последње ажурирање: %s</string>

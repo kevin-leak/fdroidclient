@@ -30,6 +30,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.viktormykhailiv.compose.hints.HintHost
+import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
@@ -39,7 +40,7 @@ import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.utils.BackButton
 import org.fdroid.ui.utils.BigLoadingIndicator
 import org.fdroid.ui.utils.MeteredConnectionDialog
-import org.fdroid.ui.utils.OnboardingCard
+import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.TopAppBarButton
 import org.fdroid.ui.utils.TopAppBarOverflowButton
 import org.fdroid.ui.utils.getHintOverlayColor
@@ -56,24 +57,24 @@ fun RepoDetails(
   val repo = info.model.repo
 
   val hintController = rememberHintController(overlay = getHintOverlayColor())
-  val hint = rememberHint {
-    Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-      OnboardingCard(
-        title = stringResource(R.string.repo_details),
-        message = stringResource(R.string.repo_details_info_text),
-        modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
-        onGotIt = {
-          info.actions.onOnboardingSeen()
-          hintController.dismiss()
-        },
-      )
+  val hint =
+    rememberHint(HintProperties(dismissOnClickOutside = false)) {
+      Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+        OnboardingPopupCard(
+          title = stringResource(R.string.repo_details),
+          message = stringResource(R.string.repo_details_info_text),
+          modifier = Modifier.padding(horizontal = 32.dp, vertical = 8.dp),
+          onGotIt = {
+            info.actions.onOnboardingSeen()
+            hintController.dismiss()
+          },
+        )
+      }
     }
-  }
   val hintAnchor = rememberHintAnchorState(hint)
   LaunchedEffect(info.model.showOnboarding) {
     if (info.model.showOnboarding) {
       hintController.show(hintAnchor)
-      info.actions.onOnboardingSeen()
     }
   }
 
@@ -95,7 +96,10 @@ fun RepoDetails(
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = null,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) info.actions.onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
   Scaffold(
@@ -120,7 +124,7 @@ fun RepoDetails(
             contentDescription = stringResource(R.string.repo_force_update),
             enabled = info.model.isUpdateButtonEnabled,
             onClick = {
-              if (info.model.networkState.isMetered)
+              if (info.model.networkState.showWarningDialog)
                 showMeteredDialog = { RepoUpdateWorker.updateNow(context, repo.repoId) }
               else RepoUpdateWorker.updateNow(context, repo.repoId)
             },

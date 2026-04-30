@@ -554,7 +554,6 @@
     <string name="repositories_last_update_never">從不</string>
     <string name="repo_list_info_text">軟體庫是應用程式的來源。此清單顯示所有目前新增的軟體庫。不會使用已停用的軟體庫。 \n \n若一個應用程式位於多個軟體庫中，則自動偏好清單中較高的軟體庫。您可以透過長按並拖曳軟體庫來重新排序。</string>
     <string name="repo_archive_failed">封存軟體庫目前無法使用</string>
-    <string name="repo_disable_warning">停用此軟體庫將從所有應用程式中刪除其「偏好」狀態。</string>
     <string name="repo_add_repo_and_mirror">新增軟體庫與鏡像</string>
     <string name="repo_scan_qr_code">掃描 QR Code</string>
     <string name="repo_preview_included_apps">包含的應用程式：</string>

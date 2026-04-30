@@ -6,6 +6,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement.spacedBy
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
@@ -56,10 +57,11 @@ fun Versions(item: AppDetailsItem, scrollUp: suspend () -> Unit) {
       item.versions?.forEach { versionItem ->
         Version(
           item = versionItem,
-          isMetered = item.networkState.isMetered,
+          isMetered = item.networkState.showWarningDialog,
           installAction = { version: AppVersion ->
             item.actions.installAction(item.app, version, item.icon)
           },
+          onNotWarnWhenMetered = item.actions.onNotWarnWhenMetered,
           scrollUp = scrollUp,
         )
       }
@@ -72,6 +74,7 @@ fun Version(
   item: VersionItem,
   isMetered: Boolean,
   installAction: (AppVersion) -> Unit,
+  onNotWarnWhenMetered: () -> Unit,
   scrollUp: suspend () -> Unit,
 ) {
   val isPreview = LocalInspectionMode.current
@@ -83,7 +86,7 @@ fun Version(
       modifier = Modifier.padding(bottom = 8.dp).clickable { expanded = !expanded },
     ) {
       ExpandIconChevron(expanded)
-      Row {
+      Row(verticalAlignment = Alignment.CenterVertically) {
         Column(modifier = Modifier.weight(1f)) {
           Text(
             text = item.version.versionName,
@@ -103,14 +106,14 @@ fun Version(
             containerColor = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(start = 8.dp),
           ) {
-            Text(text = stringResource(R.string.app_installed), modifier = Modifier.padding(2.dp))
+            Text(text = stringResource(R.string.app_installed), modifier = Modifier.padding(4.dp))
           }
         if (item.isSuggested)
           Badge(
             containerColor = MaterialTheme.colorScheme.secondary,
             modifier = Modifier.padding(start = 8.dp),
           ) {
-            Text(text = stringResource(R.string.app_suggested), modifier = Modifier.padding(2.dp))
+            Text(text = stringResource(R.string.app_suggested), modifier = Modifier.padding(4.dp))
           }
       }
     }
@@ -120,83 +123,79 @@ fun Version(
     ) {
       val coroutineScope = rememberCoroutineScope()
       var showMeteredDialog by remember { mutableStateOf(false) }
-      Row(horizontalArrangement = spacedBy(16.dp), verticalAlignment = Alignment.CenterVertically) {
-        Column(modifier = Modifier.weight(1f)) {
-          if (!item.isCompatible || !item.isSignerCompatible)
+      Column(modifier = Modifier.fillMaxWidth().padding(start = 40.dp)) {
+        if (!item.isCompatible || !item.isSignerCompatible)
+          Text(
+            text =
+              if (!item.isCompatible) {
+                stringResource(R.string.app_details_incompatible_version)
+              } else {
+                stringResource(R.string.app_details_incompatible_signer)
+              },
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.error,
+          )
+        item.version.size?.let { size ->
+          Text(
+            text =
+              stringResource(
+                R.string.size_colon,
+                Formatter.formatFileSize(LocalContext.current, size),
+              ),
+            style = MaterialTheme.typography.bodySmall,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+          )
+        }
+        SelectionContainer {
+          Text(
+            text = stringResource(R.string.version_code_colon, item.version.versionCode.toString()),
+            style = MaterialTheme.typography.bodySmall,
+            maxLines = 1,
+            overflow = TextOverflow.MiddleEllipsis,
+          )
+        }
+        val sdkString = buildString {
+          item.version.packageManifest.minSdkVersion?.let { sdk ->
+            append(stringResource(R.string.sdk_min_version, sdk))
+          }
+          item.version.packageManifest.targetSdkVersion?.let { sdk ->
+            if (isNotEmpty()) append(" ")
+            append(stringResource(R.string.sdk_target_version, sdk))
+          }
+          item.version.packageManifest.maxSdkVersion?.let { sdk ->
+            if (isNotEmpty()) append(" ")
+            append(stringResource(R.string.sdk_max_version, sdk))
+          }
+        }
+        if (sdkString.isNotEmpty())
+          SelectionContainer {
             Text(
-              text =
-                if (!item.isCompatible) {
-                  stringResource(R.string.app_details_incompatible_version)
-                } else {
-                  stringResource(R.string.app_details_incompatible_signer)
-                },
+              text = stringResource(R.string.sdk_versions_colon, sdkString),
               style = MaterialTheme.typography.bodySmall,
-              color = MaterialTheme.colorScheme.error,
+              maxLines = 1,
+              overflow = TextOverflow.StartEllipsis,
             )
-          item.version.size?.let { size ->
+          }
+        item.version.packageManifest.nativecode?.let { nativeCode ->
+          if (nativeCode.isNotEmpty())
+            SelectionContainer {
+              Text(
+                text = stringResource(R.string.architectures_colon, nativeCode.joinToString(", ")),
+                style = MaterialTheme.typography.bodySmall,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+              )
+            }
+        }
+        item.version.signer?.let { signer ->
+          SelectionContainer {
             Text(
-              text =
-                stringResource(
-                  R.string.size_colon,
-                  Formatter.formatFileSize(LocalContext.current, size),
-                ),
+              text = stringResource(R.string.signer_colon, signer.sha256[0].substring(0..15)),
               style = MaterialTheme.typography.bodySmall,
               maxLines = 1,
               overflow = TextOverflow.Ellipsis,
             )
-          }
-          SelectionContainer {
-            Text(
-              text =
-                stringResource(R.string.version_code_colon, item.version.versionCode.toString()),
-              style = MaterialTheme.typography.bodySmall,
-              maxLines = 1,
-              overflow = TextOverflow.MiddleEllipsis,
-            )
-          }
-          val sdkString = buildString {
-            item.version.packageManifest.minSdkVersion?.let { sdk ->
-              append(stringResource(R.string.sdk_min_version, sdk))
-            }
-            item.version.packageManifest.targetSdkVersion?.let { sdk ->
-              if (isNotEmpty()) append(" ")
-              append(stringResource(R.string.sdk_target_version, sdk))
-            }
-            item.version.packageManifest.maxSdkVersion?.let { sdk ->
-              if (isNotEmpty()) append(" ")
-              append(stringResource(R.string.sdk_max_version, sdk))
-            }
-          }
-          if (sdkString.isNotEmpty())
-            SelectionContainer {
-              Text(
-                text = stringResource(R.string.sdk_versions_colon, sdkString),
-                style = MaterialTheme.typography.bodySmall,
-                maxLines = 1,
-                overflow = TextOverflow.StartEllipsis,
-              )
-            }
-          item.version.packageManifest.nativecode?.let { nativeCode ->
-            if (nativeCode.isNotEmpty())
-              SelectionContainer {
-                Text(
-                  text =
-                    stringResource(R.string.architectures_colon, nativeCode.joinToString(", ")),
-                  style = MaterialTheme.typography.bodySmall,
-                  maxLines = 1,
-                  overflow = TextOverflow.Ellipsis,
-                )
-              }
-          }
-          item.version.signer?.let { signer ->
-            SelectionContainer {
-              Text(
-                text = stringResource(R.string.signer_colon, signer.sha256[0].substring(0..15)),
-                style = MaterialTheme.typography.bodySmall,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-              )
-            }
           }
         }
         if (item.showInstallButton) {
@@ -211,13 +210,15 @@ fun Version(
                 coroutineScope.launch { scrollUp() }
               }
             },
+            modifier = Modifier.padding(top = 8.dp, end = 16.dp).fillMaxWidth(),
           )
         }
       }
       if (showMeteredDialog)
         MeteredConnectionDialog(
           numBytes = item.version.size,
-          onConfirm = {
+          onConfirm = { notWarnWhenMetered ->
+            if (notWarnWhenMetered) onNotWarnWhenMetered()
             installAction(item.version as AppVersion)
             coroutineScope.launch { scrollUp() }
           },

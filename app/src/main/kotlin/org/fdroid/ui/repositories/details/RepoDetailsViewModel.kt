@@ -154,6 +154,10 @@ constructor(
     }
   }
 
+  override fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
+  }
+
   override fun onOnboardingSeen() = onboardingManager.onRepoDetailsOnboardingSeen()
 
   private fun Repository.archiveState(): ArchiveState {

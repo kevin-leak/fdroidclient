@@ -634,7 +634,6 @@
     <string name="repo_archive_failed">Arhivski repozitorij trenutno ni na voljo</string>
     <string name="repo_confirm_delete_mirror_title">Izbriši zrcalo?</string>
     <string name="repo_confirm_delete_mirror_body">Aplikacije iz tega repozitorija lahko še naprej nameščate z uporabo drugih zrcalnih strežnikov.</string>
-    <string name="repo_disable_warning">Če onemogočite to skladišče, boste odstranili njegov status \"prednostno\" iz vseh aplikacij.</string>
     <string name="repo_disable_warning_button">Onemogoči</string>
     <string name="share_mirror">Deli zrcalo</string>
     <string name="show_repository_qr">Prikaži QR kodo repozitorija</string>

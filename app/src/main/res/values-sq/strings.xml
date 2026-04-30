@@ -520,7 +520,6 @@
     <string name="repo_list_info_title">Listë deposh</string>
     <string name="repo_archive_toggle">Arkiv deposh</string>
     <string name="repo_archive_toggle_description">Shfaq aplikacione të arkivuar dhe versione të vjetruar të aplikacioneves</string>
-    <string name="repo_disable_warning">Çaktivizimi i kësaj depoje do t’i heqë asaj gjendjen “e parapëlqyer” nga krejt aplikacionet.</string>
     <string name="ipfsgw_title">Kanale IPFS</string>
     <string name="repositories_last_update">Përditësimi i fundit më: %s</string>
     <string name="repositories_last_update_never">kurrë</string>

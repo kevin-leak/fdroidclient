@@ -575,7 +575,6 @@
     </plurals>
     <string name="repo_and_mirror_add_both_info">URL, ko tiek mēģināts pievienot (%s), ir jaunas glabātavas spoguļserveris. Tiks pievienota gan sākotnējā glabātava, gan spoguļserveris.</string>
     <string name="repo_archive_toggle_description">Rādīt arhivētās lietotnes un novecojušas lietotņu versijas</string>
-    <string name="repo_disable_warning">Šīs glabātavas atspējošana noņems tās stāvokli \"vēlama\" no visām lietotnēm.</string>
     <string name="auto_update_time">Tuvākais nākamais atjauninājums: %s</string>
     <string name="auto_update_time_past">Nākamais atjauninājums, kad ir izpildījušies nosacījumi</string>
     <string name="antitetherednet">Piesaistīti tīkla pakalpojumi</string>

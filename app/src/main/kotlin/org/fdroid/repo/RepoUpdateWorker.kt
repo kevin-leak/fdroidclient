@@ -127,6 +127,7 @@ constructor(
     }
     try {
       if (canStartForegroundService(applicationContext)) setForeground(getForegroundInfo())
+      else log.info { "Not using foreground service" }
     } catch (e: Exception) {
       log.error(e) { "Error while running setForeground: " }
     }

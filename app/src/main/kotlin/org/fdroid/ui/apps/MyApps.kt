@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ManageSearch
 import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material.icons.filled.AccessTime
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.SortByAlpha
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -96,8 +96,8 @@ fun MyApps(
           title = { Text(stringResource(R.string.menu_apps_my)) },
           actions = {
             TopAppBarButton(
-              imageVector = Icons.Filled.Search,
-              contentDescription = stringResource(R.string.menu_search),
+              imageVector = Icons.AutoMirrored.Default.ManageSearch,
+              contentDescription = stringResource(R.string.search_my_apps_hint),
               onClick = { searchActive = true },
             )
             var sortByMenuExpanded by remember { mutableStateOf(false) }
@@ -186,10 +186,8 @@ fun MyAppsLoadingPreview() {
   val model =
     MyAppsModel(
       installingApps = emptyList(),
-      appUpdates = null,
-      installedApps = null,
+      showUpdatesHint = false,
       showAppIssueHint = false,
-      sortOrder = AppListSortOrder.NAME,
       networkState = NetworkState(isOnline = false, isMetered = false),
     )
   FDroidContent {
@@ -223,11 +221,11 @@ fun MyAppsEmptyPreview() {
   FDroidContent {
     val model =
       MyAppsModel(
-        installingApps = emptyList(),
         appUpdates = emptyList(),
+        installingApps = emptyList(),
         installedApps = emptyList(),
+        showUpdatesHint = false,
         showAppIssueHint = false,
-        sortOrder = AppListSortOrder.NAME,
         networkState = NetworkState(isOnline = false, isMetered = false),
       )
     MyApps(

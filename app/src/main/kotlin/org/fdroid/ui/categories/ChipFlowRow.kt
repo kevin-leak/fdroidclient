@@ -37,7 +37,7 @@ fun ChipFlowRowFewItemsPreview() {
       CategoryItem("doesn't exist", "Oops"),
     )
 
-  FDroidContent { ChipFlowRow { categories.map { category -> CategoryChip(category, {}) } } }
+  FDroidContent { ChipFlowRow { categories.forEach { category -> CategoryChip(category, {}) } } }
 }
 
 @Preview
@@ -61,5 +61,5 @@ fun ChipFlowRowManyItemsPreview() {
       CategoryItem("Science & Education", "Science & Education"),
     )
 
-  FDroidContent { ChipFlowRow { categories.map { category -> CategoryChip(category, {}) } } }
+  FDroidContent { ChipFlowRow { categories.forEach { category -> CategoryChip(category, {}) } } }
 }

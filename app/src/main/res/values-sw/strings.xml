@@ -559,7 +559,6 @@
     <string name="repo_error_adding_archive">Kumbukumbu za ghala haiwezi kuongezwa moja kwa moja. Gusa ghala kwenye orodha na uwezeshe kumbukumbu hio hapo.</string>
     <string name="repo_archive_failed">Ghala la kumbukumbu halipatikani kwa sasa.</string>
     <string name="ipfsgw_title">Milango za IPFS</string>
-    <string name="repo_disable_warning">Kulemaza ghala hili litaondoa hali yake ya \"Iliyopendekezwa\" kutoka kwa apu zote.</string>
     <string name="repo_preview_included_apps">Apu zilizojumuishwa:</string>
     <string name="repo_mirror_add_info">URL hio unayojaribu kuongeza (%s) ni kioo cha ghala iliyopo.</string>
     <string name="repo_and_mirror_add_both_info">URL unayojaribu kuongeza (%s) ni kioo cha ghala mpya. Zote mbili ghala asili na kioo zitaongezwa.</string>

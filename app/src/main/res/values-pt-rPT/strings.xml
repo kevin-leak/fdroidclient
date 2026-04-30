@@ -543,7 +543,6 @@
     <string name="repo_list_info_text">Um repositório é uma fonte de aplicações. Esta lista mostra todos os repositórios atualmente adicionados. Os repositórios desativados não são utilizados.\n\nSe uma aplicação estiver em mais do que um repositório, o repositório no topo da lista é automaticamente preferido. Pode reordenar os repositórios premindo longamente e arrastando-os.</string>
     <string name="repo_archive_toggle">Arquivo do repositório</string>
     <string name="repo_archive_failed">O repositório de arquivos não está atualmente disponível</string>
-    <string name="repo_disable_warning">A desativação deste repositório removerá o seu estatdo de \"preferido\" de todas as apps.</string>
     <string name="repo_disable_warning_button">Desativar</string>
     <string name="nearby_splach__external_storage_permission_explainer">F-Droid pode procurar por repositórios e espelhos no seu Cartão de Memória, mas precisa da sua permissão para fazer isso.</string>
     <string name="swap_banner_message">Para trocar aplicações, inicie o seu Wi-Fi e ligue-se à mesma rede que o seu amigo.</string>

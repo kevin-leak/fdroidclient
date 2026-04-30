@@ -45,7 +45,7 @@ fun BottomBar(model: MainModel, currentNavKey: NavKey, onNav: (MainNavKey) -> Un
             selectedTextColor = MaterialTheme.colorScheme.primary,
             selectedIconColor = contentColorFor(MaterialTheme.colorScheme.primary),
           ),
-        onClick = { if (dest != currentNavKey) onNav(dest) },
+        onClick = { onNav(dest) },
         modifier =
           Modifier.semantics {
             if (dest == NavigationKey.MyApps) {
@@ -83,7 +83,7 @@ fun NavigationRail(
             selectedTextColor = MaterialTheme.colorScheme.primary,
             selectedIconColor = contentColorFor(MaterialTheme.colorScheme.primary),
           ),
-        onClick = { if (dest != currentNavKey) onNav(dest) },
+        onClick = { onNav(dest) },
         modifier =
           Modifier.semantics {
             if (dest == NavigationKey.MyApps) {

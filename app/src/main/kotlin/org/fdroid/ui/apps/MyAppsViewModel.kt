@@ -99,6 +99,7 @@ constructor(
           appInstallStatesFlow = appInstallManager.appInstallStates,
           appsWithIssuesFlow = updatesManager.appsWithIssues,
           installedAppsFlow = installedAppItems,
+          showUpdatesHintFlow = onboardingManager.showMyAppsUpdatesHint,
           showAppIssueHintFlow = onboardingManager.showAppIssueHint,
           searchQueryFlow = searchQuery,
           sortOrderFlow = sortOrder,
@@ -139,7 +140,13 @@ constructor(
     updatesManager.loadUpdates()
   }
 
+  override fun onUpdatesHintSeen() = onboardingManager.onMyAppsUpdateHintSeen()
+
   override fun onAppIssueHintSeen() = onboardingManager.onAppIssueHintSeen()
+
+  override fun onNotWarnWhenMetered() {
+    settingsManager.onDontWarnOnMeteredNetwork()
+  }
 
   override fun exportInstalledApps() {
     scope.launch {

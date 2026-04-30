@@ -47,6 +47,7 @@ fun DetailsPresenter(
   viewModel: AppDetailsViewModel,
   packageInfoFlow: StateFlow<AppInfo?>,
   currentRepoIdFlow: StateFlow<Long?>,
+  showAntiFeaturesOnboardingFlow: StateFlow<Boolean>,
   appsWithIssuesFlow: StateFlow<List<AppWithIssueItem>?>,
   networkStateFlow: StateFlow<NetworkState>,
 ): AppDetailsItem? {
@@ -205,7 +206,9 @@ fun DetailsPresenter(
         onUninstallResult = viewModel::onUninstallResult,
         onRepoChanged = viewModel::onRepoChanged,
         onPreferredRepoChanged = viewModel::onPreferredRepoChanged,
+        onNotWarnWhenMetered = viewModel::onNotWarnWhenMetered,
         allowBetaVersions = viewModel::allowBetaUpdates,
+        onAntiFeaturesOnboardingSeen = viewModel::onAntiFeaturesOnboardingSeen,
         ignoreAllUpdates =
           if (installedVersionCode == null) {
             null
@@ -265,6 +268,7 @@ fun DetailsPresenter(
     suggestedVersion = suggestedVersion,
     possibleUpdate = possibleUpdate,
     appPrefs = appPrefs,
+    showAntiFeaturesOnboarding = showAntiFeaturesOnboardingFlow.collectAsState().value,
     issue = issue,
     authorHasMoreThanOneApp = authorHasMoreThanOneApp,
     localeList = locales,

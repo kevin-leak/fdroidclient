@@ -609,7 +609,6 @@
     <string name="repo_archive_toggle_description">أظهِر التطبيقات المؤرشفة والإصدارات القديمة من التطبيقات</string>
     <string name="repo_disable_warning_button">عطّل</string>
     <string name="app_details_repository_preferred">(مفضّل)</string>
-    <string name="repo_disable_warning">سيؤدي تعطيل هذا المستودع إلى إزالة حالته \"المفضلة\" من جميع التطبيقات.</string>
     <string name="repo_mirror_add_info">عنوان URL الذي تحاول إضافته (%s) هو مرآة لمستودع موجود.</string>
     <string name="repo_add_repo_and_mirror">أضِف المستودع والمرآة</string>
     <string name="repo_view_repo">اعرض المستودع</string>

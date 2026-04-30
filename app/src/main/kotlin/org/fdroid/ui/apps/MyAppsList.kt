@@ -37,6 +37,7 @@ import org.fdroid.database.NotAvailable
 import org.fdroid.ui.FDroidContent
 import org.fdroid.ui.utils.MeteredConnectionDialog
 import org.fdroid.ui.utils.OfflineBar
+import org.fdroid.ui.utils.OnboardingCard
 import org.fdroid.ui.utils.getMyAppsInfo
 import org.fdroid.ui.utils.myAppsModel
 
@@ -74,7 +75,22 @@ fun MyAppsList(
       modifier.then(if (currentPackageName == null) Modifier else Modifier.selectableGroup()),
   ) {
     // Updates header with Update all button
-    if (!updatableApps.isNullOrEmpty()) {
+    if (
+      updatableApps != null &&
+        updatableApps.isEmpty() &&
+        myAppsInfo.model.showUpdatesHint &&
+        !myAppsInfo.model.isSearching
+    ) {
+      item(key = "A-hint", contentType = "hint") {
+        OnboardingCard(
+          title = stringResource(R.string.apps_updates_hint_title),
+          message = stringResource(R.string.apps_updates_hint_text),
+          buttonText = stringResource(R.string.hide),
+          onGotIt = { myAppsInfo.actions.onUpdatesHintSeen() },
+          modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+        )
+      }
+    } else if (!updatableApps.isNullOrEmpty()) {
       if (!myAppsInfo.model.networkState.isOnline) {
         item(key = "OfflineBar", contentType = "offlineBar") { OfflineBar() }
       }
@@ -92,7 +108,7 @@ fun MyAppsList(
                   myAppsInfo.actions.updateAll()
                   showUpdateAllButton = false
                 }
-                if (myAppsInfo.model.networkState.isMetered) {
+                if (myAppsInfo.model.networkState.showWarningDialog) {
                   showMeteredDialog = installLambda
                 } else {
                   installLambda()
@@ -211,12 +227,8 @@ fun MyAppsList(
           NotAvailableDialog(app.packageName) { showNotAvailableDialog = false }
       }
     }
-    // Installed apps header (only show when we have non-empty lists above)
-    val aboveNonEmpty =
-      installingApps.isNotEmpty() ||
-        !updatableApps.isNullOrEmpty() ||
-        !appsWithIssue.isNullOrEmpty()
-    if (aboveNonEmpty && !installedApps.isNullOrEmpty()) {
+    // List of installed apps
+    if (!installedApps.isNullOrEmpty()) {
       item(key = "D", contentType = "header") {
         Text(
           text = stringResource(R.string.installed_apps__activity_title),
@@ -224,9 +236,6 @@ fun MyAppsList(
           modifier = Modifier.padding(16.dp),
         )
       }
-    }
-    // List of installed apps
-    if (installedApps != null)
       items(items = installedApps, key = { it.packageName }, contentType = { "D" }) { app ->
         val isSelected = app.packageName == currentPackageName
         val interactionModifier =
@@ -241,12 +250,16 @@ fun MyAppsList(
         val modifier = Modifier.animateItem().then(interactionModifier)
         InstalledAppRow(app, isSelected, modifier)
       }
+    }
   }
   val meteredLambda = showMeteredDialog
   if (meteredLambda != null)
     MeteredConnectionDialog(
       numBytes = myAppsInfo.model.appUpdatesBytes,
-      onConfirm = { meteredLambda() },
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) myAppsInfo.actions.onNotWarnWhenMetered()
+        meteredLambda()
+      },
       onDismiss = { showMeteredDialog = null },
     )
 }
@@ -258,6 +271,27 @@ private fun MyAppsListPreview() {
   FDroidContent {
     MyApps(
       myAppsInfo = getMyAppsInfo(myAppsModel),
+      currentPackageName = null,
+      onAppItemClick = {},
+      onNav = {},
+    )
+  }
+}
+
+@Preview
+@Composable
+@RestrictTo(RestrictTo.Scope.TESTS)
+private fun Preview() {
+  FDroidContent {
+    MyApps(
+      myAppsInfo =
+        getMyAppsInfo(
+          myAppsModel.copy(
+            appUpdates = emptyList(),
+            installingApps = emptyList(),
+            appsWithIssue = emptyList(),
+          )
+        ),
       currentPackageName = null,
       onAppItemClick = {},
       onNav = {},

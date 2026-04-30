@@ -22,6 +22,7 @@ import org.fdroid.index.v2.SignerV2
 import org.fdroid.install.InstallConfirmationState
 import org.fdroid.install.InstallState
 import org.fdroid.repo.RepoUpdateProgress
+import org.fdroid.search.SavedSearch
 import org.fdroid.ui.apps.AppUpdateItem
 import org.fdroid.ui.apps.AppWithIssueItem
 import org.fdroid.ui.apps.InstalledAppItem
@@ -49,6 +50,9 @@ import org.fdroid.ui.repositories.details.RepoDetailsActions
 import org.fdroid.ui.repositories.details.RepoDetailsInfo
 import org.fdroid.ui.repositories.details.RepoDetailsModel
 import org.fdroid.ui.repositories.details.UserMirrorItem
+import org.fdroid.ui.search.SearchActions
+import org.fdroid.ui.search.SearchInfo
+import org.fdroid.ui.search.SearchResults
 
 object Names {
   val randomName: String
@@ -256,7 +260,9 @@ fun getAppDetailsActions() =
     onUninstallResult = { _ -> },
     onRepoChanged = {},
     onPreferredRepoChanged = {},
+    onNotWarnWhenMetered = {},
     allowBetaVersions = {},
+    onAntiFeaturesOnboardingSeen = {},
     ignoreAllUpdates = {},
     ignoreThisUpdate = {},
     shareApk = Intent(),
@@ -407,7 +413,11 @@ fun getMyAppsInfo(model: MyAppsModel): MyAppsInfo =
 
           override fun ignoreAppIssue(item: AppWithIssueItem) {}
 
+          override fun onUpdatesHintSeen() {}
+
           override fun onAppIssueHintSeen() {}
+
+          override fun onNotWarnWhenMetered() {}
 
           override fun exportInstalledApps() {}
         }
@@ -495,6 +505,7 @@ internal val myAppsModel =
           lastUpdated = System.currentTimeMillis() - DAYS.toMillis(3),
         ),
       ),
+    showUpdatesHint = true,
     showAppIssueHint = true,
     sortOrder = AppListSortOrder.NAME,
     networkState = NetworkState(isOnline = false, isMetered = false),
@@ -549,6 +560,8 @@ fun getRepositoriesInfo(model: RepositoryModel, currentRepositoryId: Long? = nul
 
     override fun onRepositoryEnabled(repoId: Long, enabled: Boolean) {}
 
+    override fun onNotWarnWhenMetered() {}
+
     override fun onAddRepo() {}
 
     override fun onRepositoryMoved(fromRepoId: Long, toRepoId: Long) {}
@@ -600,6 +613,8 @@ fun getRepoDetailsInfo(
 
         override fun setArchiveRepoEnabled(enabled: Boolean) {}
 
+        override fun onNotWarnWhenMetered() {}
+
         override fun onOnboardingSeen() {}
       }
   }
@@ -623,3 +638,31 @@ fun getRepository(
     password = password,
     lastError = lastError,
   )
+
+fun getSearchInfo(
+  searchResults: SearchResults? = null,
+  savedSearches: List<SavedSearch>? = null,
+  categories: List<CategoryItem>? = null,
+) =
+  object : SearchInfo {
+    override val searchResults: SearchResults? = searchResults
+
+    override val savedSearches: List<SavedSearch>? = savedSearches
+
+    override val categories: List<CategoryItem>? = categories
+    override val autoShowKeyboard: Boolean = false
+    override val showKeyboard: Boolean = false
+
+    override val actions: SearchActions =
+      object : SearchActions {
+        override suspend fun onSearch(term: String) {}
+
+        override fun onSearchCleared() {}
+
+        override fun onClearSearchHistory() {}
+
+        override fun setAutoShowKeyboard(autoShow: Boolean) {}
+      }
+
+    override fun onKeyboardShown() {}
+  }

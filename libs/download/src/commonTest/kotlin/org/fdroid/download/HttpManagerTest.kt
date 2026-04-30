@@ -13,6 +13,7 @@ import io.ktor.client.engine.mock.respondRedirect
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.RedirectResponseException
 import io.ktor.client.plugins.ServerResponseException
+import io.ktor.http.HttpHeaders.AcceptEncoding
 import io.ktor.http.HttpHeaders.Authorization
 import io.ktor.http.HttpHeaders.ETag
 import io.ktor.http.HttpHeaders.UserAgent
@@ -50,7 +51,7 @@ internal class HttpManagerTest {
   private val downloadRequest = DownloadRequest("foo", mirrors)
 
   @Test
-  fun testUserAgent() = runSuspend {
+  fun testUserAgentAndCompression() = runSuspend {
     val mockEngine = MockEngine { respondOk() }
     val httpManager = HttpManager(userAgent, null, httpClientEngineFactory = get(mockEngine))
 
@@ -59,6 +60,7 @@ internal class HttpManagerTest {
 
     mockEngine.requestHistory.forEach { request ->
       assertEquals(userAgent, request.headers[UserAgent])
+      assertEquals("deflate,gzip", request.headers[AcceptEncoding])
     }
   }
 

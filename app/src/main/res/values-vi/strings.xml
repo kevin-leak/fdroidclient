@@ -526,7 +526,6 @@
     <string name="repo_exists">Kho này đã được thêm từ trước.</string>
     <string name="repositories_last_update">Cập nhật lần cuối: %s</string>
     <string name="repositories_last_update_never">chưa từng cập nhật</string>
-    <string name="repo_disable_warning">Vô hiệu hóa kho này sẽ gỡ bỏ trạng thái \"ưu tiên\" của nó khỏi tất cả ứng dụng.</string>
     <string name="targetsdk_or_later">mục tiêu %s</string>
     <string name="repo_list_info_text">Kho ứng dụng (repository) lưu giữ thông tin cài đặt và cập nhật cho các ứng dụng, Danh sách này hiển thị tất cả các kho đã thêm. Các kho bị vô hiệu hóa sẽ không cung cấp được thông tin cài đặt và cập nhật cho các ứng dụng trong kho ấy.\n \nNếu một ứng dụng tồn tại trong nhiều kho, kho có vị trí cao hơn trong danh sách sẽ được ưu tiên. Bạn có thể sắp xếp vị trí kho bằng cách nhấn giữ và kéo thả chúng.</string>
     <string name="force_old_installer_title">Dùng trình cài đặt cũ</string>

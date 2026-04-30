@@ -223,6 +223,7 @@ fun AppDetailsHeader(
         Text(
           text = stringResource(strRes),
           style = MaterialTheme.typography.bodyMedium,
+          color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
           overflow = TextOverflow.Ellipsis,
           maxLines = 1,
         )
@@ -236,6 +237,7 @@ fun AppDetailsHeader(
           Text(
             text = stringResource(R.string.status_downloading, speedStr),
             style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             overflow = TextOverflow.StartEllipsis,
             maxLines = 1,
             modifier = Modifier.padding(end = 8.dp),
@@ -243,6 +245,7 @@ fun AppDetailsHeader(
           Text(
             text = stringResource(R.string.status_downloading_remaining, remainingStr),
             style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
             overflow = TextOverflow.Ellipsis,
             maxLines = 1,
           )
@@ -304,7 +307,7 @@ fun AppDetailsHeader(
         // button is for either installing or updating
         Button(
           onClick = {
-            if (item.networkState.isMetered) {
+            if (item.networkState.showWarningDialog) {
               showMeteredDialog = true
             } else {
               require(item.suggestedVersion != null) { "suggestedVersion was null" }
@@ -325,7 +328,8 @@ fun AppDetailsHeader(
   if (showMeteredDialog)
     MeteredConnectionDialog(
       numBytes = version?.size,
-      onConfirm = {
+      onConfirm = { notWarnWhenMetered ->
+        if (notWarnWhenMetered) item.actions.onNotWarnWhenMetered()
         require(item.suggestedVersion != null) { "suggestedVersion was null" }
         item.actions.installAction(item.app, item.suggestedVersion, item.icon)
       },

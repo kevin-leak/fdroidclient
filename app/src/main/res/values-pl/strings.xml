@@ -596,7 +596,6 @@
     <string name="app_details_repository_button_prefer">Preferuj repozytorium</string>
     <string name="repo_error_adding_archive">Archiwalne repozytoria nie mogą być dodawane bezpośrednio. Naciśnij repozytorium na liście i włącz tam archiwum.</string>
     <string name="repositories_last_update">Ostatnia aktualizacja: %s</string>
-    <string name="repo_disable_warning">Wyłączenie tego repozytorium spowoduje usunięcie jego statusu „preferowane” ze wszystkich aplikacji.</string>
     <string name="repo_add_repo_and_mirror">Dodaj repozytorium i serwer lustrzany</string>
     <string name="repo_view_repo">Wyświetl repozytorium</string>
     <string name="repo_scan_qr_code">Zeskanuj kod QR</string>

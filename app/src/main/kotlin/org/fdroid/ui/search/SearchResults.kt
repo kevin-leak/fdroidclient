@@ -23,12 +23,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.fdroid.R
-import org.fdroid.search.SEARCH_THRESHOLD
 import org.fdroid.search.SavedSearch
+import org.fdroid.search.SearchHelper.isSearchable
 import org.fdroid.ui.categories.CategoryChip
 import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.categories.ChipFlowRow
@@ -47,6 +48,7 @@ fun SearchResults(
   searchResults: SearchResults?,
   textFieldState: TextFieldState,
   savedSearches: List<SavedSearch>?,
+  categories: List<CategoryItem>?,
   onClearSavedSearches: () -> Unit,
   onNav: (NavigationKey) -> Unit,
   modifier: Modifier = Modifier,
@@ -55,20 +57,29 @@ fun SearchResults(
   val listState =
     rememberSaveable(searchResults, saver = LazyListState.Saver) { LazyListState(0, 0) }
   if (searchResults == null) {
-    if (textFieldState.text.length >= SEARCH_THRESHOLD) {
+    if (textFieldState.text.isSearchable()) {
       BigLoadingIndicator(modifier.padding(paddingValues).imePadding())
     } else {
-      if (!savedSearches.isNullOrEmpty()) {
-        PastSearches(
-          savedSearches = savedSearches,
-          onSearch = { textFieldState.edit { replace(0, length, it) } },
-          onClearSavedSearches = onClearSavedSearches,
-          modifier = modifier,
-          paddingValues = paddingValues,
-        )
+      val keyboardController = LocalSoftwareKeyboardController.current
+      LazyColumn(modifier = modifier.fillMaxSize(), contentPadding = paddingValues) {
+        if (!savedSearches.isNullOrEmpty()) {
+          pastSearches(
+            savedSearches = savedSearches,
+            onSearch = {
+              textFieldState.edit { replace(0, length, it) }
+              keyboardController?.hide()
+            },
+            onClearSavedSearches = onClearSavedSearches,
+          )
+        }
+        if (!categories.isNullOrEmpty()) {
+          item { CategoriesFlowRow(categories, onNav, modifier = Modifier.padding(top = 16.dp)) }
+        }
+        item { Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.systemBars)) }
+        item { Spacer(Modifier.windowInsetsBottomHeight(WindowInsets.ime)) }
       }
     }
-  } else if (searchResults.apps.isEmpty() && textFieldState.text.length >= SEARCH_THRESHOLD) {
+  } else if (searchResults.apps.isEmpty() && textFieldState.text.isSearchable()) {
     Column(modifier = modifier.padding(paddingValues)) {
       if (searchResults.categories.isNotEmpty()) {
         CategoriesFlowRow(searchResults.categories, onNav)
@@ -121,8 +132,12 @@ fun SearchResults(
 }
 
 @Composable
-private fun CategoriesFlowRow(categories: List<CategoryItem>, onNav: (NavigationKey) -> Unit) {
-  Column(modifier = Modifier.padding(horizontal = 8.dp)) {
+private fun CategoriesFlowRow(
+  categories: List<CategoryItem>,
+  onNav: (NavigationKey) -> Unit,
+  modifier: Modifier = Modifier,
+) {
+  Column(modifier = modifier.padding(horizontal = 8.dp)) {
     Text(
       text = stringResource(R.string.main_menu__categories),
       style = MaterialTheme.typography.labelLarge,

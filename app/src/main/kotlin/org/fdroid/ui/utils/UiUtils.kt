@@ -23,7 +23,7 @@ import kotlinx.coroutines.withContext
 import org.fdroid.database.Repository
 
 @Composable
-fun getHintOverlayColor() = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.8f)
+fun getHintOverlayColor() = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f)
 
 fun Context.startActivitySafe(i: Intent?) {
   if (i == null) return

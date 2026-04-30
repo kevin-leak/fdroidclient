@@ -38,6 +38,7 @@
     <string name="search_no_results">No apps found\n\nTry using fewer search terms or add more repositories</string>
     <string name="search_filter_no_results">No matching apps\n\nTry using fewer search terms or remove filters</string>
     <string name="search_my_apps_no_results">No matching apps\n\nTry using fewer search terms</string>
+    <string name="search_auto_keyboard">Automatically open keyboard</string>
     <string name="sort_title">Sorting and compatibility</string>
     <string name="sort_by_name">Sort by name</string>
     <string name="sort_by_latest">Sort by last update</string>
@@ -56,6 +57,18 @@
     <string name="onboarding_app_list_filter_message">Use filters to only show apps from specific categories or repositories. You can also change the sort order.</string>
     <string name="got_it">Got it</string>
     <string name="clear">Clear</string>
+    <string name="hide">Hide</string>
+
+    <string name="category_group_summary_productivity">Calendars, tasks, clocks &amp; notes</string>
+    <string name="category_group_summary_tools">Navigation, weather, calculators &amp; converters</string>
+    <string name="category_group_summary_wallets">Finance, money &amp; pass managers</string>
+    <string name="category_group_summary_media">Music, podcasts, games &amp; ebook readers</string>
+    <string name="category_group_summary_communication">Email, messaging &amp; social networks</string>
+    <string name="category_group_summary_device">Launcher, keyboard, security &amp; theming</string>
+    <string name="category_group_summary_network">Browser, VPNs, proxies &amp; firewall</string>
+    <string name="category_group_summary_storage">Files, gallery, cloud sync &amp; encryption</string>
+    <string name="category_group_summary_interests">Science, sports, drawing &amp; recipes</string>
+    <string name="category_group_summary_misc">Uncategorized</string>
 
     <string name="category_group_productivity">Productivity</string>
     <string name="category_group_tools">Tools</string>
@@ -225,6 +238,10 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="app_details_more_apps_interesting">This might also be interesting to you:</string>
     <string name="app_details_more_apps_by_author">More apps by %1$s</string>
 
+    <string name="app_details_anti_features_title">What are Anti-Features?</string>
+    <string name="app_details_anti_features_text">Some apps come with behaviors you didn’t ask for — and might not want. Things like ads, tracking, or dependence on proprietary services. We call these Anti-Features.
+\n\nApps in F-Droid are clearly labeled when they contain Anti-Features, so you can make an informed choice.</string>
+
     <string name="about_title_full">About F-Droid</string>
     <string name="about_title_basic">About F-Droid Basic</string>
     <string name="about_text">Apps on F-Droid are free and open source software (FOSS), they respect your privacy, and they\'re available for anyone to see the source code, build on and improve.\n\nApp distribution is transparent, privacy-respecting, and accountable, setting a standard that challenges the mobile ecosystem to do better.\n\nF-Droid\'s impact is measured not just in apps published, but in the freedom, trust, and digital rights it helps protect.\n\nHelp F-Droid to protect community-powered innovation and continue our mission of openness, privacy, and user empowerment.</string>
@@ -239,6 +256,7 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <!-- The placeholder will be replaced with a size string such as "13 MB" -->
     <string name="dialog_metered_text">Downloading %1$s may incur charges depending on your data plan</string>
     <string name="dialog_metered_text_no_size">Downloading may incur charges depending on your data plan</string>
+    <string name="dialog_metered_dont_show">Don\'t show this again</string>
     <string name="dialog_metered_button">Download</string>
     <string name="screenshots_metered">Tap to load screenshots via mobile data</string>
 
@@ -295,6 +313,8 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="app_list__dismiss_downloading_app">Download canceled</string>
 
     <string name="installed_apps__activity_title">Installed apps</string>
+    <string name="apps_updates_hint_title">Congratulations 🥳</string>
+    <string name="apps_updates_hint_text">All your apps are up to date</string>
     <!-- Should be exactly the same as the standard word for "Share" throughout Android and apps -->
     <string name="send_installed_apps">Share installed apps</string>
     <string name="send_installed_apps_csv">Apps installed by F-Droid as CSV file</string>
@@ -488,6 +508,7 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="expert_on">Show extra info and enable extra settings</string>
 
     <string name="search_hint">Search apps</string>
+    <string name="search_my_apps_hint">Search installed apps</string>
 
     <string name="appcompatibility">App compatibility</string>
     <string name="show_incompat_versions">Include incompatible versions</string>
@@ -639,7 +660,9 @@ This often occurs with apps installed via Google Play or other sources, if they 
     <string name="repo_disabled_notification">Disabled "%1$s".\n\nYou will
         need to re-enable this repository to install apps from it.
     </string>
-    <string name="repo_disable_warning">Disabling this repository will remove its \"preferred\" status from all apps.</string>
+    <string name="repo_disable_dialog_title">Disable repository</string>
+    <string name="repo_disable_dialog_warning">If you\'ve set this repository as preferred for any apps, that preference will be lost</string>
+    <string name="repo_disable_dialog_text">All apps from this repository will disappear. Already installed apps won\'t be affected.</string>
     <string name="repo_disable_warning_button">Disable</string>
     <string name="repo_added">Saved package repository %1$s.</string>
     <string name="repo_searching_address">Looking for package repository at\n%1$s</string>

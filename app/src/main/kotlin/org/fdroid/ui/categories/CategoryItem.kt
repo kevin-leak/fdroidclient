@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.AppBlocking
 import androidx.compose.material.icons.filled.Apps
 import androidx.compose.material.icons.filled.BatteryChargingFull
 import androidx.compose.material.icons.filled.Bookmarks
+import androidx.compose.material.icons.filled.BrowserUpdated
 import androidx.compose.material.icons.filled.Brush
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CalendarMonth
@@ -74,7 +75,7 @@ import androidx.compose.material.icons.filled.Wallpaper
 import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.ui.graphics.vector.ImageVector
 
-data class CategoryItem(val id: String, val name: String) {
+data class CategoryItem(val id: String, val name: String, val description: String? = null) {
   val imageVector: ImageVector
     get() =
       when (id) {
@@ -130,6 +131,7 @@ data class CategoryItem(val id: String, val name: String) {
         "Reading" -> AutoMirrored.Default.MenuBook
         "Recipe Manager" -> Icons.Default.RestaurantMenu
         "Religion" -> Icons.Default.Church
+        "Remote Access" -> Icons.Default.BrowserUpdated
         "Remote Controller" -> Icons.Default.SettingsRemote
         "Science & Education" -> Icons.Default.Science
         "Security" -> Icons.Default.Security
@@ -208,6 +210,7 @@ data class CategoryItem(val id: String, val name: String) {
         "Reading" -> CategoryGroups.media
         "Recipe Manager" -> CategoryGroups.interests
         "Religion" -> CategoryGroups.interests
+        "Remote Access" -> CategoryGroups.network
         "Remote Controller" -> CategoryGroups.tools
         "Science & Education" -> CategoryGroups.interests
         "Security" -> CategoryGroups.device

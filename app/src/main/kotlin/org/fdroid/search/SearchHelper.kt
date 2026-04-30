@@ -6,6 +6,9 @@ import java.text.Normalizer.Form.NFKD
 object SearchHelper {
   private val normalizerRegex = "\\p{M}".toRegex()
 
+  fun CharSequence.isSearchable(): Boolean =
+    isNotBlank() && (length >= 3 || any { Character.isIdeographic(it.code) })
+
   /** Normalizes the string by removing any diacritics that may appear. */
   fun String.normalize(): String {
     if (Normalizer.isNormalized(this, NFKD)) return this

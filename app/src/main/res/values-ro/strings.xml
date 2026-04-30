@@ -570,7 +570,6 @@
     <string name="repo_list_info_title">Lista de depozite</string>
     <string name="repo_archive_toggle">Arhivă depozit</string>
     <string name="repo_archive_failed">Arhivă depozit momentan indisponibilă</string>
-    <string name="repo_disable_warning">Dezactivarea acestui depozit îl va elimina ca fiind \"preferat\" pentru toate aplicațiile.</string>
     <string name="repositories_last_update">Ultima actualizare: %s</string>
     <string name="repositories_last_update_never">niciodată</string>
     <string name="repo_list_info_text">Un depozit este o sursă de aplicații. Această listă afișează toate depozitele adăugate în prezent. Depozitele dezactivate nu sunt utilizate.

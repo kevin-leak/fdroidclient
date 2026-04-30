@@ -259,7 +259,8 @@ internal class SessionInstallManagerTest {
     every { packageInstaller.openSession(999) } returns mockk(relaxed = true)
     val preapprovalReceiver: InstallBroadcastReceiver = mockk(relaxed = true)
     every { receiverFactory.create(999, any()) } returns preapprovalReceiver
-    every { registerReceiver(context, preapprovalReceiver, any<IntentFilter>(), any()) } returns mockk()
+    every { registerReceiver(context, preapprovalReceiver, any<IntentFilter>(), any()) } returns
+      mockk()
 
     val iconError =
       sessionInstallManager.requestPreapproval(
@@ -353,6 +354,42 @@ internal class SessionInstallManagerTest {
   }
 
   @Test
+  fun `install ignores duplicate callbacks after completion`() = runBlocking {
+    val apkFile: File =
+      tmpFolder.newFile("app-duplicate-callback.apk").apply { writeBytes(byteArrayOf(7)) }
+
+    val listenerSlot = slot<InstallBroadcastListener>()
+    every { receiverFactory.create(sessionId, capture(listenerSlot)) } returns receiver
+
+    val sender: IntentSender = mockk(relaxed = true)
+    every { PendingIntent.getBroadcast(any(), any(), any<Intent>(), any()) } returns pendingIntent
+    every { pendingIntent.intentSender } returns sender
+
+    every { packageInstaller.openSession(sessionId) } returns session
+    every { session.openWrite(packageName, 0, apkFile.length()) } returns ByteArrayOutputStream()
+    every { session.fsync(any()) } just runs
+    every { session.commit(any()) } answers
+      {
+        listenerSlot.captured.invoke(receiver, PackageInstaller.STATUS_SUCCESS, null, null)
+        listenerSlot.captured.invoke(receiver, PackageInstaller.STATUS_FAILURE_ABORTED, null, null)
+      }
+    every { session.close() } just Runs
+    every { registerReceiver(context, receiver, any<IntentFilter>(), any()) } returns mockk()
+
+    val result =
+      sessionInstallManager.install(
+        sessionId = sessionId,
+        packageName = packageName,
+        state = installingState,
+        apkFile = apkFile,
+      )
+
+    // first state wins, even though we got STATUS_FAILURE_ABORTED afterward
+    assertIs<InstallState.Installed>(result)
+    verify(atLeast = 1) { context.unregisterReceiver(any()) }
+  }
+
+  @Test
   fun `install returns UserConfirmationNeeded when STATUS_PENDING_USER_ACTION`() {
     runBlocking {
       val apkFile = tmpFolder.newFile("app-pending.apk")
@@ -419,15 +456,14 @@ internal class SessionInstallManagerTest {
 
     // start the installation in the background so we can cancel() it
     val installScope = CoroutineScope(Dispatchers.Unconfined)
-    val installJob =
-      installScope.async {
-        sessionInstallManager.install(
-          sessionId = sessionId,
-          packageName = packageName,
-          state = installingState,
-          apkFile = apkFile,
-        )
-      }
+    val installJob = installScope.async {
+      sessionInstallManager.install(
+        sessionId = sessionId,
+        packageName = packageName,
+        state = installingState,
+        apkFile = apkFile,
+      )
+    }
     installJob.cancelAndJoin()
 
     verify(atLeast = 1) { context.unregisterReceiver(receiver) }

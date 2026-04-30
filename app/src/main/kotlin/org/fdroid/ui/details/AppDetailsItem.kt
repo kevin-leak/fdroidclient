@@ -21,8 +21,8 @@ import org.fdroid.index.RELEASE_CHANNEL_BETA
 import org.fdroid.index.v2.PackageVersion
 import org.fdroid.install.InstallState
 import org.fdroid.install.SessionInstallManager
-import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.search.SearchHelper.removeZeroWhiteSpace
+import org.fdroid.ui.categories.CategoryItem
 
 data class AppDetailsItem(
   val app: AppMetadata,
@@ -62,6 +62,7 @@ data class AppDetailsItem(
   val appPrefs: AppPrefs? = null,
   val whatsNew: String? = null,
   val antiFeatures: List<AntiFeature>? = null,
+  val showAntiFeaturesOnboarding: Boolean = false,
   val issue: AppIssue? = null,
   val authorHasMoreThanOneApp: Boolean = false,
   val proxy: ProxyConfig? = null,
@@ -82,6 +83,7 @@ data class AppDetailsItem(
     suggestedVersion: AppVersion?,
     possibleUpdate: AppVersion?,
     appPrefs: AppPrefs?,
+    showAntiFeaturesOnboarding: Boolean,
     issue: AppIssue?,
     authorHasMoreThanOneApp: Boolean,
     localeList: LocaleListCompat,
@@ -131,6 +133,7 @@ data class AppDetailsItem(
           localeList = localeList,
           proxy = proxy,
         ),
+    showAntiFeaturesOnboarding = showAntiFeaturesOnboarding,
     issue = issue,
     authorHasMoreThanOneApp = authorHasMoreThanOneApp,
     proxy = proxy,
@@ -239,7 +242,9 @@ data class AppDetailsActions(
   val onUninstallResult: (ActivityResult) -> Unit,
   val onRepoChanged: (Long) -> Unit,
   val onPreferredRepoChanged: (Long) -> Unit,
+  val onNotWarnWhenMetered: () -> Unit,
   val allowBetaVersions: () -> Unit,
+  val onAntiFeaturesOnboardingSeen: () -> Unit,
   val ignoreAllUpdates: (() -> Unit)? = null,
   val ignoreThisUpdate: (() -> Unit)? = null,
   val shareApk: Intent? = null,

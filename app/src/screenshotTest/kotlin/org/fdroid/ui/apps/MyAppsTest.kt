@@ -14,6 +14,31 @@ import org.fdroid.ui.utils.getPreviewVersion
 @Composable
 @PreviewTest
 @Preview(showBackground = true, showSystemUi = true)
+fun MyAppsEmpty() {
+  ScreenshotTest(numUpdates = 0, hasAppIssues = false) {
+    val model =
+      MyAppsModel(
+        appUpdates = emptyList(),
+        installingApps = emptyList(),
+        appsWithIssue = null,
+        installedApps = emptyList(),
+        showUpdatesHint = true,
+        showAppIssueHint = false,
+        sortOrder = AppListSortOrder.NAME,
+        networkState = NetworkState(isOnline = true, isMetered = false),
+      )
+    MyApps(
+      myAppsInfo = getMyAppsInfo(model),
+      currentPackageName = null,
+      onAppItemClick = {},
+      onNav = {},
+    )
+  }
+}
+
+@Composable
+@PreviewTest
+@Preview(showBackground = true, showSystemUi = true)
 fun MyAppsOnlyInstalledAppsAndNoInternet() {
   ScreenshotTest(numUpdates = 0, hasAppIssues = false) {
     val model =
@@ -22,6 +47,7 @@ fun MyAppsOnlyInstalledAppsAndNoInternet() {
         installingApps = emptyList(),
         appsWithIssue = null,
         installedApps = getInstalledApps(),
+        showUpdatesHint = true,
         showAppIssueHint = false,
         sortOrder = AppListSortOrder.NAME,
         networkState = NetworkState(isOnline = true, isMetered = false),
@@ -46,6 +72,7 @@ fun MyAppsInstalledAndIssues() {
         installingApps = emptyList(),
         appsWithIssue = getAppIssues(),
         installedApps = getInstalledApps(),
+        showUpdatesHint = false,
         showAppIssueHint = true,
         sortOrder = AppListSortOrder.NAME,
         networkState = NetworkState(isOnline = false, isMetered = false),
@@ -70,6 +97,7 @@ fun MyAppsUpdatesOnlyAndNoInternet() {
         installingApps = emptyList(),
         appsWithIssue = null,
         installedApps = emptyList(),
+        showUpdatesHint = false,
         showAppIssueHint = false,
         sortOrder = AppListSortOrder.LAST_UPDATED,
         networkState = NetworkState(isOnline = false, isMetered = false),
@@ -119,6 +147,7 @@ fun MyAppsFullList() {
         installingApps = installingApps,
         appsWithIssue = getAppIssues(),
         installedApps = getInstalledApps(),
+        showUpdatesHint = false,
         showAppIssueHint = false,
         sortOrder = AppListSortOrder.NAME,
         networkState = NetworkState(isOnline = true, isMetered = false),

@@ -605,7 +605,6 @@
     <string name="repo_archive_failed">Arhivski repozitorij trenutačno nije dostupan</string>
     <string name="repo_confirm_delete_mirror_title">Izbrisati zrcalni server?</string>
     <string name="repo_confirm_delete_mirror_body">Možeš nastaviti instalirati aplikacije iz ovog repozitorija pomoću drugih zrcalnih servera.</string>
-    <string name="repo_disable_warning">Deaktiviranje ovog repozitorija će ukloniti njegov „preferirani” status iz svih aplikacija.</string>
     <string name="repo_disable_warning_button">Deaktiviraj</string>
     <string name="share_mirror">Dijeli zrcalni server</string>
     <string name="show_repository_qr">Prikaži QR kod repozitorija</string>

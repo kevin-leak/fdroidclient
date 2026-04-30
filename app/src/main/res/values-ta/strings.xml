@@ -529,7 +529,6 @@
     <string name="app_details_repository_expand">களஞ்சிய பட்டியலை விரிவாக்கு</string>
     <string name="useDnsCacheSummary">டிஎன்எச் வினவல்களைக் குறைக்க தற்காலிக சேமிப்பு முடிவுகளைப் பயன்படுத்தவும்.</string>
     <string name="repo_archive_toggle">களஞ்சிய காப்பகம்</string>
-    <string name="repo_disable_warning">இந்த களஞ்சியத்தை முடக்குவது அனைத்து பயன்பாடுகளிலிருந்தும் அதன் \"விருப்பமான\" நிலையை அகற்றும்.</string>
     <string name="nearby_splace__external_storage_permission_button">முயற்சி செய்யுங்கள்</string>
     <string name="repositories_last_update_never">ஒருபோதும்</string>
     <string name="repo_add_repo_and_mirror">களஞ்சியத்தையும் கண்ணாடியையும் சேர்க்கவும்</string>
