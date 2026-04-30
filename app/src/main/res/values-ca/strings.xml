@@ -563,8 +563,8 @@
     <string name="ipfsgw_add_add">Afegir</string>
     <string name="ipfsgw_explainer">Descarregar les aplicacions des de nodes IPFS. (Només funciona per a repositoris de F-Droid amb suport per a IPFS.)</string>
     <plurals name="ipfsgw_summary">
-        <item quantity="one">Descarregar les aplicacions des de nodes IPFS: %1$d habilitat</item>
-        <item quantity="many">Descarregar les aplicacions des de nodes IPFS: %1$d habilitats</item>
+        <item quantity="one">Descarrega les aplicacions des de nodes IPFS: %1$d habilitat</item>
+        <item quantity="many">Descarrega les aplicacions des de nodes IPFS: %1$d habilitats</item>
         <item quantity="other">Descarregar les aplicacions des de nodes IPFS: %1$d habilitats</item>
     </plurals>
     <string name="repo_add_repo_and_mirror">Afegir dipòsit i rèplica</string>
@@ -735,7 +735,7 @@
     <string name="app_details_incompatible_version">Incompatible • La instal·lació probablement fallarà</string>
     <string name="app_details_incompatible_signer">La signatura no coincideix, no es pot instal·lar</string>
     <string name="app_details_install_error_text">Uix! S\'ha produït un error inesperat a l\'instal·lar aquesta aplicació</string>
-    <string name="status_downloading">S\'està descarregant a %1$s</string>
+    <string name="status_downloading">S\'està descarregant a %s/s</string>
     <string name="status_downloading_remaining">Queden %1$s</string>
     <string name="repo_has_update_error">Hi ha hagut errors a l\'actualitzar</string>
     <string name="repo_has_update_error_intro">Hi ha hagut un error a l\'hora d\'actualitzar el repositori:</string>
@@ -790,4 +790,8 @@
     <string name="install_history_disabled_state">L\'històric d\'instal·lacions està desactivat\n\nLes instal·lacions, actualitzacions i desinstal·lacions no seran registrades</string>
     <string name="install_history_delete_ally">Esborra l\'històric d\'instal·lacions</string>
     <string name="install_history_delete_text">Voleu esborrar l\'històric d\'instal·lacions?</string>
+    <string name="search_history">Cerques recents</string>
+    <string name="install_history_switch">Usa l\'historial d\'instal·lacions</string>
+    <string name="sdk_target_version">%1$s (objectiu)</string>
+    <string name="sdk_max_version">%1$s (màxim)</string>
 </resources>

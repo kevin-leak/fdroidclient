@@ -48,10 +48,10 @@
     <string name="antitracklist">Aquela aplicacion seguís e senhala vòstra activitat</string>
     <string name="antinonfreeassetslist">Aquela aplicacion conten de ressorsas non liuras</string>
     <string name="app_list__name__successfully_installed">%1$s instalat/da</string>
-    <string name="more">Mei</string>
+    <string name="more">Mai</string>
     <string name="warning_no_internet">Impossible d\'actualizar, çò sètz connectat a Internet ?</string>
     <string name="no_permissions">Cap de permission</string>
-    <string name="notification_action_install">Instalar</string>
+    <string name="notification_action_install">Installar</string>
     <string name="less">Mens</string>
     <string name="global_error_updating_repos">Error mentre l\'actualizacion : %s</string>
     <string name="all_other_repos_fine">Totes los autres depausses an pas creat d\'errors.</string>

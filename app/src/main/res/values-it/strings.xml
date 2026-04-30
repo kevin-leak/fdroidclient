@@ -15,9 +15,9 @@
     <string name="notify_on">Mostra una notifica quando sono disponibili aggiornamenti</string>
     <string name="system_installer">Estensione privilegiata</string>
     <string name="system_installer_on">Usa l\'Estensione privilegiata per installare, aggiornare e rimuovere i pacchetti</string>
-    <string name="local_repo_name">Nome del tuo repository locale</string>
-    <string name="local_repo_name_summary">Il titolo visualizzato del tuo repository: %s</string>
-    <string name="local_repo_https_on">Usa la connessione HTTPS:// criptata per i repository locali</string>
+    <string name="local_repo_name">Nome della tua repository locale</string>
+    <string name="local_repo_name_summary">Il titolo visualizzato della tua repository: %s</string>
+    <string name="local_repo_https_on">Usa la connessione HTTPS:// criptata per le repository locali</string>
     <string name="app_details">Dettagli applicazione</string>
     <string name="no_such_app">Nessuna app corrispondente trovata.</string>
     <string name="about_title_full">Informazioni su F-Droid</string>
@@ -38,10 +38,10 @@
     <string name="choose_bt_send">Scegli invio mediante Bluetooth</string>
     <string name="repo_add_url">Indirizzo repository</string>
     <string name="repo_add_fingerprint">Impronta digitale (opzionale)</string>
-    <string name="malformed_repo_uri">Ignora URI non valide dei repository: %s</string>
+    <string name="malformed_repo_uri">Ignora URI non validi delle repository: %s</string>
     <string name="menu_manage">Repository</string>
     <string name="menu_search">Cerca</string>
-    <string name="menu_add_repo">Nuovo repository</string>
+    <string name="menu_add_repo">Nuova repository</string>
     <string name="menu_launch">Apri</string>
     <string name="menu_share">Condividi</string>
     <string name="menu_install">Installa</string>
@@ -70,10 +70,10 @@
     <string name="touch_to_configure_local_repo">Tocca per vedere i dettagli e permettere agli altri di ricevere le tue
         app.
     </string>
-    <string name="deleting_repo">Cancellazione del repository attuale…</string>
-    <string name="adding_apks_format">Aggiunta di %s al repository…</string>
+    <string name="deleting_repo">Cancellazione della repository attuale…</string>
+    <string name="adding_apks_format">Aggiunta di %s alla repository…</string>
     <string name="writing_index_jar">Scrittura del file di indice firmato (index.jar)…</string>
-    <string name="linking_apks">Collegamento degli APK al repository…</string>
+    <string name="linking_apks">Collegamento degli APK alla repository…</string>
     <string name="copying_icons">Copia delle icone delle app nel repository…</string>
     <string name="icon">Icona</string>
     <string name="next">Avanti</string>
@@ -89,8 +89,8 @@
 \n%2$s / %3$s (%4$d%%) da
 \n%1$s</string>
     <string name="status_connecting_to_repo">Connessione a\n%1$s</string>
-    <string name="repos_unchanged">Tutti i repository sono aggiornati</string>
-    <string name="all_other_repos_fine">Tutti gli altri repository non hanno generato errori.</string>
+    <string name="repos_unchanged">Tutte le repository sono aggiornate</string>
+    <string name="all_other_repos_fine">Tutte le altre repository non hanno generato errori.</string>
     <string name="global_error_updating_repos">Errore durante l\'aggiornamento: %s</string>
     <string name="no_permissions">Nessuna autorizzazione</string>
     <string name="no_handler_app">Non hai alcuna app disponibile che può gestire %s.</string>
@@ -100,14 +100,10 @@
     <string name="repo_fingerprint">Impronta digitale della chiave (SHA-256)</string>
     <string name="repo_description">Descrizione</string>
     <string name="unknown">Sconosciuta</string>
-    <string name="repo_confirm_delete_title">Eliminare il repository?</string>
-    <string name="repo_confirm_delete_body">L\'eliminazione di un repository comporta che le app contenute in esso non saranno più disponibili.
-\n
-\nNota: Tutte le applicazioni installate in precedenza rimarranno sul tuo dispositivo.</string>
-    <string name="repo_disabled_notification">%1$s disattivato.
-\n
-\nDovrai riattivare nuovamente questo repository per installare le app contenute.</string>
-    <string name="not_on_same_wifi">Il tuo dispositivo non è sulla stessa rete Wi-Fi del repository locale che hai aggiunto! Prova a collegarti a questa rete: %s</string>
+    <string name="repo_confirm_delete_title">Eliminare la repository?</string>
+    <string name="repo_confirm_delete_body">L\'eliminazione di una repository comporta che le app contenute in essa non saranno più disponibili. \n \nNota: Tutte le applicazioni installate in precedenza rimarranno sul tuo dispositivo.</string>
+    <string name="repo_disabled_notification">%1$s disattivato. \n \nDovrai riattivare nuovamente questa repository per installare le app contenute.</string>
+    <string name="not_on_same_wifi">Il tuo dispositivo non è sulla stessa rete Wi-Fi della repository locale che hai aggiunto! Prova a collegarti a questa rete: %s</string>
     <string name="requires_features">Richiede: %1$s</string>
     <string name="category_Development">Sviluppo</string>
     <string name="category_Games">Giochi</string>
@@ -193,7 +189,7 @@
     <string name="menu_changelog">Cronologia</string>
     <string name="menu_litecoin">Litecoin</string>
     <string name="menu_flattr">Flattr</string>
-    <string name="banner_updating_repositories">Aggiornamento dei repository</string>
+    <string name="banner_updating_repositories">Aggiornamento delle repository</string>
     <string name="status_processing_xml_percent">Elaborazione %2$s/%3$s (%4$d%%) di %1$s</string>
     <string name="status_inserting_apps">Salvataggio dettagli applicazione</string>
     <string name="repo_details">Repository</string>
@@ -291,7 +287,7 @@
     <string name="preference_manage_installed_apps">Gestisci le applicazioni installate</string>
     <string name="latest__empty_state__never_updated">Una volta aggiornata la tua lista delle applicazioni, le ultime applicazioni dovrebbero apparire qui</string>
     <string name="latest__empty_state__no_recent_apps">Nessuna app recente trovata</string>
-    <string name="latest__empty_state__no_enabled_repos">Una volta abilitato un repository e fatto aggiornare, le ultime applicazioni dovrebbero apparire qui</string>
+    <string name="latest__empty_state__no_enabled_repos">Una volta abilitata una repository e fatta aggiornare, le ultime applicazioni dovrebbero apparire qui</string>
     <string name="categories__empty_state__no_categories">Nessuna categoria da visualizzare</string>
     <string name="details_new_in_version">Novità della versione %s</string>
     <string name="antifeatureswarning">Questa app ha caratteristiche che potrebbero non piacerti.</string>
@@ -474,7 +470,7 @@
     <string name="try_again">Riprova</string>
     <string name="panic_will_be_wiped">Sarà disinstallato e i dati cancellati</string>
     <string name="panic_add_apps_to_uninstall">Aggiungi le app da disinstallare</string>
-    <string name="panic_reset_repos_title">Reimposta i repository</string>
+    <string name="panic_reset_repos_title">Reimposta le repository</string>
     <string name="swap_visible_hotspot">Visibile tramite hotspot</string>
     <string name="swap_blank_wifi_ssid">(vuoto)</string>
     <string name="swap_hidden_wifi_ssid">(nascosto)</string>
@@ -486,7 +482,7 @@
     <string name="swap_error_cannot_start_bluetooth">Non è possibile avviare il Bluetooth!</string>
     <string name="nearby_splash__document_tree">Cerca repository e mirror nella chiavetta USB.</string>
     <string name="panic_apps_to_uninstall">App da disinstallare e di cui cancellare tutti i dati</string>
-    <string name="panic_reset_repos_summary">Forza l\'impostazione del repository ai valori predefiniti</string>
+    <string name="panic_reset_repos_summary">Forza l\'impostazione delle repository ai valori predefiniti</string>
     <string name="swap_toast_closing_nearby_after_timeout">Nearby chiuso poiché era inattivo.</string>
     <string name="menu_opencollective">OpenCollective</string>
     <string name="notification_channel_updates_title">Aggiornamenti</string>
@@ -511,8 +507,8 @@
     <string name="banner_no_internet">Nessuna connessione</string>
     <string name="share_apk_error">Impossibile condividere il file dell\'app</string>
     <string name="swap_wifi_vpn_conflict">In conflitto con la VPN attiva!</string>
-    <string name="has_disallow_install_unknown_sources">Fonti sconosciute non possono essere aggiunte da questo utente, inclusi nuovi repository</string>
-    <string name="has_disallow_install_unknown_sources_globally">L\'amministratore del tuo dispositivo non permette l\'installazione di app da fonti sconosciute, inclusi nuovi repository</string>
+    <string name="has_disallow_install_unknown_sources">Fonti sconosciute non possono essere aggiunte da questo utente, incluse nuove repository</string>
+    <string name="has_disallow_install_unknown_sources_globally">L\'amministratore del tuo dispositivo non permette l\'installazione di app da fonti sconosciute, incluse nuove repository</string>
     <string name="antinonfreedep">Dipendenze non libere</string>
     <string name="app_list_results_hidden_antifeature_settings">Alcune app sono nascoste in base alle tue impostazioni di anti-caratteristiche. Tocca per cambiarlo.</string>
     <string name="antinonfreead">Addon non liberi</string>
@@ -536,17 +532,13 @@
     <string name="swap_banner_message">Per scambiare le app, accendi il Wi-Fi e connettiti alla stessa rete del tuo amico.</string>
     <string name="turn_on_wifi">Accendi il wifi</string>
     <string name="repo_add_new_title">Aggiungi repository</string>
-    <string name="repo_intro">Un repository è una fonte aggiuntiva di app. Quelli di terze parti che aggiungi qui, hanno standard diversi rispetto a quelli che forniscono app compilate da F-Droid stesso.
-\n
-\nAssicurati che il repository che stai aggiungendo sia affidabile.</string>
+    <string name="repo_intro">Una repository è una fonte aggiuntiva di app. Quelli di terze parti che aggiungi qui, hanno standard diversi rispetto a quelli che forniscono app compilate da F-Droid stesso. \n \nAssicurati che la repository che stai aggiungendo sia affidabile.</string>
     <string name="repo_state_fetching">Recupero repository…</string>
     <string name="repo_state_adding">Aggiunta repository…</string>
-    <string name="repo_enter_url">Inserisci l\'URL del repository a mano</string>
-    <string name="repo_exists">Questo repository è già stato aggiunto.</string>
-    <string name="repo_invalid">Repository non valido.
-\n
-\nContatta il manutentore e informalo del problema.</string>
-    <string name="repo_io_error">Errore di connessione al repository.</string>
+    <string name="repo_enter_url">Inserisci l\'URL della repository a mano</string>
+    <string name="repo_exists">Questa repository è già stata aggiunta.</string>
+    <string name="repo_invalid">Repository non valida. \n \nContatta il manutentore e informalo del problema.</string>
+    <string name="repo_io_error">Errore di connessione alla repository.</string>
     <string name="nearby_splace__external_storage_permission_button">Prova</string>
     <string name="nearby_splach__external_storage_permission_explainer">F-Droid può cercare repo e mirror sulla tua scheda SD, ma ha bisogno della tua autorizzazione per farlo.</string>
     <string name="swap_connection_indexv0_error">Stai cercando di connetterti a qualcuno con una versione obsoleta di F-Droid. Per collegarsi deve aggiornare la sua app F-Droid. Può aggiornarla tramite te.</string>
@@ -576,14 +568,12 @@
     <string name="useDnsCacheSummary">Usa risultati in cache per minimizzare le richieste DNS.</string>
     <string name="app_details_repository">Repository</string>
     <string name="app_details_repositories">Repository</string>
-    <string name="app_details_repository_preferred">(preferito)</string>
+    <string name="app_details_repository_preferred">(preferita)</string>
     <string name="app_details_repository_button_prefer">Preferisci repository</string>
     <string name="app_details_repository_expand">Espandi lista repository</string>
     <string name="app_list_no_suggested_version">Nessuna versione consigliata da installare.</string>
-    <string name="repo_error_adding_archive">I repository di archivio non possono essere aggiunti direttamente. Tocca il repository nella lista e attiva l\'archivio lì.</string>
-    <string name="repo_list_info_text">Un repository è una fonte di app. Questo elenco mostra tutti i repository attualmente aggiunti. Quelli disattivati non vengono usati.
-\n
-\nSe un\'app si trova in più di un repository, viene automaticamente preferito quello più in alto nella lista. Puoi riordinare i repository premendoli a lungo e trascinandoli.</string>
+    <string name="repo_error_adding_archive">Le repository di archivio non possono essere aggiunte direttamente. Tocca la repository nella lista e attiva l\'archivio lì.</string>
+    <string name="repo_list_info_text">Una repository è una fonte di app. Questo elenco mostra tutte le repository attualmente aggiunte. Quelle disattivate non vengono usate. \n \nSe un\'app si trova in più di una repository, viene automaticamente preferita quella più in alto nella lista. Puoi riordinare le repository premendole a lungo e trascinandole.</string>
     <string name="repo_archive_toggle">Repository di archivio</string>
     <string name="repo_archive_toggle_description">Mostra app archiviate e versioni obsolete delle app</string>
     <string name="repo_disable_warning_button">Disattiva</string>
@@ -592,13 +582,13 @@
     <string name="repo_list_info_title">Elenco repository</string>
     <string name="repo_archive_failed">Repo di archivio attualmente non disponibile</string>
     <string name="repo_add_repo_and_mirror">Aggiungi repository e mirror</string>
-    <string name="repo_view_repo">Vedi il repository</string>
+    <string name="repo_view_repo">Vedi repository</string>
     <string name="repo_scan_qr_code">Scansiona codice QR</string>
-    <string name="repo_and_mirror_add_both_info">L\'URL che stai cercando di aggiungere (%s) è un mirror di un nuovo repository. Verrà aggiunto sia il repository originale che il mirror.</string>
+    <string name="repo_and_mirror_add_both_info">L\'URL che stai cercando di aggiungere (%s) è un mirror di una nuova repository. Verrà aggiunto sia la repository originale che il mirror.</string>
     <string name="repo_preview_included_apps">App incluse:</string>
     <string name="repo_mirror_exists">Questo mirror è già stato aggiunto (%s).</string>
-    <string name="repo_mirror_add_info">L\'URL che stai cercando di aggiungere (%s) è un mirror di un repository esistente.</string>
-    <string name="warning_no_compat_versions">Il repository selezionato non ha versioni dell\'app compatibili. Per ricevere aggiornamenti, prediligi un repository con versioni compatibili.</string>
+    <string name="repo_mirror_add_info">L\'URL che stai cercando di aggiungere (%s) è un mirror di una repository esistente.</string>
+    <string name="warning_no_compat_versions">La repository selezionata non ha versioni dell\'app compatibili. Per ricevere aggiornamenti, seleziona una repository preferita con versioni compatibili.</string>
     <string name="auto_update_time">Prossimo aggiornamento: %s</string>
     <string name="antitetherednet">Servizi di rete in tethering</string>
     <string name="antitetherednetlist">Questa app dipende completamente da una particolare istanza di un servizio di rete</string>
@@ -609,7 +599,7 @@
     <string name="preferForeignSummary">Prova prima mirror che si trovano al di fuori del tuo Paese, ad es. se le protezioni all\'estero sono più robuste.</string>
     <string name="preferForeign">Preferisci mirror esteri</string>
     <string name="no_handler_app_generic">Non hai alcuna app disponibile che possa gestirlo.</string>
-    <string name="repo_archive_unknown">Questo repository non sembra avere un archivio.</string>
+    <string name="repo_archive_unknown">Questa repository non sembra avere un archivio.</string>
     <string name="repo_archive_check">Cerca un archivio</string>
     <plurals name="repo_num_apps_text">
         <item quantity="one">1 app</item>
@@ -626,8 +616,8 @@
     <string name="repo_basic_auth_password">Password: ***</string>
     <string name="repo_basic_auth_edit">Modifica</string>
     <string name="expand">Espandi</string>
-    <string name="repo_details_info_text">Un repository è una fonte di app.\n\nI mirror vengono usati per distribuire il carico di scaricamento delle app tra più server. I mirror più vicini a te potrebbero essere più veloci.\n\nI mirror ufficiali sono definiti dal proprietario del repository. Non possono essere eliminati, solo disattivati. Puoi definire mirror personalizzati aggiungendoli proprio come un repository normale.</string>
-    <string name="repo_confirm_delete_mirror_body">Puoi continuare a installare app da questo repository usando gli altri mirror.</string>
+    <string name="repo_details_info_text">Una repository è una fonte di app.\n\nI mirror vengono usati per distribuire il carico di scaricamento delle app tra più server. I mirror più vicini a te potrebbero essere più veloci.\n\nI mirror ufficiali sono definiti dal proprietario del repository. Non possono essere eliminati, solo disattivati. Puoi definire mirror personalizzati aggiungendoli proprio come una repository normale.</string>
+    <string name="repo_confirm_delete_mirror_body">Puoi continuare a installare app da questa repository usando gli altri mirror.</string>
     <string name="collapse">Riduci</string>
     <string name="pref_export_log_summary">Crea un file con output logcat utile per il deubg. Attenzione, potrebbe contenere informazioni sensibili!</string>
     <string name="export_log_success">Logcat salvato con successo</string>
@@ -707,7 +697,7 @@
     <string name="category">Categoria</string>
     <string name="filter_antifeatures">Nascondi anti caratteristiche</string>
     <string name="onboarding_app_list_filter_title">Filtro</string>
-    <string name="onboarding_app_list_filter_message">Usa i filtri per mostrare solo le app da una specifica categoria o repository. Puoi anche cambiare ordine di ordinamento.</string>
+    <string name="onboarding_app_list_filter_message">Usa i filtri per mostrare solo le app da una specifica categoria o repository. Puoi anche cambiare l\'ordine.</string>
     <string name="got_it">Fatto</string>
     <string name="clear">Rimuovi</string>
     <string name="pref_dyn_colors_title">Usa i colori di sistema</string>
@@ -720,8 +710,8 @@
     <string name="pref_auto_updates_summary_always">Scarica e aggiorna le app giornalmente con connessione dati mobile quando il dispositivo non viene utilizzato</string>
     <string name="pref_auto_updates_summary_never">Aggiornamenti automatici disabilitati • Le app dovranno essere aggiornate manualmente</string>
     <string name="pref_repo_updates_title">Controlla aggiornamenti</string>
-    <string name="pref_repo_updates_summary_only_wifi">Scarica periodicamente gli aggiornamenti delle app dai repository solo quando sei connesso al Wi-Fi.</string>
-    <string name="pref_repo_updates_summary_always">Scarica periodicamente gli aggiornamenti delle app dai repository anche con connessione dati mobile.</string>
+    <string name="pref_repo_updates_summary_only_wifi">Scarica periodicamente gli aggiornamenti delle app dalle repository solo quando sei connesso al Wi-Fi</string>
+    <string name="pref_repo_updates_summary_always">Scarica periodicamente gli aggiornamenti delle app dalle repository anche con connessione dati mobile.</string>
     <string name="pref_repo_updates_summary_never">Non cercare aggiornamenti • Le applicazioni diventeranno obsolete</string>
     <string name="pref_category_network">Rete</string>
     <string name="search_history">Ricerche recenti</string>
@@ -739,7 +729,7 @@
     <string name="copy_link">Copia link</string>
     <string name="app_no_compatible_versions">Questa app non è compatibile con il tuo dispositivo</string>
     <string name="app_issue_not_available_title">App non più disponibile</string>
-    <string name="app_issue_not_available_text">L\'app potrebbe essere stata rimossa o era in un repository rimosso o disabilitato</string>
+    <string name="app_issue_not_available_text">L\'app potrebbe essere stata rimossa o era in una repository rimossa o disabilitata</string>
     <string name="app_issue_not_available_button">Mostra info app</string>
     <string name="app_issue_hint">Le app qui sotto hanno bisogno della tua attenzione. Puoi ignorare un problema di un\'app premendo a lungo.</string>
     <string name="added_x_ago">Aggiunta %1$s</string>
@@ -755,4 +745,28 @@
     <string name="notification_title">Notifiche</string>
     <string name="notification_channel_install_success_title">App installate automaticamente</string>
     <string name="notification_channel_install_success_description">Mostra una notifica dopo che le app sono state installate automaticamente</string>
+    <string name="pref_mirror_chooser_title">Selezione mirror</string>
+    <string name="about_text">Le app su F-Droid sono software gratuito e open source (FOSS), rispettano la tua privacy e sono disponibili per chiunque per vedere il codice sorgente, costruire e migliorare.\n\nLa distribuzione delle app è trasparente, rispetto alla privacy e responsabile, stabilendo uno standard che sfida l\'ecosistema mobile a fare meglio.\n\nL\'impatto di F-Droid è misurato non solo nelle app pubblicate, ma nella libertà, nella fiducia e nei diritti digitali che aiuta a proteggere.\n\nAiuta F-Droid a proteggere l\'innovazione basata sulla comunità e continua la nostra missione di apertura, privacy e responsabilizzazione degli utenti.</string>
+    <string name="about_license_text">Questo programma è Software Libero. È possibile ridistribuirlo e/o modificarlo secondo i termini della GNU General Public License come pubblicata dalla Free Software Foundation, dalla versione 3 della licenza, o qualsiasi versione successiva.</string>
+    <string name="screenshots_metered">Tocca per scaricare screenshot tramite dati mobili</string>
+    <string name="app_no_compatible_signer">Non è possibile aggiornare questa applicazione, perché tutte le versioni hanno una firma incompatibile\n\nSe non puoi aggiornare in altro modo, potrebbe essere necessario disinstallare e quindi reinstallare questa applicazione. I dati dell\'app andranno persi.</string>
+    <string name="app_no_compatible_signer_in_this_repo">Non è possibile aggiornare questa applicazione, perché non ci sono versioni compatibili nella repository preferita\n\nProva a cambiare la repository preferita</string>
+    <string name="app_no_auto_update">Aggiornamento automatico non disponibile perché questa applicazione è stata compilata per una vecchia versione di Android senza supporto per l\'aggiornamento automatico</string>
+    <string name="app_issue_update_other_repo">Un aggiornamento è disponibile in un altra repository. Cambia la repository preferita per aggiornare</string>
+    <string name="app_details_incompatible_version">Incompatibile - Installazione probabilmente fallirà</string>
+    <string name="app_details_incompatible_signer">Firma non corrispondente, installazione non possibile</string>
+    <string name="app_details_install_error_text">Ci dispiace! C\'è stato un errore inatteso durante l\'installazione di questa app</string>
+    <string name="status_downloading">Scaricamento a %s/s</string>
+    <string name="status_downloading_remaining">%1$s rimanenti</string>
+    <string name="repo_has_update_error">Errori aggiornamento</string>
+    <string name="repo_has_update_error_intro">Si è verificato un errore durante l\'aggiornamento di questa repository:</string>
+    <string name="repo_last_update_upstream">%s è stata pubblicata</string>
+    <string name="repo_last_downloaded">%s è stata caricata</string>
+    <string name="repo_basicauth_username">Nome utente</string>
+    <string name="repo_basicauth_edit">Salva Modifiche</string>
+    <string name="repo_force_update">Controlla aggiornamenti</string>
+    <string name="crash_report_text">Si è verificato un errore inaspettato. Non è colpa tua. Vuoi inviarci via e-mail i dettagli per aiutarti a risolvere il problema?</string>
+    <string name="crash_report_comment_hint">Dicci cosa è successo proprio prima del crash</string>
+    <string name="crash_report_button_send">Invia report</string>
+    <string name="crash_report_error">Impossibile inviare report. Nessuna app di posta elettronica trovata :(</string>
 </resources>
