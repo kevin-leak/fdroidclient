@@ -7,37 +7,25 @@
             <!-- Additionally trust user added CAs -->
             <certificates src="user" />
         </trust-anchors>
+
+        <!-- Self-hosted repos may have certs that are not in CT (private CAs) -->
+        <certificateTransparency enabled="false" />
     </base-config>
+
     <domain-config cleartextTrafficPermitted="true">
+        <certificateTransparency enabled="false" />
         <domain includeSubdomains="true">onion</domain>
     </domain-config>
 
     <domain-config cleartextTrafficPermitted="false">
+        <certificateTransparency enabled="true" />
+
         <domain includeSubdomains="true">amazonaws.com</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">f-droid.org</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">github.com</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">githubusercontent.com</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">github.io</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">gitlab.com</domain>
-        <certificateTransparency enabled="true"/>
-    </domain-config>
-    <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">gitlab.io</domain>
-        <certificateTransparency enabled="true"/>
     </domain-config>
 </network-security-config>
