@@ -22,6 +22,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import info.guardianproject.panic.Panic
+import info.guardianproject.panic.PanicResponder.PREF_TRIGGER_PACKAGE_NAME
 import kotlinx.coroutines.flow.MutableStateFlow
 import me.zhanghai.compose.preference.MapPreferences
 import me.zhanghai.compose.preference.Preferences
@@ -63,7 +64,7 @@ fun PanicSettings(
           title = { Text(stringResource(R.string.panic_destructive_actions)) },
         )
         listPreference(
-          key = "pref_panic_app",
+          key = PREF_TRIGGER_PACKAGE_NAME,
           defaultValue = null,
           icon = {
             if (state.selectedPanicApp == null)
