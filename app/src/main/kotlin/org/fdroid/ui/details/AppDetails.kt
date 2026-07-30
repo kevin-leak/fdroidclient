@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
@@ -18,7 +17,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AppSettingsAlt
 import androidx.compose.material.icons.filled.ChangeHistory
 import androidx.compose.material.icons.filled.Code
-import androidx.compose.material.icons.filled.CurrencyBitcoin
 import androidx.compose.material.icons.filled.EditNote
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Link
@@ -44,6 +42,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
@@ -223,7 +222,7 @@ fun AppDetails(
                 .lineCount > maxLines
             }
           var descriptionExpanded by
-            remember(allowExpand) {
+            rememberSaveable(allowExpand) {
               // not expanded (false) by default,
               // but expanded (true) when expanding not allowed
               mutableStateOf(!allowExpand)
