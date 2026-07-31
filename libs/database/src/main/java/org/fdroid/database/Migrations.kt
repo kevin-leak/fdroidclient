@@ -239,7 +239,7 @@ internal class DbMetadataMigration : AutoMigrationSpec {
   override fun onPostMigrate(db: SupportSQLiteDatabase) {
     db.beginTransaction()
     try {
-      db.execSQL("INSERT INTO DbMetadata (key, value) VALUES ('setup', 'true')")
+      db.execSQL("INSERT OR REPLACE INTO DbMetadata (key, value) VALUES ('setup', 'true')")
       db.setTransactionSuccessful()
     } finally {
       db.endTransaction()
