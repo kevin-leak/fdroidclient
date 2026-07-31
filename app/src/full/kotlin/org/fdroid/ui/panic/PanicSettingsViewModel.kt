@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import info.guardianproject.panic.Panic
 import info.guardianproject.panic.PanicResponder
+import info.guardianproject.panic.PanicResponder.PREF_TRIGGER_PACKAGE_NAME
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -39,7 +40,7 @@ constructor(
   private val log = KotlinLogging.logger {}
 
   val prefsFlow = settingsManager.prefsFlow
-  val appFlow = prefsFlow.map { it.get<String>("pref_panic_app") }.distinctUntilChanged()
+  val appFlow = prefsFlow.map { it.get<String>(PREF_TRIGGER_PACKAGE_NAME) }.distinctUntilChanged()
   val resetRepos
     get() = settingsManager.prefs.getBoolean("pref_panic_reset_repos", false)
 
