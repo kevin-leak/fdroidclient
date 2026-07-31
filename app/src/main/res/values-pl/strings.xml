@@ -359,7 +359,7 @@
     <string name="app_no_compatible_versions">Ta aplikacja nie jest zgodna z Twoim urządzeniem</string>
     <string name="app_no_compatible_signer">Nie można zaktualizować tej aplikacji, ponieważ wszystkie wersje mają niezgodny podpis\n\nJeśli nie otrzymujesz aktualizacji w inny sposób, konieczne może być odinstalowanie, a następnie ponowne zainstalowanie tej aplikacji. Dane aplikacji zostaną utracone.</string>
     <string name="app_no_compatible_signer_in_this_repo">Nie można zaktualizować tej aplikacji, ponieważ nie ma zgodnych wersji w preferowanym repozytorium\n\nSpróbuj zmienić preferowane repozytorium</string>
-    <string name="app_no_auto_update">Automatyczna aktualizacja jest nieodstępna, ponieważ ta aplikacja została stworzona dla starszej wersji Androida bez obsługi automatycznych aktualizacji</string>
+    <string name="app_no_auto_update">Automatyczna aktualizacja jest nieodstępna, ponieważ ta aplikacja została stworzona dla starszej wersji Androida</string>
     <string name="app_issue_update_other_repo">Aktualizacja jest dostępna w innym repozytorium. Zmień preferowane repozytorium, aby zaktualizować</string>
     <string name="app_issue_not_available_title">Aplikacja nie jest już dostępna</string>
     <string name="app_issue_not_available_button">Pokaż informacje o aplikacji</string>

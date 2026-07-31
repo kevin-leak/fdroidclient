@@ -373,7 +373,7 @@
     <string name="screenshots_metered">Tocca per scaricare screenshot tramite dati mobili</string>
     <string name="app_no_compatible_signer">Non è possibile aggiornare questa applicazione, perché tutte le versioni hanno una firma incompatibile\n\nSe non puoi aggiornare in altro modo, potrebbe essere necessario disinstallare e quindi reinstallare questa applicazione. I dati dell\'app andranno persi.</string>
     <string name="app_no_compatible_signer_in_this_repo">Non è possibile aggiornare questa applicazione, perché non ci sono versioni compatibili nella repository preferita\n\nProva a cambiare la repository preferita</string>
-    <string name="app_no_auto_update">Aggiornamento automatico non disponibile perché questa applicazione è stata compilata per una vecchia versione di Android senza supporto per l\'aggiornamento automatico</string>
+    <string name="app_no_auto_update">Aggiornamento automatico non disponibile perché questa applicazione è stata compilata per una vecchia versione di Android</string>
     <string name="app_issue_update_other_repo">Un aggiornamento è disponibile in un altra repository. Cambia la repository preferita per aggiornare</string>
     <string name="app_details_incompatible_version">Incompatibile - Installazione probabilmente fallirà</string>
     <string name="app_details_incompatible_signer">Firma non corrispondente, installazione non possibile</string>

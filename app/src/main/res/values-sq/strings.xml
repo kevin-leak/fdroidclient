@@ -344,7 +344,7 @@
     <string name="app_no_compatible_versions">Ky aplikacion s’është i përputhshëm me pajisjen tuaj</string>
     <string name="app_no_compatible_signer">S’përditësohet dot ky aplikacion, ngaqë krejt versionet janë një nënshkrim të papërputhshëm\n\nNëse s’merrni përditësime përmes kanalesh të tjerë, mund të duhet të çinstaloni dhe mandej të riinstaloni këtë aplikacion. Të dhënat e aplikacionit do të humbin.</string>
     <string name="app_no_compatible_signer_in_this_repo">S’përditësohet dot ky aplikacion, ngaqë te depoja e parapëlqyer s’ka versione të përputhshëm\n\nProvoni të ndryshoni depon e parapëlqyer</string>
-    <string name="app_no_auto_update">Vetëpërditësimi s’është i mundshëm, ngaqë ky aplikacion qe montuar për një version të vjetër të Android-it, pa mbulim për përditësime të vetvetishme</string>
+    <string name="app_no_auto_update">Vetëpërditësimi s’është i mundshëm, ngaqë ky aplikacion qe montuar për një version të vjetër të Android-it</string>
     <string name="app_issue_update_other_repo">Ka një përditësim gati në një tjetër depo. Që ta përditësoni, ndryshoni depon e parapëlqyer</string>
     <string name="app_issue_not_available_title">Aplikacioni s’mund të kihet më</string>
     <string name="app_issue_not_available_text">Aplikacioni mund të jetë hequr, ose gjendej në një depo që e hoqët ose çaktivizuat</string>

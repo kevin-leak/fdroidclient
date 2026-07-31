@@ -324,7 +324,7 @@
     <string name="pref_auto_updates_summary_only_wifi">Stahovat a aktualizovat aplikace denně, když jste na Wi-Fi a zařízení není používáno</string>
     <string name="pref_auto_updates_summary_always">Stahovat a aktualizovat aplikace denně i na mobilních datech a když zařízení není používáno</string>
     <string name="pref_auto_updates_summary_never">Automatické aktualizace zakázány • Aplikace budou muset být aktualizovány ručně</string>
-    <string name="pref_repo_updates_title">Kontrola aktualizací</string>
+    <string name="pref_repo_updates_title">Zkontrolovat aktualizace</string>
     <string name="pref_repo_updates_summary_only_wifi">Pravidelně načítat aktualizace aplikací z repozitářů pouze na Wi-Fi</string>
     <string name="pref_repo_updates_summary_always">Pravidelně načítat aktualizace aplikací z repozitářů i na mobilních datech</string>
     <string name="pref_repo_updates_summary_never">Nekontrolovat aktualizace • Aplikace budou zastaralé</string>
@@ -348,7 +348,7 @@
     <string name="app_no_compatible_versions">Tato aplikace není kompatibilní s vaším zařízením</string>
     <string name="app_no_compatible_signer">Tuto aplikaci nelze aktualizovat, protože všechny její verze mají nekompatibilní podpis\n\nPokud ji neaktualizujete jinými způsoby, budete možná muset aplikaci odinstalovat a znovu nainstalovat. Data aplikace budou ztracena.</string>
     <string name="app_no_compatible_signer_in_this_repo">Tuto aplikaci nelze aktualizovat, protože v preferovaném repozitáři se nenacházejí žádné kompatibilní verze\n\nZkuste změnit preferovaný repozitář</string>
-    <string name="app_no_auto_update">Automatické aktualizace nejsou k dispozici, protože tato aplikace byla sestavena pro starou verzi systému Android bez podpory automatických aktualizací</string>
+    <string name="app_no_auto_update">Automatické aktualizace nejsou k dispozici, protože tato aplikace byla sestavena pro starou verzi systému Android</string>
     <string name="app_issue_update_other_repo">Je dostupná aktualizace v jiném repozitáři. Pro její instalaci změňte preferovaný repozitář</string>
     <string name="app_issue_not_available_title">Aplikace již není dostupná</string>
     <string name="app_issue_not_available_text">Aplikace mohla být odstraněna nebo byla v repozitáři, který jste odstranili nebo zakázali</string>

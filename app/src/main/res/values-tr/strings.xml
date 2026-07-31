@@ -295,7 +295,7 @@
     <string name="technical_info">Teknik bilgi</string>
     <string name="package_name">Paket ismi:</string>
     <string name="installed_version">Yüklü sürüm:</string>
-    <string name="call_to_action_keepandroidopen">F-Droid tehlike altında! Google, sizin kendi cihazınıza nasıl uygulama yükleyeceğinizi değiştirmeye çalışıyor. Yardımına ihtiyacımız var!</string>
+    <string name="call_to_action_keepandroidopen">F-Droid tehlike altında. Google, sizin kendi cihazınıza nasıl uygulama yükleyeceğinizi değiştirmeye çalışıyor. Yardımınıza ihtiyacımız var.</string>
     <string name="call_to_action_keepandroidopen_url">https://keepandroidopen.org</string>
     <string name="ipfsgw_summary_new">IPFS HTTP ağ geçitleri (web gateway’leri) üzerinden uygulama indirme</string>
     <string name="first_start_intro">Başlamak için uygulama depolarını senkronize edin</string>
@@ -352,7 +352,7 @@
     <string name="app_no_compatible_versions">Bu uygulama cihazınızla uyumlu değil</string>
     <string name="app_no_compatible_signer">Bu uygulama güncellenemedi çünkü tüm sürümler uyumsuz imzaya sahip\n\nEğer başka yollarla da güncellemelere ulaşamıyorsanız uygulamayı silip tekrar yüklemeniz gerekebilir. Uygulamanın verileri silinecektir.</string>
     <string name="app_no_compatible_signer_in_this_repo">Bu uygulama güncellenemedi çünkü tercih edilen depoda uyumlu bir sürüm yok\n\nTercih edilen depoyu değiştirmeyi deneyin</string>
-    <string name="app_no_auto_update">Bu uygulama, otomatik güncelleme desteği olmayan eski bir Android sürümü için geliştirildiğinden otomatik güncelleme özelliği kullanılamıyor</string>
+    <string name="app_no_auto_update">Bu uygulama, eski bir Android sürümü için geliştirildiğinden otomatik güncelleme özelliği kullanılamıyor</string>
     <string name="app_issue_update_other_repo">Başka bir depoda bir güncelleme mevcut. Güncellemek için tercih edilen depoyu değiştirin</string>
     <string name="app_issue_not_available_title">Uygulama artık mevcut değil</string>
     <string name="app_issue_not_available_text">Uygulama kaldırılmış olabilir ya da sizin kaldırdığınız veya devre dışı bıraktığınız bir depoda yer alıyordu</string>

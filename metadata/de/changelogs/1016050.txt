@@ -1,4 +1,4 @@
-Komplette Modernisierung von Download, Index, und Datenbankprogrammierung. Schneller und stabiler bei geringerem Bandbreitenbedarf. Auch besser wartbar mit einer stark verbesserten Test-Suite. Behebung zahlreicher Abstürze und langjähriger Bugs.
+Komplette Überarbeitung von Download, Index, und Datenbankprogrammierung. Schneller und stabiler bei geringerem Bandbreitenbedarf. Auch besser wartbar mit einer stark verbesserten Test-Suite. Behebt zahlreiche Abstürze und seit langem bekannte Bugs.
 
 * Funktioniert besser auf günstigen Geräten mit wenig Speicher *
 

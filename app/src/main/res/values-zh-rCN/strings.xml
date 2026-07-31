@@ -347,7 +347,7 @@
     <string name="app_no_compatible_versions">此应用不兼容您的设备</string>
     <string name="app_no_compatible_signer">无法更新此应用，因为所有版本的签名都不兼容。\n\n如果不是通过其他方式接收更新，您可能需要卸载然后重新安装此应用。应用的数据将丢失。</string>
     <string name="app_no_compatible_signer_in_this_repo">因为首选存储库中没有兼容版本，无法更新此应用\n\n请尝试更改首选存储库</string>
-    <string name="app_no_auto_update">由于此应用为不支持自动更新的旧版本 Android 构建，无法自动更新</string>
+    <string name="app_no_auto_update">由于此应用为旧版 Android 系统构建，无法自动更新</string>
     <string name="app_issue_update_other_repo">另一个存储库中有更新。要更新请更改首选存储库</string>
     <string name="app_issue_not_available_title">应用不再可用</string>
     <string name="app_issue_not_available_text">此应用可能已被删除或者在您删除或禁用的存储库中</string>

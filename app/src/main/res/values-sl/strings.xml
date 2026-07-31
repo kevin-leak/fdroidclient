@@ -364,7 +364,7 @@
     <string name="app_no_compatible_versions">Ta aplikacija ni združljiva z vašo napravo</string>
     <string name="app_no_compatible_signer">Te aplikacije ni mogoče posodobiti, ker imajo vse različice nezdružljiv podpis.\n\nČe posodobitev ne prejemate na druge načine, boste morda morali odstraniti in nato znova namestiti to aplikacijo. Podatki aplikacije bodo izgubljeni.</string>
     <string name="app_no_compatible_signer_in_this_repo">Te aplikacije ni mogoče posodobiti, ker v želenem repozitoriju ni združljivih različic.\n\nPoskusite spremeniti želeni repozitorij</string>
-    <string name="app_no_auto_update">Samodejno posodabljanje ni na voljo, ker je bila ta aplikacija ustvarjena za staro različico Androida brez podpore za samodejno posodabljanje</string>
+    <string name="app_no_auto_update">Samodejno posodabljanje ni na voljo, ker je bila ta aplikacija ustvarjena za staro različico Androida</string>
     <string name="app_issue_update_other_repo">Posodobitev je na voljo v drugem repozitoriju. Spremenite prednostni repozitorij za posodobitev</string>
     <string name="app_issue_not_available_title">Aplikacija ni več na voljo</string>
     <string name="app_issue_not_available_text">Aplikacija je bila morda odstranjena ali pa je bila v repozitoriju, ki ste ga odstranili ali onemogočili</string>

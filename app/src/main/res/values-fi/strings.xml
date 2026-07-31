@@ -406,7 +406,7 @@
     <string name="screenshots_metered">Paina ladataksesi näyttökuvat mobiilidatalla</string>
     <string name="app_no_compatible_signer">Sovelluksen päivittäminen ei onnistunut, koska kaikilla versioilla on epäyhteensopiva allekirjoitus\n\nJos et vastaanota päivityksiä toisilla tavoilla, sinun voi olla poistettava ja uudelleenasennetava tämä sovellus. Sovelluksen data häviää.</string>
     <string name="app_no_compatible_signer_in_this_repo">Sovelluksen päivittämien ei onnistunut, koska repossa ei ole sopivia versioita\n\nKokeile vaihtaa valittu repo</string>
-    <string name="app_no_auto_update">Automaattinen päivitys ei ole saatavilla, koska tämä sovellus on suunniteltu vanhalle Androidin versiolle ilman automaattisen päivityksen tukea</string>
+    <string name="app_no_auto_update">Automaattinen päivitys ei ole saatavilla, koska tämä sovellus on suunniteltu vanhalle Androidin versiolle</string>
     <string name="app_issue_update_other_repo">Päivitys saatavilla toisessa repossa. Vaihda valittu repo päivittääksesi</string>
     <string name="app_issue_not_available_text">Tämä sovellus on voitu poistaa reposta tai oli repossa jonka poistit tai poistit käytöstä</string>
     <string name="app_issue_not_available_button">Näytä sovelluksen tiedot</string>

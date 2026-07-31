@@ -354,7 +354,7 @@
     <string name="app_no_compatible_versions">Deze app is niet compatibel met uw apparaat</string>
     <string name="app_no_compatible_signer">Deze app kan niet geüpdate worden omdat alle versies een incompatibele handtekening hebben\n\nAls u geen updates ontvangt via andere kanalen is het misschien nodig om de app te deïnstalleren en te herinstalleren. De data van de app zal dan verloren gaan.</string>
     <string name="app_no_compatible_signer_in_this_repo">Deze app kan niet geüpdate worden omdat er geen compatibele versies in de voorkeursdatabank staan\n\nProbeer de voorkeursdatabank te veranderen</string>
-    <string name="app_no_auto_update">Automatisch updaten niet beschikbaar omdat de app gebouwd is voor een oude Android versie zonder ondersteuning voor automatisch updaten</string>
+    <string name="app_no_auto_update">Automatisch updaten niet beschikbaar omdat de app gebouwd is voor een oude Android</string>
     <string name="app_issue_update_other_repo">Een update is beschikbaar in een andere databank. Verander voorkeursdatabank om te updaten</string>
     <string name="app_issue_not_available_title">App niet langer beschikbaar</string>
     <string name="app_issue_not_available_text">De app is misschien verwijderd of zat in een databank die u hebt verwijderd of uitgeschakeld</string>

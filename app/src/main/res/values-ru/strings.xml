@@ -403,7 +403,7 @@
     <string name="app_no_compatible_versions">Это приложение несовместимо с вашим устройством</string>
     <string name="app_no_compatible_signer">Невозможно обновить это приложение, так как все версии имеют несовместимую подпись\n\nЕсли вы не можете получить обновления другими способами, возможно, вам потребуется удалить, а затем заново установить это приложение. Данные приложения будут утеряны.</string>
     <string name="app_no_compatible_signer_in_this_repo">Невозможно обновить это приложение, так как в выбранном репозитории нет совместимых версий\n\nПопробуйте изменить выбранный репозиторий</string>
-    <string name="app_no_auto_update">Автоматическое обновление недоступно, так как это приложение было разработано для старой версии Android, не поддерживающей автоматические обновления</string>
+    <string name="app_no_auto_update">Автоматическое обновление недоступно, поскольку это приложение создано для старой версии Android</string>
     <string name="app_issue_update_other_repo">Обновление доступно в другом репозитории. Для обновления необходимо выбрать другой репозиторий</string>
     <string name="app_issue_not_available_title">Приложение больше не доступно</string>
     <string name="app_issue_not_available_text">Приложение, возможно, было удалено или находилось в репозитории, который вы удалили или отключили</string>
@@ -416,7 +416,7 @@
     <string name="sdk_min_version">%1$s (минимальный)</string>
     <string name="sdk_target_version">%1$s (целевой)</string>
     <string name="sdk_max_version">%1$s (максимальный)</string>
-    <string name="signer_colon">Подписант: %1$s</string>
+    <string name="signer_colon">Подписано: %1$s</string>
     <string name="app_details_incompatible_version">Несовместимо • Установка, скорее всего, завершится сбоем</string>
     <string name="first_start_metered">Вы используете мобильный интернет, при этом будет загружено более 10 МБ. Нажмите Загрузить репозитории, чтобы начать в любом случае.</string>
     <string name="first_start_button">Загрузить репозитории</string>

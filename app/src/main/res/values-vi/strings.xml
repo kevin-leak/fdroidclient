@@ -346,7 +346,7 @@
     <string name="app_no_compatible_versions">Ứng dụng này không tương thích với thiết bị của bạn</string>
     <string name="app_no_compatible_signer">Không thể cập nhật ứng dụng này vì tất cả các phiên bản đều có chữ ký không tương thích.\n\nNếu bạn không nhận được bản cập nhật, bạn có thể cần gỡ cài đặt rồi cài đặt lại ứng dụng này. Dữ liệu của ứng dụng sẽ bị mất.</string>
     <string name="app_no_compatible_signer_in_this_repo">Không thể cập nhật ứng dụng này vì không có phiên bản tương thích nào trong kho lưu trữ ưu tiên.\n\nHãy thử thay đổi kho lưu trữ ưu tiên</string>
-    <string name="app_no_auto_update">Tính năng tự động cập nhật không khả dụng vì ứng dụng này được xây dựng cho phiên bản Android cũ không hỗ trợ cập nhật tự động</string>
+    <string name="app_no_auto_update">Tính năng tự động cập nhật không khả dụng vì ứng dụng này được thiết kế cho phiên bản Android cũ</string>
     <string name="app_issue_update_other_repo">Có bản cập nhật ở kho lưu trữ khác. Hãy thay đổi kho lưu trữ ưu tiên để cập nhật</string>
     <string name="app_issue_not_available_title">Ứng dụng không còn khả dụng</string>
     <string name="app_issue_not_available_text">Ứng dụng có thể đã bị xóa hoặc nằm trong kho lưu trữ mà bạn đã xóa hoặc vô hiệu hóa</string>
@@ -405,7 +405,7 @@
     <string name="install_history_disabled_state">Lịch sử cài đặt đã bị vô hiệu hóa\n\nViệc cài đặt, cập nhật và gỡ cài đặt sẽ không được ghi lại</string>
     <string name="install_history_delete_ally">Xóa lịch sử cài đặt</string>
     <string name="install_history_delete_text">Xóa lịch sử cài đặt?</string>
-    <string name="status_downloading">Tốv độ tải %s/s</string>
+    <string name="status_downloading">Đang tải %s/s</string>
     <string name="status_downloading_remaining">%1$s còn lại</string>
     <string name="search_history">Lượt tìm kiếm gần đây</string>
     <string name="install_history_switch">Dùng lịch sử cài đặt</string>
