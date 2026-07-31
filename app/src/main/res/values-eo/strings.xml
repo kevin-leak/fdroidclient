@@ -227,7 +227,7 @@
     <string name="pref_export_log_summary">Krei dosieron enhavantan logcat-eligon, kiu estas utila por senerarigi. Averto: ĝi povas enhavi konfidencajn datumojn!</string>
     <string name="export_log_success">Logcat-protokolo konservita</string>
     <string name="export_log_error">Eraro dum konservi logcat-protokolon</string>
-    <string name="repo_archive_unknown">Tiu deponejo probable ne havas arĥivan deponejon.</string>
+    <string name="repo_archive_unknown">Tiu ĉi deponejo probable ne havas arĥivan deponejon.</string>
     <string name="repo_archive_check">Kontroli pri arĥivo</string>
     <plurals name="repo_num_apps_text">
         <item quantity="one">1 aplikaĵo</item>

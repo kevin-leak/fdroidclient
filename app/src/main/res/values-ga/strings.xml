@@ -357,7 +357,7 @@
     <string name="app_no_compatible_versions">Níl an aip seo comhoiriúnach le do ghléas</string>
     <string name="app_no_compatible_signer">Ní féidir an aip seo a nuashonrú, mar tá síniú neamh-chomhoiriúnach ag gach leagan.\n\nMura bhfaigheann tú nuashonruithe trí mhodhanna eile, b\'fhéidir go mbeidh ort an aip seo a dhíshuiteáil agus ansin í a athshuiteáil. Caillfear sonraí na haipe.</string>
     <string name="app_no_compatible_signer_in_this_repo">Ní féidir an aip seo a nuashonrú, mar níl aon leaganacha comhoiriúnacha sa stórlann is fearr leat\n\nBain triail as an stórlann is fearr leat a athrú</string>
-    <string name="app_no_auto_update">Níl nuashonrú uathoibríoch ar fáil mar gur tógadh an aip seo do sheanleagan de Android gan tacaíocht le haghaidh nuashonruithe uathoibríocha</string>
+    <string name="app_no_auto_update">Níl nuashonrú uathoibríoch ar fáil mar gur tógadh an aip seo do sheanleagan de Android</string>
     <string name="app_issue_update_other_repo">Tá nuashonrú ar fáil i stór eile. Athraigh an stór is fearr leat chun nuashonrú a dhéanamh</string>
     <string name="app_issue_not_available_title">Níl an aip ar fáil a thuilleadh</string>
     <string name="app_issue_not_available_text">B’fhéidir gur baineadh an aip nó go raibh sí i stórlann a bhain tú nó a dhíchumasaigh tú</string>

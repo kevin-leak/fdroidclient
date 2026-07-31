@@ -118,4 +118,6 @@
     <string name="panic_app_setting_summary">No hay una app establecida</string>
     <string name="has_disallow_install_unknown_sources">Este usuario no puede añadir fuentes desconocidas, incluyendo repositorios nuevos</string>
     <string name="app_name_basic">F-droid basico</string>
+    <string name="app_name_full_nightly">F-Nocturno</string>
+    <string name="app_name_basic_nightly">F-Nocturo Básico</string>
 </resources>

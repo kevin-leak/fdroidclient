@@ -225,8 +225,8 @@
     <string name="repo_mirror_exists">このミラーはすでに追加されています（%s）。</string>
     <string name="repo_mirror_add_info">追加しようとしている URL (%s) は、既存のリポジトリのミラーです。</string>
     <string name="repo_and_mirror_add_both_info">追加しようとしている URL (%s) は新しいリポジトリのミラーです。元のリポジトリとミラーの両方が追加されます。</string>
-    <string name="auto_update_time">次回の更新予定日：%s</string>
-    <string name="repo_preview_included_apps">含まれたアプリ：</string>
+    <string name="auto_update_time">次回の更新予定日:%s</string>
+    <string name="repo_preview_included_apps">含まれたアプリ:</string>
     <string name="repo_scan_qr_code">QRコードをスキャン</string>
     <string name="auto_update_time_past">条件が満たされたら次回更新</string>
     <string name="menu_share_apk">APKファイルを共有</string>
@@ -327,7 +327,7 @@
     <string name="copy_link">リンクをコピー</string>
     <string name="app_no_compatible_versions">このアプリはデバイスと互換性がありません</string>
     <string name="about_license_text">当プログラムは自由ソフトウェアです。これを貴方は自由ソフトウェア財団により発行されたGNU一般公衆利用許諾書(バージョン３、若しくはそれ以降のバージョンの何れか)が定める条件の下で再頒布や改変が可能です。</string>
-    <string name="app_no_auto_update">このアプリは自動更新をサポートしない古いAndriod向けに作成されていないため自動アップデートできません</string>
+    <string name="app_no_auto_update">このアプリは古いバージョンのAndroid向けにビルドされているため、自動更新を利用できません</string>
     <string name="app_issue_not_available_text">このアプリはリポジトリから削除されたか、削除/無効化されたリポジトリにあります</string>
     <string name="size_colon">サイズ: %1$s</string>
     <string name="version_code_colon">バージョンコード: %1$s</string>

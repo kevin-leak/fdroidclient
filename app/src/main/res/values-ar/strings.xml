@@ -357,7 +357,7 @@
     <string name="app_no_compatible_versions">هذا التطبيق لا يتوافق مع جهازك</string>
     <string name="app_no_compatible_signer">تعذّر تحديث هذا التطبيق لأن جميع الإصدارات تحتوي على توقيع غير متوافق.\n\nإذا لم تصلك التحديثات عبر وسائل أخرى، فقد تحتاج إلى إلغاء تثبيت هذا التطبيق ثم إعادة تثبيته. ستُفقد بيانات التطبيق.</string>
     <string name="app_no_compatible_signer_in_this_repo">لا يمكن تحديث هذا التطبيق لعدم توفر إصدارات متوافقة في المستودع المفضل\n\nجرّب تغيير المستودع المفضل</string>
-    <string name="app_no_auto_update">التحديث التلقائي غير متاح لأن هذا التطبيق صُمّم لإصدار قديم من أندرويد لا يدعم التحديثات التلقائية</string>
+    <string name="app_no_auto_update">التحديث التلقائي غير متاح لأن هذا التطبيق صُمّم لإصدار قديم من الأندرويد</string>
     <string name="app_issue_update_other_repo">يتوفر تحديث في مستودع آخر. غيِّر المستودع المفضل للتحديث</string>
     <string name="app_issue_not_available_title">التطبيق لم يعد متوفرًا</string>
     <string name="app_issue_not_available_text">ربما أُزيل التطبيق، أو أنه كان في مستودع حذفته أو عطّلته</string>

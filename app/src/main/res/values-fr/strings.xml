@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l’ancienne version. Pour installer cette nouvelle version, vous devez d\'abord désinstaller l’ancienne version de l’application avant de réessayer. (Attention : la désinstallation supprimera toutes les données de l\'application)</string>
+    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l’ancienne version ; pour l’installer vous devez d\'abord désinstaller l’ancienne application (attention : une désinstallation supprime toutes les données internes à l\'application).</string>
     <string name="installIncompatible">Application non compatible avec votre appareil, l’installer quand même ?</string>
     <string name="version">Version</string>
     <string name="delete">Supprimer</string>
@@ -346,7 +346,7 @@
     <string name="screenshots_metered">Touchez pour charger les captures d\'écran via les données cellulaires</string>
     <string name="copy_link">Copier le lien</string>
     <string name="app_no_compatible_versions">Cette application n\'est pas compatible avec votre appareil</string>
-    <string name="app_no_auto_update">Mise à jour automatique non disponible car cette application a été développée pour une ancienne version d\'Android sans support des mises à jour automatiques</string>
+    <string name="app_no_auto_update">La mise à jour automatique n\'est pas disponible car cette application a été développée pour une ancienne version d\'Android.</string>
     <string name="app_issue_update_other_repo">Une mise à jour est disponible dans un autre dépôt. Changez de dépôt préféré pour mettre à jour</string>
     <string name="app_issue_not_available_title">L\'application n\'est plus disponible</string>
     <string name="app_issue_not_available_text">L\'application peut avoir été supprimée ou était dans un dépôt que vous avez supprimé ou désactivé</string>

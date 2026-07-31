@@ -422,4 +422,10 @@
     <string name="install_history_disabled_state">Diegimo istorija išungta\n\nDiegimai, atnaujinimai ir išdiegimai nebus įrašomi</string>
     <string name="install_history_delete_ally">Ištrinti diegimo istoriją</string>
     <string name="install_history_delete_text">Ar ištrinti diegimo istoriją?</string>
+    <string name="pref_repo_updates_summary_only_wifi">Periodiškai gauti programėlių atnaujinimus iš saugyklų tik prisijungus prie Wi-Fi</string>
+    <string name="pref_repo_updates_summary_always">Periodiškai gauti programėlių atnaujinimus iš saugyklų net naudojant mob. duomenis</string>
+    <string name="pref_repo_updates_summary_only_when_open_app">Tikrinti, ar yra atnaujinimų tik atidarius • Programėlės pasens</string>
+    <string name="pref_repo_updates_summary_never">Netikrinti, ar yra atnaujinimų • Programėlės pasens</string>
+    <string name="pref_mirror_chooser_summary_random">Atsitiktinis</string>
+    <string name="pref_mirror_chooser_summary_prefer_foreign">Teikti pirmenybę iš kitų šalių</string>
 </resources>

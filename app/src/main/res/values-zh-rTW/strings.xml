@@ -345,7 +345,7 @@
     <string name="app_no_compatible_versions">此應用程式不相容於您的裝置</string>
     <string name="app_no_compatible_signer">無法更新此應用程式，因為所有版本的簽名都不相容。\n\n如果不是透過其他方式接收更新，您可能需要解除安裝然後重新安裝此應用程式。應用程式的資料將會遺失。</string>
     <string name="app_no_compatible_signer_in_this_repo">因為首選軟體庫中沒有相容版本，無法更新此應用程式\n\n請嘗試變更首選軟體庫</string>
-    <string name="app_no_auto_update">此應用程式無法自動更新，因為是由「不支援自動更新的舊版 Android 」開發的</string>
+    <string name="app_no_auto_update">由於此應用程式是針對舊版 Android 所開發，因此無法自動更新</string>
     <string name="app_issue_update_other_repo">另一個軟體庫中有更新。若要更新，請變更首選軟體庫</string>
     <string name="app_issue_not_available_title">無法使用應用程式</string>
     <string name="app_issue_not_available_text">此應用程式可能已被刪除或在您刪除或停用的軟體庫中</string>

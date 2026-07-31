@@ -420,9 +420,9 @@
     <string name="notification_repo_update_default">Savienojas pie %1$s…</string>
     <string name="notification_repo_update_downloading">Lejupielādēja %1$s no %2$s</string>
     <plurals name="notification_repo_update_saving">
-        <item quantity="zero">Saglabāja %1$d lietotnes no %2$s</item>
-        <item quantity="one">Saglabāja %1$d lietotni no %2$s</item>
-        <item quantity="other">Saglabāja %1$d lietotnes no %2$s</item>
+        <item quantity="zero">Saglabātas %1$d lietotnes no %2$s</item>
+        <item quantity="one">Saglabāta %1$d lietotni no %2$s</item>
+        <item quantity="other">Saglabātas %1$d lietotnes no %2$s</item>
     </plurals>
     <plurals name="notification_installing_title">
         <item quantity="zero">Uzstāda %1$d lietotņu…</item>
