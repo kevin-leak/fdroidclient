@@ -1,3 +1,11 @@
+### 2.0-rc0 (2026-08-03)
+
+* Reduce opacity of feature graphic (Thanks Thore!)
+* Enable certificate transparency for known domains (Thanks Thore!)
+* Remember expanded state of app description in app details
+* Fix bug with display of chosen panic app (full only)
+* Fix bug with DB migration when updating from older versions
+
 ### 2.0-alpha11 (2026-07-10)
 
 * Prevent self-updates from getting stuck, allow updates to be canceled when waiting
