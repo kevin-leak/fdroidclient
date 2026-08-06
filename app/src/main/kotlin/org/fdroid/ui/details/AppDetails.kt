@@ -273,47 +273,26 @@ fun AppDetails(
               modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
             item.app.donate?.forEach { donation ->
-              AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Link),
-                title = donation,
-                url = donation,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
+              AppDonationLink(url = donation, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp))
             }
             item.liberapayUri?.let { liberapayUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_liberapay),
-                disableTinting = true,
-                title = "Liberapay",
-                url = liberapayUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
+              AppDonationLink(
+                url = liberapayUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
             }
             item.openCollectiveUri?.let { openCollectiveUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_opencollective),
-                disableTinting = true,
-                title = "Open Collective",
-                url = openCollectiveUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
+              AppDonationLink(
+                url = openCollectiveUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
             }
             item.bitcoinUri?.let { bitcoinUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_bitcoin),
-                disableTinting = true,
-                title = stringResource(R.string.menu_bitcoin),
-                url = bitcoinUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
+              AppDonationLink(
+                url = bitcoinUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
             }
             item.litecoinUri?.let { litecoinUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_litecoin),
-                disableTinting = true,
-                title = stringResource(R.string.menu_litecoin),
-                url = litecoinUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
+              AppDonationLink(
+                url = litecoinUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
               )
             }
           }
