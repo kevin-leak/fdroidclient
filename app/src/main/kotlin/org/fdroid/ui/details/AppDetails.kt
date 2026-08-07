@@ -51,7 +51,6 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
@@ -75,6 +74,7 @@ import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
+import java.net.URI
 import kotlinx.coroutines.launch
 import org.fdroid.LocaleChooser.getBestLocale
 import org.fdroid.R
@@ -88,6 +88,54 @@ import org.fdroid.ui.utils.ExpandableSection
 import org.fdroid.ui.utils.HintOverlayContainer
 import org.fdroid.ui.utils.OnboardingPopupCard
 import org.fdroid.ui.utils.testApp
+
+
+data class DonateData(
+  val url: String,
+  val type: DonateType,
+  val subtitle: String?,
+)
+
+enum class DonateType {
+  GENERIC,
+  OPEN_COLLECTIVE,
+  LIBERAPAY,
+  BITCOIN,
+  LITECOIN,
+}
+
+fun mapDonateLinks(links: List<String>): List<DonateData> {
+  val typeMapping = links.associateWith<String, DonateType> { link ->
+    when {
+      link.startsWith("https://opencollective.com") -> DonateType.OPEN_COLLECTIVE
+      link.startsWith("https://liberapay.com") -> DonateType.LIBERAPAY
+      link.startsWith("bitcoin:") -> DonateType.BITCOIN
+      link.startsWith("litecoin:") -> DonateType.LITECOIN
+      else -> DonateType.GENERIC
+    }
+  }
+  val typeCounts = typeMapping.values.groupingBy { it }.eachCount()
+  return links.map { link ->
+    DonateData(
+      url = link,
+      type = typeMapping[link]!!,
+      subtitle = if (typeCounts[typeMapping[link]!!]!! > 1) {
+        when (typeMapping[link]!!) {
+          in listOf(DonateType.OPEN_COLLECTIVE, DonateType.LIBERAPAY) -> {
+            try {
+              URI(link).path.split("/")[1]
+            } catch (e: Exception) {
+              null
+            }
+          }
+          DonateType.BITCOIN -> link.removePrefix("bitcoin:")
+          DonateType.LITECOIN -> link.removePrefix("litecoin:")
+          else -> null
+        }
+      } else null,
+    )
+  }
+}
 
 @Composable
 @OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
@@ -262,7 +310,18 @@ fun AppDetails(
           }
         }
         // Donate card
-        if (item.showDonate)
+        if (item.showDonate) {
+          val donateLinks = remember (item.app) {
+            mapDonateLinks(
+              (item.app.donate ?: emptyList()) + listOfNotNull(
+                item.app.liberapay?.let { it -> "https://liberapay.com/$it/donate" },
+                item.app.openCollective?.let { it -> "https://opencollective.com/$it/donate" },
+                item.app.bitcoin?.let { it -> "bitcoin:$it" },
+                item.app.litecoin?.let { it -> "litecoin:$it" }
+              )
+            )
+          }
+
           ElevatedCard(
             colors = CardDefaults.elevatedCardColors(),
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
@@ -272,30 +331,11 @@ fun AppDetails(
               style = MaterialTheme.typography.titleMediumEmphasized,
               modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
-            item.app.donate?.forEach { donation ->
-              AppDonationLink(url = donation, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp))
-            }
-            item.liberapayUri?.let { liberapayUri ->
-              AppDonationLink(
-                url = liberapayUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.openCollectiveUri?.let { openCollectiveUri ->
-              AppDonationLink(
-                url = openCollectiveUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.bitcoinUri?.let { bitcoinUri ->
-              AppDonationLink(
-                url = bitcoinUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.litecoinUri?.let { litecoinUri ->
-              AppDonationLink(
-                url = litecoinUri, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
+            donateLinks.forEach { donate ->
+              AppDonationLink(donate, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp))
             }
           }
+        }
         // Links
         ExpandableSection(
           icon = rememberVectorPainter(Icons.Default.Link),
