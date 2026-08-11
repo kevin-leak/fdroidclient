@@ -11,6 +11,7 @@ import org.fdroid.ui.icons.Bitcoin
 import org.fdroid.ui.icons.Liberapay
 import org.fdroid.ui.icons.Litecoin
 import org.fdroid.ui.icons.OpenCollective
+import org.fdroid.ui.icons.Taler
 
 @Composable
 fun AppDonationLink(
@@ -23,6 +24,7 @@ fun AppDonationLink(
       DonateType.LIBERAPAY -> Liberapay
       DonateType.BITCOIN -> Bitcoin
       DonateType.LITECOIN -> Litecoin
+      DonateType.TALER -> Taler
       DonateType.GENERIC -> Icons.Default.Link
     },
     when (link.type) {
@@ -30,6 +32,7 @@ fun AppDonationLink(
       DonateType.LIBERAPAY -> "Liberapay"
       DonateType.BITCOIN -> "Bitcoin"
       DonateType.LITECOIN -> "Litecoin"
+      DonateType.TALER -> "Taler"
       DonateType.GENERIC -> link.url
     },
     link.url,
@@ -95,6 +98,18 @@ fun LitecoinAppDonationLinkPreview() {
       "litecoin:lc1asdfew44asdf3wv5asdfdhdsasdf8qkvasdffff",
       DonateType.LITECOIN,
       "lc1asdfew44asdf3wv5asdfdhdsasdf8qkvasdffff",
+    ),
+  )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TalerAppDonationLinkPreview() {
+  AppDonationLink(
+    DonateLink(
+      "taler://pay-template/backend.demo.taler.net/instances/fdroid-taler-test/demo-donation",
+      DonateType.TALER,
+      "demo-donation",
     ),
   )
 }
