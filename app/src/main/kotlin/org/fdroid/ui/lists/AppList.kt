@@ -202,6 +202,7 @@ fun AppList(
 }
 
 @Composable
+@OptIn(ExperimentalMaterial3Api::class)
 private fun FilterButton(
   showFilterBadge: Boolean,
   toggleFilterVisibility: () -> Unit,
