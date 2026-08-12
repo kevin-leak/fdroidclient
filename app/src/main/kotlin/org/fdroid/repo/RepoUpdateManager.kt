@@ -174,7 +174,7 @@ internal constructor(
       return true
     }
     val timeSinceLastCheck = System.currentTimeMillis() - settingsManager.lastRepoUpdate
-    if (timeSinceLastCheck < MIN_UPDATE_INTERVAL_MILLIS) {
+    if (timeSinceLastCheck in 1..<MIN_UPDATE_INTERVAL_MILLIS) {
       // This is a workaround for a similar issue as above.
       // We've seen WorkManager tell our worker to run in what looks like an endless loop.
       log.info { "Not updating, only $timeSinceLastCheck ms since last check." }
