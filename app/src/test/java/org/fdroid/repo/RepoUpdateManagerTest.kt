@@ -188,6 +188,23 @@ internal class RepoUpdateManagerTest {
   }
 
   @Test
+  fun `updateRepos does not skip when lastRepoUpdate is 20 years in the future`() = runTest {
+    val twentyYearsMillis = 20L * 365 * 24 * 60 * 60 * 1000
+    // Setting lastRepoUpdate to the future causes timeSinceLastCheck to be negative,
+    // this happened in production because a user had their time set in the future.
+    every { settingsManager.lastRepoUpdate } returns System.currentTimeMillis() + twentyYearsMillis
+    every { repositoryDao.getRepositories() } returns emptyList()
+    every { notificationManager.cancelUpdateRepoNotification() } just runs
+    every { repositoryDao.walCheckpoint() } just runs
+    every { settingsManager.lastRepoUpdate = any() } just runs
+
+    repoUpdateManager.updateRepos()
+
+    // ensure we didn't skip the update
+    verify(exactly = 1) { repositoryDao.getRepositories() }
+  }
+
+  @Test
   fun `updateRepos updates enabled repos only`() = runTest {
     val repo1: Repository = mockk(relaxed = true) { every { enabled } returns true }
     val repo2: Repository = mockk(relaxed = true) { every { enabled } returns false }
