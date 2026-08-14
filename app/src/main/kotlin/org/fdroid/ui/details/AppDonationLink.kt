@@ -14,7 +14,7 @@ import org.fdroid.ui.icons.OpenCollective
 
 @Composable
 fun AppDonationLink(
-  link: DonateData,
+  link: DonateLink,
   modifier: Modifier = Modifier
 ) {
   AppDetailsLink(
@@ -43,7 +43,7 @@ fun AppDonationLink(
 @Composable
 fun GenericAppDonationLinkPreview() {
   AppDonationLink(
-    DonateData(
+    DonateLink(
       "https://f-droid.org/donate",
       DonateType.GENERIC,
       null,
@@ -55,7 +55,7 @@ fun GenericAppDonationLinkPreview() {
 @Composable
 fun LiberapayAppDonationLinkPreview() {
   AppDonationLink(
-    DonateData(
+    DonateLink(
       "https://liberapay.com/F-Droid-Data/donate",
       DonateType.LIBERAPAY,
       "F-Droid-Data",
@@ -67,7 +67,7 @@ fun LiberapayAppDonationLinkPreview() {
 @Composable
 fun OpencollectiveAppDonationLinkPreview() {
   AppDonationLink(
-    DonateData(
+    DonateLink(
       "https://opencollective.com/f-droid/donate",
       DonateType.OPEN_COLLECTIVE,
       "f-droid",
@@ -79,7 +79,7 @@ fun OpencollectiveAppDonationLinkPreview() {
 @Composable
 fun BitcoinAppDonationLinkPreview() {
   AppDonationLink(
-    DonateData(
+    DonateLink(
       "bitcoin:bc1qd8few44yaxc3wv5ceeedhdszl238qkvu50rj4v",
       DonateType.BITCOIN,
       "bc1qd8few44yaxc3wv5ceeedhdszl238qkvu50rj4v",
@@ -91,7 +91,7 @@ fun BitcoinAppDonationLinkPreview() {
 @Composable
 fun LitecoinAppDonationLinkPreview() {
   AppDonationLink(
-    DonateData(
+    DonateLink(
       "litecoin:lc1asdfew44asdf3wv5asdfdhdsasdf8qkvasdffff",
       DonateType.LITECOIN,
       "lc1asdfew44asdf3wv5asdfdhdsasdf8qkvasdffff",

@@ -216,12 +216,14 @@ internal class DetailsPresenterTest {
       assertNull(item.installedVersion)
       assertNull(item.installedSigner)
       assertEquals("Bug fixes", item.whatsNew)
+      assertEquals(mapDonateLinks(item.app.donate!! + listOf(
+        "https://liberapay.com/${app.metadata.liberapay}/donate",
+        "https://opencollective.com/${app.metadata.openCollective}/donate",
+        "bitcoin:${app.metadata.bitcoin}",
+        "litecoin:${app.metadata.litecoin}",
+      )), item.donateLinks)
       assertTrue(item.showDonate)
       assertTrue(item.showAuthorContact)
-      assertEquals(testApp.liberapayUri, item.liberapayUri)
-      assertEquals(testApp.openCollectiveUri, item.openCollectiveUri)
-      assertEquals(testApp.bitcoinUri, item.bitcoinUri)
-      assertEquals(testApp.litecoinUri, item.litecoinUri)
       assertFalse(item.showWarnings)
       assertFalse(item.ignoresCurrentUpdate)
       assertFalse(item.ignoresAllUpdates)
