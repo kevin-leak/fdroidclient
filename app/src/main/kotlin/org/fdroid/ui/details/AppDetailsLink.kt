@@ -20,8 +20,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.layout.FirstBaseline
 import androidx.compose.ui.platform.ClipEntry
@@ -38,7 +37,7 @@ import org.fdroid.ui.utils.openUriSafe
 
 @Composable
 fun AppDetailsLink(
-  icon: Painter,
+  icon: ImageVector,
   title: String,
   url: String,
   modifier: Modifier = Modifier,
@@ -93,7 +92,7 @@ fun AppDetailsLink(
 @Composable
 fun AppDetailsLinkPreview() {
   AppDetailsLink(
-    rememberVectorPainter(Icons.Default.Share),
+    Icons.Default.Share,
     "example.com",
     "",
   )
@@ -103,7 +102,7 @@ fun AppDetailsLinkPreview() {
 @Composable
 fun AppDetailsLinkWithSubtitlePreview() {
   AppDetailsLink(
-    rememberVectorPainter(Icons.Default.Code),
+    Icons.Default.Code,
     "Source Code",
     "",
     subTitle = "https://gitlab.com/fdroid/fdroidclient",
@@ -114,7 +113,7 @@ fun AppDetailsLinkWithSubtitlePreview() {
 @Composable
 fun AppDetailsLinkWithVeryLongSubtitlePreview() {
   AppDetailsLink(
-    rememberVectorPainter(Icons.Default.Checklist),
+    Icons.Default.Checklist,
     "SHA-512",
     "",
     subTitle = "a69a964b3d34c3cd792b2c68c4730e0c4a7e54bbf90276052913971f00df6b997f2c7ffa6aea208a6bd86a4f171d06b0531585036e2bfe87dd11702abf87acab",

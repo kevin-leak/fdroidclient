@@ -345,49 +345,49 @@ fun AppDetails(
           Column(modifier = Modifier.padding(start = 16.dp)) {
             item.app.webSite?.let { webSite ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Home),
+                icon = Icons.Default.Home,
                 title = stringResource(R.string.menu_website),
                 url = webSite,
               )
             }
             item.app.issueTracker?.let { issueTracker ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.EditNote),
+                icon = Icons.Default.EditNote,
                 title = stringResource(R.string.menu_issues),
                 url = issueTracker,
               )
             }
             item.app.changelog?.let { changelog ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.ChangeHistory),
+                icon = Icons.Default.ChangeHistory,
                 title = stringResource(R.string.menu_changelog),
                 url = changelog,
               )
             }
             item.app.license?.let { license ->
               AppDetailsLink(
-                icon = rememberVectorPainter(License),
+                icon = License,
                 title = stringResource(R.string.menu_license, license),
                 url = "https://spdx.org/licenses/$license",
               )
             }
             item.app.translation?.let { translation ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Translate),
+                icon = Icons.Default.Translate,
                 title = stringResource(R.string.menu_translation),
                 url = translation,
               )
             }
             item.app.sourceCode?.let { sourceCode ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Code),
+                icon = Icons.Default.Code,
                 title = stringResource(R.string.menu_source),
                 url = sourceCode,
               )
             }
             item.app.video?.getBestLocale(LocaleListCompat.getDefault())?.let { video ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.OndemandVideo),
+                icon = Icons.Default.OndemandVideo,
                 title = stringResource(R.string.menu_video),
                 url = video,
               )
@@ -408,14 +408,14 @@ fun AppDetails(
             Column(modifier = Modifier.padding(start = 16.dp)) {
               item.app.authorWebSite?.let { authorWebSite ->
                 AppDetailsLink(
-                  icon = rememberVectorPainter(Icons.Default.Home),
+                  icon = Icons.Default.Home,
                   title = stringResource(R.string.menu_website),
                   url = authorWebSite,
                 )
               }
               item.app.authorEmail?.let { authorEmail ->
                 AppDetailsLink(
-                  icon = rememberVectorPainter(Icons.Default.Mail),
+                  icon = Icons.Default.Mail,
                   title = stringResource(R.string.menu_email),
                   url = authorEmail,
                 )

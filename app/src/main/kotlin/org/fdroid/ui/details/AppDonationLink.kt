@@ -5,12 +5,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import java.net.URI
-import org.fdroid.R
+import org.fdroid.ui.icons.Bitcoin
+import org.fdroid.ui.icons.Liberapay
+import org.fdroid.ui.icons.Litecoin
+import org.fdroid.ui.icons.OpenCollective
 
 @Composable
 fun AppDonationLink(
@@ -18,20 +18,19 @@ fun AppDonationLink(
   modifier: Modifier = Modifier
 ) {
   AppDetailsLink(
-    // painterResource(R.drawable.ic_donation_opencollective),
     when (link.type) {
-      DonateType.OPEN_COLLECTIVE -> painterResource(R.drawable.ic_donation_opencollective)
-      DonateType.LIBERAPAY -> painterResource(R.drawable.ic_donation_liberapay)
-      DonateType.BITCOIN -> painterResource(R.drawable.ic_donation_bitcoin)
-      DonateType.LITECOIN -> painterResource(R.drawable.ic_donation_litecoin)
-      else -> rememberVectorPainter(Icons.Default.Link)
+      DonateType.OPEN_COLLECTIVE -> OpenCollective
+      DonateType.LIBERAPAY -> Liberapay
+      DonateType.BITCOIN -> Bitcoin
+      DonateType.LITECOIN -> Litecoin
+      DonateType.GENERIC -> Icons.Default.Link
     },
     when (link.type) {
       DonateType.OPEN_COLLECTIVE -> "Open Collective"
       DonateType.LIBERAPAY -> "Liberapay"
       DonateType.BITCOIN -> "Bitcoin"
       DonateType.LITECOIN -> "Litecoin"
-      else -> link.url
+      DonateType.GENERIC -> link.url
     },
     link.url,
     disableTinting = link.type != DonateType.GENERIC,
