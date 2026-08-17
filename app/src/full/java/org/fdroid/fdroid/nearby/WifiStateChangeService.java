@@ -169,15 +169,21 @@ public class WifiStateChangeService extends Worker {
                     if (wifiState == WifiManager.WIFI_STATE_ENABLED) {
                         Utils.debugLog(TAG, "wifi enabled, get network info");
                         wifiInfo = wifiManager.getConnectionInfo();
-                        FDroidApp.ipAddressString = formatIpAddress(wifiInfo.getIpAddress());
+                        final String ipAddress = formatIpAddress(wifiInfo.getIpAddress());
+                        FDroidApp.ipAddressString = ipAddress;
                         setSsid(wifiInfo);
                         DhcpInfo dhcpInfo = wifiManager.getDhcpInfo();
                         if (dhcpInfo != null) {
                             Utils.debugLog(TAG, "get address/subnet info from dhcp");
-                            String netmask = formatIpAddress(dhcpInfo.netmask);
-                            if (!TextUtils.isEmpty(FDroidApp.ipAddressString) && netmask != null) {
+                            final String netmask = formatIpAddress(dhcpInfo.netmask);
+                            if (!TextUtils.isEmpty(ipAddress) && !TextUtils.isEmpty(netmask)) {
                                 try {
-                                    FDroidApp.subnetInfo = new SubnetUtils(FDroidApp.ipAddressString, netmask).getInfo();
+                                    // encountered an issue where FDroidApp.ipAddressString was null
+                                    // in the SubnetUtils constructor. it seems to only be set to
+                                    // null by FDroidApp.initWifiSettings above. multiple versions
+                                    // of this thread may be running, but for now local final copies
+                                    // of ipAddress/netmask will be checked and used for SubnetUtils
+                                    FDroidApp.subnetInfo = new SubnetUtils(ipAddress, netmask).getInfo();
                                 } catch (IllegalArgumentException e) {
                                     // catch mystery: "java.lang.IllegalArgumentException: Could not parse [null/24]"
                                     e.printStackTrace();
