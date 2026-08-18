@@ -45,7 +45,11 @@ class AppInstallService : Service() {
     } catch (e: Exception) {
       log.error(e) { "Error starting foreground service: " }
     }
-    return super.onStartCommand(intent, flags, startId)
+    // Don't let the system re-create the service since this risks it sticking around forever.
+    // The most likely reason it got killed is that our app got killed, e.g. during backup.
+    // Also, this service doesn't do anything on its own,
+    // it is just here to keep the app in the foreground, so it won't stop itself.
+    return START_NOT_STICKY
   }
 
   override fun onBind(intent: Intent): IBinder? = null
