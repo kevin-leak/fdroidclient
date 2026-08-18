@@ -20,7 +20,6 @@ import kotlin.test.assertIs
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
 import kotlin.test.assertTrue
-import kotlin.test.fail
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flowOf
@@ -521,13 +520,14 @@ internal class DetailsPresenterTest {
   }
 
   @Test
-  fun `run mapDonateLinks() on all types of links`() = runTest {
+  fun `run mapDonateLinks() on all supported types of links`() = runTest {
     val links = listOf(
       "https://example.com/donate",
       "https://opencollective.com/florpus/donate",
       "https://liberapay.com/florpus/donate",
       "bitcoin:bc11234",
       "litecoin:lc11234",
+      "taler://pay-template/backend.demo.taler.net/instances/fdroid-taler-test/demo-donation",
     )
 
     assertEquals(
@@ -537,6 +537,7 @@ internal class DetailsPresenterTest {
         DonateLink("https://liberapay.com/florpus/donate", DonateType.LIBERAPAY, null),
         DonateLink("bitcoin:bc11234", DonateType.BITCOIN, null),
         DonateLink("litecoin:lc11234", DonateType.LITECOIN, null),
+        DonateLink("taler://pay-template/backend.demo.taler.net/instances/fdroid-taler-test/demo-donation", DonateType.TALER, null),
       ), mapDonateLinks(links)
     )
   }
@@ -612,6 +613,29 @@ internal class DetailsPresenterTest {
       listOf(
         DonateLink("litecoin:lc11234", DonateType.LITECOIN, "lc11234"),
         DonateLink("litecoin:lc15678", DonateType.LITECOIN, "lc15678"),
+      ), mapDonateLinks(links)
+    )
+  }
+
+  @Test
+  fun `check mapDonateLinks() account name parsing for taler`() = runTest {
+    val links = listOf(
+      "taler://pay-template/backend.demo.taler.net/instances/fdroid-taler-test/demo-donation",
+      "taler://pay-template/taler.example.com/something/entirely/different/receiver/magic-money",
+    )
+
+    assertEquals(
+      listOf(
+        DonateLink(
+          "taler://pay-template/backend.demo.taler.net/instances/fdroid-taler-test/demo-donation",
+          DonateType.TALER,
+          "demo-donation"
+        ),
+        DonateLink(
+          "taler://pay-template/taler.example.com/something/entirely/different/receiver/magic-money",
+          DonateType.TALER,
+          "magic-money"
+        ),
       ), mapDonateLinks(links)
     )
   }
