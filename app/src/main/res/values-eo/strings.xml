@@ -344,7 +344,7 @@
     <string name="app_no_compatible_versions">Tiu ĉi aplikaĵo estas nekongrua kun via aparato</string>
     <string name="app_no_compatible_signer">Ne eblas ĝisdatigi tiun ĉi aplikaĵon, ĉar ĉiu versio havas nekongruan subskribon.\n\nSe vi ne ricevas ĝisdatigojn el aliaj fontoj, necesas malinstali kaj sekve reinstali la aplikaĵon. Datumoj de la aplikaĵo perdiĝos.</string>
     <string name="app_no_compatible_signer_in_this_repo">Ne eblas ĝisdatigi tiun ĉi aplikaĵon, ĉar estas neniu kongrua versio de ĝi en la preferata deponejo.\n\nProvu ŝanĝi la preferatan deponejon.</string>
-    <string name="app_no_auto_update">Ne eblas aŭtomate ĝisdatigi tiun ĉi aplikaĵon, ĉar ĝi estas kompilita celante malnovan version de Android sen subteno por aŭtomataj ĝisdatigoj.</string>
+    <string name="app_no_auto_update">Ne eblas aŭtomate ĝisdatigi tiun ĉi aplikaĵon, ĉar ĝi estas kompilita celante malnovan version de Android.</string>
     <string name="app_issue_update_other_repo">Ĝisdatigo estas disponebla en alia deponejo. Ŝanĝu preferatan deponejon por ĝisdatigi.</string>
     <string name="app_issue_not_available_title">Aplikaĵo jam ne disponebla</string>
     <string name="app_issue_not_available_text">La aplikaĵo eble estis forigita aŭ ĝi estis en deponejo, kiun vi forigis aŭ malaktivigis.</string>

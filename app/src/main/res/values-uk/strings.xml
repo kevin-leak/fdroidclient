@@ -257,7 +257,7 @@
     <string name="call_to_action_keepandroidopen">F-Droid знаходиться під загрозою. Google змінює спосіб встановлення додатків на вашому пристрої. Нам потрібна ваша допомога.</string>
     <string name="call_to_action_keepandroidopen_url">https://keepandroidopen.org/uk/</string>
     <string name="menu_about">Про застосунок</string>
-    <string name="menu_discover">Відкрийте для себе</string>
+    <string name="menu_discover">Головна</string>
     <string name="menu_apps_my">Мої застосунки</string>
     <string name="first_start_loading">Завантаження репозиторіїв додатків…</string>
     <string name="my_apps_empty">Тут відображаються лише застосунки, доступні в репозиторіях %1$s</string>
@@ -314,7 +314,7 @@
     <string name="filter">Фільтр</string>
     <string name="filter_selected">вибраний</string>
     <string name="filter_antifeatures">Приховати антифункції</string>
-    <string name="onboarding_app_list_filter_title">Фільтер</string>
+    <string name="onboarding_app_list_filter_title">Фільтр</string>
     <string name="my_apps_header_recently_installed_apps">Нещодавно встановлені</string>
     <string name="onboarding_app_list_filter_message">Використовуйте фільтри, щоб відображати лише програми з певних категорій або репозиторіїв. Ви також можете змінити порядок сортування.</string>
     <string name="got_it">Зрозуміло</string>

@@ -350,7 +350,7 @@
     <string name="app_no_compatible_versions">Aplikasi ini tidak kompatibel dengan perangkat Anda</string>
     <string name="app_no_compatible_signer">Tidak dapat memperbarui aplikasi ini, karena semua versi memiliki tanda tangan yang tidak kompatibel\n\nJika Anda tidak menerima pembaruan melalui cara lain, Anda mungkin perlu menghapus instalasi lalu menginstal ulang aplikasi ini. Data aplikasi akan hilang.</string>
     <string name="app_no_compatible_signer_in_this_repo">Tidak dapat memperbarui aplikasi ini, karena tidak ada versi yang kompatibel di repositori yang dipilih\n\nCoba ubah repositori yang dipilih</string>
-    <string name="app_no_auto_update">Pembaruan otomatis tidak tersedia karena aplikasi ini dibuat untuk versi Android lama tanpa dukungan pembaruan otomatis</string>
+    <string name="app_no_auto_update">Pembaruan otomatis tidak tersedia karena aplikasi ini dibuat untuk versi Android yang lama</string>
     <string name="app_issue_update_other_repo">Pembaruan tersedia di repositori lain. Ubah repositori yang dipilih untuk memperbarui</string>
     <string name="app_issue_not_available_title">Aplikasi tidak lagi tersedia</string>
     <string name="app_issue_not_available_text">Aplikasi mungkin telah dihapus atau berada di repositori yang Anda hapus atau nonaktifkan</string>

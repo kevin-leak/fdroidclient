@@ -428,4 +428,20 @@
     <string name="install_history_disabled_state">Повест уградњи је онемогућена.\n\nУградње, надградње и уклањања програма неће бити записивана</string>
     <string name="install_history_delete_ally">Избриши повест уградњи</string>
     <string name="install_history_delete_text">Да ли избрисати повест уградњи?</string>
+    <string name="my_apps_header_recently_installed_apps">Недавно инсталирано</string>
+    <string name="clear_all">Очисти све</string>
+    <string name="category_group_games">Игрице</string>
+    <string name="pref_auto_updates_only_only_when_open_app">Само при отварању апликације</string>
+    <string name="pref_repo_updates_summary_only_when_open_app">Провери ажурирања само при отварању • Апликације могу да застаре</string>
+    <string name="apps_updates_hint_title">Честитамо 🥳</string>
+    <string name="apps_updates_hint_text">Све апликације су на најновијим верзијама</string>
+    <string name="search_my_apps_hint">Претражи инсталиране апликације</string>
+    <string name="status_downloading_remaining">преостаје %1$s</string>
+    <string name="repo_has_update_error">Ажурирај грешке</string>
+    <string name="repo_last_update_upstream">Објављено %s</string>
+    <string name="repo_last_downloaded">Преузето %s</string>
+    <string name="repo_basicauth_username">Име налога</string>
+    <string name="repo_basicauth_password">Шифра</string>
+    <string name="repo_basicauth_edit">Сачувај измене</string>
+    <string name="notification_channel_self_update_title">Аутоматско ажурирање</string>
 </resources>

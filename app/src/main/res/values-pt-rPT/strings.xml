@@ -374,7 +374,7 @@
     <string name="app_no_compatible_versions">Esta app não é compatível com o seu dispositivo</string>
     <string name="app_no_compatible_signer">Não é possível atualizar esta app, pois todas as versões têm uma assinatura incompatível\n\nSe não recebe atualizações por outro meio, pode precisar de reinstalar a app. Os dados da app serão apagados.</string>
     <string name="app_no_compatible_signer_in_this_repo">Não é possível atualizar esta app, pois não há versões compatíveis no repositório preferido\n\nTente alterar o repositório preferido</string>
-    <string name="app_no_auto_update">A atualização automática não está disponível, pois a app foi compilada para uma versão antiga do Android sem apoiar atualizações automáticas</string>
+    <string name="app_no_auto_update">A atualização automática não está disponível, pois a app foi compilada para uma versão antiga do Android sem suporte a atualizações automáticas</string>
     <string name="app_issue_update_other_repo">Uma atualização está disponível num outro repositório. Altere o repositório preferido para atualizar</string>
     <string name="app_issue_not_available_title">App acabou de estar disponível</string>
     <string name="app_issue_not_available_text">A app pode ter sido removida ou estava num repositório que removeu ou desativou</string>
