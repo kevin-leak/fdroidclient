@@ -51,7 +51,6 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
@@ -75,6 +74,7 @@ import com.viktormykhailiv.compose.hints.HintProperties
 import com.viktormykhailiv.compose.hints.rememberHint
 import com.viktormykhailiv.compose.hints.rememberHintAnchorState
 import com.viktormykhailiv.compose.hints.rememberHintController
+import java.net.URI
 import kotlinx.coroutines.launch
 import org.fdroid.LocaleChooser.getBestLocale
 import org.fdroid.R
@@ -262,7 +262,7 @@ fun AppDetails(
           }
         }
         // Donate card
-        if (item.showDonate)
+        if (item.showDonate) {
           ElevatedCard(
             colors = CardDefaults.elevatedCardColors(),
             modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
@@ -272,51 +272,11 @@ fun AppDetails(
               style = MaterialTheme.typography.titleMediumEmphasized,
               modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
             )
-            item.app.donate?.forEach { donation ->
-              AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Link),
-                title = donation,
-                url = donation,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.liberapayUri?.let { liberapayUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_liberapay),
-                disableTinting = true,
-                title = "Liberapay",
-                url = liberapayUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.openCollectiveUri?.let { openCollectiveUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_opencollective),
-                disableTinting = true,
-                title = "Open Collective",
-                url = openCollectiveUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.bitcoinUri?.let { bitcoinUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_bitcoin),
-                disableTinting = true,
-                title = stringResource(R.string.menu_bitcoin),
-                url = bitcoinUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
-            }
-            item.litecoinUri?.let { litecoinUri ->
-              AppDetailsLink(
-                icon = painterResource(id = R.drawable.ic_donation_litecoin),
-                disableTinting = true,
-                title = stringResource(R.string.menu_litecoin),
-                url = litecoinUri,
-                modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp),
-              )
+            item.donateLinks.forEach { donate ->
+              AppDonationLink(donate, modifier = Modifier.padding(horizontal = 16.dp).padding(bottom = 8.dp))
             }
           }
+        }
         // Links
         ExpandableSection(
           icon = rememberVectorPainter(Icons.Default.Link),
@@ -326,49 +286,49 @@ fun AppDetails(
           Column(modifier = Modifier.padding(start = 16.dp)) {
             item.app.webSite?.let { webSite ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Home),
+                icon = Icons.Default.Home,
                 title = stringResource(R.string.menu_website),
                 url = webSite,
               )
             }
             item.app.issueTracker?.let { issueTracker ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.EditNote),
+                icon = Icons.Default.EditNote,
                 title = stringResource(R.string.menu_issues),
                 url = issueTracker,
               )
             }
             item.app.changelog?.let { changelog ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.ChangeHistory),
+                icon = Icons.Default.ChangeHistory,
                 title = stringResource(R.string.menu_changelog),
                 url = changelog,
               )
             }
             item.app.license?.let { license ->
               AppDetailsLink(
-                icon = rememberVectorPainter(License),
+                icon = License,
                 title = stringResource(R.string.menu_license, license),
                 url = "https://spdx.org/licenses/$license",
               )
             }
             item.app.translation?.let { translation ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Translate),
+                icon = Icons.Default.Translate,
                 title = stringResource(R.string.menu_translation),
                 url = translation,
               )
             }
             item.app.sourceCode?.let { sourceCode ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.Code),
+                icon = Icons.Default.Code,
                 title = stringResource(R.string.menu_source),
                 url = sourceCode,
               )
             }
             item.app.video?.getBestLocale(LocaleListCompat.getDefault())?.let { video ->
               AppDetailsLink(
-                icon = rememberVectorPainter(Icons.Default.OndemandVideo),
+                icon = Icons.Default.OndemandVideo,
                 title = stringResource(R.string.menu_video),
                 url = video,
               )
@@ -389,14 +349,14 @@ fun AppDetails(
             Column(modifier = Modifier.padding(start = 16.dp)) {
               item.app.authorWebSite?.let { authorWebSite ->
                 AppDetailsLink(
-                  icon = rememberVectorPainter(Icons.Default.Home),
+                  icon = Icons.Default.Home,
                   title = stringResource(R.string.menu_website),
                   url = authorWebSite,
                 )
               }
               item.app.authorEmail?.let { authorEmail ->
                 AppDetailsLink(
-                  icon = rememberVectorPainter(Icons.Default.Mail),
+                  icon = Icons.Default.Mail,
                   title = stringResource(R.string.menu_email),
                   url = authorEmail,
                 )

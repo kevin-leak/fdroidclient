@@ -32,6 +32,8 @@ import org.fdroid.ui.apps.MyAppsModel
 import org.fdroid.ui.categories.CategoryItem
 import org.fdroid.ui.details.AntiFeature
 import org.fdroid.ui.details.AppDetailsActions
+import org.fdroid.ui.details.DonateLink
+import org.fdroid.ui.details.DonateType
 import org.fdroid.ui.details.LoadedAppDetailsItem
 import org.fdroid.ui.details.VersionItem
 import org.fdroid.ui.lists.AntiFeatureItem
@@ -190,6 +192,13 @@ val testApp =
     summary = "Lightweight YouTube frontend",
     description = description,
     categories = categoryItems.subList(0, 5),
+    donateLinks = listOf(
+      DonateLink("https://newpipe.net/donate", DonateType.GENERIC, null),
+      DonateLink("https://liberapay.com/TeamNewPipe/donate", DonateType.LIBERAPAY, null),
+      DonateLink("https://opencollective.com/TeamNewPipe/donate", DonateType.OPEN_COLLECTIVE, null),
+      DonateLink("bitcoin:TeamNewPipe", DonateType.BITCOIN, null),
+      DonateLink("litecoin:TeamNewPipe", DonateType.LITECOIN, null),
+    ),
     antiFeatures =
       listOf(
         AntiFeature(
