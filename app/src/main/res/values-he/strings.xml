@@ -390,7 +390,7 @@
     <string name="pref_repo_updates_summary_only_when_open_app">בדיקת עדכונים רק כאשר היישומון פתוח • היישומונים יתיישנו</string>
     <string name="pref_proxy_hint">תבנית המתווך המצופה היא host:port</string>
     <string name="pref_proxy_error">תבנית מתווך לא תקנית</string>
-    <string name="app_no_auto_update">לא ניתן לעדכן אוטומטית משום שהיישומון הזה נועד לגרסה ישנה של Android שאינה תומכת בעדכונים אוטומטיים</string>
+    <string name="app_no_auto_update">לא ניתן לעדכן אוטומטית משום שהיישומון הזה נועד לגרסה ישנה של Android</string>
     <string name="app_issue_update_other_repo">יש עדכון זמין ממאגר אחר. יש לשנות את המאגר המועדף כדי לעדכן</string>
     <string name="app_issue_not_available_text">ייתכן שהיישומון הוסר או היה במאגר שהסרת או השבתת</string>
     <string name="sdk_target_version">‏%1$s (יעד)</string>
@@ -424,4 +424,40 @@
     <string name="install_history_switch">להשתמש בהיסטוריית התקנה</string>
     <string name="install_history_empty_state">הרשימה הזאת עדיין ריקה. \n\nכשמתקינים, מעדכנים או מסירים יישומונים, תופיע כאן רשומה</string>
     <string name="install_history_delete_ally">מחיקת היסטוריית התקנות</string>
+    <string name="pref_repo_updates_summary_only_wifi">למשוך עדכוני יישומונים מדי פעם ממאגרים רק דרך רשת אלחוטית</string>
+    <string name="pref_repo_updates_summary_always">למשוך עדכוני יישומונים מדי פעם ממאגרים אפילו דרך חיבור סלולרי</string>
+    <string name="about_text">יישומונים ב־F-Droid הם חופשיים ובקוד פתוח (FOSS), הם מכבדים את הפרטיות שלך, וקוד המקור שלהם זמין לכולם לראות, לבנות ולשפר.\n\nהפצת היישומון היא שקופה, מכבדת פרטיות ואחראית, מגדירה תקן שמאתגר את האקוסיסטם לנייד להיות טוב יותר.\n\nההשפעה של F-Droid נמדדת לא רק ביישומונים שפורסמו, אלא גם בחופש, באמון ובזכויות דיגיטליות שהיא עוזרת להגן עליהן.\n\nעזרו ל־F-Droid להגן על החדשנות המופעלת על ידי הקהילה ולהמשיך את משימת הפתיחות, הפרטיות והעצמת המשתמשים.</string>
+    <string name="dialog_metered_text">הורדת %1$s עלולה לגרור חיובים בהתאם לחבילת הגלישה שלך</string>
+    <string name="app_no_compatible_signer">לא ניתן לעדכן את היישומון הזה, משום שלכל הגרסאות יש חתימה לא תואמת\n\nאם לא תקבל עדכונים בדרך אחרת, ייתכן שתצטרך להסיר את היישומון ולאחר מכן להתקין אותו מחדש. נתוני היישומון יאבדו.</string>
+    <string name="app_no_compatible_signer_in_this_repo">לא ניתן לעדכן את היישומון הזה, משום שאין גרסאות תואמות במאגר המועדף\n\nנסה לשנות את המאגר המועדף</string>
+    <string name="repo_disable_dialog_warning">אם הגדרת את המאגר הזה כמועדף עבור יישומונים כלשהם, העדפה זו תאבד</string>
+    <string name="repo_disable_dialog_text">כל היישומונים מהמאגר הזה ייעלמו. יישומונים שכבר הותקנו לא יושפעו.</string>
+    <string name="crash_report_text">אירעה שגיאה בלתי צפויה. זו לא אשמתך. האם ברצונך לשלוח לנו את פרטי השגיאה בדוא\"ל כדי לסייע בתיקון הבעיה?</string>
+    <string name="crash_report_comment_hint">ספר לנו מה קרה ממש לפני הקריסה</string>
+    <string name="crash_report_button_send">שלח דו\"ח</string>
+    <string name="crash_report_error">לא ניתן לשלוח דו\"ח. לא נמצא יישומון דוא\"ל :(</string>
+    <string name="crash_report_save">שמור דו\"ח קריסה לקובץ</string>
+    <string name="notification_channel_install_success_description">מציג התראה לאחר התקנה אוטומטית של יישומונים</string>
+    <string name="notification_channel_updates_available_title">עדכוני יישומון זמינים</string>
+    <string name="notification_channel_updates_available_description">מציג התראה לאחר עדכון מאגרים ומציאת עדכוני יישומון</string>
+    <string name="notification_channel_self_update_title">עדכון-עצמי</string>
+    <string name="notification_channel_self_update_description">מודיע כאשר היישומון מעדכן את עצמו ונסגר, על מנת שתוכל לשגר אותו שוב בקלות</string>
+    <string name="notification_repo_update_default">מתחבר אל %1$s…</string>
+    <plurals name="notification_repo_update_saving">
+        <item quantity="one">נשמר יישומון %1$d מ־ %2$s</item>
+        <item quantity="two">נשמרו %1$d יישומונים מ־ %2$s</item>
+        <item quantity="other">נשמרו %1$d יישומונים מ־ %2$s</item>
+    </plurals>
+    <plurals name="notification_installing_title">
+        <item quantity="one">מתקין יישומון %1$d…</item>
+        <item quantity="two">מתקין %1$d יישומונים…</item>
+        <item quantity="other">מתקין %1$d יישומונים…</item>
+    </plurals>
+    <plurals name="notification_updating_title">
+        <item quantity="one">מעדכן יישומון %1$d…</item>
+        <item quantity="two">מעדכן %1$d יישומונים…</item>
+        <item quantity="other">מעדכן %1$d יישומונים…</item>
+    </plurals>
+    <string name="install_history_disabled_state">היסטוריית התקנות מושבתת\n\nהתקנות, עדכונים והסרת התקנות לא יתועדו</string>
+    <string name="install_history_delete_text">למחוק היסטוריית התקנות?</string>
 </resources>

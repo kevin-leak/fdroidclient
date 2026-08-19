@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l’ancienne version ; pour l’installer vous devez d\'abord désinstaller l’ancienne application (attention : une désinstallation supprime toutes les données internes à l\'application).</string>
+    <string name="SignatureMismatch">La nouvelle version est signée avec une clé différente de l’ancienne version. Pour installer cette nouvelle version, vous devez d\'abord désinstaller l’ancienne version (attention : la désinstallation supprimera toutes les données de l\'application).</string>
     <string name="installIncompatible">Application non compatible avec votre appareil, l’installer quand même ?</string>
     <string name="version">Version</string>
     <string name="delete">Supprimer</string>
@@ -68,7 +68,7 @@
     <string name="swap_success">Échange réussi !</string>
     <string name="swap_active_hotspot">%1$s (votre point d\'accès)</string>
     <string name="swap_scan_or_type_url">Une personne doit balayer le code ou saisir l’URL de l’autre dans un navigateur.</string>
-    <string name="swap_choose_apps">Choisissez des applis</string>
+    <string name="swap_choose_apps">Choisir des applications</string>
     <string name="swap_scan_qr">Code QR</string>
     <string name="swap_people_nearby">Personnes à proximité</string>
     <string name="swap_scanning_for_peers">Recherche des personnes à proximité…</string>
@@ -191,7 +191,7 @@
     <string name="copied_to_clipboard">Copié vers le presse-papier</string>
     <string name="nearby_splace__external_storage_permission_button">Essayez-le</string>
     <string name="nearby_splach__external_storage_permission_explainer">F-Droid peut chercher des dépôts et des miroirs sur votre carte SD, mais a besoin de votre autorisation pour le faire.</string>
-    <string name="repo_num_apps_button">Afficher les applis</string>
+    <string name="repo_num_apps_button">Afficher les applications</string>
     <string name="swap_connection_indexv0_error">Vous essayez de vous connecter à quelqu\'un disposant d\'une version obsolète de F-Droid. Pour vous connecter, cette personne doit mettre à niveau son application F-Droid. Elle peut utiliser l\'échange d\'applications pour mettre à jour son application à partir de vous.</string>
     <string name="ipfsgw_caption_official_gateways">Passerelles IPFS officielles</string>
     <string name="ipfsgw_title">Passerelles IPFS</string>
@@ -212,7 +212,7 @@
     <string name="repo_list_info_title">Liste des dépôts</string>
     <string name="repo_archive_toggle_description">Afficher les apps archivées et les anciennes versions des apps</string>
     <string name="repositories_last_update_never">jamais</string>
-    <string name="repo_list_info_text">Un dépôt est un pourvoyeur d\'applis. Cette liste affiche tous les dépôts actuellement ajoutés. Les dépôts désactivés ne sont pas utilisés. \n \nSi une appli est disponible dans plus d\'un dépôt, le dépôt le plus haut dans la liste est préféré. Vous pouvez changer l\'ordre des dépôts avec un appui long puis en les faisant glisser.</string>
+    <string name="repo_list_info_text">Un dépôt est une source d\'applications. Cette liste affiche tous les dépôts actuellement ajoutés. Les dépôts désactivés ne sont pas utilisés.\n\nSi une application se trouve dans plusieurs dépôts, celui situé en haut de la liste est automatiquement prioritaire. Vous pouvez réorganiser les dépôts en effectuant un appui long et en les faisant glisser.</string>
     <string name="repo_error_adding_archive">Les dépôts d\'archive ne peuvent pas être directement ajoutés. Appuyez sur le dépôt dans la liste puis activez l\'archive à cet emplacement.</string>
     <string name="repo_add_repo_and_mirror">Ajouter des dépôts et des miroirs</string>
     <string name="repo_view_repo">Voir le dépôt</string>

@@ -346,7 +346,7 @@
     <string name="app_no_compatible_versions">Aquesta aplicació no és compatible amb el vostre dispositiu</string>
     <string name="app_no_compatible_signer">No es pot actuatlizar aquesta aplicació perquè totes les versions tenen una signatura incompatible\n\nSi no rebeu actualitzacions a través d\'altres mitjans, potser haureu de desinstal·lar i tornar a instal·lar aquesta aplicació. Les dades de l\'aplicació es perdran.</string>
     <string name="app_no_compatible_signer_in_this_repo">No es pot actualitzar aquesta aplicació perquè no hi ha versions compatibles al repositori preferit\n\nMireu de canviar de repositori preferit</string>
-    <string name="app_no_auto_update">L\'actualització automàtica no està disponible perquè aquesta aplicació ha estat construïda per a una versió antiga d\'Android que no és compatible amb l\'actualització automàtica</string>
+    <string name="app_no_auto_update">L\'actualització automàtica no està disponible perquè aquesta aplicació ha estat construïda per a una versió antiga d\'Android</string>
     <string name="app_issue_update_other_repo">Hi ha una actualització disponible en un altre repositori. Canvieu de repositori preferit per actualitzar</string>
     <string name="app_issue_not_available_title">Aquesta aplicació ja no està disponible</string>
     <string name="app_issue_not_available_text">L\'aplicació pot haver estat esborrada o trobar-se en un repositori que hàgiu esborrat o desactivat</string>

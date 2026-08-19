@@ -414,7 +414,7 @@
     <string name="permission_camera_denied">Acordați accesul la camera foto pentru a scana codul QR. Atinge pentru a acorda permisiunea în setări.</string>
     <string name="app_issue_hint">Aplicațiile de mai jos au nevoie de atenția dvs. Puteți ignora o problemă cu o atingere lungă.</string>
     <string name="install_history_empty_state">Această listă este încă goală\n\nCând instalați, actualizați sau dezinstalați aplicații, aici va apărea o înregistrare</string>
-    <string name="app_no_auto_update">Actualizarea automată nu este disponibilă, această aplicație a fost construită pentru o versiune veche de Android fără suport automat</string>
+    <string name="app_no_auto_update">Actualizarea automată nu este disponibilă pentru această aplicație deoarece că a fost construită pentru o versiune mai veche de Android.</string>
     <string name="app_no_compatible_signer_in_this_repo">Nu se poate actualiza această aplicație, nu există versiuni compatibile în depozitul preferat\n\nÎncercați să schimbați depozitul preferat</string>
     <string name="crash_report_text">O eroare neașteptată a avut loc. Nu e vina dvs. Doriți să ne trimiteți prin e-mail detaliile pentru a ajuta la remedierea problemei?</string>
     <string name="app_no_compatible_signer">Nu se poate actualiza această aplicație, toate versiunile au o semnătură incompatibilă\n\nDacă nu primiți actualizări prin alte mijloace, este posibil să fie necesar să dezinstalați și apoi să reinstalați această aplicație. Datele aplicației vor fi pierdute.</string>
