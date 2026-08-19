@@ -1,3 +1,12 @@
+### 2.0-rc1 (2026-08-20)
+
+* Use better donation service icons
+* Don't skip repo updates when clock had been in the future
+* Fix crash when using back gesture while menu is open
+* Fix crash when Wi-Fi IP changed (full only)
+* Prevent nearby crashes from affecting users not using nearby (full only)
+* Use different banner for full flavor on Android TV
+
 ### 2.0-rc0 (2026-08-03)
 
 * Reduce opacity of feature graphic (Thanks Thore!)
