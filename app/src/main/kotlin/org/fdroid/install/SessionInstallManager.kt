@@ -181,8 +181,7 @@ constructor(
                 pendingIntent.send()
               } catch (e: Exception) {
                 log.error(e) { "Error sending pre-approval intent: " }
-                val s = PreApprovalResult.UserConfirmationRequired(sessionId, pendingIntent)
-                cont.resume(s)
+                cont.resume(PreApprovalResult.NotSupported)
                 unregisterReceiver(this)
               }
             } else {

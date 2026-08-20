@@ -338,6 +338,25 @@ internal class SessionInstallManagerTest {
   }
 
   @Test
+  fun `requestPreapproval returns NotSupported when pendingIntent send throws`() = runBlocking {
+    every { context.isAppInForeground() } returns true
+    expectPreApprovalSession(PackageInstaller.STATUS_PENDING_USER_ACTION)
+    every { pendingIntent.send() } throws SecurityException("not allowed")
+
+    val result =
+      sessionInstallManager.requestPreapproval(
+        app = appMetadata,
+        iconGetter = { null },
+        isUpdate = false,
+        version = appVersion,
+        canRequestUserConfirmationNow = true,
+      )
+
+    assertIs<PreApprovalResult.NotSupported>(result)
+    Unit
+  }
+
+  @Test
   fun `install returns Installed when receiver callback reports STATUS_SUCCESS`() = runBlocking {
     val apkFile: File = tmpFolder.newFile("app.apk").apply { writeBytes(byteArrayOf(1, 2, 3)) }
 
