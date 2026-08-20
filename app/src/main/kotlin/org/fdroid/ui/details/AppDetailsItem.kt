@@ -328,6 +328,7 @@ enum class DonateType {
   LIBERAPAY,
   BITCOIN,
   LITECOIN,
+  TALER,
 }
 
 fun mapDonateLinks(links: List<String>): List<DonateLink> {
@@ -337,6 +338,7 @@ fun mapDonateLinks(links: List<String>): List<DonateLink> {
       link.startsWith("https://liberapay.com") -> DonateType.LIBERAPAY
       link.startsWith("bitcoin:") -> DonateType.BITCOIN
       link.startsWith("litecoin:") -> DonateType.LITECOIN
+      link.startsWith("taler:") -> DonateType.TALER
       else -> DonateType.GENERIC
     }
   }
@@ -358,6 +360,14 @@ fun mapDonateLinks(links: List<String>): List<DonateLink> {
           }
           DonateType.BITCOIN -> link.removePrefix("bitcoin:")
           DonateType.LITECOIN -> link.removePrefix("litecoin:")
+          DonateType.TALER -> {
+            try {
+              // parse taler template-id from url string
+              link.toUri().path?.split("/")?.last()
+            } catch (e: Exception) {
+              null
+            }
+          }
           DonateType.GENERIC -> null  // generic web links are always displayed in full and don't need a subtitle
         }
       } else null,
