@@ -5,7 +5,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Link
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import org.fdroid.R
 import org.fdroid.ui.icons.Bitcoin
 import org.fdroid.ui.icons.Liberapay
 import org.fdroid.ui.icons.Litecoin
@@ -28,11 +30,11 @@ fun AppDonationLink(
       DonateType.GENERIC -> Icons.Default.Link
     },
     when (link.type) {
-      DonateType.OPEN_COLLECTIVE -> "Open Collective"
-      DonateType.LIBERAPAY -> "Liberapay"
-      DonateType.BITCOIN -> "Bitcoin"
-      DonateType.LITECOIN -> "Litecoin"
-      DonateType.TALER -> "Taler"
+      DonateType.OPEN_COLLECTIVE -> stringResource(R.string.open_collective)
+      DonateType.LIBERAPAY -> stringResource(R.string.liberapay)
+      DonateType.BITCOIN -> stringResource(R.string.bitcoin)
+      DonateType.LITECOIN -> stringResource(R.string.litecoin)
+      DonateType.TALER -> stringResource(R.string.taler)
       DonateType.GENERIC -> link.url
     },
     link.url,

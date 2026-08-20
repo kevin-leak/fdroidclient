@@ -97,6 +97,13 @@
     <string name="package_name">Package name:</string>
     <string name="installed_version">Installed version:</string>
 
+    <!-- supported donation/payment options -->
+    <string name="liberapay">Liberapay</string>
+    <string name="open_collective">Open Collective</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="litecoin">Litecoin</string>
+    <string name="taler">Taler</string>
+
     <string name="SignatureMismatch">The new version is signed with a different key to the old one. To install the new
         version, the old one must be uninstalled first. Please do this and try again. (Note that uninstalling will erase
         any internal data stored by the app)
@@ -303,8 +310,6 @@
     <!-- The title for the link that points to the translation service for this app -->
     <string name="menu_translation">Translation</string>
     <string name="menu_upgrade">Update</string>
-    <string name="menu_bitcoin">Bitcoin</string>
-    <string name="menu_litecoin">Litecoin</string>
     <!-- The button label -->
     <string name="main_menu__categories">Categories</string>
     <!-- The button label.  Should be the same term used in the Google Nearby Settings -->
